@@ -20,9 +20,6 @@ export const HeroSection = () => {
       {/* Decorative Circle - Full Width */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-purple-900/30 rounded-full blur-3xl z-0" />
 
-      {/* Navigation */}
-      {/* <Navbar /> */}
-
       {/* Social Sidebar */}
       <SocialSidebar />
 
@@ -45,7 +42,7 @@ export const HeroSection = () => {
       </div>
 
       {/* Bottom Banner */}
-      <BottomBanner />
+      {/* <BottomBanner /> */}
     </section>
   );
 };
