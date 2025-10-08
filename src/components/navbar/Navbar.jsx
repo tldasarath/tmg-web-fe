@@ -1,20 +1,39 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-
-// Container component (assuming this structure)
-const Container = ({ children }) => (
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-    {children}
-  </div>
-);
+import { Container } from '../layout/Container';
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  
   const navLinks = ['Home', 'About', 'Service', 'Workspace', 'Accounting', 'Visa', 'Company', 'Packages'];
   
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="absolute top-0 left-0 right-0 z-50 py-4 sm:py-6">
+    <nav 
+      className={`top-0 left-0 right-0 z-50 py-4 sm:py-6 md:py-3 fixed transition-all duration-300 ${
+        isScrolled 
+          ? 'border-2 border-b-0 border-gray-200 bg-gradient-to-b from-white/90 to-white/60 backdrop-blur-sm shadow-md' 
+          : 'bg-transparent'
+      }`}
+    >
       <Container>
         <div className="flex items-center justify-between lg:justify-start lg:gap-[11rem] xl:gap-24">
           {/* Logo */}
@@ -22,12 +41,18 @@ export const Navbar = () => {
             <img 
               src='/assets/logo/logo.png' 
               alt="Logo" 
-              className="h-16 sm:h-20 md:h-24 lg:h-28 xl:h-[7.563rem] w-auto" 
+              className="h-16 sm:h-20 md:h-24 lg:h-20 xl:h-[6.563rem] w-auto" 
             />
           </div>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex bg-white/90 backdrop-blur-sm rounded-2xl flex-1 max-w-4xl px-4 xl:px-8 py-2 xl:py-3 shadow-lg">
+          <div 
+            className={`hidden lg:flex rounded-2xl flex-1 max-w-4xl px-4 xl:px-8 py-2 xl:py-3 transition-all duration-300 ${
+              isScrolled 
+                ? 'bg-white/90 backdrop-blur-sm shadow-lg' 
+                : 'bg-white/70 backdrop-blur-sm shadow-md'
+            }`}
+          >
             <ul className="flex items-center justify-center w-full gap-4 xl:gap-8">
               {navLinks.map((link, index) => (
                 <li key={index}>
