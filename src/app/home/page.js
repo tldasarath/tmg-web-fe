@@ -3,6 +3,7 @@ import BusinessSection from "@/components/businessSection/businessSection";
 import { HeroSection } from "@/components/hero/HeroSection";
 import ImageSection from "@/components/imageSection/imageSection1";
 import { Navbar } from "@/components/navbar/Navbar";
+import ServicesSection from "@/components/serviceSection/serviceSection";
 import React from "react";
 
 const page = () => {
@@ -14,6 +15,7 @@ const page = () => {
         <AboutSection/>
         <ImageSection/>
         <BusinessSection/>
+        <ServicesSection/>
       </div>
     </>
   );

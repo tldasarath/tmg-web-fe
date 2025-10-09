@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Container } from '../layout/Container';
 import MainButton from '../button/main-button';
+import LettersPullUpText from '../text/LettersPullUpText';
 
 const BusinessSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -64,31 +65,32 @@ const BusinessSection = () => {
   };
 
   return (
-    <div className="lg:h-[500px] h-auto py-16 px-4 sm:px-6 lg:px-10">
+    <div className="h-auto py-8 lg:py-16 px-4 sm:px-6 lg:px-10">
       <Container>
         <div className="w-full mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
             {/* Left Side - Heading and Content */}
-            <div className="space-y-8 lg:w-4/5 pr-4">
+            <div className="space-y-8  lg:w-3/5 ">
               <div className="space-y-6">
-                <h1 className="text-5xl font-bold text-gray-900 leading-tight">
-                  Start Your Business in 
-                </h1>
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <LettersPullUpText
+                  text="Start Your Business in"
+                  className="text-[#49051E]"
+                />
+                <p className="text-xl text-gray-600 leading-relaxed ">
                 Rorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
                 </p>
               </div>
             </div>
 
-            {/* Right Side - Rectangles */}
-{/* Right Side - Rectangles */}
-<div className="flex flex-col lg:flex-row gap-4 justify-center lg:justify-end w-full lg:max-w-[70vw] overflow-visible">
+    
+<div className="flex flex-row gap-4 justify-center lg:justify-end w-full overflow-x-auto lg:overflow-visible px-2 sm:px-4 no-scrollbar">
   {rectangles.map((rectangle, index) => (
     <div
       key={rectangle.id}
       className="relative group cursor-pointer flex-shrink-0"
       onMouseEnter={() => handleMouseEnter(index)}
+      onClick={() => handleMouseEnter(index)} // ✅ Works on mobile too
     >
       <div
         className={`
@@ -96,7 +98,7 @@ const BusinessSection = () => {
           h-[220px] sm:h-[260px] lg:h-[400px] rounded-2xl shadow-2xl
           transform group-hover:scale-[1.03]
           border-2 border-opacity-20
-          ${activeIndex === index ? 'w-full lg:w-[500px]' : 'w-full lg:w-28'}
+          ${activeIndex === index ? 'w-[320px] sm:w-[380px] lg:w-[500px]' : 'w-16 sm:w-20 lg:w-28'}
           backdrop-blur-sm
           ${getBorderColor(index, rectangle)}
         `}
@@ -110,9 +112,9 @@ const BusinessSection = () => {
         >
           <div className="text-center">
             <span
-              className={`font-bold text-2xl lg:text-[40px] tracking-wider ${
+              className={`font-bold text-xl sm:text-2xl lg:text-[40px] tracking-wider ${
                 rectangle.id === 2 && index === 1 ? 'text-[#49051E]' : 'text-white'
-              } lg:[writing-mode:vertical-rl] lg:[text-orientation:mixed]`}
+              } [writing-mode:vertical-rl] [text-orientation:mixed]`}
             >
               {rectangle.title}
             </span>
@@ -137,7 +139,7 @@ const BusinessSection = () => {
           </div>
 
           {/* Button */}
-          <div className="absolute bottom-3 right-8">
+          <div className="absolute bottom-3 right-6 sm:right-8">
             <MainButton text="View more" icon="arrow" />
           </div>
         </div>
@@ -148,6 +150,7 @@ const BusinessSection = () => {
     </div>
   ))}
 </div>
+
 
           </div>
         </div>
