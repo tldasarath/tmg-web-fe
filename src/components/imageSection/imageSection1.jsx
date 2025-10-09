@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import MainButton from '../button/main-button';
 import { Container } from '../layout/Container';
+import LettersPullUpText from '../text/LettersPullUpText';
 
 const ImageSection = () => {
     return (
@@ -26,9 +27,10 @@ const ImageSection = () => {
 
                     {/* Left Side - Main Heading Content */}
                     <div className="text-white   flex justify-center items-center">
-                        <h1 className="lg:text-[3rem] text-[1.5rem] font-bold mb-4 leading-tight">
-                            Torem ipsum dolor sit amet, consectetur adipiscing elit.             </h1>
-
+                        <LettersPullUpText
+                  text="Torem ipsum dolor sit amet, consectetur adipiscing elit. "
+                  className="text-[#FFFFFF]"
+                />
                     </div>
 
                     {/* Right Side - Description Content */}
