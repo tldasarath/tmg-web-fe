@@ -9,7 +9,7 @@ export const SocialSidebar = () => {
   ];
 
   return (
-    <div className="fixed left-6 top-1/2 -translate-y-1/2 z-40 flex flex-col space-y-3">
+    <div className=" fixed left-6 top-1/2 -translate-y-1/2 z-40 flex flex-col space-y-3">
       {socialLinks.map((social, index) => (
         <a
           key={index}
