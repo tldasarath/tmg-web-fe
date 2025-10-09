@@ -59,7 +59,7 @@ const ScheduleMeetingSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 * index }}
-            className={`relative rounded-2xl px-1 py-2 md:p-4 text-center transition-all duration-300 overflow-hidden ${
+            className={`relative rounded-2xl px-1 py-2 md:p-4 lg:p-2 xl:p-4 text-center transition-all duration-300 overflow-hidden ${
               selectedDate === index
                 ? "bg-gradient-to-br from-[#49051E] to-[#7a2240] text-white shadow-xl"
                 : "bg-white/80 hover:bg-white backdrop-blur-sm text-[#49051E] shadow-md hover:shadow-lg border border-gray-200"

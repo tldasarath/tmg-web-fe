@@ -1,230 +1,144 @@
 'use client'
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Container } from '../layout/Container';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 const GoldenVisaBanner = () => {
+  const sectionRef = useRef(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"]
+  });
+
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.on("change", (latest) => {
+      setScrollProgress(latest);
+    });
+    return () => unsubscribe();
+  }, [scrollYProgress]);
+
+ 
+
+  const airplaneX = useTransform(scrollYProgress, [0, 1], ["-50%", "150%"]);
+  const airplaneY = useTransform(scrollYProgress, [0, 1], ["100%", "-100%"]);
+  const airplaneRotate = useTransform(scrollYProgress, [0, 1], [0, -15]);
+  const airplaneScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1.2, 0.6]);
+  const airplaneOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+
   return (
-    <section className="relative w-full h-[655px] overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 w-full h-full">
-        <img 
-          src="/assets/images/visa/sky-banner.png" 
-          alt="Sky background"
-          className="w-full h-full object-cover"
-        />
+    <>
+  
+      <section 
+        ref={sectionRef} 
+        className="relative w-full h-[200vh] "
+      >
+        {/* Sticky Container - This stays fixed while scrolling */}
+        <div className="sticky top-0 w-full h-screen overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0 w-full h-full">
+            <img 
+              src="/assets/images/visa/sky-banner.png" 
+              alt="Sky background"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-100/40 to-blue-100/20"></div>
+          </div>
 
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-100/40 to-blue-100/20"></div>
-      </div>
-
-      <Container>
-        <div className="relative z-10 h-[655px] flex items-center">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
-            {/*Airplane Image */}
-            <motion.div 
-              className="flex justify-center lg:justify-start"
-              initial={{ x: -100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1, ease: "easeOut" }}
-            >
-              <div className="relative">
-                {/* Large Golden Text - OPTION 1: Staggered Word Animation (RECOMMENDED) */}
-                <h2 className="text-6xl sm:text-7xl md:text-8xl lg:text-8xl font-bold mb-4">
-                  <motion.span 
-                    className="inline-block text-[#c99b5a]"
-                    initial={{ opacity: 0, x: -50, rotateY: -90 }}
-                    animate={{ opacity: 1, x: 0, rotateY: 0 }}
-                    transition={{ 
-                      duration: 1, 
-                      delay: 0.2,
-                      type: "spring",
-                      stiffness: 100
-                    }}
-                  >
-                    Golden
-                  </motion.span>{' '}
-                  <motion.span 
-                    className="inline-block text-black"
-                    initial={{ opacity: 0, x: 50, rotateY: 90 }}
-                    animate={{ opacity: 1, x: 0, rotateY: 0 }}
-                    transition={{ 
-                      duration: 1, 
-                      delay: 0.5,
-                      type: "spring",
-                      stiffness: 100
-                    }}
-                  >
-                    Visa
-                  </motion.span>
-                </h2>
-
-                {/* OPTION 2: Scale + Fade (Elegant & Professional) */}
-                {/* <motion.h1 
-                  className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-4"
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ 
-                    duration: 1, 
-                    delay: 0.3,
-                    type: "spring",
-                    stiffness: 80
-                  }}
-                >
-                  <span className="text-[#c99b5a]">Golden</span>{' '}
-                  <span className="text-black">Visa</span>
-                </motion.h1> */}
-               
-
-                {/* OPTION 3: Typewriter Effect with Glow */}
-                {/* <motion.h1 
-                  className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-4"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  <motion.span 
-                    className="text-[#c99b5a] drop-shadow-[0_0_15px_rgba(201,155,90,0.5)]"
-                    initial={{ width: 0, display: "inline-block", overflow: "hidden" }}
-                    animate={{ width: "auto" }}
-                    transition={{ duration: 1, delay: 0.3 }}
-                  >
-                    Golden
-                  </motion.span>{' '}
-                  <motion.span 
-                    className="text-black"
-                    initial={{ width: 0, display: "inline-block", overflow: "hidden" }}
-                    animate={{ width: "auto" }}
-                    transition={{ duration: 1, delay: 1.3 }}
-                  >
-                    Visa
-                  </motion.span>
-                </motion.h1> */}
-               
-
-                {/* OPTION 4: Bounce In (Energetic & Fun) */}
-                {/* <motion.h1 
-                  className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-4"
-                  initial={{ opacity: 0, y: -100 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ 
-                    duration: 0.8, 
-                    delay: 0.3,
-                    type: "spring",
-                    bounce: 0.5
-                  }}
-                >
-                  <span className="text-[#c99b5a]">Golden</span>{' '}
-                  <span className="text-black">Visa</span>
-                </motion.h1> */}
-               
-
-                {/* OPTION 5: Slide & Fade from Bottom (Smooth & Classic) */}
-                {/* <motion.h1 
-                  className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-4"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ 
-                    duration: 1, 
-                    delay: 0.3,
-                    ease: [0.6, -0.05, 0.01, 0.99]
-                  }}
-                >
-                  <span className="text-[#c99b5a]">Golden</span>{' '}
-                  <span className="text-black">Visa</span>
-                </motion.h1> */}
-               
-
-                {/* OPTION 6: Letter by Letter Animation (Most Premium) */}
-                {/* <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold mb-4">
-                  {"Golden".split("").map((letter, index) => (
-                    <motion.span
-                      key={index}
-                      className="inline-block text-[#c99b5a]"
-                      initial={{ opacity: 0, y: 50 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{
-                        duration: 0.5,
-                        delay: 0.1 + index * 0.1,
-                      }}
-                    >
-                      {letter}
-                    </motion.span>
-                  ))}{' '}
-                  {"Visa".split("").map((letter, index) => (
-                    <motion.span
-                      key={index}
-                      className="inline-block text-black"
-                      initial={{ opacity: 0, y: 50 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{
-                        duration: 0.5,
-                        delay: 0.7 + index * 0.1,
-                      }}
-                    >
-                      {letter}
-                    </motion.span>
-                  ))}
-                </h1> */}
-               
-                
-                {/* Airplane Image with Floating Animation */}
-                <motion.div 
-                  className="relative w-full max-w-sm lg:max-w-md mt-8"
-                  animate={{ 
-                    y: [0, -15, 0],
-                    x: [0, 10, 0]
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                >
-                  <img 
-                    src="/assets/images/visa/plane-element.png" 
-                    alt="Golden airplane"
-                    className="w-full h-auto object-contain"
-                  />
-                </motion.div>
-              </div>
-            </motion.div>
-
-            {/* Right Side - Content */}
-            <motion.div 
-              className="space-y-6 px-4 sm:px-6 lg:px-0"
-              initial={{ x: 100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.5, duration: 1 }}
-            >
-              <motion.h2 
-                className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#5c1a2e] leading-tight"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7, duration: 0.8 }}
-              >
-                Golden Visa<br />Assistance
-              </motion.h2>
+          {/* Content Container */}
+          <div className="relative z-10 h-full flex items-center px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
               
+              {/* Left Side - Title and Airplane */}
+              <div className="flex justify-center lg:justify-start">
+                <div className="relative w-full">
+                  {/* Large Golden Text */}
+                  <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4">
+                    <motion.span 
+                      className="inline-block text-[#C79A59]"
+                      initial={{ opacity: 0, x: -50, rotateY: -90 }}
+                      animate={{ opacity: 1, x: 0, rotateY: 0 }}
+                      transition={{ 
+                        duration: 1, 
+                        delay: 0.2,
+                        type: "spring",
+                        stiffness: 100
+                      }}
+                    >
+                      Golden
+                    </motion.span>{' '}
+                    <motion.span 
+                      className="inline-block text-black"
+                      initial={{ opacity: 0, x: 50, rotateY: 90 }}
+                      animate={{ opacity: 1, x: 0, rotateY: 0 }}
+                      transition={{ 
+                        duration: 1, 
+                        delay: 0.5,
+                        type: "spring",
+                        stiffness: 100
+                      }}
+                    >
+                      Visa
+                    </motion.span>
+                  </h2>
+
+                  {/* Airplane Image with Scroll-Based Animation */}
+                  <motion.div 
+                    className="absolute top-0 left-0 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg pointer-events-none"
+                    style={{
+                      x: airplaneX,
+                      y: airplaneY,
+                      rotate: airplaneRotate,
+                      scale: airplaneScale,
+                      opacity: airplaneOpacity,
+                    }}
+                  >
+                    <img 
+                      src="/assets/images/visa/plane-element.png" 
+                      alt="Golden airplane"
+                      className="w-full h-auto object-contain drop-shadow-2xl"
+                    />
+                  </motion.div>
+                </div>
+              </div>
+
+              {/* Right Side - Content */}
               <motion.div 
-                className="space-y-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.9, duration: 0.8 }}
+                className="space-y-6"
+                initial={{ x: 100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: 0.5, duration: 1 }}
               >
-                <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-                  Porem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                </p>
+                <motion.h2 
+                  className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#49051E] leading-tight mb-5 md:mb-10"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.7, duration: 0.8 }}
+                >
+                  Golden Visa<br />Assistance
+                </motion.h2>
                 
-                <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-                  Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                </p>
+                <motion.div 
+                  className="space-y-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.9, duration: 0.8 }}
+                >
+                  <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
+                    Porem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                  </p>
+                  
+                  <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
+                    Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.libero et velit interdum, ac aliquet odio mattis.
+                  </p>
+                </motion.div>
               </motion.div>
-            </motion.div>
+            </div>
           </div>
         </div>
-      </Container>
-    </section>
+      </section>
+    </>
   );
 };
 

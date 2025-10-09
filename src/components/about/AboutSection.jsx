@@ -6,7 +6,7 @@ import { Container } from "../layout/Container";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import MainButton from "../button/main-button";
 import LettersPullUpText from "../text/LettersPullUpText";
-import ScheduleMeetingSection from "../ScheduleMeetingSection";
+import ScheduleMeetingSection from "../meetingSchedule/ScheduleMeetingSection";
 
 const AboutSection = () => {
   const [selectedDate, setSelectedDate] = useState(2);
@@ -20,15 +20,10 @@ const AboutSection = () => {
     { day: 4, month: "We" },
   ];
 
-    const x = useMotionValue(0);
-  const background = useTransform(
-    x,
-    [0, 150],
-    ["#5c1a2e", "#7a2240"]
-  );
+  const x = useMotionValue(0);
+  const background = useTransform(x, [0, 150], ["#5c1a2e", "#7a2240"]);
 
-
-    const handleDragEnd = (event, info) => {
+  const handleDragEnd = (event, info) => {
     if (info.offset.x > 150) {
       setIsSwiped(true);
       // You can trigger navigation or callback here
@@ -47,7 +42,7 @@ const AboutSection = () => {
       <div className="absolute top-32 left-20 w-48 h-48 opacity-20">
         <div className="w-full h-full bg-gradient-to-br from-orange-300 via-amber-200 to-yellow-200 rounded-full blur-2xl"></div>
       </div>
-           {/* Top Watercolor Background Elements End */}
+      {/* Top Watercolor Background Elements End */}
 
       {/* Top Decorative dots */}
       {/* <div className="absolute top-40 left-10 w-2 h-2 bg-amber-400 rounded-full opacity-60"></div>
@@ -55,7 +50,7 @@ const AboutSection = () => {
       <div className="absolute top-56 left-16 w-1 h-1 bg-amber-500 rounded-full opacity-40"></div> */}
 
       {/* Middle/Bottom Watercolor Background Elements - Between sections */}
-       
+
       <div
         className="absolute left-0 w-80 h-80 opacity-100"
         style={{ top: "55%", transform: "translateY(-50%)" }}
@@ -102,7 +97,7 @@ const AboutSection = () => {
                   </span>
                 </h2> */}
 
-                <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-5">
+                <p className="text-gray-600 text-[0.938rem]  md:text-lg leading-relaxed mb-5">
                   At Thameem Management Group Global LLC (TMG), we specialize in
                   providing end-to-end solutions for both individuals and
                   government service requirements. Our mission is to simplify
@@ -110,7 +105,7 @@ const AboutSection = () => {
                   clients achieve new levels of growth and success.
                 </p>
 
-                <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-5 md:mb-8">
+                <p className="text-gray-600 text-[0.938rem]  md:text-lg leading-relaxed mb-5 md:mb-8">
                   Founded under the visionary leadership of Mr. Thameem
                   Aboobacker a respected figure in the business setup industry
                   and a dedicated philanthropist TMG was built on the values of
@@ -260,41 +255,40 @@ const AboutSection = () => {
               <p className="text-white/90 mb-6 md:mb-8 text-[0.938rem]  md:text-lg font-normal">
                 Torem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
                 vulputate libero et velit interdum, ac aliquet odio mattis.te
-              
               </p>
 
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3 mb-8 lg:mb-0 xl:mb-8"
-    >
-      {/* Chat Now Button */}
-      <motion.button
-        whileHover={{ scale: 1.08, y: -5 }}
-        whileTap={{ scale: 0.95 }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1 }}
-        className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 border border-white/30"
-      >
-        <MessageCircle className="w-5 h-5" />
-        Chat Now
-      </motion.button>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3 mb-8 lg:mb-0 xl:mb-8"
+              >
+                {/* Chat Now Button */}
+                <motion.button
+                  whileHover={{ scale: 1.08, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 }}
+                  className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 border border-white/30"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  Chat Now
+                </motion.button>
 
-      {/* Call Now Button */}
-      <motion.button
-        whileHover={{ scale: 1.08, y: -5 }}
-        whileTap={{ scale: 0.95 }}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
-        className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 border border-white/30"
-      >
-        <Phone className="w-5 h-5" />
-        Call Now
-      </motion.button>
-    </motion.div>
+                {/* Call Now Button */}
+                <motion.button
+                  whileHover={{ scale: 1.08, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 border border-white/30"
+                >
+                  <Phone className="w-5 h-5" />
+                  Call Now
+                </motion.button>
+              </motion.div>
 
               {/* <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
@@ -314,7 +308,7 @@ const AboutSection = () => {
               </div> */}
             </div>
 
-          {/* Gold Section with Swipe Button */}
+            {/* Gold Section with Swipe Button */}
             <div className="bg-[#C79A59] rounded-2xl px-6 py-10 lg:px-5 lg:py-6 xl:px-8 xl:py-10 shadow-xl text-white flex flex-col ">
               <p className="text-[#000000] mb-6 lg:mb-8 xl:mb-6 text-lg leading-relaxed font-normal">
                 Torem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
