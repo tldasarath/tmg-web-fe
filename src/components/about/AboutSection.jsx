@@ -3,12 +3,14 @@
 import React, { useState } from "react";
 import { ArrowRight, MessageCircle, Phone, ChevronRight } from "lucide-react";
 import { Container } from "../layout/Container";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import MainButton from "../button/main-button";
 import LettersPullUpText from "../text/LettersPullUpText";
+import ScheduleMeetingSection from "../meetingSchedule/ScheduleMeetingSection";
 
 const AboutSection = () => {
   const [selectedDate, setSelectedDate] = useState(2);
+  const [isSwiped, setIsSwiped] = useState(false);
 
   const dates = [
     { day: 31, month: "May" },
@@ -17,6 +19,19 @@ const AboutSection = () => {
     { day: 3, month: "We" },
     { day: 4, month: "We" },
   ];
+
+  const x = useMotionValue(0);
+  const background = useTransform(x, [0, 150], ["#5c1a2e", "#7a2240"]);
+
+  const handleDragEnd = (event, info) => {
+    if (info.offset.x > 150) {
+      setIsSwiped(true);
+      // You can trigger navigation or callback here
+      setTimeout(() => setIsSwiped(false), 2000);
+    } else {
+      x.set(0);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
@@ -27,7 +42,7 @@ const AboutSection = () => {
       <div className="absolute top-32 left-20 w-48 h-48 opacity-20">
         <div className="w-full h-full bg-gradient-to-br from-orange-300 via-amber-200 to-yellow-200 rounded-full blur-2xl"></div>
       </div>
-           {/* Top Watercolor Background Elements End */}
+      {/* Top Watercolor Background Elements End */}
 
       {/* Top Decorative dots */}
       {/* <div className="absolute top-40 left-10 w-2 h-2 bg-amber-400 rounded-full opacity-60"></div>
@@ -35,7 +50,7 @@ const AboutSection = () => {
       <div className="absolute top-56 left-16 w-1 h-1 bg-amber-500 rounded-full opacity-40"></div> */}
 
       {/* Middle/Bottom Watercolor Background Elements - Between sections */}
-       
+
       <div
         className="absolute left-0 w-80 h-80 opacity-100"
         style={{ top: "55%", transform: "translateY(-50%)" }}
@@ -69,7 +84,7 @@ const AboutSection = () => {
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-0 py-8 lg:py-16">
           {/* Hero Section */}
           <section className="mb-16 lg:mb-24">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center py-6 lg:py-8">
               {/* Left Content */}
               <div className="order-2 lg:order-1">
                 <LettersPullUpText
@@ -82,7 +97,7 @@ const AboutSection = () => {
                   </span>
                 </h2> */}
 
-                <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-5">
+                <p className="text-gray-600 text-[0.938rem]  md:text-lg leading-relaxed mb-5">
                   At Thameem Management Group Global LLC (TMG), we specialize in
                   providing end-to-end solutions for both individuals and
                   government service requirements. Our mission is to simplify
@@ -90,7 +105,7 @@ const AboutSection = () => {
                   clients achieve new levels of growth and success.
                 </p>
 
-                <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-5 md:mb-8">
+                <p className="text-gray-600 text-[0.938rem]  md:text-lg leading-relaxed mb-5 md:mb-8">
                   Founded under the visionary leadership of Mr. Thameem
                   Aboobacker a respected figure in the business setup industry
                   and a dedicated philanthropist TMG was built on the values of
@@ -219,10 +234,10 @@ const AboutSection = () => {
                 <br />
                 Meeting
               </h2> */}
-              <p className="text-gray-700 font-semibold mb-4">
+              <p className="text-gray-700 font-semibold mb-4 text-[0.938rem]  md:text-lg">
                 Your Path to UAE Business Ownership
               </p>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600 text-[0.938rem]  md:text-lg font-normal leading-relaxed">
                 Rorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
                 vulputate libero et velit interdum, ac aliquet odio mattis.
                 Class aptent taciti sociosqu ad litora torquent per conubia
@@ -231,29 +246,49 @@ const AboutSection = () => {
               </p>
             </div>
 
-            <div className="bg-[#8E1A3D] rounded-2xl px-8 py-10 shadow-xl text-white">
+            <div className="bg-[#8E1A3D] rounded-2xl px-8 py-10 lg:px-5 lg:py-6 xl:px-8 xl:py-10 shadow-xl text-white">
               <h3 className="text-2xl sm:text-3xl font-bold mb-4 md:mb-8">
                 Hurry? Get Support
                 <br />
                 Right Away!
               </h3>
-              <p className="text-white/90 mb-6 md:mb-8 text-sm ">
+              <p className="text-white/90 mb-6 md:mb-8 text-[0.938rem]  md:text-lg font-normal">
                 Torem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
                 vulputate libero et velit interdum, ac aliquet odio mattis.te
-                vulputate libero et velit interdum, ac aliquet odio mattis.te
-                libero et velit interdum, ac aliquet odio mattis.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-3 mb-8">
-                <button className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 border border-white/30">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3 mb-8 lg:mb-0 xl:mb-8"
+              >
+                {/* Chat Now Button */}
+                <motion.button
+                  whileHover={{ scale: 1.08, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 }}
+                  className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 border border-white/30"
+                >
                   <MessageCircle className="w-5 h-5" />
                   Chat Now
-                </button>
-                <button className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 border border-white/30">
+                </motion.button>
+
+                {/* Call Now Button */}
+                <motion.button
+                  whileHover={{ scale: 1.08, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 border border-white/30"
+                >
                   <Phone className="w-5 h-5" />
                   Call Now
-                </button>
-              </div>
+                </motion.button>
+              </motion.div>
 
               {/* <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
@@ -273,15 +308,15 @@ const AboutSection = () => {
               </div> */}
             </div>
 
-            <div className="bg-[#C79A59] rounded-2xl px-8 py-10 shadow-xl text-white flex flex-col justify-end">
-              <p className="text-[#000000] mb-6 text-lg leading-relaxed font-normal">
+            {/* Gold Section with Swipe Button */}
+            <div className="bg-[#C79A59] rounded-2xl px-6 py-10 lg:px-5 lg:py-6 xl:px-8 xl:py-10 shadow-xl text-white flex flex-col ">
+              <p className="text-[#000000] mb-6 lg:mb-8 xl:mb-6 text-lg leading-relaxed font-normal">
                 Torem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                vulputate libero et velit interdum, ac aliquet odio mattis.te
-                libero et velit interdum, ac aliquet odio mattis.
+                vulputate libero et velit interdum, ac aliquet odio mattis.
               </p>
 
               {/* Date Selector */}
-              <div className="grid grid-cols-5 gap-2 mb-6">
+              {/* <div className="grid grid-cols-5 gap-2 mb-6 lg:mb-8 xl:mb-6">
                 {dates.map((date, index) => (
                   <button
                     key={index}
@@ -297,13 +332,33 @@ const AboutSection = () => {
                   </button>
                 ))}
               </div>
+              <motion.div
+                className="relative w-full bg-[#5c1a2e] rounded-xl overflow-hidden h-14 flex items-center px-3 cursor-pointer select-none"
+                style={{ background }}
+              >
+                <motion.div
+                  className="absolute left-0 top-0 h-full bg-[#7a2240]/50"
+                  style={{ width: useTransform(x, [0, 200], ["0%", "100%"]) }}
+                />
+                <motion.div
+                  className="relative z-10 w-10 h-10 bg-white rounded-full flex items-center justify-center"
+                  drag="x"
+                  dragConstraints={{ left: 0, right: 200 }}
+                  dragElastic={0.05}
+                  style={{ x }}
+                  onDragEnd={handleDragEnd}
+                >
+                  <ChevronRight className="w-6 h-6 text-[#5c1a2e]" />
+                </motion.div>
+                <motion.span
+                  className="relative z-0 w-full text-center text-white font-semibold text-base pointer-events-none"
+                  animate={{ opacity: isSwiped ? 0 : 1 }}
+                >
+                  {isSwiped ? "Meeting Scheduled!" : "Swipe to Schedule Meeting"}
+                </motion.span>
+              </motion.div> */}
 
-              <button className="w-full bg-[#5c1a2e] hover:bg-[#7a2240] text-white px-6 py-4 rounded-xl font-semibold flex items-center justify-between transition-all duration-300 shadow-lg hover:shadow-xl">
-                <span>Schedule Meeting</span>
-                <div className="bg-white/20 p-2 rounded-lg">
-                  <ChevronRight className="w-5 h-5" />
-                </div>
-              </button>
+              <ScheduleMeetingSection />
             </div>
           </section>
         </div>

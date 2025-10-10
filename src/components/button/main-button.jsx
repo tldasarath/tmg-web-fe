@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { ArrowRight, ChevronRight, MoveRight, ArrowUpRight } from 'lucide-react';
 import ShinyText from '../animations/ShinyText';
+import { motion } from 'framer-motion';
 
 const MainButton = ({ 
   bgColor = '#C79A59',
@@ -38,7 +39,10 @@ const MainButton = ({
 
   return (
     <Link href={link}>
-      <button 
+      <motion.button
+        initial={{ opacity: 0, y: 20 }}      // fade up start
+        animate={{ opacity: 1, y: 0 }}       // fade up end
+        transition={{ duration: 0.5, delay: 0 }} // adjust delay if needed
         className={`
           text-white 
           font-semibold 
@@ -64,7 +68,7 @@ const MainButton = ({
         <IconComponent 
           className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 transition-transform duration-300 group-hover:translate-x-1" 
         />
-      </button>
+      </motion.button>
     </Link>
   );
 };
