@@ -71,13 +71,13 @@ const BusinessSection = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
             {/* Left Side - Heading and Content */}
-            <div className="space-y-8  lg:w-3/5 ">
+            <div className="space-y-8  lg:w-4/6 ">
               <div className="space-y-6">
                 <LettersPullUpText
                   text="Start Your Business in"
                   className="text-[#49051E]"
                 />
-                <p className="text-xl text-gray-600 leading-relaxed ">
+                <p className="text-[0.938rem]  md:text-lg leading-relaxed ">
                 Rorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
                 </p>
               </div>
