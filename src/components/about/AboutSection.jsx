@@ -56,7 +56,7 @@ const AboutSection = () => {
         style={{ top: "55%", transform: "translateY(-50%)" }}
       >
         <img
-          src="/assets/images/about/left_element.png"
+          src="/assets/images/about/left_element_about.png"
           alt="Professional woman with tablet"
           className="w-full h-auto rounded-2xl"
         />{" "}

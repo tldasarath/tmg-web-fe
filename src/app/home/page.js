@@ -1,5 +1,8 @@
 import AboutSection from "@/components/about/AboutSection";
+import WhereAvailableSection from "@/components/branches/Branches";
 import BusinessSection from "@/components/businessSection/businessSection";
+import GetInTouch from "@/components/contact/ContactSection";
+import FAQSection from "@/components/faqs/FaqSection";
 import GoldenVisaBanner from "@/components/goldenVisa/GoldenVisaBanner";
 import { HeroSection } from "@/components/hero/HeroSection";
 import ImageSection from "@/components/imageSection/imageSection1";
@@ -21,6 +24,9 @@ const page = () => {
         <ServicesSection/>
         <GoldenVisaBanner/>
         <LicenseSetupPage/>
+        <WhereAvailableSection/>
+        <FAQSection/>
+        <GetInTouch/>
       </div>
     </>
   );

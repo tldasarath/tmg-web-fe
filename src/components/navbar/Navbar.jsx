@@ -41,7 +41,7 @@ export const Navbar = () => {
             <img 
               src='/assets/logo/logo.png' 
               alt="Logo" 
-              className="h-16 sm:h-20 md:h-24 lg:h-20 xl:h-[6.563rem] w-auto" 
+              className="h-16 sm:h-20 md:h-24 lg:h-20 xl:h-[5.563rem] w-auto" 
             />
           </div>
 
