@@ -17,7 +17,7 @@ const BusinessSection = () => {
       image: '/assets/images/businessSection/business01.png',
       color: '#8E8E8E',
       hoverColor: '#49051E',
-      icon: '💡',
+      description: 'TMG Global Services LLC offers expert Free Zone company formation services in Dubai, allowing investors full ownership and operational freedom. Our consultants assist with jurisdiction selection, approvals, licensing, and registration, ensuring a seamless setup. With detailed understanding of Free Zone regulations, we deliver efficient, compliant, and structured services that enable entrepreneurs to focus on growth and maximize opportunities within Dubai\'s business-friendly environment.'
     },
     {
       id: 2,
@@ -25,7 +25,7 @@ const BusinessSection = () => {
       image: '/assets/images/businessSection/business02.png',
       color: '#FFFFFF',
       hoverColor: '#49051E',
-      icon: '⭐',
+      description: 'TMG Global Services LLC provides trusted mainland company formation services in Dubai, helping entrepreneurs establish fully licensed businesses. We manage trade name approvals, legal documentation, and licensing processes directly with government authorities. With in-depth local knowledge, our team ensures smooth registration and compliance, enabling businesses to operate efficiently and leverage Dubai\'s strong commercial infrastructure for growth and long-term success.'
     },
     {
       id: 3,
@@ -34,6 +34,7 @@ const BusinessSection = () => {
       color: '#49051E',
       hoverColor: '#49051E',
       icon: '📈',
+      description: 'TMG Global Services LLC specializes in offshore company formation in Dubai, providing investors with secure, compliant, and strategic solutions. We handle registration, documentation, and regulatory approvals efficiently, ensuring confidentiality and operational flexibility. Our team guides clients through the offshore setup process with precision and professionalism, helping businesses access international markets while benefiting from Dubai\'s favorable regulatory framework.'
     },
   ];
 
@@ -68,90 +69,104 @@ const BusinessSection = () => {
     <div className="h-auto py-8 lg:py-16 px-4 sm:px-6 lg:px-10">
       <Container>
         <div className="w-full mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 items-center">
             
             {/* Left Side - Heading and Content */}
-            <div className="space-y-8  lg:w-4/6 ">
+            <div className="space-y-8 lg:w-4/6">
               <div className="space-y-6">
                 <LettersPullUpText
-                  text="Start Your Business in"
+                  text={"Establish Your Business in Opportunity"}
                   className="text-[#49051E]"
                 />
-                <p className="text-[0.938rem]  md:text-lg leading-relaxed ">
-                Rorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobortis.ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+                <p className="text-[0.938rem] md:text-lg leading-relaxed transition-all duration-500 ease-in-out">
+                  {rectangles[activeIndex].description}
                 </p>
               </div>
             </div>
 
-    
-<div className="flex flex-row gap-4 justify-center lg:justify-end w-full overflow-x-auto lg:overflow-visible px-2 sm:px-4 no-scrollbar">
-  {rectangles.map((rectangle, index) => (
-    <div
-      key={rectangle.id}
-      className="relative group cursor-pointer flex-shrink-0"
-      onMouseEnter={() => handleMouseEnter(index)}
-      onClick={() => handleMouseEnter(index)} // ✅ Works on mobile too
-    >
-      <div
-        className={`
-          relative overflow-hidden transition-all duration-700 ease-out
-          h-[220px] sm:h-[260px] lg:h-[400px] rounded-2xl shadow-2xl
-          transform group-hover:scale-[1.03]
-          border-2 border-opacity-20
-          ${activeIndex === index ? 'w-[320px] sm:w-[380px] lg:w-[500px]' : 'w-16 sm:w-20 lg:w-28'}
-          backdrop-blur-sm
-          ${getBorderColor(index, rectangle)}
-        `}
-        style={{ background: getRectangleColor(index, rectangle) }}
-      >
-        {/* Collapsed Text */}
-        <div
-          className={`absolute inset-0 flex items-center justify-center transition-all duration-300 z-10 ${
-            activeIndex === index ? 'opacity-0 scale-90' : 'opacity-100 scale-100'
-          }`}
-        >
-          <div className="text-center">
-            <span
-              className={`font-bold text-xl sm:text-2xl lg:text-[40px] tracking-wider ${
-                rectangle.id === 2 && index === 1 ? 'text-[#49051E]' : 'text-white'
-              } [writing-mode:vertical-rl] [text-orientation:mixed]`}
-            >
-              {rectangle.title}
-            </span>
-          </div>
-        </div>
+            {/* Right Side - Rectangles */}
+            {/* Small screens: Vertical layout, Medium+: Horizontal layout */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-end w-full overflow-y-auto sm:overflow-x-auto lg:overflow-visible px-2 sm:px-4 no-scrollbar">
+              {rectangles.map((rectangle, index) => (
+                <div
+                  key={rectangle.id}
+                  className="relative group cursor-pointer flex-shrink-0 w-full sm:w-auto"
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onClick={() => handleMouseEnter(index)}
+                >
+                  <div
+                    className={`
+                      relative overflow-hidden transition-all duration-700 ease-out
+                      rounded-2xl shadow-2xl
+                      transform group-hover:scale-[1.03]
+                      border-2 border-opacity-20
+                      backdrop-blur-sm
+                      ${getBorderColor(index, rectangle)}
+                      /* Small screen styles */
+                      h-16 sm:h-[260px] lg:h-[400px]
+                      ${
+                        activeIndex === index 
+                          ? 'sm:w-[380px] lg:w-[500px] h-48 sm:h-[260px] lg:h-[400px]' 
+                          : 'sm:w-20 lg:w-28 h-16 sm:h-[260px] lg:h-[400px]'
+                      }
+                    `}
+                    style={{ background: getRectangleColor(index, rectangle) }}
+                  >
+                    {/* Collapsed Text */}
+                    <div
+                      className={`absolute inset-0 flex items-center justify-center transition-all duration-300 z-10 ${
+                        activeIndex === index ? 'opacity-0 scale-90' : 'opacity-100 scale-100'
+                      }`}
+                    >
+                      <div className="text-center">
+                        {/* Small screen: Horizontal text */}
+                        <span
+                          className={`font-bold text-xl sm:text-2xl lg:text-[40px] tracking-wider sm:hidden ${
+                            rectangle.id === 2 && index === 1 ? 'text-[#49051E]' : 'text-white'
+                          }`}
+                        >
+                          {rectangle.title}
+                        </span>
+                        {/* Medium+ screens: Vertical text */}
+                        <span
+                          className={`font-bold text-xl sm:text-2xl lg:text-[40px] tracking-wider hidden sm:inline ${
+                            rectangle.id === 2 && index === 1 ? 'text-[#49051E]' : 'text-white'
+                          } [writing-mode:vertical-rl] [text-orientation:mixed]`}
+                        >
+                          {rectangle.title}
+                        </span>
+                      </div>
+                    </div>
 
-        {/* Expanded Image Content */}
-        <div
-          className={`absolute w-full h-full inset-0 transition-all duration-700 ${
-            activeIndex === index ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
-          }`}
-        >
-          <div className="w-full h-full relative">
-            <Image
-              src={rectangle.image}
-              alt={rectangle.title}
-              fill
-              className="object-fit"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              priority={index === 0}
-            />
-          </div>
+                    {/* Expanded Image Content */}
+                    <div
+                      className={`absolute w-full h-full inset-0 transition-all duration-700 ${
+                        activeIndex === index ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
+                      }`}
+                    >
+                      <div className="w-full h-full relative">
+                        <Image
+                          src={rectangle.image}
+                          alt={rectangle.title}
+                          fill
+                          className="object-fit"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          priority={index === 0}
+                        />
+                      </div>
 
-          {/* Button */}
-          <div className="absolute bottom-3 right-6 sm:right-8">
-            <MainButton text="View more" icon="arrow" />
-          </div>
-        </div>
+                      {/* Button */}
+                      <div className="absolute bottom-3 right-6 sm:right-8">
+                        <MainButton text="View more" icon="arrow" />
+                      </div>
+                    </div>
 
-        {/* Shine Effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-      </div>
-    </div>
-  ))}
-</div>
-
-
+                    {/* Shine Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </Container>
