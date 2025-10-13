@@ -35,7 +35,7 @@ const ImageSection = () => {
 
                     {/* Right Side - Description Content */}
                     <div className="text-white flex flex-col justify-center items-center">
-                        <p className="text-lg sm:text-xl mb-6 leading-relaxed">
+                        <p className="text-[0.938rem]  md:text-lg mb-6 leading-relaxed">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
                         </p>
