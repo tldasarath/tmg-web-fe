@@ -109,7 +109,7 @@ const FounderSection = () => {
 
             {/* Center - About Content */}
             <div className="text-center lg:text-left">
-              <h2 className="text-4xl sm:text-5xl lg:text-[3.3rem] text-white  mb-6 lg:mb-8 leading-tight font-bold">
+              <h2 className="text-4xl sm:text-5xl lg:text-[3rem] text-white  mb-6 lg:mb-8 leading-tight font-bold">
                 Starting Career
                 <HighlightWord>
                  Since </HighlightWord> 2008

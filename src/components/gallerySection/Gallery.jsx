@@ -8,8 +8,8 @@ const Gallery = () => {
       <Container>
         {/* Heading and Description */}
         <div className="text-center mb-10">
-          <h2 className="text-4xl font-bold text-[#49051E] mb-4">Gallery</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl text-[#49051E] lg:text-[3rem] text-maroon-900 mb-6 lg:mb-8 leading-tight font-bold">Gallery</h2>
+          <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
             Explore our curated collection of visuals that capture creativity, color, and emotion in every frame.
           </p>
         </div>

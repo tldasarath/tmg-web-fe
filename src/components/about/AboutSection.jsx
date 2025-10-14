@@ -81,7 +81,7 @@ const AboutSection = () => {
       <div className="absolute left-36 w-1 h-1 bg-orange-400 rounded-full opacity-40" style={{ top: '62%' }}></div> */}
 
       <Container>
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-0 py-8 lg:py-16">
+          <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-0 py-8 lg:py-16">
           {/* Hero Section */}
           <section className="mb-16 lg:mb-24">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center py-6 lg:py-8">
