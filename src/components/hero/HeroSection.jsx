@@ -4,7 +4,6 @@ import { SocialSidebar } from "./SocialSidebar";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BottomCTA } from "./BottomCta";
-import { LetsTalkCard } from "./CtaCard";
 
 export const HeroSection = () => {
   const [videoError, setVideoError] = useState(false);
@@ -196,7 +195,7 @@ export const HeroSection = () => {
                 </div>
 
                 {/* Subtle subtitle animation */}
-                {/* <motion.div
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.5, duration: 1 }}
@@ -205,12 +204,12 @@ export const HeroSection = () => {
                   <p className="text-white/80 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto">
                     Empowering businesses to reach new heights
                   </p>
-                </motion.div> */}
+                </motion.div>
               </div>
             </div>
           </Container>
         </div>
-        <LetsTalkCard />
+
         {/* Elegant bottom fade for seamless transition to next section */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/40 to-transparent z-10" />
       </section>

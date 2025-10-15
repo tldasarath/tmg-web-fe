@@ -668,3 +668,96 @@ body {
 .circular-gallery:active {
   cursor: grabbing;
 }
+
+/* Corner animation lines */
+.corner-anim {
+  position: absolute;
+}
+
+.horizontal-line,
+.vertical-line {
+  position: absolute;
+  background-color: #C79A59;
+  opacity: 0;
+}
+
+/* Horizontal line animation */
+.horizontal-line {
+  top: 0.5rem;
+  left: 0.5rem;
+  height: 2px;
+  width: 0;
+  animation: drawHorizontal 3s ease-in-out infinite;
+}
+
+/* Vertical line animation */
+.vertical-line {
+  top: 0.5rem;
+  left: 0.5rem;
+  width: 2px;
+  height: 0;
+  animation: drawVertical 3s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+/* Circle animations */
+.horizontal-circle,
+.vertical-circle {
+  position: absolute;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #49051E;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+  opacity: 0;
+}
+
+/* Circle on horizontal line */
+.horizontal-circle {
+  top: 0.25rem;
+  left: 0.5rem;
+  animation: moveCircleHorizontal 3s ease-in-out infinite;
+}
+
+/* Circle on vertical line */
+.vertical-circle {
+  left: 0.25rem;
+  top: 0.5rem;
+  animation: moveCircleVertical 3s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+/* KEYFRAMES */
+
+/* Draw horizontal line */
+@keyframes drawHorizontal {
+  0% { width: 0; opacity: 0; }
+  20% { opacity: 1; }
+  70% { width: 9.5rem; opacity: 1; }
+  100% { width: 9.5rem; opacity: 0; }
+}
+
+/* Draw vertical line */
+@keyframes drawVertical {
+  0% { height: 0; opacity: 0; }
+  20% { opacity: 1; }
+  70% { height: 9.5rem; opacity: 1; }
+  100% { height: 9.5rem; opacity: 0; }
+}
+
+/* Move circle along horizontal line */
+@keyframes moveCircleHorizontal {
+  0% { left: 0.5rem; opacity: 0; }
+  20% { opacity: 1; }
+  70% { left: 9.5rem; opacity: 1; }
+  100% { left: 9.5rem; opacity: 0; }
+}
+
+/* Move circle along vertical line */
+@keyframes moveCircleVertical {
+  0% { top: 0.5rem; opacity: 0; }
+  20% { opacity: 1; }
+  70% { top: 9.5rem; opacity: 1; }
+  100% { top: 9.5rem; opacity: 0; }
+}
