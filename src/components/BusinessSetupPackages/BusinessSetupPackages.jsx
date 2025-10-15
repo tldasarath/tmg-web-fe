@@ -145,7 +145,7 @@ export const BusinessSetupPackages = () => {
                       {/* Logo Badge */}
                       <div className="absolute top-0 left-0 z-10 bg-white/95 backdrop-blur-sm py-4 px-2 rounded-br-2xl shadow-md">
                         <img
-                          className="h-12 w-auto  object-contain"
+                          className="h-6 md:h-12 w-auto  object-contain"
                           src={option.logo}
                           alt="Logo"
                         />

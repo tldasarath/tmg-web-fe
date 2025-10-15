@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 
 const MainButton = ({ 
   bgColor = '#C79A59',
+  gradient = '', // 🆕 optional gradient background
   text = 'Button', 
   link = '/',
   className = '',
@@ -22,6 +23,19 @@ const MainButton = ({
   };
 
   const IconComponent = iconComponents[icon] || iconComponents.external;
+
+  // 🧠 Determine background style
+  const backgroundStyle = gradient
+    ? {
+        backgroundImage: gradient,
+        backgroundPosition: 'center center',
+        backgroundSize: 'cover',
+      }
+    : {
+        backgroundColor: isHovered
+          ? `color-mix(in srgb, ${bgColor} 90%, black)`
+          : bgColor,
+      };
 
   return (
     <Link href={link}>
@@ -39,11 +53,7 @@ const MainButton = ({
           hover:scale-105 flex items-center gap-2 group
           ${className}
         `}
-        style={{
-          backgroundColor: isHovered
-            ? `color-mix(in srgb, ${bgColor} 90%, black)`
-            : bgColor,
-        }}
+        style={backgroundStyle}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >

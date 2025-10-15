@@ -7,10 +7,9 @@ const LettersPullUpText = ({ text, className = '' }) => {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true });
 
-  // Split text into individual letters
-  const letters = text.split('');
+  // Split text into words
+  const words = text.split(' ');
 
-  // Animation variant (pull up + fade in)
   const variants = {
     hidden: { y: 10, opacity: 0 },
     show: (i) => ({
@@ -30,19 +29,23 @@ const LettersPullUpText = ({ text, className = '' }) => {
       initial="hidden"
       animate={isInView ? 'show' : ''}
       className={cn(
-        '  text-4xl sm:text-5xl lg:text-[3.3rem] text-maroon-900 mb-6 lg:mb-8 leading-tight font-bold ',
+        'text-4xl sm:text-5xl lg:text-[3rem] text-maroon-900 mb-6 lg:mb-8 leading-tight font-bold',
         className
       )}
     >
-      {letters.map((char, i) => (
-        <motion.span
-          key={i}
-          variants={variants}
-          custom={i}
-          className="inline-block"
-        >
-          {char === ' ' ? '\u00A0' : char}
-        </motion.span>
+      {words.map((word, wi) => (
+        <span key={wi} className="inline-block mr-[0.25em]">
+          {word.split('').map((char, ci) => (
+            <motion.span
+              key={`${wi}-${ci}`}
+              variants={variants}
+              custom={wi * word.length + ci}
+              className="inline-block"
+            >
+              {char}
+            </motion.span>
+          ))}
+        </span>
       ))}
     </motion.h2>
   );

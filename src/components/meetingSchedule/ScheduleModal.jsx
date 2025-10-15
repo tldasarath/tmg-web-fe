@@ -1,7 +1,7 @@
-'use client';
+"use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import {  X, Calendar, User, MessageSquare, Send } from "lucide-react";
+import { X, Calendar, User, MessageSquare, Send } from "lucide-react";
 
 export const ScheduleModal = ({ selectedDate, onClose }) => {
   const [name, setName] = useState("");
@@ -35,11 +35,11 @@ export const ScheduleModal = ({ selectedDate, onClose }) => {
         initial={{ scale: 0.7, opacity: 0, y: 50, rotateX: 20 }}
         animate={{ scale: 1, opacity: 1, y: 0, rotateX: 0 }}
         exit={{ scale: 0.7, opacity: 0, y: 50, rotateX: -20 }}
-        transition={{ 
-          type: "spring", 
-          damping: 25, 
+        transition={{
+          type: "spring",
+          damping: 25,
           stiffness: 300,
-          duration: 0.5 
+          duration: 0.5,
         }}
         className="bg-gradient-to-br from-white via-white to-gray-50 rounded-3xl shadow-2xl p-8 w-full max-w-md relative overflow-hidden"
         onClick={(e) => e.stopPropagation()}
@@ -48,7 +48,6 @@ export const ScheduleModal = ({ selectedDate, onClose }) => {
         <div className="absolute top-0 right-0 w-40 h-40 bg-[#49051E]/5 rounded-full blur-3xl -z-10" />
         <div className="absolute bottom-0 left-0 w-32 h-32 bg-purple-500/5 rounded-full blur-3xl -z-10" />
 
-        {/* Close button */}
         <motion.button
           onClick={onClose}
           whileHover={{ scale: 1.1, rotate: 90 }}
@@ -58,7 +57,6 @@ export const ScheduleModal = ({ selectedDate, onClose }) => {
           <X size={24} />
         </motion.button>
 
-        {/* Header */}
         <motion.div
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -76,10 +74,12 @@ export const ScheduleModal = ({ selectedDate, onClose }) => {
           <h2 className="text-3xl font-bold bg-gradient-to-r from-[#49051E] to-[#7a2240] bg-clip-text text-transparent">
             Schedule Meeting
           </h2>
-          <p className="text-gray-500 text-sm mt-2">Let's plan your next discussion</p>
+          <p className="text-gray-500 text-sm mt-2">
+            Let's plan your next discussion
+          </p>
         </motion.div>
 
-        {/* Date Selection */}
+        {/* Date Selector */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -99,7 +99,8 @@ export const ScheduleModal = ({ selectedDate, onClose }) => {
                   <div>
                     <p className="text-xs text-gray-500">Selected Date</p>
                     <p className="font-bold text-[#49051E]">
-                      {selectedDate.day}, {selectedDate.date} {selectedDate.month}
+                      {selectedDate.day}, {selectedDate.date}{" "}
+                      {selectedDate.month}
                     </p>
                   </div>
                 </div>
@@ -138,7 +139,6 @@ export const ScheduleModal = ({ selectedDate, onClose }) => {
           )}
         </motion.div>
 
-        {/* Input Fields */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -169,7 +169,6 @@ export const ScheduleModal = ({ selectedDate, onClose }) => {
           </div>
         </motion.div>
 
-        {/* Submit Button */}
         <motion.button
           onClick={handleSubmit}
           disabled={isSubmitting}

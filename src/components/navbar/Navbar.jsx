@@ -7,7 +7,7 @@ export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   
-  const navLinks = ['Home', 'About', 'Service', 'Workspace', 'Accounting', 'Visa', 'Company', 'Packages'];
+  const navLinks = ['Home', 'About', 'Service', 'Blog', 'Gallery', 'Visa', 'Company', 'Contact'];
   
   useEffect(() => {
     const handleScroll = () => {

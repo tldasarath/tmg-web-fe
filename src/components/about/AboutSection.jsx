@@ -26,7 +26,7 @@ const AboutSection = () => {
   const handleDragEnd = (event, info) => {
     if (info.offset.x > 150) {
       setIsSwiped(true);
-      // You can trigger navigation or callback here
+
       setTimeout(() => setIsSwiped(false), 2000);
     } else {
       x.set(0);
@@ -35,21 +35,18 @@ const AboutSection = () => {
 
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
-      {/* Top Watercolor Background Elements */}
+      {/* Top Background Elements */}
       <div className="absolute top-0 left-0 w-64 h-64 opacity-30">
         <div className="w-full h-full bg-gradient-to-br from-amber-200 via-orange-200 to-amber-100 rounded-full blur-3xl"></div>
       </div>
       <div className="absolute top-32 left-20 w-48 h-48 opacity-20">
         <div className="w-full h-full bg-gradient-to-br from-orange-300 via-amber-200 to-yellow-200 rounded-full blur-2xl"></div>
       </div>
-      {/* Top Watercolor Background Elements End */}
 
       {/* Top Decorative dots */}
       {/* <div className="absolute top-40 left-10 w-2 h-2 bg-amber-400 rounded-full opacity-60"></div>
       <div className="absolute top-48 left-24 w-1.5 h-1.5 bg-orange-400 rounded-full opacity-50"></div>
       <div className="absolute top-56 left-16 w-1 h-1 bg-amber-500 rounded-full opacity-40"></div> */}
-
-      {/* Middle/Bottom Watercolor Background Elements - Between sections */}
 
       <div
         className="absolute left-0 w-80 h-80 opacity-100"
@@ -61,9 +58,7 @@ const AboutSection = () => {
           className="w-full h-auto rounded-2xl"
         />{" "}
       </div>
-      {/* <div className="absolute left-12 w-64 h-64 opacity-25" style={{ top: '58%', transform: 'translateY(-50%)' }}>
-        <div className="w-full h-full bg-gradient-to-tr from-orange-300 via-amber-300 to-yellow-200 rounded-full blur-2xl"></div>
-      </div> */}
+
       <div
         className="absolute left-8 w-48 h-48 opacity-20"
         style={{ top: "62%", transform: "translateY(-50%)" }}
@@ -71,24 +66,13 @@ const AboutSection = () => {
         <div className="w-full h-full bg-gradient-to-br from-amber-400 via-orange-300 to-yellow-300 rounded-full blur-xl"></div>
       </div>
 
-      {/* Middle Decorative dots */}
-      {/* <div className="absolute left-16 w-2.5 h-2.5 bg-orange-400 rounded-full opacity-70" style={{ top: '52%' }}></div>
-      <div className="absolute left-32 w-2 h-2 bg-amber-500 rounded-full opacity-60" style={{ top: '56%' }}></div>
-      <div className="absolute left-24 w-1.5 h-1.5 bg-orange-500 rounded-full opacity-50" style={{ top: '60%' }}></div>
-      <div className="absolute left-40 w-1.5 h-1.5 bg-amber-600 rounded-full opacity-55" style={{ top: '58%' }}></div>
-      <div className="absolute left-8 w-1 h-1 bg-orange-600 rounded-full opacity-45" style={{ top: '54%' }}></div>
-      <div className="absolute left-20 w-2 h-2 bg-amber-400 rounded-full opacity-50" style={{ top: '64%' }}></div>
-      <div className="absolute left-36 w-1 h-1 bg-orange-400 rounded-full opacity-40" style={{ top: '62%' }}></div> */}
-
       <Container>
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-0 py-8 lg:py-16">
-          {/* Hero Section */}
           <section className="mb-16 lg:mb-24">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center py-6 lg:py-8">
-              {/* Left Content */}
               <div className="order-2 lg:order-1">
                 <LettersPullUpText
-                  text="Driven by Vision, Built on Trust"
+                  text="Empowering Businesses. Simplifying Solutions."
                   className="text-[#49051E]"
                 />
                 {/* <h2 className="text-4xl sm:text-5xl lg:text-[3.3rem] font-bold text-maroon-900 mb-6 lg:mb-8 leading-tight">
@@ -98,20 +82,41 @@ const AboutSection = () => {
                 </h2> */}
 
                 <p className="text-gray-600 text-[0.938rem]  md:text-lg leading-relaxed mb-5">
-                  At Thameem Management Group Global LLC (TMG), we specialize in
-                  providing end-to-end solutions for both individuals and
-                  government service requirements. Our mission is to simplify
-                  complex processes, offer transparent guidance, and help our
-                  clients achieve new levels of growth and success.
+                  <strong>
+                    {" "}
+                    TMG Global Services LLC (Thameem Management Group Global
+                    LLC)
+                  </strong>{" "}
+                  stands as a trusted
+                  <strong>
+                    {" "}
+                    business setup and document-clearing company in Dubai,{" "}
+                  </strong>{" "}
+                  offering comprehensive solutions for individuals,
+                  entrepreneurs, and corporations throughout the UAE. Founded by{" "}
+                  <strong>Mr. Thameem Aboobacker ,</strong> a pioneering figure
+                  in{" "}
+                  <strong>
+                    {" "}
+                    business consultancy and government services{" "}
+                  </strong>
+                  , we specialize in simplifying complex procedures including{" "}
+                  <strong>
+                    company formation, visa processing, PRO services,{" "}
+                  </strong>{" "}
+                  and <strong> government documentation. </strong>
                 </p>
 
                 <p className="text-gray-600 text-[0.938rem]  md:text-lg leading-relaxed mb-5 md:mb-8">
-                  Founded under the visionary leadership of Mr. Thameem
-                  Aboobacker a respected figure in the business setup industry
-                  and a dedicated philanthropist TMG was built on the values of
-                  service, trust, and community impact. What began as a mission
-                  to assist people has grown into a global organization
-                  delivering innovative, reliable, and people-centric solutions.
+                  With our expanding network of{" "}
+                  <strong> over four branches across Dubai ,</strong> we bring
+                  together deep local expertise, professional guidance, and
+                  transparent processes to ensure our clients can establish and
+                  grow their businesses seamlessly. Our commitment is to deliver
+                  fast, reliable, and fully compliant services that empower
+                  sustainable success in the UAE's dynamic and competitive
+                  business landscape, making us your ideal partner for business
+                  growth and establishment in the region.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -129,63 +134,8 @@ const AboutSection = () => {
                     className=""
                     icon="external"
                   />
-
-                  {/* <button className="bg-[#5c1a2e] hover:bg-[#7a2240] text-white px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl">
-                   Read More
-                    <ArrowRight className="w-5 h-5" />
-                  </button>
-                  <button className="bg-[#9d3b5b] hover:bg-[#b4476a] text-white px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 shadow-lg hover:shadow-xl">
-                    BUTTON
-                    <ArrowRight className="w-5 h-5" />
-                  </button> */}
                 </div>
               </div>
-
-              {/* Right Image */}
-              {/* <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-                <div className="relative"> */}
-              {/* <div className="
-                  absolute 
-                  inset-0 
-                  bg-gradient-to-br from-blue-300 to-blue-400 
-                  rounded-3xl transform rotate-6 opacity-80"></div> */}
-              {/* <div className="relative bg-white rounded-3xl p-8 shadow-2xl"> */}
-              {/* <div className="w-full max-w-md">
-                      <img 
-                        src="/assets/images/about/about_img.png" 
-                        alt="Professional woman with tablet"
-                        className="w-full h-auto rounded-2xl"
-                      /> */}
-              {/* <div className="absolute -right-4 top-1/2 transform -translate-y-1/2">
-                        <div className="bg-white rounded-xl shadow-xl p-4 w-48">
-                          <div className="flex items-center gap-2 mb-2">
-                            <div className="w-8 h-8 bg-blue-500 rounded-full"></div>
-                            <div className="flex-1 h-2 bg-gray-200 rounded"></div>
-                          </div>
-                          <div className="grid grid-cols-2 gap-2">
-                            <div className="bg-gray-100 rounded h-16"></div>
-                            <div className="bg-gray-100 rounded h-16"></div>
-                          </div>
-                        </div>
-                      </div> */}
-              {/* Floating icons */}
-              {/* <div className="absolute -top-4 right-12 bg-yellow-400 w-10 h-10 rounded-full flex items-center justify-center shadow-lg">
-                        💡
-                      </div>
-                      <div className="absolute top-16 -right-2 bg-blue-400 w-8 h-8 rounded-full flex items-center justify-center shadow-lg">
-                        ✈️
-                      </div>
-                      <div className="absolute bottom-24 -right-4 bg-red-400 w-10 h-10 rounded-full flex items-center justify-center shadow-lg">
-                        🎓
-                      </div>
-                      <div className="absolute bottom-12 right-8 bg-orange-400 w-8 h-8 rounded-full flex items-center justify-center shadow-lg">
-                        📢
-                      </div> */}
-              {/* </div> */}
-              {/* </div> */}
-              {/* </div> */}
-              {/* </div> */}
-              {/* Right Image - Composite of Two Images */}
 
               <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
                 <div className="relative w-full max-w-md lg:max-w-lg h-[400px] sm:h-[500px] lg:h-[600px]">
@@ -238,11 +188,10 @@ const AboutSection = () => {
                 Your Path to UAE Business Ownership
               </p>
               <p className="text-gray-600 text-[0.938rem]  md:text-lg font-normal leading-relaxed">
-                Rorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                vulputate libero et velit interdum, ac aliquet odio mattis.
-                Class aptent taciti sociosqu ad litora torquent per conubia
-                nostra, per inceptos himenaeos. Curabitur tempus urna at turpis
-                condimentum lobortis.
+                Take the first step toward establishing your business in the UAE
+                with TMG Global. Our experts guide you through every stage from
+                company setup and licensing to document clearance and approvals
+                making your business journey seamless and hassle-free.
               </p>
             </div>
 
@@ -253,8 +202,9 @@ const AboutSection = () => {
                 Right Away!
               </h3>
               <p className="text-white/90 mb-6 md:mb-8 text-[0.938rem]  md:text-lg font-normal">
-                Torem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                vulputate libero et velit interdum, ac aliquet odio mattis.te
+                Short on time? Connect with our team directly via WhatsApp or
+                call for immediate support. We’re here to answer your questions
+                and guide you through your business setup efficiently.
               </p>
 
               <motion.div
@@ -263,7 +213,6 @@ const AboutSection = () => {
                 transition={{ duration: 0.5 }}
                 className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3 mb-8 lg:mb-0 xl:mb-8"
               >
-                {/* Chat Now Button */}
                 <motion.button
                   whileHover={{ scale: 1.08, y: -5 }}
                   whileTap={{ scale: 0.95 }}
@@ -276,7 +225,6 @@ const AboutSection = () => {
                   Chat Now
                 </motion.button>
 
-                {/* Call Now Button */}
                 <motion.button
                   whileHover={{ scale: 1.08, y: -5 }}
                   whileTap={{ scale: 0.95 }}
@@ -308,11 +256,12 @@ const AboutSection = () => {
               </div> */}
             </div>
 
-            {/* Gold Section with Swipe Button */}
+            {/* Swipe Button Section*/}
             <div className="bg-[#C79A59] rounded-2xl px-6 py-10 lg:px-5 lg:py-6 xl:px-8 xl:py-10 shadow-xl text-white flex flex-col ">
               <p className="text-[#000000] mb-6 lg:mb-8 xl:mb-6 text-lg leading-relaxed font-normal">
-                Torem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                vulputate libero et velit interdum, ac aliquet odio mattis.
+                Plan your meeting with ease. Select a date that suits you, and
+                we’ll make sure an expert is ready to assist you with your
+                business setup in the UAE.
               </p>
 
               {/* Date Selector */}

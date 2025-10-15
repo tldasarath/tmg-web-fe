@@ -14,20 +14,6 @@ const FAQSection = () => {
 
   return (
     <div className="min-h-screen md:min-h-fit bg-white py-16 relative overflow-hidden">
-      {/* Decorative watercolor splash */}
-      {/* <motion.div
-        initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
-        animate={{ opacity: 0.3, scale: 1, rotate: 0 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
-        className="absolute top-10 left-10 w-64 h-64 bg-gradient-to-br from-yellow-300 via-orange-200 to-amber-300 rounded-full blur-3xl"
-      />
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8, rotate: 10 }}
-        animate={{ opacity: 0.2, scale: 1, rotate: 0 }}
-        transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-        className="absolute top-20 left-5 w-48 h-48 bg-gradient-to-br from-green-200 via-emerald-200 to-teal-200 rounded-full blur-2xl"
-      /> */}
-
       <div
         className="absolute left-0 top-[30%] w-80 h-80 opacity-100"
         style={{ transform: "translateY(-50%)" }}
@@ -45,7 +31,7 @@ const FAQSection = () => {
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-5xl font-bold text-center mb-12 bg-gradient-to-r from-red-900 via-rose-800 to-red-900 bg-clip-text text-transparent"
+            className="text-5xl font-bold text-center mb-12 bg-[linear-gradient(180deg,rgba(152,32,68,1)_0%,rgba(100,14,41,1)_100%)] bg-center bg-clip-text text-transparent"
           >
             Frequently Asking Questions
           </motion.h1>
@@ -104,38 +90,25 @@ const FAQSection = () => {
                       <span className="pr-8">{faq.question}</span>
                       <motion.div
                         animate={{ rotate: openIndex === index ? 180 : 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        transition={{
+                          duration: 0.4,
+                          ease: [0.4, 0, 0.2, 1],
+                        }}
                         className="flex-shrink-0"
                       >
-                        {openIndex === index ? (
-                          <svg
-                            className="w-6 h-6"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2.5}
-                              d="M5 15l7-7 7 7"
-                            />
-                          </svg>
-                        ) : (
-                          <svg
-                            className="w-6 h-6"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2.5}
-                              d="M19 9l-7 7-7-7"
-                            />
-                          </svg>
-                        )}
+                        <svg
+                          className="w-6 h-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2.5}
+                            d="M19 9l-7 7-7-7"
+                          />
+                        </svg>
                       </motion.div>
                     </motion.button>
 
