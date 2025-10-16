@@ -31,7 +31,7 @@ const OurValuesSection = () => {
   ];
 
   return (
-    <section className=" px-4 sm:px-6 lg:px-0 py-8 lg:py-16 bg-gray-50 relative overflow-visible">
+    <section className=" px-4 sm:px-6 lg:px-0 py-16 lg:py-24 bg-gray-50 relative overflow-visible">
       <Container>
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl lg:text-[3rem] text-[#49051E] mb-6 lg:mb-8 leading-tight font-bold">

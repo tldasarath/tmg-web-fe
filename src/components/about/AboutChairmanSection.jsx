@@ -17,17 +17,12 @@ const AboutChairmanSection = () => {
     { name: "Company Logo", logo: "/assets/images/logos/logo5.png" },
   ];
 
-  // Rotate only half (-180°) when in view
+  // Animate the rotation 0 → -180 → 0 smoothly when in view
   useEffect(() => {
     if (inView) {
       controls.start({
-        rotate: -180,
-        transition: { duration: 1.5, ease: 'easeInOut' },
-      });
-    } else {
-      controls.start({
-        rotate: 0,
-        transition: { duration: 1.5, ease: 'easeInOut' },
+        rotate: [0, -180, 0],
+        transition: { duration: 4, ease: 'easeInOut' }, // slower and smoother
       });
     }
   }, [inView, controls]);
@@ -82,7 +77,7 @@ const AboutChairmanSection = () => {
           {/* Right Side - Chairman Image */}
           <div className="w-full lg:w-1/2 flex justify-center">
             <div className="relative w-80 h-80 lg:w-96 lg:h-96">
-              {/* Rotating Circle (half rotation in opposite direction) */}
+              {/* Rotating Circle (smooth 0 → -180 → 0) */}
               <motion.div
                 animate={controls}
                 className="absolute inset-0 rounded-full"
@@ -100,7 +95,7 @@ const AboutChairmanSection = () => {
                 <img
                   src="/assets/images/chairman/boss.jpg"
                   alt="Chairman - TMG Global LLC"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-fit"
                 />
               </div>
 
