@@ -1,14 +1,18 @@
 // components/VerticalRectangles.tsx
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import Image from 'next/image';
 import { Container } from '../layout/Container';
 import MainButton from '../button/main-button';
 import LettersPullUpText from '../text/LettersPullUpText';
+import { motion, useInView } from 'framer-motion';
 
 const BusinessSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const sectionRef = useRef(null);
+  const inView = useInView(sectionRef, { margin: '-10% 0px -10% 0px' });
 
   const rectangles = [
     {
@@ -17,7 +21,8 @@ const BusinessSection = () => {
       image: '/assets/images/businessSection/business01.png',
       color: '#8E8E8E',
       hoverColor: '#49051E',
-      description: 'TMG Global Services LLC offers expert Free Zone company formation services in Dubai, allowing investors full ownership and operational freedom. Our consultants assist with jurisdiction selection, approvals, licensing, and registration, ensuring a seamless setup. With detailed understanding of Free Zone regulations, we deliver efficient, compliant, and structured services that enable entrepreneurs to focus on growth and maximize opportunities within Dubai\'s business-friendly environment.'
+      description:
+        "TMG Global Services LLC offers expert Free Zone company formation services in Dubai, allowing investors full ownership and operational freedom. Our consultants assist with jurisdiction selection, approvals, licensing, and registration, ensuring a seamless setup. With detailed understanding of Free Zone regulations, we deliver efficient, compliant, and structured services that enable entrepreneurs to focus on growth and maximize opportunities within Dubai's business-friendly environment.",
     },
     {
       id: 2,
@@ -25,7 +30,8 @@ const BusinessSection = () => {
       image: '/assets/images/businessSection/business02.png',
       color: '#FFFFFF',
       hoverColor: '#49051E',
-      description: 'TMG Global Services LLC provides trusted mainland company formation services in Dubai, helping entrepreneurs establish fully licensed businesses. We manage trade name approvals, legal documentation, and licensing processes directly with government authorities. With in-depth local knowledge, our team ensures smooth registration and compliance, enabling businesses to operate efficiently and leverage Dubai\'s strong commercial infrastructure for growth and long-term success.'
+      description:
+        "TMG Global Services LLC provides trusted mainland company formation services in Dubai, helping entrepreneurs establish fully licensed businesses. We manage trade name approvals, legal documentation, and licensing processes directly with government authorities. With in-depth local knowledge, our team ensures smooth registration and compliance, enabling businesses to operate efficiently and leverage Dubai's strong commercial infrastructure for growth and long-term success.",
     },
     {
       id: 3,
@@ -33,24 +39,18 @@ const BusinessSection = () => {
       image: '/assets/images/businessSection/business03.png',
       color: '#49051E',
       hoverColor: '#49051E',
-      icon: '📈',
-      description: 'TMG Global Services LLC specializes in offshore company formation in Dubai, providing investors with secure, compliant, and strategic solutions. We handle registration, documentation, and regulatory approvals efficiently, ensuring confidentiality and operational flexibility. Our team guides clients through the offshore setup process with precision and professionalism, helping businesses access international markets while benefiting from Dubai\'s favorable regulatory framework.'
+      description:
+        "TMG Global Services LLC specializes in offshore company formation in Dubai, providing investors with secure, compliant, and strategic solutions. We handle registration, documentation, and regulatory approvals efficiently, ensuring confidentiality and operational flexibility. Our team guides clients through the offshore setup process with precision and professionalism, helping businesses access international markets while benefiting from Dubai's favorable regulatory framework.",
     },
   ];
 
-  useEffect(() => {
-    // ✅ Keep the first rectangle open by default on load
-    setActiveIndex(0);
-  }, []);
+  const handleMouseEnter = (index) => {
+    setActiveIndex(index);
+  };
 
   const getRectangleColor = (index, rectangle) => {
-    if (activeIndex === index) {
-      return rectangle.hoverColor;
-    }
-    if (rectangle.id === 2) {
-      if (index === 1) return '#FFFFFF';
-      else if (index === 0) return '#49051E';
-    }
+    if (activeIndex === index) return rectangle.hoverColor;
+    if (rectangle.id === 2) return index === 1 ? '#FFFFFF' : '#49051E';
     if (rectangle.id === 1 && index === 0) return '#8E8E8E';
     if (rectangle.id === 3 && index === 2) return '#49051E';
     return rectangle.color;
@@ -61,21 +61,22 @@ const BusinessSection = () => {
     return 'border-white';
   };
 
-  const handleMouseEnter = (index) => {
-    setActiveIndex(index);
-  };
-
   return (
-    <div className="h-auto py-8 lg:py-16 px-4 sm:px-6 lg:px-10">
+    <motion.div
+      ref={sectionRef}
+      initial={{ opacity: 0, y: 50 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+      className="h-auto py-8 lg:py-16 px-4 sm:px-6 lg:px-10"
+    >
       <Container>
         <div className="w-full mx-auto">
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 items-center">
-            
-            {/* Left Side - Heading and Content */}
+            {/* Left Side */}
             <div className="space-y-8 lg:w-4/6">
               <div className="space-y-6">
                 <LettersPullUpText
-                  text={"Establish Your Business in Opportunity"}
+                  text="Establish Your Business in Opportunity"
                   className="text-[#49051E]"
                 />
                 <p className="text-[0.938rem] md:text-lg leading-relaxed transition-all duration-500 ease-in-out">
@@ -85,31 +86,23 @@ const BusinessSection = () => {
             </div>
 
             {/* Right Side - Rectangles */}
-            {/* Small screens: Vertical layout, Medium+: Horizontal layout */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-end w-full overflow-y-auto sm:overflow-x-auto lg:overflow-visible px-2 sm:px-4 no-scrollbar">
               {rectangles.map((rectangle, index) => (
                 <div
                   key={rectangle.id}
-                  className="relative group cursor-pointer flex-shrink-0 w-full sm:w-auto"
                   onMouseEnter={() => handleMouseEnter(index)}
                   onClick={() => handleMouseEnter(index)}
+                  className={`relative group cursor-pointer flex-shrink-0 w-full sm:w-auto`}
                 >
                   <div
-                    className={`
-                      relative overflow-hidden transition-all duration-700 ease-out
-                      rounded-2xl shadow-2xl
-                      transform group-hover:scale-[1.03]
-                      border-2 border-opacity-20
-                      backdrop-blur-sm
+                    className={`relative overflow-hidden transition-all duration-700 ease-out rounded-2xl shadow-2xl transform group-hover:scale-[1.03] border-2 border-opacity-20 backdrop-blur-sm
                       ${getBorderColor(index, rectangle)}
-                      /* Small screen styles */
                       h-16 sm:h-[260px] lg:h-[400px]
                       ${
-                        activeIndex === index 
-                          ? 'sm:w-[380px] lg:w-[500px] h-48 sm:h-[260px] lg:h-[400px]' 
+                        activeIndex === index
+                          ? 'sm:w-[380px] lg:w-[500px] h-48 sm:h-[260px] lg:h-[400px]'
                           : 'sm:w-20 lg:w-28 h-16 sm:h-[260px] lg:h-[400px]'
-                      }
-                    `}
+                      }`}
                     style={{ background: getRectangleColor(index, rectangle) }}
                   >
                     {/* Collapsed Text */}
@@ -119,7 +112,6 @@ const BusinessSection = () => {
                       }`}
                     >
                       <div className="text-center">
-                        {/* Small screen: Horizontal text */}
                         <span
                           className={`font-bold text-xl sm:text-2xl lg:text-[40px] tracking-wider sm:hidden ${
                             rectangle.id === 2 && index === 1 ? 'text-[#49051E]' : 'text-white'
@@ -127,18 +119,17 @@ const BusinessSection = () => {
                         >
                           {rectangle.title}
                         </span>
-                        {/* Medium+ screens: Vertical text */}
                         <span
-                          className={`font-bold text-xl sm:text-2xl lg:text-[40px] tracking-wider hidden sm:inline ${
+                          className={`font-bold text-xl sm:text-2xl lg:text-[40px] tracking-wider hidden sm:inline [writing-mode:vertical-rl] [text-orientation:mixed] ${
                             rectangle.id === 2 && index === 1 ? 'text-[#49051E]' : 'text-white'
-                          } [writing-mode:vertical-rl] [text-orientation:mixed]`}
+                          }`}
                         >
                           {rectangle.title}
                         </span>
                       </div>
                     </div>
 
-                    {/* Expanded Image Content */}
+                    {/* Expanded Image */}
                     <div
                       className={`absolute w-full h-full inset-0 transition-all duration-700 ${
                         activeIndex === index ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'
@@ -177,7 +168,7 @@ const BusinessSection = () => {
           text-orientation: mixed;
         }
       `}</style>
-    </div>
+    </motion.div>
   );
 };
 

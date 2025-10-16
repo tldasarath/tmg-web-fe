@@ -145,28 +145,30 @@ export const ScheduleModal = ({ selectedDate, onClose }) => {
           transition={{ delay: 0.3 }}
           className="space-y-4 mb-6"
         >
-          <div className="relative">
-            <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+          <div className="relative bg-white rounded-xl border-2 border-gray-200 focus-within:ring-2 focus-within:ring-[#49051E] transition-all">
+            <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
             <motion.input
               whileFocus={{ scale: 1.02 }}
               type="text"
               placeholder="Your Name"
-              className="border-2 border-gray-200 rounded-xl pl-12 pr-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-[#49051E] focus:border-transparent transition-all"
+              className="text-black bg-transparent rounded-xl pl-12 pr-4 py-3 w-full focus:outline-none"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
           </div>
 
-          <div className="relative">
+
+          <div className="relative bg-white rounded-xl border-2 border-gray-200 focus-within:ring-2 focus-within:ring-[#49051E] transition-all">
             <MessageSquare className="absolute left-4 top-4 w-5 h-5 text-gray-400" />
             <motion.textarea
               whileFocus={{ scale: 1.02 }}
               placeholder="Your message or agenda..."
-              className="border-2 border-gray-200 rounded-xl pl-12 pr-4 py-3 w-full h-28 resize-none focus:outline-none focus:ring-2 focus:ring-[#49051E] focus:border-transparent transition-all"
+              className="text-black rounded-xl pl-12 pr-4 py-3 w-full h-28 resize-none focus:outline-none bg-transparent"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
           </div>
+
         </motion.div>
 
         <motion.button
