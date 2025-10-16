@@ -142,7 +142,7 @@ const ScheduleMeetingSection = () => {
 
           {/* Text */}
           <motion.span
-            className="absolute w-full text-center text-white font-semibold pl-12 sm:pl-0 lg:pl-12 text-[0.625rem]  md:text-lg lg:text-sm xl:text-lg pointer-events-none"
+            className="absolute w-full text-center text-white font-semibold pl-12 sm:pl-0 lg:pl-12 text-[0.625rem]  text-lg lg:text-sm xl:text-lg pointer-events-none"
             animate={{ opacity: isSwiped ? 0 : 1 }}
           >
             {isSwiped ? (

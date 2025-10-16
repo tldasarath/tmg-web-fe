@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export const LicenseCard = ({ title, image, delay }) => {
+export const LicenseCard = ({ title, image, delay, description }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleClick = () => {
@@ -59,11 +59,7 @@ export const LicenseCard = ({ title, image, delay }) => {
                 transition={{ duration: 0.4, delay: 0.2 }}
                 className="text-white/90 text-sm lg:text-[13px] xl:text-sm leading-relaxed mb-2"
               >
-                Vorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                vulputate libero et velit interdum, ac aliquet odio mattis.
-                Class aptent taciti sociosqu ad litora torquent per conubia
-                nostra, per inceptos himenaeos. Curabitur tempus urna at turpis
-                condimentum lobortis.
+                {description}
               </motion.p>
 
               <motion.button

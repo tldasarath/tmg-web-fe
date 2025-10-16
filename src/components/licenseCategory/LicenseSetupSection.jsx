@@ -45,6 +45,7 @@ const LicenseSetupPage = () => {
                 title={category.title}
                 image={category.image}
                 delay={index * 0.1}
+                description={category.description}
               />
             ))}
           </div>

@@ -89,7 +89,7 @@ export const BottomCTA = () => {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="  fixed bottom-6 left-[15%] -translate-x-1/2 z-[60] w-[95%] sm:w-[90%] md:w-[1029px] max-w-[1029px]"
+          className=" hidden md:block fixed bottom-6 left-[15%] -translate-x-1/2 z-[60] w-[95%] sm:w-[90%] md:w-[1029px] max-w-[1029px]"
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
