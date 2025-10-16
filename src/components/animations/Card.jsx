@@ -257,7 +257,7 @@ const ProfileCardComponent = ({
           <div className="pc-glare" />
           <div className="pc-content pc-avatar-content">
             <img
-              className="avatar"
+              className="avatar object-cover"
               src={avatarUrl}
               alt={`${name || 'User'} avatar`}
               loading="lazy"

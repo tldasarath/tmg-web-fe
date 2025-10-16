@@ -66,6 +66,7 @@ const ServicesSection = () => {
           <div className="text-center flex justify-center">
             <MainButton
               text='More Services'
+              link='/services'
               gradient="linear-gradient(90deg, rgba(14,14,14,1) 0%, rgba(73,5,30,1) 100%)"
             />
           </div>

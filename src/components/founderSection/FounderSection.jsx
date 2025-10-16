@@ -6,8 +6,11 @@ import Image from 'next/image';
 import { Container } from '../layout/Container';
 import { ArrowUpRight } from 'lucide-react';
 import ProfileCard from '../animations/Card';
+import { useRouter } from 'next/navigation';
 
 const FounderSection = () => {
+    const router = useRouter();
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
     {
@@ -40,7 +43,7 @@ const FounderSection = () => {
     setCurrentSlide(index);
   };
   const HighlightWord = ({ children }) => (
-    <span className=" inline-block">
+    <span className=" inline-block pl-2">
       <span
         className="text-transparent"
         style={{
@@ -49,7 +52,7 @@ const FounderSection = () => {
       >
         {children}
       </span>
-     
+
     </span>
   );
   return (
@@ -62,48 +65,40 @@ const FounderSection = () => {
       }}
     >
       <Container>
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+        <div className="w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-3 justify-items-center gap-8 items-center">
 
-            {/* Left Side - Founder Image */}
-         <div className="flex justify-center lg:justify-start">
-<div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
-    {/* <Image
-      src="/assets/images/founder/person.jpg"
-      alt="Founder"
-      fill
-      className="object-cover"
-      priority
-    /> */}
-<ProfileCard
-  name=" THAMEEM ABOOBACKER"
-  title="Software Engineer"
-  handle="javicodes"
-  status="Online"
-  position="Chairman of TMG Global"
-  contactText="Contact Me"
-  avatarUrl="/assets/images/chairman/chairman.jpg"
-  showUserInfo={true}
-  enableTilt={true}
-  enableMobileTilt={false}
-/>
-    {/* Name + Button overlay */}
-    {/* <div className="absolute bottom-8 left-4 right-4  bg-white/90 flex items-center rounded-2xl justify-between px-4 py-3 shadow-md">
-      <div className="text-left">
-        <p className="text-[#B2104B] font-semibold tracking-wide leading-tight">
-          THAMEEM ABOOBACKER
-        </p>
-        <p className="text-gray-700 text-sm font-medium">
-          Chairman of TMG Global
-        </p>
-      </div>
+         
+            <div className="flex justify-center   lg:justify-start xl:w-80 w-72  relative h-96 xl:h-96 ">
+              <Image
+                src="/assets/images/chairman/chairman.jpg"
+                alt="Founder"
+                fill
+                className="object-contain rounded-2xl "
+                priority
+              />
 
-      <button className="bg-[#B2104B] text-white p-2 rounded-2xl hover:bg-[#8e0d3a] transition flex items-center justify-center w-9 h-9">
-        <ArrowUpRight className="w-5 h-5" />
-      </button>
-    </div> */}
-  </div>
-</div>
+              {/* Name + Button overlay */}
+              <div className="absolute lg:bottom-11 bottom-12 left-4 right-4 
+    bg-white/30 backdrop-blur-md 
+    flex items-center rounded-2xl justify-between 
+    px-4 py-3 shadow-lg border border-white/20">
+                <div className="text-left">
+                  <p className="text-[#B2104B] font-semibold tracking-wide leading-tight">
+                    THAMEEM ABOOBACKER
+                  </p>
+                  <p className="text-gray-800 text-sm font-medium">
+                    Chairman of TMG Global
+                  </p>
+                </div>
+
+                <button   onClick={() => router.push('/about-us')}  className="bg-[#B2104B] text-white p-2 rounded-2xl hover:bg-[#8e0d3a] transition flex items-center justify-center w-9 h-9">
+                  <ArrowUpRight className="w-5 h-5" />
+                </button>
+              </div>
+
+            </div>
+
 
 
             {/* Center - About Content */}
@@ -111,7 +106,7 @@ const FounderSection = () => {
               <h2 className="text-4xl sm:text-5xl lg:text-[3rem] text-white  mb-6 lg:mb-8 leading-tight font-bold">
                 Starting Career
                 <HighlightWord>
-                 Since </HighlightWord> 2008
+                  Since </HighlightWord> 2008
               </h2>
 
               <p className="text-[0.938rem] md:text-lg text-white mb-4 leading-relaxed">
@@ -142,19 +137,26 @@ const FounderSection = () => {
                 </div>
 
                 {/* Dots Indicator */}
-                <div className="flex justify-center by mt-6 space-x-3">
+                <div className="flex justify-center mt-6 space-x-3">
                   {slides.map((_, index) => (
-                    <button
+                    <div
                       key={index}
-                      onClick={() => goToSlide(index)}
-                      className={`w-3 h-3 rounded-full border-2  transition-all duration-300 ${index === currentSlide
-                        ? 'bg-[#C79A59] scale-125'
-                        : 'bg-gray-300 hover:bg-gray-400'
-                        }`}
-                      aria-label={`Go to slide ${index + 1}`}
-                    />
+                      className={`w-6 h-6 flex items-center justify-center rounded-full transition-all duration-300
+        ${index === currentSlide ? 'border-2 border-white' : 'border-transparent'}`}
+                    >
+                      <button
+                        onClick={() => goToSlide(index)}
+                        className={`w-3 h-3 rounded-full transition-all duration-300
+          ${index === currentSlide
+                            ? 'bg-[#C79A59] scale-110'
+                            : 'bg-gray-300 hover:bg-gray-400'}`}
+                        aria-label={`Go to slide ${index + 1}`}
+                      />
+                    </div>
                   ))}
                 </div>
+
+
               </div>
             </div>
           </div>
