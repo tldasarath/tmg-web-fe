@@ -67,7 +67,7 @@ const FounderSection = () => {
 
             {/* Left Side - Founder Image */}
          <div className="flex justify-center lg:justify-start">
-  <div className="relative w-60 h-72 md:w-80 md:h-auto rounded-2xl overflow-hidden  group transition-all duration-300 hover:shadow-3xl hover:animate-gentle-wave">
+<div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
     {/* <Image
       src="/assets/images/founder/person.jpg"
       alt="Founder"
@@ -82,11 +82,10 @@ const FounderSection = () => {
   status="Online"
   position="Chairman of TMG Global"
   contactText="Contact Me"
-  avatarUrl="/assets/images/founder/person.jpg"
+  avatarUrl="/assets/images/chairman/chairman.jpg"
   showUserInfo={true}
   enableTilt={true}
   enableMobileTilt={false}
-  onContactClick={() => console.log('Contact clicked')}
 />
     {/* Name + Button overlay */}
     {/* <div className="absolute bottom-8 left-4 right-4  bg-white/90 flex items-center rounded-2xl justify-between px-4 py-3 shadow-md">

@@ -1,20 +1,49 @@
 'use client';
 
+import { useRef, useEffect } from 'react';
 import { Container } from '../layout/Container';
+import { motion, useInView, useAnimation } from 'framer-motion';
 
 const WhyChooseSection = () => {
+  const sectionRef = useRef(null);
+  const inView = useInView(sectionRef, { margin: '-20% 0px -20% 0px' });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      // Animate underline width left → right → left
+      controls.start({
+        width: ['0%', '65%', '20%'],
+        transition: {
+          duration: 3.5, // slower and smoother
+          ease: 'easeInOut',
+        },
+      });
+    }
+  }, [inView, controls]);
+
   return (
-    <section className="px-4 sm:px-6 lg:px-0 py-8 lg:py-16  bg-[#F6F9FA]">
+    <section
+      ref={sectionRef}
+      className="px-4 sm:px-6 lg:px-0 py-8 lg:py-16 bg-[#F6F9FA]"
+    >
       <Container>
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* Left Side - Content */}
           <div className="w-full lg:w-1/2">
             <div className="max-w-2xl">
               <div className="mb-8">
-                <h2 className="text-4xl sm:text-5xl lg:text-[3rem] text-[#49051E] mb-6 lg:mb-8 leading-tight font-bold">
+                <h2 className="text-4xl sm:text-5xl lg:text-[3rem] text-[#49051E] mb-3 lg:mb-4 leading-tight font-bold">
                   Why Choose Us
                 </h2>
-                <div className="w-20 h-1 bg-yellow-500"></div>
+
+                {/* Animated Underline */}
+                <motion.div
+                  animate={controls}
+                  initial={{ width: '0%' }}
+                  className="h-1 bg-yellow-500 rounded-full origin-left"
+                  style={{ width: '0%' }}
+                />
               </div>
 
               <div className="space-y-6 text-gray-700">
@@ -33,30 +62,22 @@ const WhyChooseSection = () => {
 
               {/* Features List */}
               <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="flex items-center gap-3  shadow-lg  p-4 rounded-2xl">
-                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                    <span className="text-green-600 text-sm">✓</span>
+                {[
+                  '18+ Years Experience',
+                  '150+ Professionals',
+                  '4+ Active Branches',
+                  'Government Connections',
+                ].map((text, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-3 shadow-lg p-4 rounded-2xl"
+                  >
+                    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                      <span className="text-green-600 text-sm">✓</span>
+                    </div>
+                    <span className="text-gray-700">{text}</span>
                   </div>
-                  <span className="text-gray-700">18+ Years Experience</span>
-                </div>
-                <div className="flex items-center gap-3  shadow-lg  p-4 rounded-2xl">
-                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                    <span className="text-green-600 text-sm">✓</span>
-                  </div>
-                  <span className="text-gray-700">150+ Professionals</span>
-                </div>
-                <div className="flex items-center gap-3  shadow-lg  p-4 rounded-2xl">
-                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                    <span className="text-green-600 text-sm">✓</span>
-                  </div>
-                  <span className="text-gray-700">4+ Active Branches</span>
-                </div>
-                <div className="flex items-center gap-3  shadow-lg  p-4 rounded-2xl">
-                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                    <span className="text-green-600 text-sm">✓</span>
-                  </div>
-                  <span className="text-gray-700">Government Connections</span>
-                </div>
+                ))}
               </div>
             </div>
           </div>
@@ -72,20 +93,20 @@ const WhyChooseSection = () => {
                   className="w-full h-80 lg:h-96 object-cover"
                 />
               </div>
-              
+
               {/* Small Top Image */}
               <div className="absolute -top-6 hidden md:block -left-6 w-40 h-40 rounded-xl overflow-hidden shadow-lg border-4 border-white">
                 <img
-                  src="/assets/images/about/why-choose.png"
+                  src="/assets/images/about/why-choose01.png"
                   alt="Client Meeting"
                   className="w-full h-full object-cover"
                 />
               </div>
-              
+
               {/* Small Bottom Image */}
               <div className="absolute -bottom-6 hidden md:block -right-6 w-40 h-40 rounded-xl overflow-hidden shadow-lg border-4 border-white">
                 <img
-                  src="/assets/images/about/why-choose.png"
+                  src="/assets/images/about/why-choose02.png"
                   alt="Business Success"
                   className="w-full h-full object-cover"
                 />

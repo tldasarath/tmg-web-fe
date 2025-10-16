@@ -7,7 +7,7 @@ import Image from 'next/image'; // if using Next.js, optional
 const ServicesSection = () => {
   const leftServices = [
     'Document Services',
-    'Value-Added Services', 
+    'Value-Added Services',
     'Value-Added Services'
   ];
 
@@ -19,14 +19,28 @@ const ServicesSection = () => {
 
   return (
     <section className="relative lg:py-16 py-8">
-        <Container>
+      <Container>
         <div className="w-full relative z-10">
           {/* Heading and Description */}
           <div className="mb-12">
-            <LettersPullUpText text=" Our Services" className="text-[#49051E]" />
+            <div className="keyboard mb-6 lg:mb-8 ">
+              <span className="key text-4xl sm:text-5xl lg:text-[3rem]">O</span>
+              <span className="key text-4xl sm:text-5xl lg:text-[3rem]">U</span>
+              <span className="key text-4xl sm:text-5xl lg:text-[3rem]">R</span>
+              <span className="key text-4xl sm:text-5xl lg:text-[3rem] ml-4">S</span>
+              <span className="key text-4xl sm:text-5xl lg:text-[3rem]">E</span>
+              <span className="key text-4xl sm:text-5xl lg:text-[3rem]">R</span>
+              <span className="key text-4xl sm:text-5xl lg:text-[3rem]">V</span>
+              <span className="key text-4xl sm:text-5xl lg:text-[3rem]">I</span>
+              <span className="key text-4xl sm:text-5xl lg:text-[3rem]">C</span>
+              <span className="key text-4xl sm:text-5xl lg:text-[3rem]">E</span>
+              <span className="key text-4xl sm:text-5xl lg:text-[3rem]">S</span>
+            </div>
+
+            {/* <LettersPullUpText text=" Our Services" className="text-[#49051E]" /> */}
             <p className="text-[0.938rem] md:text-lg">
-              We provide comprehensive solutions to meet all your service needs with 
-              professionalism and excellence. Our team is dedicated to delivering 
+              We provide comprehensive solutions to meet all your service needs with
+              professionalism and excellence. Our team is dedicated to delivering
               outstanding results.
             </p>
           </div>
@@ -50,23 +64,23 @@ const ServicesSection = () => {
 
           {/* More Services Button */}
           <div className="text-center flex justify-center">
-            <MainButton 
-              text='More Services' 
+            <MainButton
+              text='More Services'
               gradient="linear-gradient(90deg, rgba(14,14,14,1) 0%, rgba(73,5,30,1) 100%)"
             />
           </div>
         </div>
 
-          </Container>
-        {/* Right-side Image */}
-        <div className="hidden lg:block absolute top-0 right-0 h-full ">
-          <img 
-            src="/assets/images/lines/lines01.png" 
-            alt="Decorative" 
-            className="h-full object-cover w-full"
-          />
-        </div>
-      </section>
+      </Container>
+      {/* Right-side Image */}
+      <div className="hidden lg:block absolute top-0 right-0 h-full ">
+        <img
+          src="/assets/images/lines/lines01.png"
+          alt="Decorative"
+          className="h-full object-cover w-full"
+        />
+      </div>
+    </section>
   );
 };
 

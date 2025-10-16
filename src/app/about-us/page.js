@@ -5,6 +5,7 @@ import OurValuesSection from "@/components/about/OurValuesSection";
 import ScheduleSection from "@/components/about/ScheduleSection";
 import WhyChooseSection from "@/components/about/WhyChooseSection";
 import BannerSection from "@/components/banner/Banner";
+import Footer from "@/components/footer/Footer";
 
 import { Navbar } from "@/components/navbar/Navbar";
 import React from "react";
@@ -26,6 +27,7 @@ const page = () => {
       <WhyChooseSection/>
       <AboutChairmanSection/>
       <OurValuesSection/>
+      <Footer/>
       </div>
     </>
   );

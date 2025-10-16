@@ -23,7 +23,7 @@ export const Navbar = () => {
   const navLinks = [
     { label: "Home", href: "/home" },
     { label: "About", href: "/about-us" },
-    { label: "Service", href: "/service" },
+    { label: "Service", href: "/services" },
     { label: "Workspace", href: "/workspace" },
     { label: "Accounting", href: "/accounting" },
     { label: "Visa", href: "/visa" },
