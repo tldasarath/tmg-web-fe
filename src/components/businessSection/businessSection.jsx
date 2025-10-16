@@ -18,7 +18,7 @@ const BusinessSection = () => {
     {
       id: 1,
       title: 'FREEZONE',
-      image: '/assets/images/businessSection/business01.png',
+      image: '/assets/images/business-section/business01.png',
       color: '#8E8E8E',
       hoverColor: '#49051E',
       description:
@@ -27,7 +27,7 @@ const BusinessSection = () => {
     {
       id: 2,
       title: 'MAINLAND',
-      image: '/assets/images/businessSection/business02.png',
+      image: '/assets/images/business-section/business02.png',
       color: '#FFFFFF',
       hoverColor: '#49051E',
       description:
@@ -36,7 +36,7 @@ const BusinessSection = () => {
     {
       id: 3,
       title: 'OFFSHORE',
-      image: '/assets/images/businessSection/business03.png',
+      image: '/assets/images/business-section/business03.png',
       color: '#49051E',
       hoverColor: '#49051E',
       description:
