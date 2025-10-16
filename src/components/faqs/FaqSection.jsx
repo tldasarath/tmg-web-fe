@@ -1,16 +1,32 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "../layout/Container";
 import { faqsData } from "../data/FaqData";
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(2);
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Fix hydration by only rendering animations after component mounts
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
+  // Predefined positions for particles to avoid random values during SSR
+  const particlePositions = [
+    { left: "10%", top: "35%" },
+    { left: "25%", top: "60%" },
+    { left: "40%", top: "45%" },
+    { left: "55%", top: "25%" },
+    { left: "70%", top: "70%" },
+    { left: "85%", top: "40%" },
+  ];
 
   return (
     <div className="min-h-screen md:min-h-fit bg-white py-16 relative overflow-hidden">
@@ -168,27 +184,29 @@ const FAQSection = () => {
             })}
           </div>
 
-          {/* Floating particles effect */}
-          {[...Array(6)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-2 h-2 bg-amber-400 rounded-full opacity-40"
-              animate={{
-                y: [0, -100, 0],
-                x: [0, Math.random() * 50 - 25, 0],
-                opacity: [0.4, 0.8, 0.4],
-              }}
-              transition={{
-                duration: 3 + Math.random() * 2,
-                repeat: Infinity,
-                delay: i * 0.5,
-              }}
-              style={{
-                left: `${10 + i * 15}%`,
-                top: `${20 + Math.random() * 60}%`,
-              }}
-            />
-          ))}
+          {/* Fixed Floating particles effect */}
+          {isMounted &&
+            particlePositions.map((position, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-2 h-2 bg-amber-400 rounded-full opacity-40"
+                initial={{ opacity: 0 }}
+                animate={{
+                  y: [0, -100, 0],
+                  x: [0, 10, 0],
+                  opacity: [0.4, 0.8, 0.4],
+                }}
+                transition={{
+                  duration: 3 + (i % 3), // Use deterministic values
+                  repeat: Infinity,
+                  delay: i * 0.5,
+                }}
+                style={{
+                  left: position.left,
+                  top: position.top,
+                }}
+              />
+            ))}
         </div>
       </Container>
     </div>

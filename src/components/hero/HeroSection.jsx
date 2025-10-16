@@ -4,6 +4,7 @@ import { SocialSidebar } from "./SocialSidebar";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BottomCTA } from "./BottomCta";
+import { LetsTalkCard } from "./CtaCard";
 
 export const HeroSection = () => {
   const [videoError, setVideoError] = useState(false);
@@ -159,6 +160,11 @@ export const HeroSection = () => {
         {/* Social Sidebar */}
         <SocialSidebar />
 
+             {/* LetsTalkCard - Positioned on right side */}
+        <div className=" hidden md:block absolute right-14 bottom-[20%] md:bottom-[20%] lg:bottom-1/4 transform translate-y-1/2 z-30">
+          <LetsTalkCard />
+        </div>
+
         {/* Main Content */}
         <div id="home" className="relative z-20 h-full flex flex-col">
           <Container>
@@ -193,18 +199,7 @@ export const HeroSection = () => {
                     </motion.div>
                   </AnimatePresence>
                 </div>
-
-                {/* Subtle subtitle animation */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.5, duration: 1 }}
-                  className="mt-8 sm:mt-12"
-                >
-                  <p className="text-white/80 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto">
-                    Empowering businesses to reach new heights
-                  </p>
-                </motion.div>
+ 
               </div>
             </div>
           </Container>

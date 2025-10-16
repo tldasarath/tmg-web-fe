@@ -1,216 +1,378 @@
-// components/ImageWithRectangles.tsx
-'use client';
-
-import Image from 'next/image';
+'use client'
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { Container } from '../layout/Container';
 
 const BusinessDestination = () => {
+  const [pulseActive, setPulseActive] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Trigger pulse animation at intervals
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPulseActive(true);
+      setTimeout(() => setPulseActive(false), 3000);
+    }, 4000);
+    
+    return () => clearInterval(interval);
+  }, []);
+
   const rectangles = [
     {
       id: 1,
       title: 'World-Class Infrastructure',
-      description: 'Dubai offers state-of-the-art facilities, modern office spaces, and cutting-edge logistics that empower businesses to operate efficiently and scale seamlessly. Our offices provide a professional environment with top-tier amenities to ensure productivity and comfort.'
+      description: 'Dubai offers state-of-the-art facilities, modern office spaces, and cutting-edge logistics that empower businesses to operate efficiently and scale seamlessly.',
+      position: 'left',
+      verticalPosition: 'top'
     },
     {
       id: 2,
       title: 'Strategic Location',
-      description: 'Dubai\'s prime location connects businesses to key markets across the Middle East, Asia, Europe, and beyond, making it a global hub for trade and investment. We have 4 strategically located branches to serve you efficiently across the city.'
+      description: 'Dubai\'s prime location connects businesses to key markets across the Middle East, Asia, Europe, and beyond, making it a global hub for trade and investment.',
+      position: 'left',
+      verticalPosition: 'middle'
     },
     {
       id: 3,
       title: 'Ease of Doing Business',
-      description: 'Dubai is recognized as one of the world\'s easiest cities to start and operate a business, thanks to streamlined government processes and investor-friendly policies. With 18+ years of industry experience, TMG Global ensures a smooth and hassle-free setup process.'
+      description: 'Dubai is recognized as one of the world\'s easiest cities to start and operate a business, thanks to streamlined government processes and investor-friendly policies.',
+      position: 'left',
+      verticalPosition: 'bottom'
     },
     {
       id: 4,
       title: 'Explore Our Departments',
-      description: 'TMG Global supports every aspect of business setup — from licensing and document clearance to PRO services and government approvals. Explore all our departments designed to cater to your unique business requirements.'
+      description: 'TMG Global supports every aspect of business setup — from licensing and document clearance to PRO services and government approvals.',
+      position: 'right',
+      verticalPosition: 'top'
     },
     {
       id: 5,
       title: '0% Corporate & Income Tax',
-      description: 'Dubai provides a highly attractive tax environment, including 0% corporate and personal income tax, allowing businesses to maximize profits and growth.'
+      description: 'Dubai provides a highly attractive tax environment, including 0% corporate and personal income tax, allowing businesses to maximize profits and growth.',
+      position: 'right',
+      verticalPosition: 'middle'
     },
     {
       id: 6,
       title: '100% Ownership',
-      description: 'Foreign investors enjoy 100% ownership of their businesses in Dubai\'s free zones, giving complete control and operational freedom without the need for a local partner.'
+      description: 'Foreign investors enjoy 100% ownership of their businesses in Dubai\'s free zones, giving complete control and operational freedom.',
+      position: 'right',
+      verticalPosition: 'bottom'
     }
   ];
 
+  const gradientStops = [
+    { offset: "0%", color: "rgba(152,32,68,1)" },
+    { offset: "100%", color: "rgba(100,14,41,1)" }
+  ];
+
+  const getConnectionPath = (position, verticalPosition) => {
+    const centerX = 50;
+    const centerY = 50;
+    
+    let startX, startY, endX, endY;
+    
+    if (position === 'left') {
+      startX = 33;
+      if (verticalPosition === 'top') startY = 20;
+      if (verticalPosition === 'middle') startY = 50;
+      if (verticalPosition === 'bottom') startY = 80;
+    } else {
+      startX = 67;
+      if (verticalPosition === 'top') startY = 20;
+      if (verticalPosition === 'middle') startY = 50;
+      if (verticalPosition === 'bottom') startY = 80;
+    }
+    
+    endX = centerX;
+    endY = centerY;
+    
+    return { startX, startY, endX, endY };
+  };
+
+  const pulseDuration = 1.2;
+  const borderPulseDelay = pulseDuration;
+
+  // Mobile view - Grid layout
+  if (isMobile) {
+    return (
+      <div className="min-h-screen relative bg-white overflow-hidden py-8 px-4 md:px-8">
+        <div className="max-w-6xl mx-auto">
+          {/* Header Section */}
+          <div className="text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl font-bold bg-[linear-gradient(180deg,rgba(152,32,68,1)_0%,rgba(100,14,41,1)_100%)] bg-clip-text text-transparent leading-tight">
+              Why Dubai is the Perfect Business Destination
+            </h2>
+          </div>
+
+          {/* Mobile Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {rectangles.map((item) => (
+              <motion.div
+                key={item.id}
+                className="w-full"
+              >
+                <motion.div
+                  className="relative bg-white rounded-xl shadow-lg p-5 sm:p-6 overflow-hidden group transition-shadow duration-300"
+                  animate={pulseActive ? {
+                    boxShadow: [
+                      "0 10px 15px -3px rgba(152,32,68,0.08)",
+                      "0 0 0 4px rgba(152,32,68,0.25)",
+                      "0 10px 15px -3px rgba(152,32,68,0.08)"
+                    ],
+                    borderColor: [
+                      "#fff",
+                      "rgba(152,32,68,1)",
+                      "#fff"
+                    ]
+                  } : {}}
+                  transition={{
+                    duration: 1.2,
+                    delay: borderPulseDelay,
+                    times: [0, 0.5, 1]
+                  }}
+                  style={{
+                    borderWidth: 2,
+                    borderStyle: 'solid',
+                    borderColor: '#fff'
+                  }}
+                >
+                  <div className="relative z-10">
+                    <h3 className="text-lg sm:text-xl font-semibold text-[#982044] mb-2 sm:mb-3 group-hover:text-[#640E29] transition-colors duration-300">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed text-sm">
+                      {item.description}
+                    </p>
+                  </div>
+                </motion.div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Desktop view - Original spider layout
   return (
     <div className="min-h-screen relative bg-white overflow-hidden py-16">
-      <div className="w-full">
-        {/* Header Section */}
-        <Container>
-          <div className="lg:w-1/2 mb-12">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-              Our Comprehensive
-              <span className="text-blue-600 block">Business Solutions</span>
-            </h2>
-            <p className="text-lg text-gray-600 mt-4 max-w-2xl">
-              We provide end-to-end business consulting services to help you achieve 
-              your goals and drive sustainable growth in today's competitive market.
-            </p>
-          </div>
-        </Container>
+      <Container>
 
-        {/* Decorative Image */}
-        <div
-          className="absolute top-[15%] right-[-3%] w-80 h-80 opacity-100"
-          style={{ transform: "translateY(-50%)" }}
-        >
-          <img
-            src="/assets/images/common/right_element.png"
-            alt="Professional woman with tablet"
-            className="w-full h-auto rounded-2xl"
-          />
+      <div className="max-w-7xl mx-auto ">
+        {/* Header Section */}
+        <div className="text-center mb-14">
+          <h2 className="text-4xl lg:text-5xl font-bold bg-[linear-gradient(180deg,rgba(152,32,68,1)_0%,rgba(100,14,41,1)_100%)] bg-clip-text text-transparent leading-tight mb-4">
+            Why Dubai is the Perfect <br />
+            Business Destination
+          </h2>
         </div>
 
-        {/* Main Content with Central Logo and Pulse Animation */}
-        <Container>
-          <div className="relative py-20">
-            {/* Central Logo Section with Pulse Animation */}
-            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
-              {/* Pulse Animation Rings */}
-              <div className="absolute inset-0 -m-4">
-                <div className="absolute inset-0 rounded-full border-2 border-blue-500 animate-pulse-slow opacity-70"></div>
-                <div className="absolute inset-2 rounded-full border-2 border-blue-400 animate-pulse-slower opacity-50"></div>
-                <div className="absolute inset-4 rounded-full border-2 border-blue-300 animate-pulse-slowest opacity-30"></div>
-              </div>
-              
-              {/* Logo Container */}
-              <div className="relative bg-white rounded-full p-6 shadow-2xl border border-gray-200 z-10">
-                <div className="w-24 h-24 relative">
-                  <Image
-                    src="/assets/images/BusinessSection/logos/icon01.png"
-                    alt="Business Solutions"
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-                
-                {/* Center Dot for Connection Points */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-3 h-3 bg-blue-600 rounded-full animate-ping-slow"></div>
-                </div>
-              </div>
-            </div>
+        {/* Main Content */}
+        <div className="relative" style={{ height: '800px' }}>
+          {/* SVG for all connection lines */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
+            <defs>
+              <linearGradient id="brand-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                {gradientStops.map((stop, i) => (
+                  <stop key={i} offset={stop.offset} stopColor={stop.color} />
+                ))}
+              </linearGradient>
+              <filter id="line-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="0" stdDeviation="4" floodColor="#941D43" floodOpacity="0.6" />
+              </filter>
+            </defs>
+            
+            {rectangles.map((item) => {
+              const { startX, startY, endX, endY } = getConnectionPath(item.position, item.verticalPosition);
+              const delay = 0;
 
-            {/* Rectangles Grid with Animated Lines */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 relative">
-              {rectangles.map((item, index) => (
-                <div
+              return (
+                <g key={item.id}>
+                  {/* Base static line */}
+                  <line
+                    x1={`${startX}%`}
+                    y1={`${startY}%`}
+                    x2={`${endX}%`}
+                    y2={`${endY}%`}
+                    stroke="#fff"
+                    strokeWidth="2"
+                    filter="url(#line-shadow)"
+                  />
+
+                  {/* Animated pulse line */}
+                  {pulseActive && (
+                    <motion.line
+                      x1={`${endX}%`}
+                      y1={`${endY}%`}
+                      x2={`${startX}%`}
+                      y2={`${startY}%`}
+                      stroke="url(#brand-gradient)"
+                      strokeWidth="4"
+                      initial={{
+                        pathLength: 0,
+                        opacity: 1
+                      }}
+                      animate={{
+                        pathLength: 1,
+                        opacity: [1, 1, 0]
+                      }}
+                      transition={{
+                        duration: pulseDuration,
+                        delay,
+                        ease: "easeInOut"
+                      }}
+                    />
+                  )}
+
+                  {/* Connection dot at card */}
+                  <motion.circle
+                    cx={`${startX}%`}
+                    cy={`${startY}%`}
+                    r="7"
+                    fill="url(#brand-gradient)"
+                    animate={pulseActive ? {
+                      scale: [1, 1.5, 1],
+                      opacity: [0.7, 1, 0.7]
+                    } : {}}
+                    transition={{ duration: 1.2, delay: pulseDuration }}
+                  />
+
+                  {/* Connection dot at center */}
+                  <motion.circle
+                    cx={`${endX}%`}
+                    cy={`${endY}%`}
+                    r="6"
+                    fill="url(#brand-gradient)"
+                    animate={pulseActive ? {
+                      scale: [1, 1.3, 1],
+                      opacity: [0.7, 1, 0.7]
+                    } : {}}
+                    transition={{ duration: 1.2, delay: 0 }}
+                  />
+                </g>
+              );
+            })}
+          </svg>
+
+          {/* Cards Container */}
+          <div className="relative h-full" style={{ zIndex: 10 }}>
+            {rectangles.map((item) => {
+              const isLeft = item.position === 'left';
+              
+              let topPosition;
+              if (item.verticalPosition === 'top') topPosition = '5%';
+              if (item.verticalPosition === 'middle') topPosition = '42.5%';
+              if (item.verticalPosition === 'bottom') topPosition = '80%';
+              
+              return (
+                <motion.div
                   key={item.id}
-                  className={`relative group ${
-                    index < 3 ? 'md:pr-48' : 'md:pl-48'
-                  }`}
+                  className="absolute w-[30%]"
+                  style={{
+                    left: isLeft ? '0' : 'auto',
+                    right: isLeft ? 'auto' : '0',
+                    top: topPosition,
+                    transform: 'translateY(-50%)'
+                  }}
                 >
-                  {/* Card */}
-                  <div className="bg-white rounded-xl shadow-lg md:h-56 hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 hover:border-[#941D43] group">
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-[#941D43] transition-colors duration-300">
+                  <motion.div
+                    className="relative bg-white rounded-xl shadow-lg p-6 overflow-hidden group transition-shadow duration-300"
+                    animate={pulseActive ? {
+                      boxShadow: [
+                        "0 10px 15px -3px rgba(152,32,68,0.08)",
+                        "0 0 0 4px rgba(152,32,68,0.25)",
+                        "0 10px 15px -3px rgba(152,32,68,0.08)"
+                      ],
+                      borderColor: [
+                        "#fff",
+                        "rgba(152,32,68,1)",
+                        "#fff"
+                      ]
+                    } : {}}
+                    transition={{
+                      duration: 1.2,
+                      delay: borderPulseDelay,
+                      times: [0, 0.5, 1]
+                    }}
+                    style={{
+                      borderWidth: 2,
+                      borderStyle: 'solid',
+                      borderColor: '#fff'
+                    }}
+                  >
+                    <div className="relative z-10">
+                      <h3 className="text-xl font-semibold text-[#982044] mb-3 group-hover:text-[#640E29] transition-colors duration-300">
                         {item.title}
                       </h3>
-                      <p className="text-gray-600 leading-relaxed">
+                      <p className="text-gray-700 leading-relaxed text-sm">
                         {item.description}
                       </p>
                     </div>
-                  </div>
-
-                  {/* Animated Connecting Line */}
-                  <div className={`absolute hidden md:block ${
-                    index < 3 ? 
-                    'right-24 top-1/2 transform -translate-y-1/2' :
-                    'left-24 top-1/2 transform -translate-y-1/2'
-                  }`}>
-                    {/* Static Line */}
-                    <div className={`absolute top-1/2 transform -translate-y-1/2 w-48 h-0.5 bg-gray-300 ${
-                      index < 3 ? 'right-0' : 'left-0'
-                    }`}></div>
-                    
-                    {/* Animated Pulse Line */}
-                    <div className={`absolute top-1/2 transform -translate-y-1/2 w-48 h-0.5 bg-gradient-to-r ${
-                      index < 3 ? 
-                      'from-blue-500 to-blue-300 right-0 animate-pulse-flow-left' :
-                      'from-blue-300 to-blue-500 left-0 animate-pulse-flow-right'
-                    }`}></div>
-                    
-                    {/* Connection Dot at Card End */}
-                    <div className={`absolute top-1/2 transform -translate-y-1/2 w-3 h-3 bg-blue-500 rounded-full animate-ping ${
-                      index < 3 ? 'right-0' : 'left-0'
-                    }`} style={{ animationDelay: `${index * 0.2}s` }}></div>
-                    
-                    {/* Connection Dot at Center End */}
-                    <div className={`absolute top-1/2 transform -translate-y-1/2 w-2 h-2 bg-blue-600 rounded-full ${
-                      index < 3 ? 'left-0' : 'right-0'
-                    }`}></div>
-                  </div>
-                </div>
-              ))}
-            </div>
+                  </motion.div>
+                </motion.div>
+              );
+            })}
           </div>
-        </Container>
-      </div>
 
-      {/* Add custom animations to global CSS */}
-      <style jsx global>{`
-        @keyframes pulse-slow {
-          0%, 100% { opacity: 0.7; transform: scale(1); }
-          50% { opacity: 0.3; transform: scale(1.05); }
-        }
-        
-        @keyframes pulse-slower {
-          0%, 100% { opacity: 0.5; transform: scale(1); }
-          50% { opacity: 0.2; transform: scale(1.1); }
-        }
-        
-        @keyframes pulse-slowest {
-          0%, 100% { opacity: 0.3; transform: scale(1); }
-          50% { opacity: 0.1; transform: scale(1.15); }
-        }
-        
-        @keyframes ping-slow {
-          0% { transform: scale(1); opacity: 1; }
-          75%, 100% { transform: scale(2); opacity: 0; }
-        }
-        
-        @keyframes pulse-flow-left {
-          0% { transform: translateX(100%) scaleX(0); opacity: 0; }
-          50% { transform: translateX(50%) scaleX(1); opacity: 1; }
-          100% { transform: translateX(0%) scaleX(0); opacity: 0; }
-        }
-        
-        @keyframes pulse-flow-right {
-          0% { transform: translateX(-100%) scaleX(0); opacity: 0; }
-          50% { transform: translateX(-50%) scaleX(1); opacity: 1; }
-          100% { transform: translateX(0%) scaleX(0); opacity: 0; }
-        }
-        
-        .animate-pulse-slow {
-          animation: pulse-slow 3s ease-in-out infinite;
-        }
-        
-        .animate-pulse-slower {
-          animation: pulse-slower 4s ease-in-out infinite;
-        }
-        
-        .animate-pulse-slowest {
-          animation: pulse-slowest 5s ease-in-out infinite;
-        }
-        
-        .animate-ping-slow {
-          animation: ping-slow 2s ease-in-out infinite;
-        }
-        
-        .animate-pulse-flow-left {
-          animation: pulse-flow-left 3s ease-in-out infinite;
-        }
-        
-        .animate-pulse-flow-right {
-          animation: pulse-flow-right 3s ease-in-out infinite;
-        }
-      `}</style>
+          {/* Central Logo */}
+          <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2" style={{ zIndex: 20 }}>
+            {/* Outer Pulse Rings */}
+            <motion.div
+              className="absolute inset-0 -m-16"
+              animate={pulseActive ? {
+                scale: [1, 1.5, 1],
+                opacity: [0.6, 0.3, 0]
+              } : {}}
+              transition={{ duration: 2, ease: "easeOut" }}
+            >
+              <div className="absolute inset-0 rounded-full border-4" style={{ borderColor: "rgba(152,32,68,1)" }}></div>
+            </motion.div>
+            
+            <motion.div
+              className="absolute inset-0 -m-12"
+              animate={pulseActive ? {
+                scale: [1, 1.3, 1],
+                opacity: [0.5, 0.2, 0]
+              } : {}}
+              transition={{ duration: 2, ease: "easeOut", delay: 0.1 }}
+            >
+              <div className="absolute inset-0 rounded-full border-3" style={{ borderColor: "rgba(100,14,41,1)" }}></div>
+            </motion.div>
+
+            {/* Logo Container */}
+            <motion.div 
+              className="relative bg-[#C79A59] rounded-full p-5 shadow-2xl"
+              animate={pulseActive ? {
+                scale: [1, 1.1, 1],
+                boxShadow: [
+                  "0 20px 25px -5px rgba(152,32,68,0.3)",
+                  "0 25px 50px -12px rgba(100,14,41,0.6)",
+                  "0 20px 25px -5px rgba(152,32,68,0.3)"
+                ]
+              } : {}}
+              transition={{ duration: 2 }}
+            >
+              <div className="w-32 h-32 flex items-center justify-center">
+                <img src="/assets/images/middle_logo.png" alt="TMG Logo" className="w-20 h-20 mb-2" />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+      </Container>
+
     </div>
   );
 };

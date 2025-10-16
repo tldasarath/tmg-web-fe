@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { MessageCircle, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -7,9 +7,9 @@ export const BottomCTA = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const homeSection = document.getElementById('home');
-    const footer = document.querySelector('footer');
-    
+    const homeSection = document.getElementById("home");
+    const footer = document.querySelector("footer");
+
     if (!homeSection || !footer) return;
 
     // Observer for home section - hide CTA when home is visible
@@ -27,7 +27,7 @@ export const BottomCTA = () => {
       },
       {
         threshold: [0.1, 0.9], // Trigger when home section enters/leaves view
-        rootMargin: '0px'
+        rootMargin: "0px",
       }
     );
 
@@ -45,8 +45,8 @@ export const BottomCTA = () => {
         });
       },
       {
-        threshold: 0.1, 
-        rootMargin: '0px'
+        threshold: 0.1,
+        rootMargin: "0px",
       }
     );
 
@@ -54,14 +54,14 @@ export const BottomCTA = () => {
     const checkIfShouldShow = () => {
       const homeRect = homeSection.getBoundingClientRect();
       const footerRect = footer.getBoundingClientRect();
-      
+
       // Show CTA if:
       // 1. Home section is out of view (scrolled past it)
       // 2. Footer is not yet in view
       // const isHomeOutOfView = homeRect.bottom <= window.innerHeight /2;
       const isHomeOutOfView = homeRect.bottom <= window.innerHeight * 0.75;
       const isFooterNotInView = footerRect.top > window.innerHeight;
-      
+
       setIsVisible(isHomeOutOfView && isFooterNotInView);
     };
 
@@ -73,7 +73,7 @@ export const BottomCTA = () => {
     // Set up observers
     homeObserver.observe(homeSection);
     footerObserver.observe(footer);
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     // Initial check
     checkIfShouldShow();
@@ -81,21 +81,21 @@ export const BottomCTA = () => {
     return () => {
       homeObserver.disconnect();
       footerObserver.disconnect();
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.div 
-          className="fixed bottom-6 left-[15%] -translate-x-1/2 z-[60] w-[95%] sm:w-[90%] md:w-[1029px] max-w-[1029px]"
+        <motion.div
+          className="  fixed bottom-6 left-[15%] -translate-x-1/2 z-[60] w-[95%] sm:w-[90%] md:w-[1029px] max-w-[1029px]"
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
-          transition={{ 
+          transition={{
             duration: 0.3,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
         >
           <div className="bg-[#C79A59]/80 rounded-2xl shadow-2xl h-[70px] px-6 sm:px-8 md:px-10 backdrop-blur-sm">
@@ -109,17 +109,22 @@ export const BottomCTA = () => {
 
               {/* Action Buttons */}
               <motion.div className="flex items-center gap-3 flex-shrink-0">
-                <motion.button 
-                  className="bg-[#2D0A1F] hover:bg-[#3d1429] text-white px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-full font-medium transition-all duration-300 flex items-center gap-2 text-sm sm:text-base shadow-lg hover:shadow-xl"
+                <motion.button
+                  className="bg-[#49051E] hover:bg-[#3d1429] text-white px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-2xl font-medium transition-all duration-300 flex items-center gap-2 text-sm sm:text-base shadow-lg hover:shadow-xl"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
+                  {/* <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" /> */}
+                  <img
+                    src="/assets/images/whatsapp-icon.png"
+                    alt="Chat"
+                    className="w-4 h-4 sm:w-6 sm:h-6"
+                  />
                   <span>Chat Now</span>
                 </motion.button>
-                
-                <motion.button 
-                  className="bg-[#2D0A1F] hover:bg-[#3d1429] text-white px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-full font-medium transition-all duration-300 flex items-center gap-2 text-sm sm:text-base shadow-lg hover:shadow-xl"
+
+                <motion.button
+                  className="bg-[#49051E] hover:bg-[#3d1429] text-white px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-2xl font-medium transition-all duration-300 flex items-center gap-2 text-sm sm:text-base shadow-lg hover:shadow-xl"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >

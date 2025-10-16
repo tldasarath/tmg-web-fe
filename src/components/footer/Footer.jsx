@@ -39,7 +39,7 @@ export default function Footer() {
         </div>
 
         {/* Right Decorative pattern */}
-        <div className="absolute right-0 top-0 w-48 h-full md:w-64 lg:w-80">
+        <div className="absolute right-0 top-0 w-48 h-full md:w-64 lg:w-80 hidden md:block">
           <img
             src="/assets/images/footer/right_element.png"
             alt="Decorative element"
