@@ -64,8 +64,8 @@ const BusinessSection = () => {
   return (
     <motion.div
       ref={sectionRef}
-      initial={{ opacity: 0, y: 50 }}
-      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 100 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
       className="h-auto py-8 lg:py-16 px-4 sm:px-6 lg:px-10"
     >
