@@ -54,7 +54,7 @@ const LicenseSetupPage = () => {
       </div>
 
       <Container>
-        <div className="container z-10 mx-auto px-4 py-16 lg:py-24">
+        <div className="container z-10 mx-auto px-4 py-16 lg:pt-24 lg:py-0">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -121,7 +121,7 @@ const LicenseSetupPage = () => {
           </div>
 
           {/* Business Setup Packages Section */}
-          <BusinessSetupPackages />
+          {/* <BusinessSetupPackages /> */}
         </div>
       </Container>
     </div>

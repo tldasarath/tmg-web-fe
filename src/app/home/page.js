@@ -19,6 +19,7 @@ import ServicesSection from "@/components/serviceSection/serviceSection";
 import SocialMediaCards from "@/components/socialMedia/SocalSection";
 import React from "react";
 import BusinessServiceTransiton from "@/components/Scrolling/BusinessServiceTransiton";
+import { BusinessSetupPackages } from "@/components/BusinessSetupPackages/BusinessSetupPackages";
 
 const page = () => {
   return (
@@ -35,6 +36,7 @@ const page = () => {
         <BusinessServiceTransiton/>
         <GoldenVisaBanner/>
         <LicenseSetupPage/>
+        <BusinessSetupPackages />
         <FounderSection/>
         <BusinessDestination/>
         <Gallery/>

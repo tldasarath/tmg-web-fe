@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import ServicesSection from "../serviceSection/serviceSection";
@@ -8,38 +8,27 @@ const BusinessServiceTransition = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "end start"],
+    offset: ["start start", "end end"],
   });
 
-  // Define scale animations for each service card
-  const scale1 = useTransform(scrollYProgress, [0, 0.3, 1], [1, 0.8, 0.5]);
-  const scale2 = useTransform(scrollYProgress, [0.2, 0.5, 1], [0.8, 1, 0.8]);
-  const scale3 = useTransform(scrollYProgress, [0.4, 0.8, 1], [0.7, 0.9, 1]);
+  // 👇 BusinessSection: only slightly scale while scrolling
+  const scale1 = useTransform(scrollYProgress, [0, 0.3, 0.6], [1, 0.95, 0.9]);
+
+  // 👇 ServicesSection: stays 1 while visible, no zoom out after leaving
+  const scale2 = useTransform(scrollYProgress, [0, 0.5, 0.8, 1], [1, 1, 1, 1]);
 
   return (
     <div className="w-full">
-      {/* Normal (non-animated) Business Section */}
-
-      {/* Animated Services Section */}
-      <div ref={containerRef} className=" flex flex-col ">
-        {/* Service Card 1 */}
-        <motion.div
-          className="c-card sticky top-0 w-full"
-          style={{ scale: scale1 }}
-        >
-      <BusinessSection />
+      <div ref={containerRef} className="flex flex-col">
+        {/* Business Section */}
+        <motion.div className="c-card sticky top-0 w-full" style={{ scale: scale1 }}>
+          <BusinessSection />
         </motion.div>
 
-        {/* Service Card 2 */}
-        <motion.div
-          className="c-card sticky top-0 w-full "
-          style={{ scale: scale2 }}
-        >
+        {/* Services Section */}
+        <motion.div className="c-card sticky top-0 w-full pb-8  " style={{ scale: scale2 }}>
           <ServicesSection index={1} />
         </motion.div>
-
-        {/* Service Card 3 */}
-     
       </div>
     </div>
   );
