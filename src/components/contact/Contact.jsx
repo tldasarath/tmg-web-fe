@@ -93,7 +93,7 @@ const handleSubmit = (e) => {
   ];
 
   return (
-    <div className="relative  h-auto bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="relative  h-auto  px-4 sm:px-6 lg:px-0 py-8 lg:py-16">
            <div className="absolute  left-0 bottom-0 w-80 h-80 opacity-100 z-0">
     <img
       src="/assets/images/about/left_element.png"
@@ -104,7 +104,7 @@ const handleSubmit = (e) => {
       <Container>
         <div className="relative z-10  grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Section */}
-          <div className="space-y-8">
+          <div className="space-y-11">
             <div className="space-y-4">
               <h2 className="text-4xl sm:text-5xl lg:text-[3rem] text-[#49051E] mb-6 font-bold">
                 We’re Here to Help Your Business Grow
@@ -134,7 +134,7 @@ const handleSubmit = (e) => {
 
           {/* Right Section - Form */}
           <div
-            className="rounded-lg shadow-lg p-8 text-white"
+            className="rounded-lg shadow-lg p-6 text-white"
             style={{
               backgroundImage: "linear-gradient(180deg, rgba(142,26,61,1) 0%, rgba(40,7,17,1) 100%)",
             }}

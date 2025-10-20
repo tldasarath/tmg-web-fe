@@ -70,7 +70,7 @@ const BusinessSection = () => {
       className="h-auto py-8 lg:py-16 px-4 sm:px-6 lg:px-10"
     >
       <Container>
-        <div className="w-full mx-auto">
+        <div className="w-full ">
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 items-center">
             {/* Left Side */}
             <div className="space-y-8 lg:w-4/6">
