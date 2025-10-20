@@ -9,6 +9,7 @@ module.exports = {
   theme: {
   	extend: {
   		colors: {
+  			// Your existing colors
   			primary: {
   				'50': '#eff6ff',
   				'500': '#3b82f6',
@@ -52,12 +53,79 @@ module.exports = {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
+  			},
+  			// New colors for the animated tabs component
+  			gray: {
+  				25: '#fcfcfc',
+  				50: '#fafafa',
+  				100: 'whitesmoke',
+  				200: '#e5e5e5',
+  				300: '#d6d6d6',
+  				400: '#a3a3a3',
+  				500: '#737373',
+  				600: '#525252',
+  				700: '#424242',
+  				800: '#292929',
+  				900: '#141414',
+  			},
+  			green: {
+  				400: '#61ffc9',
+  				500: '#25fabe', // dark-green
   			}
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
+  			sm: 'calc(var(--radius) - 4px)',
+  			// Additional border radii for the animated tabs
+  			'xlarge': '2rem',
+  			'medium': '1.25rem',
+  			'xmedium': '1.5rem',
+  			'large-still': '1.75rem',
+  			'large-change': '1.75rem',
+  			'xsmall': '0.75rem',
+  			'small': '1rem',
+  			'home-hero': '2rem',
+  			'about-image': '2rem',
+  			'button-circle': '100vw',
+  			'xtiny': '0.25rem',
+  			'tiny': '0.375rem',
+  			'xxtiny': '0.175rem',
+  			'0': '0rem',
+  			'xxsmall': '0.5rem'
+  		},
+  		fontFamily: {
+  			'poppins': ['Poppins', 'sans-serif'],
+  		},
+  		spacing: {
+  			// Custom spacing if needed
+  			'3.3': '3.3%',
+  		},
+  		height: {
+  			'90vh': '90vh',
+  			'550vh': '550vh',
+  			'600vh': '600vh',
+  		},
+  		maxWidth: {
+  			'small': '30rem',
+  			'120rem': '120rem',
+  		},
+  		transitionDuration: {
+  			'600': '600ms',
+  		},
+  		letterSpacing: {
+  			'tighter': '-0.02em',
+  			'wide-03': '0.03em',
+  		},
+  		backfaceVisibility: {
+  			'hidden': 'hidden',
+  		},
+  		transformStyle: {
+  			'preserve-3d': 'preserve-3d',
+  		},
+  		willChange: {
+  			'transform-opacity': 'transform, opacity',
+  			'transform-width-height-color': 'transform, width, height, color',
   		}
   	}
   },
