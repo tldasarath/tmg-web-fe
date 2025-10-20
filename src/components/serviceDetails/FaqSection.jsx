@@ -17,7 +17,8 @@ export default function FAQSection() {
 
   return (
     <section className="py-20 px-6 md:px-12 lg:px-20 bg-white">
-        <Container>      <div className="max-w-7xl mx-auto">
+        <Container>     
+             <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-20">
           
           {/* Left Column - Title and Image */}
@@ -28,7 +29,7 @@ export default function FAQSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-12">
+            <h2 className="text-3xl md:text-4xl  font-bold text-[#49051E] leading-tight mb-12">
               <span className="block">Frequently</span>
               <span className="block">Asked Questions</span>
             </h2>
@@ -41,40 +42,12 @@ export default function FAQSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <svg
-                viewBox="0 0 200 300"
-                className="w-40 h-40"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <defs>
-                  <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style={{ stopColor: '#dc2626', stopOpacity: 1 }} />
-                    <stop offset="100%" style={{ stopColor: '#991b1b', stopOpacity: 1 }} />
-                  </linearGradient>
-                  <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
-                    <feDropShadow dx="0" dy="8" stdDeviation="4" floodOpacity="0.3" />
-                  </filter>
-                </defs>
-                
-                {/* Main Question Mark Curve */}
-                <path
-                  d="M 70 50 Q 95 30 115 35 Q 140 42 145 75 Q 148 100 125 125 Q 105 140 95 155"
-                  fill="none"
-                  stroke="url(#redGradient)"
-                  strokeWidth="22"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  filter="url(#shadow)"
-                />
-                
-                {/* Question Mark Dot */}
-                <circle cx="100" cy="185" r="18" fill="url(#redGradient)" filter="url(#shadow)" />
-              </svg>
+        <img src='/assets/images/services/question-mark-3d.png' alt='FAQ image' className=''/>
             </motion.div>
           </motion.div>
 
           {/* Right Column - FAQ Items */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-2 space-y-8 mt-5 md:mt-12">
             {faqs.map((faq, index) => (
               <motion.div
                 key={index}
@@ -82,7 +55,7 @@ export default function FAQSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="flex gap-6"
+                className="flex gap-6 justify-center "
               >
                 {/* Question Circle Badge */}
                 <motion.div 
