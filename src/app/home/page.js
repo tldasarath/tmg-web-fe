@@ -1,7 +1,9 @@
 import AboutSection from "@/components/about/AboutSection";
+import Schedule from "@/components/about/Schedule";
 import WhereAvailableSection from "@/components/branches/Branches";
 import BusinessDestination from "@/components/businessSection/BusinessDestination";
 import BusinessSection from "@/components/businessSection/businessSection";
+import { HeroAboutScrollTransition } from "@/components/Scrolling/HeroAboutScrollTransition";
 import GetInTouch from "@/components/contact/ContactSection";
 import FAQSection from "@/components/faqs/FaqSection";
 import Footer from "@/components/footer/Footer";
@@ -16,19 +18,25 @@ import { Navbar } from "@/components/navbar/Navbar";
 import ServicesSection from "@/components/serviceSection/serviceSection";
 import SocialMediaCards from "@/components/socialMedia/SocalSection";
 import React from "react";
+import BusinessServiceTransiton from "@/components/Scrolling/BusinessServiceTransiton";
+import { BusinessSetupPackages } from "@/components/BusinessSetupPackages/BusinessSetupPackages";
 
 const page = () => {
   return (
     <>
       <div className="min-h-screen w-full">
         <Navbar />
-        <HeroSection />
-        <AboutSection/>
+        {/* <HeroSection />
+        <AboutSection/> */}
+        <HeroAboutScrollTransition/>
+        <Schedule/>
         <ImageSection/>
-        <BusinessSection/>
-        <ServicesSection/>
+        {/* <BusinessSection/>
+        <ServicesSection/> */}
+        <BusinessServiceTransiton/>
         <GoldenVisaBanner/>
         <LicenseSetupPage/>
+        <BusinessSetupPackages />
         <FounderSection/>
         <BusinessDestination/>
         <Gallery/>
