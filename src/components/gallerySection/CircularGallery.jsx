@@ -111,11 +111,10 @@ class Media {
     this.font = font;
     this.createShader();
     this.createMesh();
-    this.createTitle();
     this.onResize();
   }
   createShader() {
-    const texture = new Texture(this.gl, { generateMipmaps: true });
+    const texture = new Texture(this.gl, { generateMipmaps: false });
     this.program = new Program(this.gl, {
       depthTest: false,
       depthWrite: false,
@@ -131,8 +130,10 @@ class Media {
         void main() {
           vUv = uv;
           vec3 p = position;
-          p.z = (sin(p.x * 4.0 + uTime) * 0.3 + cos(p.y * 2.0 + uTime) * 0.3) * (0.05 + uSpeed * 0.2);
-          gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.0);
+float waveAmplitude = 0.03;  
+float waveFrequency = 2.5;
+p.z += sin(p.x * waveFrequency + uTime * 1.2) * waveAmplitude;
+p.y += cos(p.x * waveFrequency * 0.5 + uTime * 1.0) * waveAmplitude * 0.25;          gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.0);
         }
       `,
       fragment: `
@@ -230,23 +231,31 @@ class Media {
       this.isBefore = this.isAfter = false;
     }
   }
-  onResize({ screen, viewport } = {}) {
-    if (screen) this.screen = screen;
-    if (viewport) {
-      this.viewport = viewport;
-      if (this.plane.program.uniforms.uViewportSizes) {
-        this.plane.program.uniforms.uViewportSizes.value = [this.viewport.width, this.viewport.height];
-      }
+onResize({ screen, viewport } = {}) {
+  if (screen) this.screen = screen;
+  if (viewport) {
+    this.viewport = viewport;
+    if (this.plane.program.uniforms.uViewportSizes) {
+      this.plane.program.uniforms.uViewportSizes.value = [this.viewport.width, this.viewport.height];
     }
-    this.scale = this.screen.height / 1500;
-    this.plane.scale.y = (this.viewport.height * (900 * this.scale)) / this.screen.height;
-    this.plane.scale.x = (this.viewport.width * (700 * this.scale)) / this.screen.width;
-    this.plane.program.uniforms.uPlaneSizes.value = [this.plane.scale.x, this.plane.scale.y];
-    this.padding = 2;
-    this.width = this.plane.scale.x + this.padding;
-    this.widthTotal = this.width * this.length;
-    this.x = this.width * this.index;
   }
+
+  this.scale = this.screen.height / 1500;
+
+  // Responsive width: 700 for small screens, 1200 for large screens
+  const widthMultiplier = this.screen.width < 768 ? 700 : 1100;
+
+  this.plane.scale.y = (this.viewport.height * (900 * this.scale)) / this.screen.height;
+  this.plane.scale.x = (this.viewport.width * (widthMultiplier * this.scale)) / this.screen.width;
+
+  this.plane.program.uniforms.uPlaneSizes.value = [this.plane.scale.x, this.plane.scale.y];
+
+  this.padding = 2;
+  this.width = this.plane.scale.x + this.padding;
+  this.widthTotal = this.width * this.length;
+  this.x = this.width * this.index;
+}
+
 }
 
 class App {
@@ -285,12 +294,15 @@ class App {
   }
   createMedias(items, bend = 1, textColor, borderRadius, font) {
     const defaultItems = [
-      { image: `/assets/images/founder/person.jpg`, text: 'Bridge' },
-      { image: `https://picsum.photos/seed/2/800/600?grayscale`, text: 'Desk Setup' },
-      { image: `https://picsum.photos/seed/3/800/600?grayscale`, text: 'Waterfall' },
-      { image: `https://picsum.photos/seed/4/800/600?grayscale`, text: 'Strawberries' },
-      { image: `https://picsum.photos/seed/5/800/600?grayscale`, text: 'Deep Diving' },
-      { image: `https://picsum.photos/seed/6/800/600?grayscale`, text: 'Santorini' }
+      { image: `/assets/images/gallery/gallery01.jpg`, text: 'Bridge' },
+      { image: `/assets/images/gallery/gallery02.jpg`, text: 'Desk Setup' },
+      { image: `/assets/images/gallery/gallery03.jpg`, text: 'Waterfall' },
+      { image: `/assets/images/gallery/gallery04.jpg`, text: 'Strawberries' },
+      { image: `/assets/images/gallery/gallery05.jpg`, text: 'Deep Diving' },
+      { image: `/assets/images/gallery/gallery06.jpg`, text: 'Santorini' },
+      { image: `/assets/images/gallery/golden-visa_1.jpg`, text: 'DS' },
+      { image: `/assets/images/gallery/golden-visa_2.jpg`, text: 'SF' },
+      { image: `/assets/images/gallery/GOLDEN-VISA-UI.jpg`, text: 'EE' }
     ];
     const galleryItems = items && items.length ? items : defaultItems;
     this.mediasImages = galleryItems.concat(galleryItems);
@@ -304,7 +316,7 @@ class App {
         renderer: this.renderer,
         scene: this.scene,
         screen: this.screen,
-        text: data.text,
+        // text: data.text,
         viewport: this.viewport,
         bend,
         textColor,

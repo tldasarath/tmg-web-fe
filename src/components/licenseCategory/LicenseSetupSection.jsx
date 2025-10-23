@@ -39,7 +39,7 @@ const LicenseSetupPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white relative overflow-hidden py-4 md:py-8">
+    <div className=" h-auto lg:h-[900px] bg-white relative overflow-hidden py-4 md:py-8">
       <div className="absolute top-0 right-0 w-64 h-64 bg-amber-200 rounded-full blur-3xl opacity-30"></div>
 
       <div

@@ -8,7 +8,7 @@
         rate:"AED5055"
       },
       { 
-        name: "Shams FREEZONE", 
+        name: "SHAMS FREEZONE", 
         description: "Sharjah Media City provides excellent opportunities for media and creative industries with flexible office solutions.",
         image: "/assets/images/category/front2.png",
         logo: "/assets/images/category/spc-logo.png",
@@ -17,7 +17,7 @@
 
       },
       { 
-        name: "IFZ", 
+        name: "IFZA", 
         description: "International Free Zone Authority offers competitive pricing and strategic location for trading and logistics companies.",
         image: "/assets/images/category/front1.png",
         logo: "/assets/images/category/spc-logo.png",
@@ -35,7 +35,7 @@
     ],
     Mainland: [
       { 
-        name: "Dubai Mainland", 
+        name: "DUBAI MAINLAND", 
         description: "Establish your business in Dubai mainland with access to local and international markets without restrictions.",
         image: "/assets/images/category/front1.png",
         logo: "/assets/images/category/spc-logo.png",
@@ -43,7 +43,7 @@
 
       },
       { 
-        name: "Abu Dhabi Mainland", 
+        name: "ABU DHABI MAINLAND", 
         description: "Set up in the capital city with government support and access to major contracts and projects.",
         image: "/assets/images/category/front2.png",
         logo: "/assets/images/category/spc-logo.png",
@@ -51,7 +51,7 @@
 
       },
       { 
-        name: "Sharjah Mainland", 
+        name: "SHARJAH MAINLAND", 
         description: "Cost-effective mainland setup with full trading rights across UAE and GCC region.",
         image: "/assets/images/category/front1.png",
         logo: "/assets/images/category/spc-logo.png",
@@ -59,7 +59,7 @@
 
       },
       { 
-        name: "Ajman Mainland", 
+        name: "AJMAN MAINLAND", 
         description: "Affordable mainland licenses with simplified procedures and quick turnaround time.",
         image: "/assets/images/category/front2.png",
         logo: "/assets/images/category/spc-logo.png",    
@@ -70,7 +70,7 @@
     ],
     OFFSHORE: [
       { 
-        name: "RAK Offshore", 
+        name: "RAK OFFSHORE", 
         description: "Ras Al Khaimah offshore company for international business operations with privacy and asset protection.",
         image: "/assets/images/category/front1.png",
         logo: "/assets/images/category/spc-logo.png",
@@ -78,7 +78,7 @@
 
       },
       { 
-        name: "Jebel Ali Offshore", 
+        name: "JEBEL ALI OFFSHORE", 
         description: "JAFZA offshore solutions for holding companies and international investments with tax benefits.",
         image: "/assets/images/category/front2.png",
         logo: "/assets/images/category/spc-logo.png",
@@ -86,7 +86,7 @@
 
       },
       { 
-        name: "Ajman Offshore", 
+        name: "AJMAN OFFSHORE", 
         description: "Quick and affordable offshore company formation for global trading and holding structures.",
         image: "/assets/images/category/front1.png",
         logo: "/assets/images/category/spc-logo.png",
@@ -94,7 +94,7 @@
 
       },
       { 
-        name: "IFZA Offshore", 
+        name: "IFZA OFFSHORE", 
         description: "Modern offshore solutions with digital banking integration and corporate services.",
         image: "/assets/images/category/front2.png",
         logo: "/assets/images/category/spc-logo.png",
