@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion"; // 🪄 Add this line
 import { Container } from "../layout/Container";
 import ScheduleMeeting from "../common/ScheduleMeeting";
@@ -36,6 +36,33 @@ const Services = () => {
   const sidebarServices = allServices.filter(
     (service) => !currentServices.some((currentService) => currentService.id === service.id)
   );
+   const containerRef = useRef(null);
+  const scrollSpeed = 0.5; // pixels per frame
+  const scrollInterval = useRef(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    let scrollPos = 0;
+    let requestId;
+
+    const step = () => {
+      // Only auto-scroll if user isn't interacting
+      if (!container.matches(':hover') && !container.matches(':active')) {
+        scrollPos += scrollSpeed;
+        if (scrollPos >= container.scrollHeight - container.clientHeight) {
+          scrollPos = 0; // reset to top
+        }
+        container.scrollTop = scrollPos;
+      }
+      requestId = requestAnimationFrame(step);
+    };
+
+    requestId = requestAnimationFrame(step);
+
+    return () => cancelAnimationFrame(requestId);
+  }, []);
 
   return (
     <div className="lg:py-16 py-8">
@@ -138,34 +165,42 @@ const Services = () => {
             >
               <div className="space-y-6 sticky top-6">
                 {/* Other Services */}
-                <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
-                  <h2 className="text-2xl font-bold text-gray-800 mb-6 pb-4 border-b border-gray-200">
-                    Other Services
-                  </h2>
-                  <div className="max-h-[400px] overflow-y-auto pr-2">
-                    <div className="space-y-4">
-                      {sidebarServices.map((service) => (
-                        <div
-                          key={service.id}
-                          className="bg-gray-50 rounded-lg p-4 hover:bg-blue-50 transition-colors duration-200 border border-gray-200 hover:border-[#b9436e]"
-                        >
-                          <div className="h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mb-3">
-                            <img
-                              src={service.image}
-                              alt={service.title}
-                              className="w-full h-full object-cover rounded-lg"
-                            />
-                          </div>
-                          <h3 className="font-semibold text-gray-800 mb-2 line-clamp-2">{service.title}</h3>
-                          <p className="text-sm text-gray-600 line-clamp-2">{service.description}</p>
-                          <button className="mt-3 text-sm text-[#49051E] hover:text-[#280110] font-medium transition-colors duration-200">
-                            View Details →
-                          </button>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                   <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+      <h2 className="text-2xl font-bold text-gray-800 mb-6 pb-4 border-b border-gray-200">
+        Other Services
+      </h2>
+
+      <div
+        ref={containerRef}
+        className="max-h-[400px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 hover:scrollbar-thumb-gray-600"
+      >
+        <div className="space-y-4">
+          {sidebarServices.map((service) => (
+            <div
+              key={service.id}
+              className="bg-gray-50 rounded-lg p-4 hover:bg-blue-50 transition-colors duration-200 border border-gray-200 hover:border-[#b9436e]"
+            >
+              <div className="h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mb-3">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+              <h3 className="font-semibold text-gray-800 mb-2 line-clamp-2">
+                {service.title}
+              </h3>
+              <p className="text-sm text-gray-600 line-clamp-2">
+                {service.description}
+              </p>
+              <button className="mt-3 text-sm text-[#49051E] hover:text-[#280110] font-medium transition-colors duration-200">
+                View Details →
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
 
                 {/* Schedule Meeting */}
                 <motion.div
