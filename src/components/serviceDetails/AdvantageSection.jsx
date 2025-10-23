@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { Container } from "../layout/Container";
 
-export default function AdvantageSection() {
+export default function AdvantageSection({section}) {
   const sectionRef = useRef(null);
   const [isInView, setIsInView] = useState(false);
   const [isSwiped, setIsSwiped] = useState(false);
@@ -84,12 +84,12 @@ export default function AdvantageSection() {
     },
   };
 
-  const advantages = [
-    "Dedicated business consultants for every setup.",
-    "100% clarity on timelines, costs, and documentation.",
-    "Strong partnerships with UAE government authorities.",
-    "Personalized business solutions designed for long-term success.",
-  ];
+  // const advantages = [
+  //   "Dedicated business consultants for every setup.",
+  //   "100% clarity on timelines, costs, and documentation.",
+  //   "Strong partnerships with UAE government authorities.",
+  //   "Personalized business solutions designed for long-term success.",
+  // ];
 
   const handleSwipe = () => {
     setIsSwiped(true);
@@ -127,22 +127,25 @@ export default function AdvantageSection() {
                 {/* Title */}
                 <motion.h2
                   variants={titleVariants}
-                  className=" text-3xl sm:text-4xl md:text-4xl lg:text-4xl font-bold text-[#49051E] leading-5 md:leading-9 mb-3 md:mb-4"
+                  className=" text-3xl sm:text-4xl md:text-4xl lg:text-4xl font-bold text-[#49051E] leading-5 md:leading-9 mb-3 md:mb-4 whitespace-pre-line"
                 >
-                  The TMG Global Advantage
+             {section?.headline}
                 </motion.h2>
 
                 {/* Description */}
+                 {section?.content?.map((text, idx) => (
                 <motion.p
+               key={idx}
                   variants={descriptionVariants}
                   className="text-sm sm:text-base text-gray-800 leading-relaxed max-w-md  mb-6 md:mb-8"
                 >
-                  TMG Global stands out through transparency, expertise, and
+                  {/* TMG Global stands out through transparency, expertise, and
                   commitment. Our team understands the UAE's business landscape
                   inside out, ensuring fast and compliant results for every
-                  client. We offer:
+                  client. We offer: */}
+                  {text}
                 </motion.p>
-
+))}
                 {/* Bullet Points */}
                 <motion.div
                   className="space-y-3 md:space-y-4"
@@ -150,7 +153,7 @@ export default function AdvantageSection() {
                   initial="hidden"
                   animate={isInView ? "visible" : "hidden"}
                 >
-                  {advantages.map((advantage, i) => (
+           {section?.features?.map((feature, i) => (
                     <motion.div
                       key={i}
                       custom={i}
@@ -159,7 +162,7 @@ export default function AdvantageSection() {
                     >
                       <div className="flex-shrink-0 w-4 h-4 rounded-full bg-[#49051E] mt-1.5" />
                       <p className="text-sm sm:text-base text-gray-800 leading-relaxed">
-                        {advantage}
+                     {feature.content}
                       </p>
                     </motion.div>
                   ))}

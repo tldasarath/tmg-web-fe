@@ -3,15 +3,14 @@ import React, { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown, ArrowRight, Instagram } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { Container } from "../layout/Container";
-import { navLinks, serviceItems } from "../data/HeaderData";
+import { navLinks, serviceItems, licenseItems } from "../../data/HeaderData";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isServiceOpen, setIsServiceOpen] = useState(false);
-  const [isMobileServiceOpen, setIsMobileServiceOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const [mobileOpenDropdown, setMobileOpenDropdown] = useState(null);
   const dropdownRef = useRef(null);
-  const serviceRef = useRef(null);
 
   const pathname = usePathname();
 
@@ -31,19 +30,25 @@ export const Navbar = () => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target) &&
-        serviceRef.current &&
-        !serviceRef.current.contains(event.target)
-      ) {
-        setIsServiceOpen(false);
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setOpenDropdown(null);
       }
     };
 
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  const getDropdownItems = (dropdownType) => {
+    switch (dropdownType) {
+      case "service":
+        return serviceItems;
+      case "license":
+        return licenseItems;
+      default:
+        return [];
+    }
+  };
 
   return (
     <nav
@@ -80,10 +85,16 @@ export const Navbar = () => {
 
                 if (link.hasDropdown) {
                   return (
-                    <li key={link.href} className="relative" ref={serviceRef}>
+                    <li key={link.href} className="relative" ref={dropdownRef}>
                       <button
-                        onMouseEnter={() => setIsServiceOpen(true)}
-                        onClick={() => setIsServiceOpen(!isServiceOpen)}
+                        onMouseEnter={() => setOpenDropdown(link.dropdownType)}
+                        onClick={() =>
+                          setOpenDropdown(
+                            openDropdown === link.dropdownType
+                              ? null
+                              : link.dropdownType
+                          )
+                        }
                         className={`flex items-center gap-1 text-sm xl:text-base text-center font-normal transition-colors hover:text-red-800 whitespace-nowrap ${
                           isActive
                             ? "text-red-800 border-b-2 border-red-800 pb-1"
@@ -94,7 +105,9 @@ export const Navbar = () => {
                         <ChevronDown
                           size={16}
                           className={`transition-transform duration-200 ${
-                            isServiceOpen ? "rotate-180" : ""
+                            openDropdown === link.dropdownType
+                              ? "rotate-180"
+                              : ""
                           }`}
                         />
                       </button>
@@ -130,21 +143,21 @@ export const Navbar = () => {
           </button>
         </div>
 
-        {/* Desktop Service Dropdown */}
-        {isServiceOpen && (
+        {/* Desktop Dropdown Menu */}
+        {openDropdown && (
           <div
             ref={dropdownRef}
-            onMouseEnter={() => setIsServiceOpen(true)}
-            onMouseLeave={() => setIsServiceOpen(false)}
+            onMouseEnter={() => setOpenDropdown(openDropdown)}
+            onMouseLeave={() => setOpenDropdown(null)}
             className="hidden lg:block absolute left-0 right-0 mt-8 px-4"
           >
             <div className="max-w-5xl mx-auto bg-gradient-to-br from-red-900 via-red-800 to-red-900 rounded-2xl shadow-2xl p-8 backdrop-blur-sm">
               <div className="grid grid-cols-4 gap-6">
-                {serviceItems.map((item, index) => (
+                {getDropdownItems(openDropdown).map((item, index) => (
                   <a
                     key={index}
                     href={item.href}
-                    onClick={() => setIsServiceOpen(false)}
+                    onClick={() => setOpenDropdown(null)}
                     className="group flex items-center justify-between text-white hover:text-red-200 transition-all duration-200 py-2 px-3 rounded-lg hover:bg-white/10"
                   >
                     <span className="text-sm font-normal">{item.title}</span>
@@ -167,14 +180,17 @@ export const Navbar = () => {
                 const isActive =
                   pathname === link.href ||
                   (link.href !== "/" && pathname.startsWith(link.href));
-                const isFirstItem = index === 0;
 
                 if (link.hasDropdown) {
                   return (
                     <li key={link.href}>
                       <button
                         onClick={() =>
-                          setIsMobileServiceOpen(!isMobileServiceOpen)
+                          setMobileOpenDropdown(
+                            mobileOpenDropdown === link.dropdownType
+                              ? null
+                              : link.dropdownType
+                          )
                         }
                         className={`flex items-center justify-between w-full px-6 py-3 text-base font-normal transition-colors hover:bg-red-50 hover:text-red-800 ${
                           isActive
@@ -186,21 +202,23 @@ export const Navbar = () => {
                         <ChevronDown
                           size={20}
                           className={`transition-transform duration-200 ${
-                            isMobileServiceOpen ? "rotate-180" : ""
+                            mobileOpenDropdown === link.dropdownType
+                              ? "rotate-180"
+                              : ""
                           }`}
                         />
                       </button>
 
-                      {/* Mobile Service Submenu */}
-                      {isMobileServiceOpen && (
+                      {/* Mobile Submenu */}
+                      {mobileOpenDropdown === link.dropdownType && (
                         <div className="bg-red-50/50 border-l-4 border-red-800">
-                          {serviceItems.map((item, idx) => (
+                          {getDropdownItems(link.dropdownType).map((item, idx) => (
                             <a
                               key={idx}
                               href={item.href}
                               onClick={() => {
                                 setIsMenuOpen(false);
-                                setIsMobileServiceOpen(false);
+                                setMobileOpenDropdown(null);
                               }}
                               className="flex items-center justify-between px-10 py-2.5 text-sm text-gray-700 hover:text-red-800 hover:bg-red-100 transition-colors group"
                             >
@@ -223,7 +241,7 @@ export const Navbar = () => {
                       href={link.href}
                       onClick={() => setIsMenuOpen(false)}
                       className={`block px-6 py-3 text-base font-normal transition-colors hover:bg-red-50 hover:text-red-800 ${
-                        isActive || isFirstItem
+                        isActive
                           ? "text-red-800 bg-red-50 border-l-4 border-red-800"
                           : "text-gray-700"
                       }`}

@@ -3,9 +3,11 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Container } from '../layout/Container';
 
-const BusinessSection = () => {
+const BusinessSection = ({section}) => {
   const sectionRef = useRef(null);
   const [isInView, setIsInView] = useState(false);
+
+    if (!section) return null;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -101,22 +103,26 @@ const BusinessSection = () => {
               className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#49051E] mb-4 sm:mb-6 md:mb-8 leading-tight"
               variants={itemVariants}
             >
-              Why Set Up Your Business in the UAE?
+        {section.headline}
             </motion.h2>
 
             {/* Description */}
+              {section?.content?.map((text, index) => (
             <motion.p
+             key={index}
               className="text-base sm:text-lg text-gray-700 leading-relaxed mb-0"
               variants={itemVariants}
             >
-              The UAE is more than a destination — it's a global business hub
+              {/* The UAE is more than a destination — it's a global business hub
               connecting the East and West. With 100% foreign ownership in many
               sectors, tax-free income, and easy access to international markets,
               the UAE provides the perfect environment for entrepreneurs, investors,
               and corporations to grow. Whether you're launching a new brand or
               expanding globally, Dubai's ecosystem offers endless opportunities
-              for success.
-            </motion.p>
+              for success. */}
+          {text}
+                  </motion.p>
+                ))}
           </motion.div>
 
           {/* Right Content - Image Section */}
@@ -130,8 +136,8 @@ const BusinessSection = () => {
               {/* Main Image Container */}
               <div className="relative rounded-xl overflow-hidden shadow-2xl border-4 sm:border-6 lg:border-8 border-[#972044]">
                 <img
-                  src="/assets/images/services/serviceDetails.png"
-                  alt="UAE Dubai Skyline"
+                src={section?.image || '/assets/images/services/serviceDetails.png'}
+                    alt={section?.headline || 'Service Image'}
                   className="w-full h-auto object-cover aspect-square"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />

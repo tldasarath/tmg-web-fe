@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { BusinessSetupPackages } from "../BusinessSetupPackages/BusinessSetupPackages";
 import { Container } from "../layout/Container";
-import { licenseCategories } from "../data/LicenseCategories";
+import { licenseCategories } from "../../data/LicenseCategories";
 
 const LicenseSetupPage = () => {
   const firstCardRef = useRef(null);

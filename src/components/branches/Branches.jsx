@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { BranchData } from "../data/BranchData";
+import { BranchData } from "../../data/BranchData";
 import { SmallCard } from "./SmallCard";
 import { LargeCard } from "./LargeCard";
 import { Container } from "../layout/Container";

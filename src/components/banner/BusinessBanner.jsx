@@ -1,9 +1,9 @@
-'use client'
-import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
-import { Container } from '../layout/Container';
+"use client";
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import { Container } from "../layout/Container";
 
-export default function BusinessBanner() {
+export default function BusinessBanner({ bannerData }) {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -20,7 +20,7 @@ export default function BusinessBanner() {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.8, ease: 'easeOut' },
+      transition: { duration: 0.8, ease: "easeOut" },
     },
   };
 
@@ -29,7 +29,7 @@ export default function BusinessBanner() {
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.6, ease: 'easeOut' },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
     hover: {
       scale: 1.05,
@@ -51,8 +51,7 @@ export default function BusinessBanner() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage:
-            'url("/assets/images/banner/banner_bg.jpeg")',
+          backgroundImage: 'url("/assets/images/banner/banner_bg.jpeg")',
         }}
       />
 
@@ -60,33 +59,29 @@ export default function BusinessBanner() {
       <div className="absolute inset-0 bg-gradient-to-r from-[#8E1A3D] via-[#8E1A3D] to-transparent opacity-70" />
 
       <Container>
-        {/* Content Container */}
         <div className="relative z-10 w-full h-full py-0 md:py-10 flex items-center">
-          <motion.div
-            className="w-full"
-            variants={containerVariants}
-          >
+          <motion.div className="w-full" variants={containerVariants}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
-              {/* Left Column - Heading */}
-              <motion.div
-                variants={itemVariants}
-              >
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
-                  Launch Your UAE<br className="hidden sm:block" />
+              {/* Left Column  */}
+              <motion.div variants={itemVariants}>
+                <motion.h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight whitespace-pre-line">
+                  {/* Launch Your UAE<br className="hidden sm:block" />
                   Business with<br className="hidden sm:block" />
-                  Confidence
-                </h1>
+                  Confidence */}
+                  {bannerData?.heading}
+                </motion.h2>
               </motion.div>
 
-              {/* Right Column - Description and Button */}
+              {/* Right Column  */}
               <motion.div
                 variants={itemVariants}
                 className="flex flex-col gap-4 sm:gap-6"
               >
                 <p className="text-sm sm:text-base md:text-lg text-white leading-relaxed font-light">
-                  Your complete partner for seamless business setup in Dubai and
+                  {/* Your complete partner for seamless business setup in Dubai and
                   across the UAE. We handle the complexities, so you can focus on
-                  your vision.
+                  your vision. */}
+                  {bannerData?.subheading}
                 </p>
 
                 {/* CTA Button */}
@@ -96,7 +91,9 @@ export default function BusinessBanner() {
                   whileTap="tap"
                   className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 md:px-10 py-3 sm:py-3 md:py-4 bg-[#C79A59] hover:bg-[#B8894A] text-gray-900 font-semibold rounded-lg transition-colors duration-200 shadow-lg w-fit"
                 >
-                  <span className="text-sm sm:text-base">Get a Free Consultation</span>
+                  <span className="text-sm sm:text-base">
+                    Get a Free Consultation
+                  </span>
                   <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5" />
                 </motion.button>
               </motion.div>

@@ -2,11 +2,14 @@
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Container } from "../layout/Container";
-import { processSteps, services } from "../data/ServiceDetails";
+import { processSteps, services } from "../../data/ServiceDetails";
 
-export default function BusinessSetupComponent() {
+export default function BusinessSetupComponent({section}) {
   const sectionRef = useRef(null);
   const [isInView, setIsInView] = useState(false);
+
+
+    if (!section) return null;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -113,10 +116,10 @@ export default function BusinessSetupComponent() {
               variants={titleVariants}
               className="text-center mb-2 sm:mb-3 md:mb-4"
             >
-              <h1 className="text-xl sm:text-2xl md:text-4xl xl:text-4xl font-bold text-white leading-5 md:leading-9">
+              <motion.h2 className="text-xl sm:text-2xl md:text-4xl xl:text-4xl font-bold text-white leading-5 md:leading-9">
                 From Concept to Launch
                 <br /> We Handle Everything
-              </h1>
+              </motion.h2>
             </motion.div>
 
             <motion.p
@@ -137,7 +140,7 @@ export default function BusinessSetupComponent() {
             animate={isInView ? "visible" : "hidden"}
           >
             <motion.div className="flex justify-center items-center gap-1 sm:gap-2 md:gap-3 lg:gap-4 w-full flex-wrap mb-6">
-              {processSteps.map((step, i) => (
+              {processSteps.map((service, i) => (
                 <div
                   key={i}
                   className="flex items-center gap-1 sm:gap-2 md:gap-3"
@@ -148,13 +151,13 @@ export default function BusinessSetupComponent() {
                     className="flex flex-col items-center"
                   >
                     <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full border-2 border-[#f2135dc1] hover:border-[#F2135D] flex items-center justify-center  transition-colors duration-300">
-                      <step.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-[#F2135D] hover:text-[#F2135D]" />
+                      <service.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-[#F2135D] hover:text-[#F2135D]" />
                     </div>
                     <span className="text-xs sm:text-xs md:text-sm lg:text-sm font-semibold text-pink-200 mt-1 sm:mt-1.5 md:mt-2">
-                      {step.label}
+                      {service.label}
                     </span>
                   </motion.div>
-                  {i < processSteps.length - 1 && (
+                  {i < service.length - 1 && (
                     <motion.div
                       custom={i}
                       variants={lineVariants}
@@ -167,10 +170,10 @@ export default function BusinessSetupComponent() {
           </motion.div>
 
           <motion.div className="flex-shrink-0 flex flex-col gap-3 md:gap-4">
-            <motion.div variants={descriptionVariants} className="text-center">
-              <h3 className="text-lg sm:text-xl md:text-2xl lg:text-2xl font-bold text-white">
-                Our Services Include:
-              </h3>
+            <motion.div variants={descriptionVariants} className="text-center mb-2">
+              <motion.h3 className="text-lg sm:text-xl md:text-2xl lg:text-2xl font-bold text-white">
+            {section?.headline}
+              </motion.h3>
             </motion.div>
 
             <motion.div
@@ -179,7 +182,7 @@ export default function BusinessSetupComponent() {
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
             >
-              {services.map((service, i) => (
+                     {section?.services?.map((service, i) => (
                 <motion.div
                   key={i}
                   custom={i}
@@ -189,19 +192,19 @@ export default function BusinessSetupComponent() {
                 >
                   <div className="mb-2 sm:mb-2.5 md:mb-3 lg:mb-4 flex-shrink-0">
                     <img
-                      src={service.icon}
-                      alt={service.title}
+                      src={service?.icon}
+                      alt={service?.name}
                       className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-12 lg:h-14 transition-all duration-300 transform group-hover:scale-110"
                     />{" "}
                   </div>
-                  <h4 className="text-sm sm:text-sm lg:text-lg font-semibold text-white mb-1 sm:mb-1.5 md:mb-2 lg:mb-3 leading-tight text-center">
-                    {service.title.split("\n").map((line, idx) => (
+                  <motion.h4 className="text-sm sm:text-sm lg:text-lg font-semibold text-white mb-1 sm:mb-1.5 md:mb-2 lg:mb-3 leading-tight text-center">
+                    {service?.name.split("\n").map((line, idx) => (
                       <div key={idx}>{line}</div>
                     ))}
-                  </h4>
-                  <p className="text-xs sm:text-xs md:text-xs lg:text-xs text-gray-300 leading-tight line-clamp-3 sm:line-clamp-4 flex-grow">
+                  </motion.h4>
+                  <motion.p className="text-xs sm:text-xs md:text-xs lg:text-xs text-gray-300 leading-tight line-clamp-3 sm:line-clamp-4 flex-grow">
                     {service.description}
-                  </p>
+                  </motion.p>
                 </motion.div>
               ))}
             </motion.div>

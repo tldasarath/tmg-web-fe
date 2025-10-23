@@ -28,23 +28,23 @@ const page = () => {
         <Navbar />
         {/* <HeroSection />
         <AboutSection/> */}
-        <HeroAboutScrollTransition/>
-        <Schedule/>
-        <ImageSection/>
+        <HeroAboutScrollTransition />
+        <Schedule />
+        <ImageSection />
         {/* <BusinessSection/>
         <ServicesSection/> */}
-        <BusinessServiceTransiton/>
-        <GoldenVisaBanner/>
-        <LicenseSetupPage/>
+        <BusinessServiceTransiton />
+        <GoldenVisaBanner />
+        <LicenseSetupPage />
         <BusinessSetupPackages />
-        <FounderSection/>
-        <BusinessDestination/>
-        <Gallery/>
-        <WhereAvailableSection/>
-        <FAQSection/>
-        <GetInTouch/>
-        <SocialMediaCards/>
-        <Footer/>
+        <FounderSection />
+        <BusinessDestination />
+        <Gallery />
+        <WhereAvailableSection />
+        <FAQSection />
+        <GetInTouch />
+        <SocialMediaCards />
+        <Footer />
       </div>
     </>
   );

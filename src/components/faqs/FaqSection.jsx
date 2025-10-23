@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "../layout/Container";
-import { faqsData } from "../data/FaqData";
+import { faqsData } from "../../data/FaqData";
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(2);
