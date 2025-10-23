@@ -15,17 +15,17 @@ const FounderSection = () => {
   const slides = [
     {
       id: 1,
-      image: '/assets/images/founder/18.png', // Replace with your image paths
+      image: '/assets/images/chairmanSection/18.png', // Replace with your image paths
       alt: 'Slide 1'
     },
     {
       id: 2,
-      image: '/assets/images/founder/150.png',
+      image: '/assets/images/chairmanSection/150.png',
       alt: 'Slide 2'
     },
     {
       id: 3,
-      image: '/assets/images/founder/18.png',
+      image: '/assets/images/chairmanSection/10.png',
       alt: 'Slide 3'
     }
   ];
@@ -69,35 +69,35 @@ const FounderSection = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 justify-items-center gap-8 items-center">
 
          
-            <div className="flex justify-center   lg:justify-start xl:w-80 w-72  relative h-96 xl:h-96 ">
-              <Image
-                src="/assets/images/chairman/chairman.jpg"
-                alt="Founder"
-                fill
-                className="object-contain rounded-2xl "
-                priority
-              />
+       <div className="flex justify-center lg:justify-start xl:w-80 w-72  relative h-96 xl:h-96  overflow-hidden">
+  <Image
+    src="/assets/images/chairman/chairman1.png"
+    alt="Founder"
+    fill
+    className="object-contain"
+    priority
+  />
 
-              {/* Name + Button overlay */}
-              <div className="absolute lg:bottom-11 bottom-12 left-4 right-4 
-    bg-white/30 backdrop-blur-md 
-    flex items-center rounded-2xl justify-between 
-    px-4 py-3 shadow-lg border border-white/20">
-                <div className="text-left">
-                  <p className="text-[#B2104B] font-semibold tracking-wide leading-tight">
-                    THAMEEM ABOOBACKER
-                  </p>
-                  <p className="text-gray-800 text-sm font-medium">
-                    Chairman of TMG Global
-                  </p>
-                </div>
+  {/* Name + Button overlay */}
+  <div className="absolute lg:bottom-11 bottom-12 left-4 right-4 
+      bg-white/30 backdrop-blur-md 
+      flex items-center rounded-2xl justify-between 
+      px-4 py-3 shadow-lg border border-white/20">
+    <div className="text-left">
+      <p className="text-[#B2104B] font-semibold tracking-wide leading-tight">
+        THAMEEM ABOOBACKER
+      </p>
+      <p className="text-gray-800 text-sm font-medium">
+        Chairman of TMG Global
+      </p>
+    </div>
 
-                <button   onClick={() => router.push('/about-us')}  className="bg-[#B2104B] text-white p-2 rounded-2xl hover:bg-[#8e0d3a] transition flex items-center justify-center w-9 h-9">
-                  <ArrowUpRight className="w-5 h-5" />
-                </button>
-              </div>
-
-            </div>
+    <button onClick={() => router.push('/about-us')}  
+      className="bg-[#B2104B] text-white p-2 rounded-2xl hover:bg-[#8e0d3a] transition flex items-center justify-center w-9 h-9">
+      <ArrowUpRight className="w-5 h-5" />
+    </button>
+  </div>
+</div>
 
 
 
@@ -119,22 +119,24 @@ const FounderSection = () => {
             <div className="flex justify-center lg:justify-end">
               <div className="relative md:w-60 w-52  ">
                 {/* Slider Container */}
-                <div className="relative md:h-60 h-52 rounded-2xl overflow-hidden ">
-                  {slides.map((slide, index) => (
-                    <div
-                      key={slide.id}
-                      className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'
-                        }`}
-                    >
-                      <Image
-                        src={slide.image}
-                        alt={slide.alt}
-                        fill
-                        className="object-fit"
-                      />
-                    </div>
-                  ))}
-                </div>
+              <div className="relative md:h-60 h-52 rounded-2xl overflow-hidden perspective-1000">
+  {slides.map((slide, index) => (
+    <div
+      key={slide.id}
+      className={`absolute inset-0 transition-transform duration-700 ease-in-out transform-style-preserve-3d ${
+        index === currentSlide ? 'rotate-y-0 z-10' : 'rotate-y-180 z-0'
+      }`}
+    >
+      <Image
+        src={slide.image}
+        alt={slide.alt}
+        fill
+        className="object-cover backface-hidden"
+      />
+    </div>
+  ))}
+</div>
+
 
                 {/* Dots Indicator */}
                 <div className="flex justify-center mt-6 space-x-3">

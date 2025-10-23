@@ -4,8 +4,7 @@ import { Container } from '../layout/Container'
 
 const Gallery = () => {
   return (
-    <section className="w-full py-16 bg-white">
-      <Container>
+    <section className="w-full py-8 px-4 md:px-8">
         {/* Heading and Description */}
         <div className="text-center mb-10">
           <h2 className="text-4xl sm:text-5xl text-[#49051E] lg:text-[3rem] text-maroon-900 mb-6 lg:mb-8 leading-tight font-bold">Gallery</h2>
@@ -17,13 +16,12 @@ const Gallery = () => {
         {/* Circular Gallery Section */}
         <div style={{ height: '600px', position: 'relative' }}>
           <CircularGallery
-            bend={3}
+            bend={0}
             textColor="#49051E"
             borderRadius={0.05}
             scrollEase={0.02}
           />
         </div>
-      </Container>
     </section>
   )
 }

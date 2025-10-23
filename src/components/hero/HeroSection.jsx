@@ -208,7 +208,7 @@ export const HeroSection = () => {
         {/* Elegant bottom fade for seamless transition to next section */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/40 to-transparent z-10" />
       </section>
-
+                         
       <BottomCTA />
     </>
   );
