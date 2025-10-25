@@ -13,7 +13,7 @@ import { ServiceDetails } from "@/data/ServiceDetails";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-const page = () => {
+const Page = () => {
   const params = useParams();
   const [service, setService] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -102,4 +102,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
