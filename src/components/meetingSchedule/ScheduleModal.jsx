@@ -12,16 +12,31 @@ export const ScheduleModal = ({ selectedDate, onClose }) => {
 
   const todayISO = new Date().toISOString().split("T")[0];
 
-  const handleSubmit = () => {
-    setIsSubmitting(true);
-    setTimeout(() => {
-      const dateToUse = showCalendar ? manualDate : selectedDate.fullDate;
-      const url = `https://wa.me/919999999999?text=Hello, I'd like to schedule a meeting on ${dateToUse}.%0AName: ${name}%0AMessage: ${message}`;
-      window.open(url, "_blank");
-      setIsSubmitting(false);
-      onClose();
-    }, 1000);
-  };
+const handleSubmit = () => {
+  setIsSubmitting(true);
+
+  setTimeout(() => {
+    const dateToUse = showCalendar ? manualDate : selectedDate.fullDate;
+
+    // ✅ Must be international format: UAE -> 971 + number without leading zero
+    const phoneNumber = "971545267777"; // use full international number (no + sign)
+
+    // ✅ Encode message safely for WhatsApp
+    const whatsappMessage = encodeURIComponent(
+      `Hello, I'd like to schedule a meeting on ${dateToUse}.\n\nName: ${name}\nMessage: ${message}`
+    );
+
+    // ✅ Correct WhatsApp API format
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+
+    // ✅ Open chat in a new tab
+    window.open(whatsappUrl, "_blank");
+
+    setIsSubmitting(false);
+    onClose();
+  }, 1000);
+};
+
 
   return (
     <motion.div
@@ -157,7 +172,6 @@ export const ScheduleModal = ({ selectedDate, onClose }) => {
             />
           </div>
 
-
           <div className="relative bg-white rounded-xl border-2 border-gray-200 focus-within:ring-2 focus-within:ring-[#49051E] transition-all">
             <MessageSquare className="absolute left-4 top-4 w-5 h-5 text-gray-400" />
             <motion.textarea
@@ -168,7 +182,6 @@ export const ScheduleModal = ({ selectedDate, onClose }) => {
               onChange={(e) => setMessage(e.target.value)}
             />
           </div>
-
         </motion.div>
 
         <motion.button

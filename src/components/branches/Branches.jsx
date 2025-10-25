@@ -71,24 +71,28 @@ const WhereAvailableSection = () => {
             transition={{ duration: 0.6 }}
             className="mb-6 sm:mb-8 lg:mb-12"
           >
+            {/* <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-2 sm:mb-3">
+             Where We’re Available in the UAE
+            </h2>
+  */}
             <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-2 sm:mb-3">
-              Where available in
+              Connecting You Across Every Emirate
             </h2>
             <p className="text-white/80 text-xs sm:text-sm lg:text-base">
-              Rorem ipsum dolor sit amet, consectetur adipiscing elit
+              Discover TMG Global’s trusted network of branches across the UAE.
             </p>
           </motion.div>
 
           {/* Main Content Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 xl:gap-10">
-            <div className="h-[400px] sm:h-[500px] lg:h-[550px] xl:h-[600px] mb-5 md:mb-6 lg:mb-0">
+            <div className="h-[400px] sm:h-[500px] lg:h-[550px] xl:h-[500px] mb-5 md:mb-6 lg:mb-0">
               <AnimatePresence mode="wait">
                 <LargeCard location={BranchData[selected]} key={selected} />
               </AnimatePresence>
             </div>
 
             {/* Right: Vertical Carousel */}
-            <div className="h-[400px] sm:h-[500px] lg:h-[550px] xl:h-[600px]">
+            <div className="h-[400px] sm:h-[500px] lg:h-[550px] xl:h-[500px]">
               <div
                 ref={carouselRef}
                 className="h-full overflow-y-auto space-y-3 sm:space-y-4 pr-0 scrollbar-hide scrollbar-thumb-[#B73B5E]/60 scrollbar-track-transparent"

@@ -9,7 +9,7 @@ import { licenseCategories } from "../../data/LicenseCategories";
 const LicenseSetupPage = () => {
   const firstCardRef = useRef(null);
 
-  // Track which card is hovered
+
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   // Auto-open first card when it comes into view
@@ -39,7 +39,7 @@ const LicenseSetupPage = () => {
   }, []);
 
   return (
-    <div className=" h-auto lg:h-[900px] bg-white relative overflow-hidden py-4 md:py-8">
+    <div className=" h-auto xl:h-[900px] bg-white relative overflow-hidden py-4 md:py-8">
       <div className="absolute top-0 right-0 w-64 h-64 bg-amber-200 rounded-full blur-3xl opacity-30"></div>
 
       <div
@@ -75,7 +75,7 @@ const LicenseSetupPage = () => {
               <div
                 key={index}
                 className="container flex justify-center"
-                ref={index === 0 ? firstCardRef : null} // Only first card
+                ref={index === 0 ? firstCardRef : null}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
@@ -103,15 +103,15 @@ const LicenseSetupPage = () => {
                       <p>{category.description}</p>
 
                       {/* Hide title when hovered */}
-                      {hoveredIndex !== index && <h3 cla>{category.title}</h3>}
+                      {hoveredIndex !== index && <h3>{category.title}</h3>}
 
                       {/* Show button only on hover */}
                       {hoveredIndex === index && (
-                      <div className="">
+                        <div className="">
                           <button className="mt-4 bg-white text-[#941D43] font-bold py-2 px-4 rounded">
-                          Learn More
-                        </button>
-                      </div>
+                            Learn More
+                          </button>
+                        </div>
                       )}
                     </div>
                   </div>

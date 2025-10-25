@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import { MapPin, Phone } from "lucide-react";
 
 export const SmallCard = ({ location, isSelected, onClick }) => (
   <motion.div
@@ -29,13 +29,34 @@ export const SmallCard = ({ location, isSelected, onClick }) => (
         >
           {location.title}
         </h4>
-        <p
-          className={`text-xs sm:text-sm ${
-            isSelected ? "text-black/70" : "text-white/70"
-          }`}
-        >
-          {location.description}
-        </p>
+        <div className="flex items-center gap-2 mb-3">
+          <Phone
+            className={`w-4 h-4 sm:w-5 sm:h-5 ${
+              isSelected ? "text-black" : "text-white"
+            }`}
+          />
+          <p
+            className={`text-xs sm:text-sm ${
+              isSelected ? "text-black/70" : "text-white/70"
+            }`}
+          >
+            {location.phone}
+          </p>
+        </div>
+        <div className="flex items-center gap-2">
+          <MapPin
+            className={`w-4 h-4 sm:w-5 sm:h-5 ${
+              isSelected ? "text-black" : "text-white"
+            }`}
+          />
+          <p
+            className={`text-xs sm:text-sm whitespace-pre-line ${
+              isSelected ? "text-black/70" : "text-white/70"
+            }`}
+          >
+            {location.location}
+          </p>
+        </div>
       </div>
     </div>
   </motion.div>

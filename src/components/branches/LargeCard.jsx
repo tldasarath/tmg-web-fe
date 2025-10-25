@@ -1,5 +1,6 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, MapPin, Phone, PinIcon, Pointer } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export const LargeCard = ({ location }) => (
   <motion.div
@@ -13,9 +14,28 @@ export const LargeCard = ({ location }) => (
       <h3 className="text-white text-xl sm:text-2xl lg:text-3xl font-bold mb-2 sm:mb-3">
         {location.title}
       </h3>
-      <p className="text-white/90 text-xs sm:text-sm lg:text-base leading-relaxed">
-        {location.description}
-      </p>
+<div className="flex items-center gap-2 mb-3">
+  <Phone className={`w-4 h-4 sm:w-5 sm:h-5 text-white`} />
+  <a 
+    href={`tel:${location.phone}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-white/90 text-xs sm:text-sm lg:text-base leading-relaxed hover:text-white transition-colors"
+  >
+    {location.phone}
+  </a>
+</div>
+<div className="flex items-center  gap-2">
+  
+  <MapPin className={`w-4 h-4 sm:w-5 sm:h-5 text-white`} />
+  <p
+ 
+
+    className="text-white/90 text-xs sm:text-sm lg:text-base leading-relaxed hover:text-white transition-colors whitespace-pre-line"
+  >
+    {location.location}
+  </p>
+</div>
     </div>
 
     {/* Image Container */}
@@ -39,13 +59,19 @@ export const LargeCard = ({ location }) => (
       </div>
 
       {/* Arrow button  */}
-      <motion.button
-        whileHover={{ scale: 1.1, rotate: 45 }}
-        whileTap={{ scale: 0.95 }}
-        className="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 lg:bottom-4 lg:right-4 bg-[#C79A59] text-white p-2 sm:p-2.5 lg:p-3 rounded-xl shadow-lg hover:bg-[#B8894D] transition-colors z-10"
+  <Link 
+        href={location.link} 
+        target="_blank" 
+        rel="noopener noreferrer"
       >
-        <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
-      </motion.button>
+        <motion.button
+          whileHover={{ scale: 1.1, rotate: 45 }}
+          whileTap={{ scale: 0.95 }}
+          className="absolute bottom-2 right-2 sm:bottom-3 sm:right-3 lg:bottom-4 lg:right-4 bg-[#C79A59] text-white p-2 sm:p-2.5 lg:p-3 rounded-xl shadow-lg hover:bg-[#B8894D] transition-colors z-10"
+        >
+          <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
+        </motion.button>
+      </Link>
     </div>
   </motion.div>
 );

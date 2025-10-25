@@ -1,10 +1,20 @@
 export const navLinks = [
-  { label: "Home", href: "/home" },
+  { label: "Home", href: "/" },
   { label: "About", href: "/about-us" },
-  { label: "Service", href: "/service", hasDropdown: true, dropdownType: "service" },
+  {
+    label: "Service",
+    href: "/service",
+    hasDropdown: true,
+    dropdownType: "service",
+  },
   { label: "Blog", href: "/blogs" },
   { label: "Gallery", href: "/gallery" },
-  { label: "License", href: "/license", hasDropdown: true, dropdownType: "license" },
+  {
+    label: "License",
+    href: "/license",
+    hasDropdown: true,
+    dropdownType: "license",
+  },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -76,22 +86,28 @@ export const serviceItems = [
 ];
 
 export const licenseItems = [
-
   {
     title: "Professional License",
-    href: "/license/professional-license",
+    href: "/license",
+    
+    // href: "/license/professional-license",
   },
-    {
+  {
     title: "Commercial License",
-    href: "/license/commercial-license",
+    href: "/license",
+    
+    // href: "/license/commercial-license",
   },
   {
     title: "Industrial License",
-    href: "/license/industrial-license",
+    href: "/license",
+    
+    // href: "/license/industrial-license",
   },
   {
     title: "E-Trader License",
-    href: "/license/e-trader-license",
-  }
-
+    href: "/license",
+    
+    // href: "/license/e-trader-license",
+  },
 ];

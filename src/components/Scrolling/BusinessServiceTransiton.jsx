@@ -11,22 +11,28 @@ const BusinessServiceTransition = () => {
     offset: ["start start", "end end"],
   });
 
-  // 👇 BusinessSection: only slightly scale while scrolling
+  // only slightly scale while scrolling
   const scale1 = useTransform(scrollYProgress, [0, 0.3, 0.6], [1, 0.95, 0.9]);
 
-  // 👇 ServicesSection: stays 1 while visible, no zoom out after leaving
+  // stays 1 while visible, no zoom out after leaving
   const scale2 = useTransform(scrollYProgress, [0, 0.5, 0.8, 1], [1, 1, 1, 1]);
 
   return (
     <div className="w-full">
       <div ref={containerRef} className="flex flex-col">
         {/* Business Section */}
-        <motion.div className="c-card sticky top-0 w-full" style={{ scale: scale1 }}>
+        <motion.div
+          className="c-card sticky top-0 w-full "
+          style={{ scale: scale1 }}
+        >
           <BusinessSection />
         </motion.div>
 
         {/* Services Section */}
-        <motion.div className="c-card sticky top-0 w-full pb-8  " style={{ scale: scale2 }}>
+        <motion.div
+          className="c-card sticky top-0 w-full pb-8  "
+          style={{ scale: scale2 }}
+        >
           <ServicesSection index={1} />
         </motion.div>
       </div>

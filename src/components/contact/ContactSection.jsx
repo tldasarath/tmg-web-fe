@@ -1,8 +1,10 @@
 'use client';
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useRef, useEffect } from 'react';
+import { motion, useInView, useAnimation } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { generateWhatsAppMessage } from '../common/WhatsAppMessage';
+import { Container } from '../layout/Container';
 
 export default function GetInTouch() {
   const [formData, setFormData] = useState({
@@ -12,29 +14,77 @@ export default function GetInTouch() {
     message: ''
   });
 
+  const containerRef = useRef(null);
+  const leftRef = useRef(null);
+  const rightRef = useRef(null);
+  const formFieldsRef = useRef(null);
+
+  const containerInView = useInView(containerRef, { once: false, amount: 0.3 });
+  const leftInView = useInView(leftRef, { once: false, amount: 0.4 });
+  const rightInView = useInView(rightRef, { once: false, amount: 0.4 });
+  const formFieldsInView = useInView(formFieldsRef, { once: false, amount: 0.2 });
+
+  const leftControls = useAnimation();
+  const rightControls = useAnimation();
+  const formFieldControls = useAnimation();
+
+  useEffect(() => {
+    rightControls.start(rightInView ? { opacity: 1, x: 0, transition: { duration: 0.8 } } : { opacity: 0, x: 100 });
+  }, [rightInView, rightControls]);
+
+  useEffect(() => {
+    leftControls.start(leftInView ? { opacity: 1, x: 0, scaleX: 1, transition: { duration: 0.9, delay: 0.2 } } : { opacity: 0, x: 150, scaleX: 0 });
+  }, [leftInView, leftControls]);
+
+  useEffect(() => {
+    formFieldControls.start(formFieldsInView ? 'visible' : 'hidden');
+  }, [formFieldsInView, formFieldControls]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    const message = generateWhatsAppMessage(formData);
+    const phoneNumber = '971545267777'; 
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappUrl, '_blank');
   };
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const fieldVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.1 + 0.5, duration: 0.6 }
+    })
+  };
+
+  const textVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.15 + 0.4, duration: 0.6 }
+    })
   };
 
   return (
-    <div className="w-full flex items-center justify-center py-4 sm:py-6 lg:py-8">
-      <div className="flex flex-col lg:flex-row w-full max-w-[1083px] mx-auto">
-        {/* Left Section - Text with Background Image */}
+    <div 
+      ref={containerRef}
+      className="w-full flex items-center justify-center py-4 sm:py-6 lg:py-8"
+    >
+      <Container>
+
+      <div className="flex flex-col lg:flex-row w-full max-w-[1083px] mx-auto overflow-hidden rounded-2xl shadow-sm"> 
+        
+        {/* Left Section */}
         <motion.div 
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative bg-[#941D43]/70 w-full lg:w-[611px] h-[400px] sm:h-[480px] lg:h-[573px] px-6 py-8 sm:px-10 sm:py-10 md:px-12 md:py-12 lg:px-14 lg:py-14 xl:px-16 xl:py-16 flex items-center overflow-hidden"
+          ref={leftRef}
+          initial={{ opacity: 0, x: 150, scaleX: 0 }}
+          animate={leftControls}
+          style={{ originX: 1 }}
+          className="relative bg-[#941D43]/70 w-full lg:w-[611px] h-[400px] sm:h-[480px] lg:h-[573px] px-6 py-8 sm:px-10 sm:py-10 md:px-12 md:py-12 lg:px-14 lg:py-14 xl:px-16 xl:py-16  items-center rounded-t-2xl lg:rounded-l-2xl lg:rounded-tr-none overflow-hidden hidden lg:flex"
         >
-          {/* Background Image - Replace with your actual image */}
           <div 
             className="absolute inset-0 bg-cover bg-center opacity-30"
             style={{
@@ -42,143 +92,104 @@ export default function GetInTouch() {
               backgroundBlendMode: 'multiply'
             }}
           />
-          
-          {/* Pattern Overlay */}
-          {/* <div 
-            className="absolute inset-0 opacity-10"
-            style={{
-              backgroundImage: `url("/assets/images/contact/bg-Img.png")`,
-              objectFit: 'cover',
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'center',
-              backgroundSize: 'cover',
-              // mixBlendMode: 'overlay' 
-            }}
-          /> */}
-          
-          {/* Decorative Building Silhouette */}
-          {/* <div className="absolute right-0 bottom-0 w-[45%] sm:w-[40%] lg:w-[45%] h-[65%] sm:h-[70%] opacity-15">
-            <svg viewBox="0 0 200 300" className="w-full h-full" preserveAspectRatio="xMaxYMax meet">
-              <rect x="20" y="50" width="60" height="250" fill="currentColor" className="text-white"/>
-              <rect x="90" y="80" width="50" height="220" fill="currentColor" className="text-white"/>
-              <rect x="150" y="100" width="40" height="200" fill="currentColor" className="text-white"/>
-              {[...Array(8)].map((_, i) => (
-                <g key={i}>
-                  <rect x="30" y={70 + i * 30} width="15" height="20" fill="currentColor" className="text-pink-300 opacity-60"/>
-                  <rect x="55" y={70 + i * 30} width="15" height="20" fill="currentColor" className="text-pink-300 opacity-60"/>
-                  <rect x="100" y={90 + i * 30} width="12" height="18" fill="currentColor" className="text-pink-300 opacity-60"/>
-                  <rect x="118" y={90 + i * 30} width="12" height="18" fill="currentColor" className="text-pink-300 opacity-60"/>
-                </g>
-              ))}
-            </svg>
-          </div> */}
-
           <div className="relative z-10 w-full">
             <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
+              custom={0}
+              variants={textVariants}
+              initial="hidden"
+              animate={leftInView ? "visible" : "hidden"}
               className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] xl:text-[44px] font-bold text-white mb-4 sm:mb-5 lg:mb-6 leading-tight"
             >
-              Torem ipsum dolor turpis molestie
+              Your Next Move, Perfected with TMG
             </motion.h2>
+
             <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
+              custom={1}
+              variants={textVariants}
+              initial="hidden"
+              animate={leftInView ? "visible" : "hidden"}
+              className="text-white text-xs sm:text-sm md:text-[15px] lg:text-[16px] leading-relaxed mb-3"
+            >
+              At TMG, we’re more than just a service provider — we’re your strategic partner in growth. Whether you’re 
+              setting up a new business in the UAE, managing corporate operations, or seeking expert support in media and 
+              marketing, our dedicated team is here to make every step seamless.
+            </motion.p>
+
+            <motion.p 
+              custom={2}
+              variants={textVariants}
+              initial="hidden"
+              animate={leftInView ? "visible" : "hidden"}
               className="text-white text-xs sm:text-sm md:text-[15px] lg:text-[16px] leading-relaxed"
             >
-              Jorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent perClass aptent taciti sociosqu ad litora torquent Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.
+              From company formation, visa services, and document clearing to branding, creative production, and digital 
+              strategy, we offer complete solutions tailored to your goals.
             </motion.p>
           </div>
         </motion.div>
 
         {/* Right Section - Contact Form */}
         <motion.div 
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="bg-black w-full lg:w-[472px] h-[500px] sm:h-[540px] lg:h-[573px] px-6 py-8 sm:px-8 sm:py-10 md:px-10 md:py-12 lg:px-12 lg:py-14 flex items-center justify-center"
+          ref={rightRef}
+          initial={{ opacity: 0, x: 100 }}
+          animate={rightControls}
+          className="bg-black w-full lg:w-[472px] h-[500px] sm:h-[540px] lg:h-[573px] px-6 py-8 sm:px-8 sm:py-10 md:px-10 md:py-12 lg:px-12 lg:py-14 flex items-center justify-center rounded-b-2xl rounded-t-2xl lg:rounded-r-2xl lg:rounded-bl-none lg:rounded-tl-none"
         >
           <div className="w-full max-w-md">
             <motion.h3 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
+              custom={0}
+              variants={textVariants}
+              initial="hidden"
+              animate={rightInView ? "visible" : "hidden"}
               className="text-2xl sm:text-3xl md:text-[36px] lg:text-[40px] font-bold text-white mb-5 sm:mb-6 lg:mb-8"
             >
               GET IN TOUCH
             </motion.h3>
-            
-            <div className="space-y-3 sm:space-y-4 lg:space-y-5">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.6 }}
-              >
-                <label className="block text-white text-xs sm:text-sm mb-1.5 sm:mb-2">Full Name</label>
-                <input
-                  type="text"
-                  name="fullName"
-                  value={formData.fullName}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 sm:px-4 sm:py-2.5 lg:py-3 text-sm sm:text-base rounded-lg bg-white text-black focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
-                />
-              </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.6 }}
-              >
-                <label className="block text-white text-xs sm:text-sm mb-1.5 sm:mb-2">Phone Number</label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 sm:px-4 sm:py-2.5 lg:py-3 text-sm sm:text-base rounded-lg bg-white text-black focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
-                />
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.6 }}
-              >
-                <label className="block text-white text-xs sm:text-sm mb-1.5 sm:mb-2">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 sm:px-4 sm:py-2.5 lg:py-3 text-sm sm:text-base rounded-lg bg-white text-black focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
-                />
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7, duration: 0.6 }}
-              >
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Type Your Message"
-                  rows={3}
-                  className="w-full px-3 py-2 sm:px-4 sm:py-2.5 lg:py-3 text-sm sm:text-base rounded-lg bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition resize-none"
-                />
-              </motion.div>
+            <div ref={formFieldsRef} className="space-y-3 sm:space-y-4 lg:space-y-5">
+              {['fullName', 'phone', 'email', 'message'].map((field, i) => (
+                <motion.div
+                  key={field}
+                  custom={i}
+                  variants={fieldVariants}
+                  initial="hidden"
+                  animate={formFieldsInView ? "visible" : "hidden"}
+                >
+                  {field !== 'message' ? (
+                    <>
+                      <label className="block text-white text-xs sm:text-sm mb-1.5 sm:mb-2 capitalize">
+                        {field === 'fullName' ? 'Full Name' : field === 'phone' ? 'Phone Number' : 'Email'}
+                      </label>
+                      <input
+                        type={field === 'email' ? 'email' : field === 'phone' ? 'tel' : 'text'}
+                        name={field}
+                        value={formData[field]}
+                        onChange={handleChange}
+                        className="w-full px-3 py-2 sm:px-4 sm:py-2.5 lg:py-3 text-sm sm:text-base rounded-lg bg-white text-black focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
+                      />
+                    </>
+                  ) : (
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      placeholder="Type Your Message"
+                      rows={3}
+                      className="w-full px-3 py-2 sm:px-4 sm:py-2.5 lg:py-3 text-sm sm:text-base rounded-lg bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition resize-none"
+                    />
+                  )}
+                </motion.div>
+              ))}
 
               <motion.button
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8, duration: 0.6 }}
+                custom={4}
+                variants={fieldVariants}
+                initial="hidden"
+                animate={formFieldsInView ? "visible" : "hidden"}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleSubmit}
-                className="w-full bg-[#C79A59] text-black font-semibold py-2.5 sm:py-3 px-4 sm:px-6 text-sm sm:text-base rounded-full hover:from-yellow-600 hover:to-yellow-700 transition flex items-center justify-center gap-2 mt-4 sm:mt-5 lg:mt-6"
+                className="w-full bg-[#C79A59] text-white font-semibold py-2.5 sm:py-3 px-4 sm:px-6 text-sm sm:text-base rounded-full hover:bg-[#B8894D] transition flex items-center justify-center gap-2 mt-4 sm:mt-5 lg:mt-6"
               >
                 Submit
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -187,6 +198,8 @@ export default function GetInTouch() {
           </div>
         </motion.div>
       </div>
+      </Container>
+
     </div>
   );
 }

@@ -12,7 +12,7 @@ export const HeroSection = () => {
   const videoRef = useRef(null);
 
   const heroTexts = [
-    "Gorem ipsum, consectetur adipiscing. Nunc vulputate libero et",
+    "Empowering Businesses to Succeed in the UAE with Expert Setup Solutions",
     "Transform Your Business Vision Into Reality with Expert Guidance",
     "Unlock Global Opportunities with Professional Business Setup Services",
   ];
@@ -121,7 +121,7 @@ export const HeroSection = () => {
 
   return (
     <>
-      <section className="relative h-screen w-full overflow-hidden bg-gray-900">
+      <section id="hero-section" className="relative h-screen w-full overflow-hidden bg-gray-900">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/60 z-10" />
 
@@ -161,9 +161,9 @@ export const HeroSection = () => {
         <SocialSidebar />
 
              {/* LetsTalkCard - Positioned on right side */}
-        <div className=" hidden md:block absolute right-14 bottom-[20%] md:bottom-[20%] lg:bottom-1/4 transform translate-y-1/2 z-30">
+        {/* <div className=" hidden md:block absolute right-14 bottom-[20%] md:bottom-[20%] lg:bottom-1/4 transform translate-y-1/2 z-30">
           <LetsTalkCard />
-        </div>
+        </div> */}
 
         {/* Main Content */}
         <div id="home" className="relative z-20 h-full flex flex-col">

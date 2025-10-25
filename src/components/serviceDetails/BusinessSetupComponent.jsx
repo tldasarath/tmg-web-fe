@@ -8,7 +8,7 @@ export default function BusinessSetupComponent({section}) {
   const sectionRef = useRef(null);
   const [isInView, setIsInView] = useState(false);
 
-
+console.log("sec",section)
     if (!section) return null;
 
   useEffect(() => {
@@ -102,7 +102,7 @@ export default function BusinessSetupComponent({section}) {
   return (
     <div
       ref={sectionRef}
-      className="w-full min-h-screen sm:min-h-screen md:min-h-screen lg:h-[724px]  bg-[linear-gradient(180deg,rgba(152,32,68,1)_0%,rgba(100,14,41,1)_100%)] bg-center overflow-hidden  py-6 sm:py-8 md:py-10 lg:py-8 flex items-center justify-cente"
+      className="w-full min-h-screen sm:min-h-screen md:min-h-screen lg:h-fit  bg-[linear-gradient(180deg,rgba(152,32,68,1)_0%,rgba(100,14,41,1)_100%)] bg-center overflow-hidden  py-6 sm:py-8 md:py-10 lg:py-8 flex items-center justify-cente"
     >
       <Container>
         <motion.div

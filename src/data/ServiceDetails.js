@@ -38,9 +38,7 @@ export const ServiceDetails = [
       },
     ],
     banner: {
-      heading: `
-        Launch Your UAE Business with Confidence
-        `,
+      heading: `Launch Your UAE Business with Confidence`,
       subheading: `
      Your complete partner for seamless business setup in Dubai and across 
      the UAE. We handle the complexities, so you can focus on your vision.
@@ -58,12 +56,12 @@ export const ServiceDetails = [
         tax-free income, and easy access to international markets, the UAE provides the perfect environment for entrepreneurs, investors, 
         and corporations to grow. Whether you’re launching a new brand or expanding globally, Dubai’s ecosystem offers endless opportunities for success.`,
         ],
-        image: "/assets/images/services/",
+        image: "/assets/images/services/Business1.png",
       },
       {
         id: "section2",
         title: "Our Comprehensive Business Setup Services",
-        headline: "From Concept to Launch — We Handle Everything",
+        headline: "From Concept to Launch  We Handle Everything",
         content: [
           `TMG Global provides complete business setup solutions, guiding you through each step with clarity and precision. 
         Our experts manage all requirements, helping you choose the best structure and jurisdiction for your goals.`,
@@ -71,35 +69,35 @@ export const ServiceDetails = [
         services: [
           {
             id: 1,
-            icon: "/assets/images/icons/icons8-business1.png",
+            icon: "/assets/images/icons/service_img1.1.png",
             name: "Mainland\nBusiness Setup",
             description:
               "Register with Dubai’s Department of Economic Development (DED) and access the entire UAE market.",
           },
           {
             id: 2,
-            icon: "/assets/images/icons/icons8-business2.png",
+            icon: "/assets/images/icons/service_img1.2.png",
             name: "Freezone\nBusiness Setup",
             description:
               "100% foreign ownership, tax exemptions, and simplified import/export processes.",
           },
           {
             id: 3,
-            icon: "/assets/images/icons/icons8-business3.png",
+            icon: "/assets/images/icons/service_img1.3.png",
             name: "Offshore\nBusiness Setup",
             description:
               "Ideal for asset protection, privacy, and global trade.",
           },
           {
             id: 4,
-            icon: "/assets/images/icons/icons8-business4.png",
+            icon: "/assets/images/icons/service_img1.4.png",
             name: "Trade\nLicense Processing",
             description:
               "Fast approval for commercial, industrial, or professional activities.",
           },
           {
             id: 5,
-            icon: "/assets/images/icons/icons8-business5.png",
+            icon: "/assets/images/icons/service_img1.5.png",
             name: "PRO & Visa\nServices",
             description: "Hassle-free investor and employee visa arrangements.",
           },
@@ -154,7 +152,7 @@ export const ServiceDetails = [
     id: 2,
     slug: "company-formation-dubai",
     title: "COMPANY FORMATION IN DUBAI, UAE",
-    heading: "Company Formation in Dubai\n With Complete Professional Support",
+    heading: "Company Formation\nin Dubai With Complete\nProfessional Support",
 
     image: "/assets/images/services/service2_img.png",
 
@@ -193,9 +191,7 @@ every stage of company formation in the UAE.
       },
     ],
     banner: {
-      heading: `
-        Build Your UAE Company with Confidence
-        `,
+      heading: `Build Your UAE Company with Confidence`,
       subheading: `
          Your trusted partner for seamless company formation in Dubai 
          and across the UAE. We manage the process from start to finish, 
@@ -220,7 +216,7 @@ every stage of company formation in the UAE.
         company formation process is smooth, efficient, and fully compliant.
         `,
         ],
-        image: "/assets/images/services/",
+        image: "/assets/images/services/Business2.png",
       },
       {
         id: "section2",
@@ -236,54 +232,54 @@ every stage of company formation in the UAE.
         services: [
           {
             id: 1,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img2.1.png",
             name: "Mainland Company Formation",
             description:
               "Operate across the UAE with full access to local and international markets.",
           },
           {
             id: 2,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img2.2.png",
             name: "Freezone Company Formation",
             description:
               "Enjoy 100% ownership, tax exemptions, and simplified trading processes.",
           },
           {
             id: 3,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img2.3.png",
             name: "Offshore Company Setup",
             description:
               "Perfect for international trade, privacy protection, and asset management.",
           },
           {
             id: 4,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img2.4.png",
             name: "Trade Name Registration",
             description:
               "Assistance in reserving and approving your desired company name",
           },
           {
             id: 5,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img2.5.png",
             name: "Memorandum of Association (MOA)",
             description: "Drafting and notarizing essential legal documents.",
           },
           {
             id: 6,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img2.6.png",
             name: "License Issuance & Renewal",
             description:
               "Handling all documentation and government coordination for trade licenses.",
           },
           {
             id: 7,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img2.7.png",
             name: "Corporate Bank Account Assistance",
             description: "Helping you open accounts with top UAE banks.",
           },
           {
             id: 8,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img2.8.png",
             name: "Investor & Partner Visa Services",
             description: "End-to-end visa assistance for smooth onboarding.",
           },
@@ -353,7 +349,8 @@ Not necessarily. In many cases, TMG Global can assist you in completing the proc
     id: 3,
     slug: "uae-golden-visa",
     title: "UAE GOLDEN VISA SERVICES",
-    heading: "Why Dubai is the Perfect Business Destination",
+    heading:
+      "Golden Visa Services in\nthe UAE Expert Assistance\nfor Investors & Professionals",
 
     image: "/assets/images/services/service3_img.png",
 
@@ -391,9 +388,7 @@ dynamic and business-friendly countries in the world.
       },
     ],
     banner: {
-      heading: `
-       Secure Your Future in the UAE with the Golden Visa
-        `,
+      heading: ` Secure Your Future in the UAE with the Golden Visa `,
       subheading: `
         Attain 5- or 10-year long-term residency for you and your family.
          Expert guidance tailored for investors, entrepreneurs, and exceptional 
@@ -419,7 +414,7 @@ dynamic and business-friendly countries in the world.
         company formation process is smooth, efficient, and fully compliant.
         `,
         ],
-        image: "/assets/images/services/",
+        image: "/assets/images/services/Business3.png",
       },
       {
         id: "section2",
@@ -435,35 +430,35 @@ dynamic and business-friendly countries in the world.
         services: [
           {
             id: 1,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img3.1.png",
             name: "Eligibility Assessment",
             description:
               "We review your profile and advise on the suitable category.",
           },
           {
             id: 2,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img3.2.png",
             name: "Document Collection & Preparation",
             description:
               "Assistance in gathering and validating all required paperwork.",
           },
           {
             id: 3,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img3.3.png",
             name: "Application Submission",
             description:
               "We liaise with the relevant authorities including ICA and GDRFA.",
           },
           {
             id: 4,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img3.4.png",
             name: "Medical & Emirates ID Processing",
             description: "Guidance through the health and ID requirements.",
           },
 
           {
             id: 5,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img3.5.png",
             name: "Visa Stamping",
             description:
               "Ensure your long-term residency is finalized without delays.",
@@ -530,7 +525,8 @@ The Golden Visa offers numerous advantages over standard visas. Key benefits inc
     id: 4,
     slug: "pro-services-dubai",
     title: "PRO SERVICES IN DUBAI",
-    heading: "Why Dubai is the Perfect Business Destination",
+    heading:
+      "Your Trusted PRO Partner\nin Dubai For Visas,\nLicenses, and Documentation",
 
     image: "/assets/images/services/service4_img.png",
 
@@ -565,8 +561,7 @@ manage everything from approvals and registrations to renewals and cancellations
       },
     ],
     banner: {
-      heading: `
-        Streamline Your Government Liaison Work
+      heading: `Streamline Your Government Liaison Work
         `,
       subheading: `
     Save time and resources by outsourcing your PRO tasks to our experienced team. We 
@@ -589,7 +584,7 @@ manage everything from approvals and registrations to renewals and cancellations
        Our PRO services ensure that your company remains compliant, avoiding delays and penalties.
         `,
         ],
-        image: "/assets/images/services/",
+        image: "/assets/images/services/Business4.png",
       },
       {
         id: "section2",
@@ -604,32 +599,32 @@ manage everything from approvals and registrations to renewals and cancellations
         services: [
           {
             id: 1,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img4.1.png",
             name: "Visa Processing",
             description:
               "Applications, renewals, cancellations, and status changes.",
           },
           {
             id: 2,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img4.2.png",
             name: "Work Permits & Labour Cards",
             description: "Issuance and renewal for employees.",
           },
           {
             id: 3,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img4.3.png",
             name: "Document Attestation & Clearing",
             description: "Submission and collection from relevant ministries.",
           },
           {
             id: 4,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img4.4.png",
             name: "Trade License Renewals",
             description: "Managing annual renewals seamlessly.",
           },
           {
             id: 5,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img4.5.png",
             name: "Ejari & Municipality Approvals",
             description:
               "Securing tenancy contracts and other required permits.",
@@ -704,7 +699,8 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
     id: 5,
     slug: "local-sponsorship",
     title: "LOCAL SPONSORSHIP SERVICES",
-    heading: "Why Dubai is the Perfect Business Destination",
+    heading:
+      "Local Sponsorship,\nDone Right With Trusted Local\nSponsorship Solutions",
 
     image: "/assets/images/services/service5_img.png",
 
@@ -742,7 +738,7 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
           "A Local Sponsor is a UAE national or a company fully owned by UAE nationals who partners with a foreign investor to facilitate mainland business operations. For LLCs, the sponsor may hold a 51% share, while for professional licenses, an LSA acts without equity ownership but receives an annual fee.",
           "Our service ensures you meet all legal requirements of the UAE Commercial Companies Law and maintain full compliance.",
         ],
-        image: "/assets/images/services/",
+        image: "/assets/images/services/Business5.png",
       },
       {
         id: "section2",
@@ -754,27 +750,27 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
         services: [
           {
             id: 1,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img5.1.png",
             name: "Verified Partner Matching",
             description: "Access pre-vetted, professional UAE nationals.",
           },
           {
             id: 2,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img5.2.png",
             name: "Agreement Drafting",
             description:
               "Legally sound sponsorship agreements protecting your interests.",
           },
           {
             id: 3,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img5.3.png",
             name: "Ongoing Relationship Management",
             description:
               "Continuous support and liaison to ensure smooth collaboration.",
           },
           {
             id: 4,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img5.4.png",
             name: "Local Service Agent (LSA) Services",
             description:
               "Assistance for professional licenses with non-equity partnerships.",
@@ -832,7 +828,7 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
     id: 6,
     slug: "uae-visa-services",
     title: "UAE VISA SERVICES",
-    heading: "Why Dubai is the Perfect Business Destination",
+    heading: "Hassle-Free Visa Services\nin the UAE Your Visa Experts",
 
     image: "/assets/images/services/service6_img.png",
 
@@ -869,7 +865,7 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
         content: [
           "The UAE is a global hub for business and tourism, and securing the right visa is essential. TMG Global manages the full process, ensuring smooth relocation, employment, or investment without stress.",
         ],
-        image: "/assets/images/services/visa-processing.jpg",
+        image: "/assets/images/services/Business6.png",
       },
       {
         id: "section2",
@@ -879,33 +875,33 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
         services: [
           {
             id: 1,
-            icon: "/assets/icons/visa-icon.png",
+            icon: "/assets/images/icons/service_img6.1.png",
             name: "Investor/Partner Visas",
             description:
               "For business owners and investors setting up a company.",
           },
           {
             id: 2,
-            icon: "/assets/icons/visa-icon.png",
+            icon: "/assets/images/icons/service_img6.2.png",
             name: "Employment Visas",
             description: "For individuals sponsored by a UAE-based employer.",
           },
           {
             id: 3,
-            icon: "/assets/icons/visa-icon.png",
+            icon: "/assets/images/icons/service_img6.3.png",
             name: "Family Sponsorship Visas",
             description:
               "To bring your spouse, children, and parents to the UAE.",
           },
           {
             id: 4,
-            icon: "/assets/icons/visa-icon.png",
+            icon: "/assets/images/icons/service_img6.4.png",
             name: "Visit & Tourist Visas",
             description: "For short-term business trips or tourism.",
           },
           {
             id: 5,
-            icon: "/assets/icons/visa-icon.png",
+            icon: "/assets/images/icons/service_img6.5.png",
             name: "Visa Renewals & Cancellations",
             description:
               "Efficient handling of all renewals and exit formalities.",
@@ -966,9 +962,10 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
     id: 7,
     slug: "iso-trademark",
     title: "ISO & TRADEMARK SERVICES",
-    heading: "Why Dubai is the Perfect Business Destination",
+    heading:
+      "ISO Certification and\nTrademark Registration\nProtect Your Brand",
 
-    image: "/assets/images/services/service1_img.png",
+    image: "/assets/images/services/service7_img.png",
 
     data: [
       {
@@ -1003,7 +1000,7 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
         content: [
           "ISO certification enhances operational efficiency and signals global-quality standards to clients, while a registered trademark safeguards your unique brand identity. Together, they strengthen your reputation, attract investors, and build long-term trust in the UAE market.",
         ],
-        image: "/assets/images/services/",
+        image: "/assets/images/services/Business7.png",
       },
       {
         id: "section2",
@@ -1015,38 +1012,38 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
         services: [
           {
             id: 1,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img7.1.png",
             name: "Trademark Registration",
             description:
               "Comprehensive search and filing with the Ministry of Economy",
           },
           {
             id: 2,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img7.2.png",
             name: "Application Submission",
             description: "Official submission and follow-up with authorities",
           },
           {
             id: 3,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img7.3.png",
             name: "Monitoring & Protection",
             description: "Ongoing protection against infringement",
           },
           {
             id: 4,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img7.4.png",
             name: "ISO Gap Analysis",
             description: "Comprehensive pre-audit and assessment",
           },
           {
             id: 5,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img7.5.png",
             name: "Documentation Support",
             description: "Process implementation and documentation assistance",
           },
           {
             id: 6,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img7.6.png",
             name: "Certification Liaison",
             description: "Coordination with certification bodies for audits",
           },
@@ -1103,9 +1100,9 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
     id: 8,
     slug: "virtual-office-ejari",
     title: "VIRTUAL OFFICE & EJARI SERVICES",
-    heading: "Why Dubai is the Perfect Business Destination",
+    heading: "Premium Virtual Office &\nEjari Registration Set Up Easily",
 
-    image: "/assets/images/services/service1_img.png",
+    image: "/assets/images/services/service8_img.png",
 
     data: [
       {
@@ -1140,7 +1137,7 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
         content: [
           "A Virtual Office provides a prestigious business address, mail handling, and professional support without the cost of leasing a physical office. Ejari is the official tenancy registration system in Dubai, required for licensing, visa applications, and compliance. Combined, these services allow businesses to operate legally and professionally from day one.",
         ],
-        image: "/assets/images/services/",
+        image: "/assets/images/services/Business8.png",
       },
       {
         id: "section2",
@@ -1150,32 +1147,32 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
         services: [
           {
             id: 1,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img8.1.png",
             name: "Premium Virtual Office",
             description: "Select from prime Dubai business locations.",
           },
           {
             id: 2,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img8.2.png",
             name: "Mail Handling & Forwarding",
             description: "Ensure no important correspondence is missed.",
           },
           {
             id: 3,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img8.3.png",
             name: "Meeting Room Access",
             description: "Book professional spaces for client meetings.",
           },
           {
             id: 4,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img8.4.png",
             name: "Ejari Registration",
             description:
               "Complete official tenancy contract registration with the Dubai Land Department.",
           },
           {
             id: 5,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img8.5.png",
             name: "Licensing Support",
             description:
               "Use your virtual office address to secure your trade license.",
@@ -1234,9 +1231,9 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
     id: 9,
     slug: "company-liquidation",
     title: "COMPANY LIQUIDATION SERVICES & CLOSURE SERVICES ",
-    heading: "Why Dubai is the Perfect Business Destination",
+    heading: "Company Liquidation and Closure\nServices egal and Smooth",
 
-    image: "/assets/images/services/service1_img.png",
+    image: "/assets/images/services/service9_img.png",
 
     data: [
       {
@@ -1271,7 +1268,7 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
         content: [
           "Company liquidation, also known as dissolution, involves formally ending your business, settling all debts, and distributing any remaining assets. The process is strictly regulated in the UAE and must be followed precisely to avoid fines, travel bans, or legal liability for shareholders.",
         ],
-        image: "/assets/images/services/",
+        image: "/assets/images/services/Business9.png",
       },
       {
         id: "section2",
@@ -1283,33 +1280,33 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
         services: [
           {
             id: 1,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img9.1.png",
             name: "Initial Audit & Feasibility",
             description: "Review company records, obligations, and debts.",
           },
           {
             id: 2,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img9.2.png",
             name: "Creditor Settlement & Announcements",
             description:
               "Legally settle outstanding debts and notify creditors.",
           },
           {
             id: 3,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img9.3.png",
             name: "Application to Authorities",
             description:
               "Submit liquidation applications to the DED or relevant Freezone.",
           },
           {
             id: 4,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img9.4.png",
             name: "Cancellation of Licenses & Visas",
             description: "Officially cancel trade licenses and employee visas.",
           },
           {
             id: 5,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img9.5.png",
             name: "Bank Account Closure",
             description:
               "Assist with closing corporate bank accounts properly.",
@@ -1368,9 +1365,9 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
     slug: "document-attestation",
 
     title: "DOCUMENT ATTESTATION SERVICES",
-    heading: "Why Dubai is the Perfect Business Destination",
+    heading: "Document Attestation and\nLegalization Services\nMOFA & Embassy",
 
-    image: "/assets/images/services/service1_img.png",
+    image: "/assets/images/services/service10_img.png",
 
     data: [
       {
@@ -1405,7 +1402,7 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
         content: [
           "Document attestation is the official certification that verifies a document as genuine for use in the UAE. The process ensures that foreign-issued documents, such as degrees, birth certificates, or commercial papers, are recognized legally by UAE authorities.",
         ],
-        image: "/assets/images/services/",
+        image: "/assets/images/services/Business10.png",
       },
       {
         id: "section2",
@@ -1415,27 +1412,27 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
         services: [
           {
             id: 1,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img10.1.png",
             name: "Educational Documents",
             description:
               "Degrees, diplomas, and school certificates for visas, employment, and higher education.",
           },
           {
             id: 2,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img10.2.png",
             name: "Personal Documents",
             description: "Birth, marriage, and death certificates.",
           },
           {
             id: 3,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img10.3.png",
             name: "Commercial Documents",
             description:
               "Powers of attorney, company incorporation documents, invoices, and contracts.",
           },
           {
             id: 4,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img10.4.png",
             name: "Country-Specialized Services",
             description:
               "Fast-track attestation for India, Pakistan, UK, Philippines, and other countries.",
@@ -1495,9 +1492,10 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
     slug: "legal-translation",
 
     title: "LEGAL TRANSLATION SERVICES",
-    heading: "Why Dubai is the Perfect Business Destination",
+    heading:
+      "Professional Legal Translation\nServices in UAE MOJ Approved \nTranslation",
 
-    image: "/assets/images/services/service1_img.png",
+    image: "/assets/images/services/service11_img.png",
 
     data: [
       {
@@ -1532,7 +1530,7 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
         content: [
           "Legal translation involves converting documents from one language to another while preserving exact meaning and legal effect. Certified translations are mandatory for all UAE government transactions, court proceedings, visa applications, and corporate filings.",
         ],
-        image: "/assets/images/services/",
+        image: "/assets/images/services/Business11.png",
       },
       {
         id: "section2",
@@ -1542,27 +1540,27 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
         services: [
           {
             id: 1,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img11.1.png",
             name: "Legal & Court Documents",
             description: "Court rulings, pleadings, and powers of attorney.",
           },
           {
             id: 2,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img11.2.png",
             name: "Corporate Documents",
             description:
               "MOAs, incorporation certificates, board resolutions, and contracts.",
           },
           {
             id: 3,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img11.3.png",
             name: "Personal Documents",
             description:
               "Marriage certificates, birth certificates, academic transcripts.",
           },
           {
             id: 4,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img11.4.png",
             name: "Technical & Financial Documents",
             description:
               "Product manuals, audit reports, bank statements, and reports.",
@@ -1621,9 +1619,9 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
     slug: "insurance-vat",
 
     title: "INSURANCE & VAT SERVICES",
-    heading: "Why Dubai is the Perfect Business Destination",
+    heading: "Business Insurance and\nVAT Services\nFast, Compliant, Reliable",
 
-    image: "/assets/images/services/service1_img.png",
+    image: "/assets/images/services/service12_img.png",
 
     data: [
       {
@@ -1658,7 +1656,7 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
         content: [
           "Our services combine regulatory expertise and practical solutions, ensuring your business avoids penalties while maintaining operational efficiency. Whether you are a startup or an established company, TMG Global helps you stay compliant and secure.",
         ],
-        image: "/assets/images/services/",
+        image: "/assets/images/services/Business12.png",
       },
       {
         id: "section2",
@@ -1670,39 +1668,39 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
         services: [
           {
             id: 1,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img12.1.png",
             name: "Employee Medical Insurance",
             description:
               "Mandatory coverage for visa processing and employee welfare.",
           },
           {
             id: 2,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img12.2.png",
             name: "Vehicle & Fleet Insurance",
             description: "Comprehensive coverage for company vehicles.",
           },
           {
             id: 3,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img12.3.png",
             name: "Property & Liability Insurance",
             description:
               "Protect office spaces, warehouses, and operations from third-party claims.",
           },
           {
             id: 4,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img12.4.png",
             name: "VAT Registration",
             description: "Registration with the Federal Tax Authority (FTA).",
           },
           {
             id: 5,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img12.5.png",
             name: "VAT Return Filing & Submission",
             description: "Accurate, timely submissions to maintain compliance.",
           },
           {
             id: 6,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img12.6.png",
             name: "VAT Compliance Health Check",
             description:
               "Review systems to avoid penalties and ensure accuracy.",
@@ -1762,9 +1760,9 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
     slug: "bank-account",
 
     title: "Bank Account Opening ",
-    heading: "Why Dubai is the Perfect Business Destination",
+    heading: "Corporate Bank Account Opening\nUAE Fast, Simple, Secure",
 
-    image: "/assets/images/services/service1_img.png",
+    image: "/assets/images/services/service13_img.png",
 
     data: [
       {
@@ -1799,7 +1797,7 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
         content: [
           "A corporate bank account is essential for managing finances, receiving payments, and building credibility. With the right guidance, your account can be opened efficiently, providing operational flexibility and access to UAE banking services.",
         ],
-        image: "/assets/images/services/",
+        image: "/assets/images/services/Business13.png",
       },
       {
         id: "section2",
@@ -1811,27 +1809,27 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
         services: [
           {
             id: 1,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img13.1.png",
             name: "Bank Selection Advisory",
             description:
               "Match your business profile with the most suitable banks.",
           },
           {
             id: 2,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img13.2.png",
             name: "Document Preparation & Review",
             description: "Ensure your application is complete and compelling.",
           },
           {
             id: 3,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img13.3.png",
             name: "Application Submission & Follow-up",
             description:
               "Liaise directly with the bank's relationship managers.",
           },
           {
             id: 4,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img13.4.png",
             name: "Introductory Meetings",
             description:
               "Prepare you for interviews and provide ongoing support.",
@@ -1893,9 +1891,9 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
     slug: "typing-service",
 
     title: "TYPING SERVICES",
-    heading: "Why Dubai is the Perfect Business Destination",
+    heading: "Typing Services in Dubai\nFast, Accurate, Confidential",
 
-    image: "/assets/images/services/service1_img.png",
+    image: "/assets/images/services/service14_img.png",
 
     data: [
       {
@@ -1930,7 +1928,7 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
         content: [
           "Typing services help businesses and individuals save time, reduce errors, and streamline workflows. Professional typing ensures that your documents are clear, standardized, and ready for official or internal use.",
         ],
-        image: "/assets/images/services/",
+        image: "/assets/images/services/Business14.png",
       },
       {
         id: "section2",
@@ -1942,27 +1940,27 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
         services: [
           {
             id: 1,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img14.1.png",
             name: "Legal Document Typing",
             description:
               "Contracts, agreements, affidavits, and court documents.",
           },
           {
             id: 2,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img14.2.png",
             name: "Business Document Typing",
             description:
               "Reports, presentations, proposals, and corporate correspondence.",
           },
           {
             id: 3,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img14.3.png",
             name: "Form Filling & Application Typing",
             description: "Government and institutional forms.",
           },
           {
             id: 4,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img14.4.png",
             name: "Data Entry & Digital Formatting",
             description:
               "Converting handwritten or scanned documents into digital format.",
@@ -2019,9 +2017,9 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
     slug: "government-approvals",
 
     title: "GOVERNMENT APPROVAL SERVICES",
-    heading: "Why Dubai is the Perfect Business Destination",
+    heading: "UAE Government\nApprovals Made Simple\nFast, Reliable, Compliant",
 
-    image: "/assets/images/services/service1_img.png",
+    image: "/assets/images/services/service15_img.png",
 
     data: [
       {
@@ -2056,7 +2054,7 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
         content: [
           "Government approvals are mandatory for operating legally in the UAE. Ensuring accurate and timely submissions protects your business from fines, penalties, or operational disruptions.",
         ],
-        image: "/assets/images/services/",
+        image: "/assets/images/services/Business15.png",
       },
       {
         id: "section2",
@@ -2068,35 +2066,35 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
         services: [
           {
             id: 1,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img15.1.png",
             name: "Business Licenses & Renewals",
             description:
               "Fast-track your commercial, professional, or industrial licenses.",
           },
           {
             id: 2,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img15.2.png",
             name: "Municipality Approvals",
             description:
               "Secure permits and clearances for your office or facility.",
           },
           {
             id: 3,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img15.3.png",
             name: "Special Regulatory Clearances",
             description:
               "Handle industry-specific approvals (health, education, trading, etc.).",
           },
           {
             id: 4,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img15.4.png",
             name: "Government Document Clearance",
             description:
               "Submission, follow-up, and collection of all official paperwork.",
           },
           {
             id: 5,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img15.5.png",
             name: "External Approvals",
             description:
               "Liaison with ministries, authorities, and regulatory bodies for specialized approvals.",
@@ -2153,9 +2151,9 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
     slug: "medical-emirates-id",
 
     title: "MEDICAL & EMIRATES ID SERVICES",
-    heading: "Why Dubai is the Perfect Business Destination",
+    heading: "Medical and Emirates ID Services\nFast, Reliable, Compliant",
 
-    image: "/assets/images/services/service1_img.png",
+    image: "/assets/images/services/service16_img.png",
 
     data: [
       {
@@ -2190,7 +2188,7 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
         content: [
           "A valid Emirates ID and medical clearance are mandatory for residency visas, employment visas, and long-term stay in the UAE. Timely and accurate processing avoids fines, delays, or visa issues.",
         ],
-        image: "/assets/images/services/",
+        image: "/assets/images/services/Business16.png",
       },
       {
         id: "section2",
@@ -2200,35 +2198,35 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
         services: [
           {
             id: 1,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img16.1.png",
             name: "Medical Fitness Tests",
             description:
               "Schedule, coordinate, and submit results for visa purposes.",
           },
           {
             id: 2,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img16.2.png",
             name: "Emirates ID Issuance",
             description:
               "Apply for new IDs or renew existing ones efficiently.",
           },
           {
             id: 3,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img16.3.png",
             name: "Visa Medical Clearances",
             description:
               "Ensure all necessary documents are prepared for visa approval.",
           },
           {
             id: 4,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img16.4.png",
             name: "Corporate Employee Services",
             description:
               "Manage multiple employee IDs and medical requirements for companies.",
           },
           {
             id: 5,
-            icon: "/assets/icons/mainland-icon.png",
+            icon: "/assets/images/icons/service_img16.5.png",
             name: "Government Liaison",
             description:
               "Direct coordination with ICA, Ministry of Health, and authorized medical centers.",

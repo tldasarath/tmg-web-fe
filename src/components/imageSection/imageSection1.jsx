@@ -28,7 +28,7 @@ const ImageSection = () => {
                     {/* Left Side - Main Heading Content */}
                     <div className="text-white   flex justify-center items-center">
                         <LettersPullUpText
-                  text="Torem ipsum dolor sit amet, consectetur adipiscing elit. "
+                  text="Connect with Our Premium Business Consultants"
                   className="text-[#FFFFFF]"
                 />
                     </div>
@@ -36,19 +36,23 @@ const ImageSection = () => {
                     {/* Right Side - Description Content */}
                     <div className="text-white flex flex-col justify-center items-center">
                         <p className="text-[0.938rem]  md:text-lg mb-6 leading-relaxed">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                      Premium business consultants in Dubai empowering entrepreneurs with expert 
+                      planning, seamless documentation, and reliable government-linked solutions.
+
                         </p>
 
 
                         {/* Button */}
-                        <div className='flex justify-center'>
-                            <MainButton bgColor='#C79A59'
-                                text='Button'
-                                link='/'
-                                className=''
-                                icon='external' />
-                        </div>
+                      <div className='flex justify-center'>
+                                <MainButton 
+                                    bgColor='#C79A59'
+                                    text='Connect with Us'
+                                    link='/contact#contact-form'
+                                    className=''
+                                    icon='external' 
+                                    scroll={true}
+                                />
+                            </div>
                     </div>
                 </div>
             </div>

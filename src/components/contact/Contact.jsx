@@ -134,6 +134,7 @@ const handleSubmit = (e) => {
 
           {/* Right Section - Form */}
           <div
+          id="contact-form"
             className="rounded-lg shadow-lg p-6 text-white"
             style={{
               backgroundImage: "linear-gradient(180deg, rgba(142,26,61,1) 0%, rgba(40,7,17,1) 100%)",

@@ -38,19 +38,19 @@ const ServicesSection = () => {
   }, [isInView, leftControls, rightControls]);
 
   const leftServices = [
-    "Document Services",
-    "Value-Added Services",
-    "Value-Added Services",
+    { label: "Business Setup", link: "/service/business-setup-dubai" },
+    { label: "Company Formation ", link: "/service/company-formation-dubai" },
+    { label: "Company Liquidation", link: "/link" },
   ];
 
   const rightServices = [
-    "PRO Services",
-    "Visa Services",
-    "Government Services",
+    { label: "PRO Services", link: "/service/pro-services-dubai" },
+    { label: "Visa Services", link: "/service/uae-visa-services" },
+    { label: "Legal Translation", link: "/service/legal-translation" },
   ];
 
   return (
-    <section ref={ref} className="relative lg:py-16 py-8 overflow-hidden">
+    <section ref={ref} className="relative lg:py-16 py-8 overflow-hidden ">
       <Container>
         <div className="w-full relative z-10">
           {/* Heading */}
@@ -69,15 +69,15 @@ const ServicesSection = () => {
             </div>
 
             <p className="text-[0.938rem] md:text-lg">
-              We provide comprehensive solutions to meet all your service needs with
-              professionalism and excellence. Our team is dedicated to delivering
-              outstanding results.
+              We provide comprehensive solutions to meet all your service needs
+              with professionalism and excellence. Our team is dedicated to
+              delivering outstanding results.
             </p>
           </div>
 
           {/* Services Grid */}
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {/* 👈 Left Section */}
+            {/* Left Section */}
             <motion.div
               className="space-y-4"
               variants={leftVariants}
@@ -89,7 +89,7 @@ const ServicesSection = () => {
               ))}
             </motion.div>
 
-            {/* 👉 Right Section */}
+            {/* Right Section */}
             <motion.div
               className="space-y-4 relative"
               variants={rightVariants}
@@ -162,12 +162,20 @@ const ServiceItem = ({ service }) => (
         stroke="currentColor"
         strokeWidth={2}
       >
-        <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M7 7h10v10" />
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M7 17L17 7M7 7h10v10"
+        />
       </svg>
 
-      <span className="text-[1.200rem] lg:text-[1.875rem] font-bold group-hover:translate-x-2 transition-transform duration-500 ease-out">
-        {service}
-      </span>
+      <a
+        href={service.link}
+        target="_blank"
+        className="text-[1.200rem] lg:text-[1.875rem] font-bold group-hover:translate-x-2 transition-transform duration-500 ease-out"
+      >
+        {service.label}
+      </a>
     </div>
 
     <div
