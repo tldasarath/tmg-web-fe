@@ -93,6 +93,7 @@ const page = () => {
         if (section.id === "section4") {
           return <FAQSection key={section.id} section={section} />;
         }
+        
         return null;
       })}
       <SmallBanner />
