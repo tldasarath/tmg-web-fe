@@ -294,12 +294,12 @@ class App {
   }
   createMedias(items, bend = 1, textColor, borderRadius, font) {
     const defaultItems = [
-      { image: `/assets/images/gallery/gallery01.jpg`, text: 'Bridge' },
-      { image: `/assets/images/gallery/gallery02.jpg`, text: 'Desk Setup' },
-      { image: `/assets/images/gallery/gallery03.jpg`, text: 'Waterfall' },
-      { image: `/assets/images/gallery/gallery04.jpg`, text: 'Strawberries' },
-      { image: `/assets/images/gallery/gallery05.jpg`, text: 'Deep Diving' },
-      { image: `/assets/images/gallery/gallery06.jpg`, text: 'Santorini' },
+      { image: `/assets/images/gallery/Gallery01.jpg`, text: 'Bridge' },
+      { image: `/assets/images/gallery/Gallery02.jpg`, text: 'Desk Setup' },
+      { image: `/assets/images/gallery/Gallery03.jpg`, text: 'Waterfall' },
+      { image: `/assets/images/gallery/Gallery04.jpg`, text: 'Strawberries' },
+      { image: `/assets/images/gallery/Gallery05.jpg`, text: 'Deep Diving' },
+      { image: `/assets/images/gallery/Gallery06.jpg`, text: 'Santorini' },
       { image: `/assets/images/gallery/golden-visa_1.jpg`, text: 'DS' },
       { image: `/assets/images/gallery/golden-visa_2.jpg`, text: 'SF' },
       { image: `/assets/images/gallery/GOLDEN-VISA-UI.jpg`, text: 'EE' }
