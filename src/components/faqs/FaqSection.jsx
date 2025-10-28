@@ -9,7 +9,6 @@ const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(2);
   const [isMounted, setIsMounted] = useState(false);
 
-  // Fix hydration by only rendering animations after component mounts
   useEffect(() => {
     setIsMounted(true);
   }, []);
@@ -18,7 +17,6 @@ const FAQSection = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  // Predefined positions for particles to avoid random values during SSR
   const particlePositions = [
     { left: "10%", top: "35%" },
     { left: "25%", top: "60%" },

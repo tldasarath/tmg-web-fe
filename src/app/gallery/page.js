@@ -3,6 +3,7 @@ import Blog from "@/components/blog/Blog";
 import ComingSoon from "@/components/ComingSoon";
 import SmallBanner from "@/components/common/SmallBanner";
 import Footer from "@/components/footer/Footer";
+import Gallery from "@/components/gallery/Gallery";
 import { Navbar } from "@/components/navbar/Navbar";
 import React from "react";
 
@@ -18,7 +19,8 @@ const page = () => {
             { name: "Gallery", path: "/gallery" },
           ]}
         />
-<ComingSoon/>
+        <Gallery/>
+{/* <ComingSoon/> */}
 
         <Footer />
       </div>

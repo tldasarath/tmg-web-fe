@@ -24,9 +24,11 @@
       answer: "We use various extraction methods including steam distillation, cold pressing, and CO2 extraction, depending on the plant material to ensure the highest quality oil.",
       color: "maroon"
     },
-    // {
-    //   question: "Why Are Some Oils Unsafe To Use On Or Around Children?",
-    //   answer: "Certain essential oils contain compounds that can be too strong for children's developing systems. We provide clear safety guidelines for each oil regarding use with children.",
-    //   color: "maroon"
-    // }
+
   ];
+
+
+
+
+
+  

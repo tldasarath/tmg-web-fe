@@ -10,3 +10,7 @@ export function generateWhatsAppMessage(formData) {
     `──────────────\nSent via TMG Global Website`
   );
 }
+
+
+
+

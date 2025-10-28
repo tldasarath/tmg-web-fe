@@ -85,7 +85,17 @@ const SmallBanner = () => {
   };
 
   return (
-    <section ref={sectionRef} className="pb-32 lg:pt-16 pt-8">
+    <section ref={sectionRef} className="relative pb-32 lg:pt-16 pt-8">
+            <div
+        className="absolute left-0 w-60 h-60 opacity-100"
+        style={{ top: "10%", transform: "translateY(-50%)" }}
+      >
+        <img
+          src="/assets/images/about/left_element_about.png"
+          alt="Professional woman with tablet"
+          className="w-full h-auto rounded-2xl"
+        />{" "}
+      </div>
       <Container>
         <motion.div
           className="min-h-[200px] w-full rounded-2xl p-6  flex items-center justify-center text-white relative overflow-hidden"

@@ -21,7 +21,7 @@ const BannerSection = ({
         <Container>
           <h1 className="text-2xl md:text-4xl font-bold mb-4">{title}</h1>
 
-          <nav className="flex flex-wrap items-center justify-center space-x-2 text-xs md:text-lg">
+          <nav className="flex flex-wrap items-center justify-center space-x-2 text-xs md:text-lg font-semibold">
             {breadcrumbs.map((crumb, index) => (
               <div key={index} className="flex items-center">
                 {index > 0 && <span className="mx-2">/</span>}

@@ -3,11 +3,12 @@ import { Container } from "../layout/Container";
 
 export default function Footer() {
   const footerLinks = [
-    { name: "About Us", href: "#" },
-    { name: "Blogs", href: "#" },
-    { name: "Terms and Conditions", href: "#" },
-    { name: "Privacy Policy", href: "#" },
-    { name: "Contact", href: "#" },
+    { name: "About Us", href: "/about-us" },
+    { name: "Blogs", href: "/blogs" },
+    { name: "FAQs", href: "/faqs" },
+    { name: "Terms and Conditions", href: "terms-&-conditions" },
+    { name: "Privacy Policy", href: "/privacy-policy" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const socialLinks = [
@@ -20,12 +21,14 @@ export default function Footer() {
 
   return (
     <div  className="relative">
-      <div className="absolute left-1/2 -translate-x-1/2 -top-16 sm:-top-18 md:-top-20 lg:-top-24 xl:-top-26 z-50 pointer-events-none">
+      <div className="absolute left-1/2 -translate-x-1/2 -top-16 sm:-top-18 md:-top-20 lg:-top-24 xl:-top-26 z-30 pointer-events-none">
+      <div className="relative w-40 h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 lg:w-52 lg:h-52 bg-white rounded-full  flex items-center justify-center">
         <img
           src="/assets/logo/tmg_footer_logo.png"
           alt="TMG Global Logo"
-          className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44 xl:w-48 xl:h-48 object-contain "
+          className="w-40 h-40 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-[219.62px] lg:h-[218.62px] object-cover  "
         />
+      </div>
       </div>
 
       <footer className="relative bg-[linear-gradient(180deg,rgba(142,26,61,1)_0%,rgba(40,7,17,1)_100%)] bg-center text-white overflow-hidden pt-20 sm:pt-24 md:pt-28 lg:pt-32">
@@ -155,14 +158,15 @@ export default function Footer() {
             <div className="border-t border-white/20 pt-4 md:pt-6">
               <p className="text-center text-xs md:text-sm text-white/90">
                 © 2025 TMG Global. Published by{" "}
-                <a
-                  href="https://nextmedia.ae/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#C9A961] transition-colors duration-300"
+                <span
+                  // href="https://nextmedia.ae/"
+                  // target="_blank"
+                  // rel="noopener noreferrer"
+                  className="hover:text-[#C9A961] transition-colors duration-300 cursor-pointer"
                 >
-                  Next Media.
-                </a>{" "}
+                  Befirst Media Production.
+                </span>
+                {" "}
                 All Rights Reserved.
               </p>
             </div>

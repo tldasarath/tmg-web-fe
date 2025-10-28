@@ -2,6 +2,7 @@
 import React, { useState, useMemo } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { blogs } from "@/data/BlogData";
 
 const Blog = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -14,197 +15,6 @@ const Blog = () => {
     "Visa & Residency",
     "PRO & Government\nServices",
     "Legal, Compliance &\nFinancial Services",
-  ];
-
-  const blogs = [
-    {
-      id: 1,
-      title: "How to Set Up a Business in Dubai Freezone",
-      description:
-        "Step-by-step guide for entrepreneurs and investors on Freezone company formation.",
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop",
-      category: "Business Setup & Company Formation",
-      date: "10 June 2025",
-    },
-    {
-      id: 2,
-      title: "Mainland vs Freezone Company Setup: Which is Right for You?",
-      description:
-        "Compare Mainland and Freezone company setups to make an informed choice.",
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop",
-      category: "Business Setup & Company Formation",
-      date: "10 June 2025",
-    },
-    {
-      id: 3,
-      title: "Offshore Company Formation in the UAE: Benefits & Process",
-      description:
-        "Explore offshore company formation for global business and asset protection.",
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop",
-      category: "Business Setup & Company Formation",
-      date: "10 June 2025",
-    },
-    {
-      id: 4,
-      title: "Top Mistakes to Avoid When Setting Up a Business in Dubai",
-      description: "Common pitfalls entrepreneurs face and how to avoid them.",
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop",
-      category: "Business Setup & Company Formation",
-      date: "10 June 2025",
-    },
-    {
-      id: 5,
-      title: "How TMG Global Simplifies Company Formation",
-      description: "End-to-end solutions for entrepreneurs and investors.",
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop",
-      category: "Business Setup & Company Formation",
-      date: "10 June 2025",
-    },
-    {
-      id: 6,
-      title: "UAE Golden Visa 2025: Eligibility & Process",
-      description:
-        "Guide to securing long-term residency for investors and talent.",
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop",
-      category: "Visa & Residency",
-      date: "10 June 2025",
-    },
-    {
-      id: 7,
-      title: "UAE Investor Visas: A Complete Guide",
-      description: "Secure residency for business owners and investors.",
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop",
-      category: "Visa & Residency",
-      date: "10 June 2025",
-    },
-    {
-      id: 8,
-      title: "Family Sponsorship in UAE: Rules & Process",
-      description: "Sponsor your spouse, children, or parents in the UAE.",
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop",
-      category: "Visa & Residency",
-      date: "10 June 2025",
-    },
-    {
-      id: 9,
-      title: "How to Renew Your UAE Visa Without Hassle",
-      description: "Step-by-step guidance for visa renewals.",
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop",
-      category: "Visa & Residency",
-      date: "10 June 2025",
-    },
-    {
-      id: 10,
-      title: "Benefits of Long-Term Residency in the UAE",
-      description: "Why a Golden Visa or long-term residency is advantageous.",
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop",
-      category: "Visa & Residency",
-      date: "10 June 2025",
-    },
-    {
-      id: 11,
-      title: "How PRO Services Save Time and Money in Dubai",
-      description: "Outsource government liaison tasks for efficiency.",
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop",
-      category: "PRO & Government Services",
-      date: "10 June 2025",
-    },
-    {
-      id: 12,
-      title: "UAE Government Approvals: A Complete Guide",
-      description: "Essential approvals for business compliance in Dubai.",
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop",
-      category: "PRO & Government Services",
-      date: "10 June 2025",
-    },
-    {
-      id: 13,
-      title: "Ejari Registration for Offices & Virtual Offices",
-      description: "How to register tenancy contracts for business licenses.",
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop",
-      category: "PRO & Government Services",
-      date: "10 June 2025",
-    },
-    {
-      id: 14,
-      title: "Medical & Emirates ID Services: Ensuring Compliance",
-      description:
-        "Streamline mandatory medical tests and Emirates ID registrations.",
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop",
-      category: "PRO & Government Services",
-      date: "10 June 2025",
-    },
-    {
-      id: 15,
-      title: "Typing Services in UAE: Fast & Accurate Documentation",
-      description:
-        "Professional typing support for government and business paperwork.",
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop",
-      category: "PRO & Government Services",
-      date: "10 June 2025",
-    },
-    {
-      id: 16,
-      title: "ISO Certification in the UAE: Why It Matters",
-      description: "Achieve international standards and credibility.",
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop",
-      category: "Legal, Compliance & Financial Services",
-      date: "10 June 2025",
-    },
-    {
-      id: 17,
-      title: "Trademark Registration in Dubai: Protect Your Brand",
-      description: "Legally secure your business name and logo in UAE.",
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop",
-      category: "Legal, Compliance & Financial Services",
-      date: "10 June 2025",
-    },
-    {
-      id: 18,
-      title: "Company Liquidation in Dubai: Steps & Legal Requirements",
-      description: "Close your business legally and avoid future liabilities.",
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop",
-      category: "Legal, Compliance & Financial Services",
-      date: "10 June 2025",
-    },
-    {
-      id: 19,
-      title: "Document Attestation Services in UAE: Fast & Reliable",
-      description:
-        "Ensure legal recognition of your educational, personal, and commercial documents.",
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop",
-      category: "Legal, Compliance & Financial Services",
-      date: "10 June 2025",
-    },
-    {
-      id: 20,
-      title: "Legal Translation Services in Dubai: Certified & Accepted",
-      description:
-        "Professional legal translation for visas, contracts, and official documents.",
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=400&fit=crop",
-      category: "Legal, Compliance & Financial Services",
-      date: "10 June 2025",
-    },
   ];
 
   const filteredBlogs = useMemo(() => {
@@ -333,8 +143,8 @@ const Blog = () => {
                 onClick={() => handleCategoryChange(category)}
                 className={`px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2.5 rounded-lg md:rounded-xl font-medium text-xs sm:text-sm md:text-base transition-all duration-300 whitespace-pre-line ${
                   activeCategory === category
-                    ? "bg-yellow-600 text-white shadow-md md:shadow-lg"
-                    : "bg-white text-gray-700 border-2 border-gray-300 hover:border-yellow-600 shadow-sm"
+                    ? "bg-[#C79A59] text-white shadow-md md:shadow-lg"
+                    : "bg-white text-gray-700 border-2 border-gray-300 hover:border-[#C79A59] shadow-sm"
                 }`}
               >
                 {category}
@@ -366,7 +176,7 @@ const Blog = () => {
                 <motion.div
                   whileHover={{ y: -6 }}
                   transition={{ duration: 0.3 }}
-                  className="bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 h-full flex flex-col border-4 border-red-800 hover:border-red-900"
+                  className="bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 h-full flex flex-col border-4 border-red-800 hover:border-red-900"
                 >
                   {/* Image Container */}
                   <motion.div
@@ -383,9 +193,9 @@ const Blog = () => {
                   </motion.div>
 
                   {/* Content Container */}
-                  <div className="bg-gradient-to-b from-red-800 to-red-900 p-3 sm:p-4 md:p-5 lg:p-6 text-white flex-1 flex flex-col justify-between rounded-b-2xl md:rounded-b-3xl">
+                  <div className="bg-[#941D43] p-3 sm:p-4 md:p-5 lg:p-6 text-white flex-1 flex flex-col justify-between rounded-b-2xl md:rounded-b-3xl">
                     <div>
-                      <motion.h3 className="text-xs sm:text-sm md:text-base lg:text-lg font-bold mb-1.5 sm:mb-2 md:mb-3 line-clamp-2 group-hover:text-yellow-300 transition-colors duration-300 leading-tight">
+                      <motion.h3 className="text-xs sm:text-sm md:text-base lg:text-lg font-bold mb-1.5 sm:mb-2 md:mb-3 line-clamp-2 group-hover:text-[#fff] transition-colors duration-300 leading-tight">
                         {blog.title}
                       </motion.h3>
                       <p className="text-xs sm:text-xs md:text-sm text-red-100 line-clamp-3 leading-relaxed">
@@ -462,7 +272,7 @@ const Blog = () => {
         )}
 
         {/* Results Count */}
-        {totalPages > 1 && (
+        {/* {totalPages > 1 && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -475,7 +285,7 @@ const Blog = () => {
               {filteredBlogs.length} results
             </p>
           </motion.div>
-        )}
+        )} */}
       </div>
     </div>
   );

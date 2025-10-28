@@ -12,9 +12,9 @@ export const HeroSection = () => {
   const videoRef = useRef(null);
 
   const heroTexts = [
-    "Empowering Businesses to Succeed in the UAE with Expert Setup Solutions",
-    "Transform Your Business Vision Into Reality with Expert Guidance",
-    "Unlock Global Opportunities with Professional Business Setup Services",
+    "Expand Globally with Seamless Business Setup Support",
+    "Accelerating UAE Success with Expert Business Guidance",
+    "Experience Premium Expertise in UAE Company Formation",
   ];
 
   useEffect(() => {

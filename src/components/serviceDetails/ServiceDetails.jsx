@@ -1,6 +1,6 @@
-'use client'
-import { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+"use client";
+import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 export default function ServiceDetails() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -11,39 +11,38 @@ export default function ServiceDetails() {
   const contentSectionRef = useRef(null);
   const wheelAccumulator = useRef(0);
   const lastScrollTimeRef = useRef(0);
-  const scrollDelayRef = useRef(400); // Delay between section changes
+  const scrollDelayRef = useRef(400);
 
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 1024);
     };
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   const sections = [
     {
-      number: '01',
-      title: 'Simplifying Your Business Setup Journey',
+      number: "01",
+      title: "Simplifying Your Business Setup Journey",
       description:
-        'Starting a business in Dubai is one of the smartest investments you can make but understanding the regulatory landscape can be overwhelming. Our experts streamline every step, offering a one-stop solution that saves you time, effort, and unnecessary costs.',
+        "Starting a business in Dubai is one of the smartest investments you can make but understanding the regulatory landscape can be overwhelming. Our experts streamline every step, offering a one-stop solution that saves you time, effort, and unnecessary costs.",
     },
     {
-      number: '02',
-      title: 'Why Dubai is the Ideal Business Destination',
+      number: "02",
+      title: "Why Dubai is the Ideal Business Destination",
       description:
         "Dubai's thriving economy, world-class infrastructure, and strategic location make it a global hub for entrepreneurs. With options like the Mainland, Freezone, and Offshore setups, the UAE offers unmatched flexibility for every type of venture.",
     },
     {
-      number: '03',
-      title: 'Expert Support Every Step of the Way',
+      number: "03",
+      title: "Expert Support Every Step of the Way",
       description:
-        'From business registration and licensing to visa processing and financial planning, our team of seasoned professionals guides you through every phase. We ensure compliance with all regulations and help you establish a solid foundation for sustainable growth.',
+        "From business registration and licensing to visa processing and financial planning, our team of seasoned professionals guides you through every phase. We ensure compliance with all regulations and help you establish a solid foundation for sustainable growth.",
     },
   ];
 
-  // Detect when content section is in view
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -65,42 +64,48 @@ export default function ServiceDetails() {
     };
   }, []);
 
-  // Handle wheel scroll with lock
   useEffect(() => {
     const handleWheel = (e) => {
       if (!isMobile && isContentVisible && contentSectionRef.current) {
         const contentRect = contentSectionRef.current.getBoundingClientRect();
-        const isOverContent = contentRect.top <= window.innerHeight / 2 && contentRect.bottom >= 0;
+        const isOverContent =
+          contentRect.top <= window.innerHeight / 2 && contentRect.bottom >= 0;
 
         if (isOverContent) {
           const now = Date.now();
           const timeSinceLastScroll = now - lastScrollTimeRef.current;
 
-          // When locked, always prevent default and handle scroll
           if (isLocked) {
             e.preventDefault();
             wheelAccumulator.current += e.deltaY;
 
-            if (Math.abs(wheelAccumulator.current) > 50 && timeSinceLastScroll > scrollDelayRef.current) {
+            if (
+              Math.abs(wheelAccumulator.current) > 50 &&
+              timeSinceLastScroll > scrollDelayRef.current
+            ) {
               if (wheelAccumulator.current > 0) {
-                handleScroll('down');
+                handleScroll("down");
               } else {
-                handleScroll('up');
+                handleScroll("up");
               }
               wheelAccumulator.current = 0;
               lastScrollTimeRef.current = now;
             }
-          } 
-          // When not locked but at section 0, lock on first scroll
-          else if (!isLocked && activeIndex === 0 && timeSinceLastScroll > scrollDelayRef.current) {
+          } else if (
+            !isLocked &&
+            activeIndex === 0 &&
+            timeSinceLastScroll > scrollDelayRef.current
+          ) {
             e.preventDefault();
             wheelAccumulator.current = 0;
             setIsLocked(true);
             setActiveIndex(1);
             lastScrollTimeRef.current = now;
-          }
-          // When not locked but activeIndex > 0, lock again to allow reverse scrolling
-          else if (!isLocked && activeIndex > 0 && timeSinceLastScroll > scrollDelayRef.current) {
+          } else if (
+            !isLocked &&
+            activeIndex > 0 &&
+            timeSinceLastScroll > scrollDelayRef.current
+          ) {
             e.preventDefault();
             wheelAccumulator.current = 0;
             setIsLocked(true);
@@ -112,17 +117,18 @@ export default function ServiceDetails() {
 
     const handleScroll = (direction) => {
       if (isLocked) {
-        if (direction === 'down' && activeIndex < sections.length - 1) {
+        if (direction === "down" && activeIndex < sections.length - 1) {
           setActiveIndex(activeIndex + 1);
-        } else if (direction === 'up' && activeIndex > 1) {
+        } else if (direction === "up" && activeIndex > 1) {
           setActiveIndex(activeIndex - 1);
-        } else if (direction === 'up' && activeIndex === 1) {
-          // Unlock and return to section 0
+        } else if (direction === "up" && activeIndex === 1) {
           setActiveIndex(0);
           setIsLocked(false);
           wheelAccumulator.current = 0;
-        } else if (direction === 'down' && activeIndex === sections.length - 1) {
-          // Unlock when reaching last section and scrolling down
+        } else if (
+          direction === "down" &&
+          activeIndex === sections.length - 1
+        ) {
           setIsLocked(false);
           wheelAccumulator.current = 0;
         }
@@ -130,8 +136,9 @@ export default function ServiceDetails() {
     };
 
     if (!isMobile && isContentVisible) {
-      window.addEventListener('wheel', handleWheel, { passive: false });
-      return () => window.removeEventListener('wheel', handleWheel, { passive: false });
+      window.addEventListener("wheel", handleWheel, { passive: false });
+      return () =>
+        window.removeEventListener("wheel", handleWheel, { passive: false });
     }
   }, [isLocked, activeIndex, isMobile, isContentVisible, sections.length]);
 
@@ -159,9 +166,14 @@ export default function ServiceDetails() {
       >
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
           {/* Left Content */}
-          <motion.div className="w-full lg:w-1/2 flex flex-col justify-start" variants={itemVariants}>
+          <motion.div
+            className="w-full lg:w-1/2 flex flex-col justify-start"
+            variants={itemVariants}
+          >
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
-              Start Your Business<br />in Dubai with Expert Guidance
+              Start Your Business
+              <br />
+              in Dubai with Expert Guidance
             </h1>
 
             {/* Decorative Element */}
@@ -173,14 +185,19 @@ export default function ServiceDetails() {
       {/* Content Section with Scroll Lock */}
       <div
         className={`relative w-full transition-all duration-300 ${
-          isLocked && !isMobile ? 'min-h-screen lg:sticky lg:top-0' : ''
+          isLocked && !isMobile ? "min-h-screen lg:sticky lg:top-0" : ""
         }`}
         ref={contentSectionRef}
       >
         <div className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 md:py-16 lg:py-20">
           {isMobile ? (
             // Mobile Layout - Cards Stacked
-            <motion.div className="space-y-8" variants={containerVariants} initial="hidden" whileInView="visible">
+            <motion.div
+              className="space-y-8"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+            >
               {sections.map((section, idx) => (
                 <motion.div
                   key={idx}
@@ -188,10 +205,16 @@ export default function ServiceDetails() {
                   variants={itemVariants}
                 >
                   <div className="flex items-start gap-4 mb-4">
-                    <span className="text-2xl sm:text-3xl font-bold text-gray-900 min-w-fit">{section.number}</span>
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900">{section.title}</h3>
+                    <span className="text-2xl sm:text-3xl font-bold text-gray-900 min-w-fit">
+                      {section.number}
+                    </span>
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
+                      {section.title}
+                    </h3>
                   </div>
-                  <p className="text-gray-700 text-sm sm:text-base leading-relaxed">{section.description}</p>
+                  <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                    {section.description}
+                  </p>
                 </motion.div>
               ))}
             </motion.div>
@@ -212,7 +235,7 @@ export default function ServiceDetails() {
                         animate={{
                           opacity: isActive ? 1 : 0,
                         }}
-                        transition={{ duration: 0.6, ease: 'easeInOut' }}
+                        transition={{ duration: 0.6, ease: "easeInOut" }}
                       >
                         <span className="text-9xl font-bold text-gray-100 leading-none">
                           {section.number}
@@ -240,8 +263,8 @@ export default function ServiceDetails() {
                           opacity: isActive ? 1 : 0,
                           y: isActive ? 0 : isPrev ? -60 : 60,
                         }}
-                        transition={{ duration: 0.7, ease: 'easeInOut' }}
-                        pointerEvents={isActive ? 'auto' : 'none'}
+                        transition={{ duration: 0.7, ease: "easeInOut" }}
+                        pointerEvents={isActive ? "auto" : "none"}
                       >
                         <motion.div
                           className="relative"
@@ -262,7 +285,9 @@ export default function ServiceDetails() {
                               <motion.div
                                 key={i}
                                 className={`h-1 rounded-full transition-all ${
-                                  i === idx ? 'bg-gray-900 w-8' : 'bg-gray-300 w-2'
+                                  i === idx
+                                    ? "bg-gray-900 w-8"
+                                    : "bg-gray-300 w-2"
                                 }`}
                                 animate={{
                                   width: i === idx ? 32 : 8,
@@ -290,7 +315,7 @@ export default function ServiceDetails() {
                 )} */}
               </div>
 
-              {/* Right Image - FIXED POSITION (No Scroll Effect) */}
+              {/* Right Image */}
               <div className=" flex-1 h-96 flex items-center justify-center sticky top-1/2 -translate-y-1/2">
                 <motion.div
                   className="relative rounded-2xl overflow-hidden shadow-2xl w-full h-full"
