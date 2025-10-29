@@ -1,10 +1,11 @@
+
 "use client";
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import { Container } from "../layout/Container";
 
-export default function AdvantageSection({section}) {
+export default function ScheduleMeetingContentCard({data}) {
   const sectionRef = useRef(null);
   const [isInView, setIsInView] = useState(false);
   const [isSwiped, setIsSwiped] = useState(false);
@@ -84,12 +85,6 @@ export default function AdvantageSection({section}) {
     },
   };
 
-  // const advantages = [
-  //   "Dedicated business consultants for every setup.",
-  //   "100% clarity on timelines, costs, and documentation.",
-  //   "Strong partnerships with UAE government authorities.",
-  //   "Personalized business solutions designed for long-term success.",
-  // ];
 
   const handleSwipe = () => {
     setIsSwiped(true);
@@ -101,7 +96,7 @@ export default function AdvantageSection({section}) {
   return (
     <div
       ref={sectionRef}
-      className="w-full py-16 md:py-20 lg:py-24 bg-white overflow-hidden relative"
+      className="w-full pt-16 md:pt-20 lg:pt-24 pb-20 md:pb-36 bg-white overflow-hidden relative"
     >
       <div
         className="absolute top-[50%] left-0 w-48 h-48 opacity-100"
@@ -122,27 +117,24 @@ export default function AdvantageSection({section}) {
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-5 items-center">
             {/* Left Section */}
-            <motion.div className="relative">
+            <motion.div className="relative justify-center lg:justify-start flex">
               <motion.div className=" relative z-10">
                 {/* Title */}
                 <motion.h2
                   variants={titleVariants}
                   className=" text-3xl sm:text-4xl md:text-4xl lg:text-4xl font-bold text-[#49051E] leading-normal md:leading-9 mb-3 md:mb-4 whitespace-pre-line"
                 >
-             {section?.headline}
+             {data?.headline}
                 </motion.h2>
 
                 {/* Description */}
-                 {section?.content?.map((text, idx) => (
+                 {data?.content?.map((text, idx) => (
                 <motion.p
                key={idx}
                   variants={descriptionVariants}
                   className="text-sm sm:text-base text-gray-800 leading-relaxed max-w-md  mb-6 md:mb-8"
                 >
-                  {/* TMG Global stands out through transparency, expertise, and
-                  commitment. Our team understands the UAE's business landscape
-                  inside out, ensuring fast and compliant results for every
-                  client. We offer: */}
+          
                   {text}
                 </motion.p>
 ))}
@@ -153,7 +145,7 @@ export default function AdvantageSection({section}) {
                   initial="hidden"
                   animate={isInView ? "visible" : "hidden"}
                 >
-           {section?.features?.map((feature, i) => (
+           {data?.points?.map((point, i) => (
                     <motion.div
                       key={i}
                       custom={i}
@@ -162,7 +154,7 @@ export default function AdvantageSection({section}) {
                     >
                       <div className="flex-shrink-0 w-4 h-4 rounded-full bg-[#49051E] mt-1.5" />
                       <p className="text-sm sm:text-base text-gray-800 leading-relaxed">
-                     {feature.content}
+                     {point}
                       </p>
                     </motion.div>
                   ))}
@@ -173,7 +165,7 @@ export default function AdvantageSection({section}) {
             {/* Right Section */}
             <motion.div
               variants={cardVariants}
-              className="flex justify-center lg:justify-end relative z-10"
+              className="flex justify-center lg:justify-end"
             >
               <div className="bg-[#C79A59] rounded-3xl px-8 md:px-15 py-20 shadow-2xl w-full max-w-sm h-fit">
                 {/* Card Content */}
@@ -187,15 +179,11 @@ export default function AdvantageSection({section}) {
                 >
             
                   <div>
-                    <h3 className="text-2xl font-bold text-[#49051E] mb-3 leading-tight">
-                      Book a Consultation
-                      <br />
-                      with TMG Global
+                    <h3 className="text-2xl font-bold text-[#49051E] mb-3 leading-tight whitespace-pre-line">
+           {data?.cardTitle}
                     </h3>
                     <p className="text-sm text-gray-800 leading-relaxed">
-                      Plan your meeting with ease. Select a date that suits you,
-                      and we'll make sure an expert is ready to assist you with
-                      your business setup in the UAE.
+            {data?.cardDescription}
                     </p>
                   </div>
 
@@ -270,3 +258,4 @@ export default function AdvantageSection({section}) {
     </div>
   );
 }
+
