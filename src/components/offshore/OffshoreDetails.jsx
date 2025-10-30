@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { Container } from "../layout/Container";
 
 export default function OffshoreDetails() {
   const squareVariants = {
@@ -36,7 +37,9 @@ export default function OffshoreDetails() {
 
   return (
     <section className="w-full bg-white py-12 md:py-20  overflow-hidden">
-      <div className="max-w-6xl mx-auto">
+      <Container>
+
+      <div className="max-w-6xl ">
         {/* Header with Logo */}
         <div className="flex flex-col md:flex-row lg:items-start lg:justify-between gap-8 mb-8">
           <div className="flex-1">
@@ -161,6 +164,8 @@ export default function OffshoreDetails() {
           </div>
         </div>
       </div>
+      </Container>
+
     </section>
   );
 }

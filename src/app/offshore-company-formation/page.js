@@ -20,7 +20,7 @@ const page = () => {
           breadcrumbs={[
             { name: "Home", path: "/" },
             {
-              name: "UAE Offshore Company Formation",
+              name: "Offshore",
               path: "/offshore-company-formation",
             },
           ]}

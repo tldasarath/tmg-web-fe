@@ -2,6 +2,7 @@
 import { Mainlandservices } from "@/data/MainlandData";
 import { motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import { Container } from "../layout/Container";
 
 export default function MainlandSetup() {
   const sectionRef = useRef(null);
@@ -33,13 +34,11 @@ export default function MainlandSetup() {
     },
   };
 
-
   return (
     <section
       ref={sectionRef}
       className="relative w-full h-fit py-16 sm:py-20 lg:py-24 bg-gradient-to-r from-[#982044] to-[#640E29] text-white overflow-hidden"
     >
-     
       <div className="hidden  absolute  top-0 right-0  lg:flex items-center justify-end pr-6">
         <img
           src="/assets/images/right_text_element.png"
@@ -47,48 +46,46 @@ export default function MainlandSetup() {
           className=""
         />
       </div>
-
-      <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8">
-        {/* Header */}
-        <motion.div
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={container}
-          className="text-center mb-12 sm:mb-16"
-        >
-          <motion.h2
-            variants={fadeUp}
-            className="text-3xl sm:text-4xl font-bold mb-4"
+      <Container>
+        <div className="relative z-10 max-w-6xl ">
+          {/* Header */}
+          <motion.div
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            variants={container}
+            className="text-center mb-12 sm:mb-16"
           >
-           Why Choose UAE Mainland Setup
-
-          </motion.h2>
-   
-        </motion.div>
-
-        {/* Services */}
-        <motion.div
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={container}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5"
-        >
-          {Mainlandservices.map((service, i) => (
-            <motion.div
-              key={i}
+            <motion.h2
               variants={fadeUp}
-              whileHover={{
-                scale: 1.03,
-              }}
-              transition={{ type: "spring", stiffness: 200, damping: 12 }}
-              className="rounded-lg border border-white/30 bg-[#49051E] backdrop-blur-sm px-6 py-4 text-sm sm:text-base text-white font-medium shadow-sm hover:shadow-lg cursor-default"
+              className="text-3xl sm:text-4xl font-bold mb-4"
             >
-              {service}
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
+              Why Choose UAE Mainland Setup
+            </motion.h2>
+          </motion.div>
+
+          {/* Services */}
+          <motion.div
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            variants={container}
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5"
+          >
+            {Mainlandservices.map((service, i) => (
+              <motion.div
+                key={i}
+                variants={fadeUp}
+                whileHover={{
+                  scale: 1.03,
+                }}
+                transition={{ type: "spring", stiffness: 200, damping: 12 }}
+                className="rounded-lg border border-white/30 bg-[#49051E] backdrop-blur-sm px-6 py-4 text-sm sm:text-base text-white font-medium shadow-sm hover:shadow-lg cursor-default"
+              >
+                {service}
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </Container>
     </section>
   );
 }
-

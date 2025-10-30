@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import React, { useRef, useEffect, useState } from "react";
 import { Container } from "../layout/Container"; // optional wrapper
+import { services } from "@/data/MainlandData";
 
 export default function MainlandCompanyFormation() {
   const sectionRef = useRef(null);
@@ -21,75 +22,76 @@ export default function MainlandCompanyFormation() {
     visible: (i = 0) => ({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut", delay: i * 0.2 },
+      transition: { duration: 0.6, ease: "easeOut", delay: i * 0.3 },
     }),
   };
 
-  const services = [
-    {
-      title: "Company name registration and DED approval",
-    },
-    {
-      title: "Trade license acquisition (Professional, Commercial, Industrial)",
-    },
-    {
-      title: "Local service agent (if required)",
-    },
-    {
-      title: "Office space solutions and Ejari registration",
-    },
-    {
-      title: "PRO and visa processing services",
-    },
-    {
-      title: "Bank account opening assistance",
-    },
-  ];
 
-  
+
   const section1 = services.slice(0, 3);
   const section2 = services.slice(3, 6);
 
-  const CircleItem = ({ service, index }) => (
-    <motion.div
-      custom={index}
-      variants={fadeUp}
-      whileHover={{
-        scale: 1.05,
-        y: -5,
-        boxShadow: "0px 6px 16px rgba(0,0,0,0.15)",
-      }}
-      transition={{ duration: 0.3 }}
-      className="
-        relative
-        w-[180px]
-        h-[180px]
-        rounded-full 
-        bg-white 
-        border-2
-        border-gray-300
-        shadow-md 
-        flex 
-        justify-center 
-        items-center 
-        text-center
-        px-4
-        py-2
-      "
-    >
-      <span className="text-[#4B0B1C] text-sm font-medium leading-tight">
-        {service.title}
-      </span>
+  const CircleItem = ({ service, index }) => {
+    const [isHovering, setIsHovering] = useState(false);
 
-      {/* Decorative dot */}
-      <span
-        className="absolute top-5 right-4 w-2 h-2 rounded-full bg-[#7A1332]"
-        style={{
-          animation: "pulse 2s infinite",
+    return (
+      <motion.div
+        custom={index}
+        variants={fadeUp}
+        whileHover={{
+          scale: 1.05,
+          y: -5,
+          boxShadow: "0px 6px 16px rgba(0,0,0,0.15)",
         }}
-      ></span>
-    </motion.div>
-  );
+        transition={{ duration: 0.3 }}
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+        className="
+          relative
+          w-[180px]
+          h-[180px]
+          rounded-full 
+          bg-white 
+          border-[0.5px]
+          border-[#4B0B1C]/40
+          shadow-md 
+          flex 
+          justify-center 
+          items-center 
+          text-center
+          px-2
+          py-2
+        "
+      >
+        <span className="text-[#4B0B1C] text-[16px] font-medium leading-tight whitespace-pre-line">
+          {service.title}
+        </span>
+
+        {/* Orbiting dot */}
+        <motion.span
+          animate={isHovering ? { rotate: 360 } : { rotate: 0 }}
+          transition={
+            isHovering
+              ? { duration: 1, ease: "linear" }
+              : { duration: 0.8, ease: "easeOut" }
+          }
+          className="absolute w-full h-full rounded-full"
+          style={{
+            transformOrigin: "center center",
+          }}
+        >
+          <span
+            className="absolute w-2 h-2 rounded-full bg-[#7A1332]"
+            style={{
+              top: "-5px",
+              right: "50%",
+              transform: "translateX(50%)",
+            }}
+          ></span>
+        </motion.span>
+      </motion.div>
+    );
+  };
 
   const ServiceSection = ({ services, isReversed = false }) => (
     <div
@@ -147,7 +149,6 @@ export default function MainlandCompanyFormation() {
       ref={sectionRef}
       className="relative w-full py-16 sm:py-20 lg:py-24 bg-white overflow-hidden "
     >
-        
       <Container>
         <div className="flex flex-col gap-10 items-start  ">
           {/* Heading Section */}
@@ -194,8 +195,6 @@ export default function MainlandCompanyFormation() {
           </motion.div>
         </div>
       </Container>
-
-
     </section>
   );
 }

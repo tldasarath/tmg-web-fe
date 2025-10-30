@@ -61,9 +61,16 @@ export default function MainlandLicenseSection() {
       ref={sectionRef}
       className="relative w-full py-16 sm:py-20 lg:py-24 bg-white overflow-hidden"
     >
+            <div className="  absolute  top-0 right-[-5]  flex items-center justify-end ">
+        <img
+          src="/assets/images/right_element.png"
+          alt="Background Pattern"
+          className=""
+        />
+      </div>
         <Container>
 
-      <div className="max-w-7xl  flex flex-col gap-10">
+      <div className="max-w-7xl  flex flex-col gap-10 relative z-10">
         {/* Header */}
         <div className="text-center lg:text-left">
           <motion.h2
@@ -93,7 +100,7 @@ export default function MainlandLicenseSection() {
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={scaleIn}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center"
+          className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 justify-items-center"
         >
           {cards.map((card, index) => (
             <motion.div

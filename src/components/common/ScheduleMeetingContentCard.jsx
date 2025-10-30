@@ -165,7 +165,7 @@ export default function ScheduleMeetingContentCard({data}) {
             {/* Right Section */}
             <motion.div
               variants={cardVariants}
-              className="flex justify-center lg:justify-end"
+              className="flex justify-center lg:justify-end relative z-10"
             >
               <div className="bg-[#C79A59] rounded-3xl px-8 md:px-15 py-20 shadow-2xl w-full max-w-sm h-fit">
                 {/* Card Content */}

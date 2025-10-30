@@ -2,6 +2,7 @@
 import { services } from "@/data/OffshoreData";
 import { motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import { Container } from "../layout/Container";
 
 export default function OffshoreSolutions() {
   const sectionRef = useRef(null);
@@ -39,6 +40,8 @@ export default function OffshoreSolutions() {
       ref={sectionRef}
       className="relative w-full h-fit py-16 sm:py-20 lg:py-24 bg-gradient-to-r from-[#982044] to-[#640E29] text-white overflow-hidden"
     >
+      <Container>
+
      
       <div className="hidden  absolute  top-0 right-0  lg:flex items-center justify-end pr-6">
         <img
@@ -48,7 +51,7 @@ export default function OffshoreSolutions() {
         />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-8">
+      <div className="relative z-10 max-w-6xl ">
         {/* Header */}
         <motion.div
           initial="hidden"
@@ -105,6 +108,8 @@ export default function OffshoreSolutions() {
           ))}
         </motion.div>
       </div>
+      </Container>
+
     </section>
   );
 }
