@@ -8,6 +8,7 @@ import FreezoneDetails from "@/components/freezone/FreezoneDetails";
 import FreezoneBusinessFormation from "@/components/freezone/FreezoneBusinessFormation";
 import FreezoneSetup from "@/components/freezone/FreezoneSetup";
 import FreezoneFAQ from "@/components/freezone/FreezoneFAQ";
+import FreezoneOpportunities from "@/components/freezone/FreezoneOpportunities";
 
 const page = () => {
   return (
@@ -25,6 +26,7 @@ const page = () => {
           ]}
         />
         <FreezoneDetails/>
+        <FreezoneOpportunities/>
         <FreezoneSetup/>
 <FreezoneBusinessFormation/>
 <FreezoneFAQ/>

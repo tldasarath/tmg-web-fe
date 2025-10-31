@@ -99,7 +99,7 @@ export default function FreezoneDetails() {
 
   return (
     <motion.div
-      className="min-h-screen py-8 md:py-12 lg:py-16 relative"
+      className="min-h-screen py-8 md:py-12 lg:py-16 relative overflow-hidden"
       initial="hidden"
       animate={isVisible ? "visible" : "hidden"}
       variants={containerVariants}

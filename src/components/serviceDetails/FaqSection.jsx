@@ -3,9 +3,11 @@
 import { motion } from "framer-motion";
 import { Container } from "../layout/Container";
 import { useRef, useState, useEffect } from "react";
-export default function FAQSection({section}) {
+
+export default function FAQSection({ license }) {
   const sectionRef = useRef(null);
   const [isInView, setIsInView] = useState(false);
+  
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -17,20 +19,6 @@ export default function FAQSection({section}) {
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
-
-  // const faqs = [
-  //   {
-  //     question:
-  //       "What is the difference between Mainland and Freezone business setup?",
-  //     answer:
-  //       "Mainland companies can trade within the UAE and internationally, while Freezone companies offer 100% ownership, no customs duty, and are ideal for import/export and global operations.",
-  //   },
-  //   {
-  //     question: "How long does the setup process take?",
-  //     answer:
-  //       "Typically, a business setup in Dubai takes between 5 to 15 working days, depending on the jurisdiction and activity type.",
-  //   },
-  // ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -110,13 +98,9 @@ export default function FAQSection({section}) {
             <motion.div
               className="flex flex-col items-start justify-start"
               variants={containerVariants}
-              // initial={{ opacity: 0, x: -50 }}
-              // whileInView={{ opacity: 1, x: 0 }}
-              // transition={{ duration: 0.6 }}
-              // viewport={{ once: true }}
             >
               <motion.h2
-                className="text-3xl md:text-4xl  font-bold text-[#49051E] leading-tight mb-12"
+                className="text-3xl md:text-4xl font-bold text-[#49051E] leading-tight mb-12"
                 variants={titleVariants}
               >
                 <span className="block">Frequently</span>
@@ -145,7 +129,7 @@ export default function FAQSection({section}) {
               className="lg:col-span-2 space-y-8 mt-5 md:mt-12"
               variants={containerVariants}
             >
-              {section?.faqs.map((faq, index) => (
+              {license?.faqs?.map((faq, index) => (
                 <motion.div
                   key={index}
                   custom={index}
@@ -154,7 +138,7 @@ export default function FAQSection({section}) {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex gap-6 justify-center "
+                  className="flex gap-6 justify-center"
                 >
                   {/* Question Circle Badge */}
                   <motion.div
@@ -191,7 +175,7 @@ export default function FAQSection({section}) {
                     >
                       {faq.answer}
                     </motion.p>
-                    {index < section?.faqs.length - 1 && (
+                    {index < license?.faqs?.length - 1 && (
                       <motion.div
                         className="border-b border-gray-300 mt-8"
                         initial={{ scaleX: 0, opacity: 0 }}

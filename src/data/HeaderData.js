@@ -88,25 +88,25 @@ export const serviceItems = [
 export const licenseItems = [
   {
     title: "Professional License",
-    href: "/license",
+    href: "/license/professional-license",
     
     // href: "/license/professional-license",
   },
   {
     title: "Commercial License",
-    href: "/license",
+    href: "/license/commercial-license",
     
     // href: "/license/commercial-license",
   },
   {
     title: "Industrial License",
-    href: "/license",
+    href: "/license/industrial-license",
     
     // href: "/license/industrial-license",
   },
   {
     title: "E-Trader License",
-    href: "/license",
+    href: "/license/e-trader-license",
     
     // href: "/license/e-trader-license",
   },

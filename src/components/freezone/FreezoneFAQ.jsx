@@ -102,7 +102,7 @@ export default function FreezoneFAQ() {
   };
 
   return (
-    <div ref={sectionRef} className="min-h-screen relative bg-white  pt-10 sm:pt-14 lg:pt-20 pb-20 sm:pb-28 lg:pb-32">
+    <div ref={sectionRef} className="min-h-screen relative bg-white  pt-10 sm:pt-14 lg:pt-20 pb-20 sm:pb-28 lg:pb-32 overflow-hidden">
              <div
         className="absolute top-[20%] right-0 w-60 h-60 opacity-100"
         style={{  transform: "translateY(-50%)" }}
