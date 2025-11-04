@@ -7,7 +7,7 @@ import Footer from "@/components/footer/Footer";
 import { Navbar } from "@/components/navbar/Navbar";
 import React, { useState } from "react";
 
-const page = () => {
+const Page = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -30,4 +30,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

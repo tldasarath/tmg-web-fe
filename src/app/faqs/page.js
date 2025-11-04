@@ -6,7 +6,7 @@ import Footer from "@/components/footer/Footer";
 import { Navbar } from "@/components/navbar/Navbar";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   return (
     <>
       <div className="w-full h-screen">
@@ -25,4 +25,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

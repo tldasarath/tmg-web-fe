@@ -8,7 +8,7 @@ import { Navbar } from "@/components/navbar/Navbar";
 import Services from "@/components/services/Services";
 import React, { useState } from "react";
 
-const page = () => {
+const Page = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -31,4 +31,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

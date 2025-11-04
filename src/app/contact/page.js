@@ -6,10 +6,11 @@ import Footer from "@/components/footer/Footer";
 import { Navbar } from "@/components/navbar/Navbar";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   return (
     <>
       <div className="min-h-screen w-full">
+        
         <Navbar />
         <BannerSection
           title="Contact"
@@ -21,9 +22,11 @@ const page = () => {
         <ContactUs />
         <Map />
         <Footer />
+
+
       </div>
     </>
   );
 };
 
-export default page;
+export default Page;
