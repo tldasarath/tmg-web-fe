@@ -73,8 +73,8 @@ const nextConfig = {
   // Production optimizations
   productionBrowserSourceMaps: false,
 
-  // Trailing slashes
-  trailingSlash: false,
+  // Trailing slashes - set to true for better static hosting compatibility
+  trailingSlash: true,
 
   // React strict mode
   reactStrictMode: true,
