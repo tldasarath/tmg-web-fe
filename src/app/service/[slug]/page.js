@@ -1,6 +1,7 @@
 "use client";
 import BannerSection from "@/components/banner/Banner";
 import BusinessBanner from "@/components/banner/BusinessBanner";
+import ConsultationModal from "@/components/common/ConsultationModal";
 import SmallBanner from "@/components/common/SmallBanner";
 import Footer from "@/components/footer/Footer";
 import { Navbar } from "@/components/navbar/Navbar";
@@ -17,6 +18,7 @@ const Page = () => {
   const params = useParams();
   const [service, setService] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     if (params?.slug) {
@@ -60,8 +62,6 @@ const Page = () => {
         </div>
         <Footer />
       </div>
-
-      
     );
   }
 
@@ -95,11 +95,14 @@ const Page = () => {
         if (section.id === "section4") {
           return <FAQSection key={section.id} section={section} />;
         }
-        
+
         return null;
       })}
-      <SmallBanner />
+      <SmallBanner onOpenModal={() => setShowModal(true)} />
       <Footer />
+
+      {/* Render modal at the top level */}
+      <ConsultationModal isOpen={showModal} setIsOpen={setShowModal} />
     </div>
   );
 };

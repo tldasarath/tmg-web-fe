@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Container } from "../layout/Container";
 import { useRef, useState, useEffect } from "react";
 
-export default function FAQSection({ section }) {
+export default function LicenseFAQSection({ license }) {
   const sectionRef = useRef(null);
   const [isInView, setIsInView] = useState(false);
   
@@ -129,7 +129,7 @@ export default function FAQSection({ section }) {
               className="lg:col-span-2 space-y-8 mt-5 md:mt-12"
               variants={containerVariants}
             >
-              {section?.faqs?.map((faq, index) => (
+              {license?.faqs?.map((faq, index) => (
                 <motion.div
                   key={index}
                   custom={index}
@@ -175,7 +175,7 @@ export default function FAQSection({ section }) {
                     >
                       {faq.answer}
                     </motion.p>
-                    {index < section?.faqs?.length - 1 && (
+                    {index < license?.faqs?.length - 1 && (
                       <motion.div
                         className="border-b border-gray-300 mt-8"
                         initial={{ scaleX: 0, opacity: 0 }}

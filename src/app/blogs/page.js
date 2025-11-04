@@ -1,11 +1,15 @@
+"use client";
 import BannerSection from "@/components/banner/Banner";
 import Blog from "@/components/blog/Blog";
+import ConsultationModal from "@/components/common/ConsultationModal";
 import SmallBanner from "@/components/common/SmallBanner";
 import Footer from "@/components/footer/Footer";
 import { Navbar } from "@/components/navbar/Navbar";
-import React from "react";
+import React, { useState } from "react";
 
 const page = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <>
       <div className="w-full h-screen">
@@ -18,8 +22,9 @@ const page = () => {
           ]}
         />
         <Blog />
-        <SmallBanner />
+        <SmallBanner onOpenModal={() => setShowModal(true)} />
         <Footer />
+        <ConsultationModal isOpen={showModal} setIsOpen={setShowModal} />
       </div>
     </>
   );

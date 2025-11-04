@@ -5,7 +5,7 @@ export const BranchData = [
     image: "/assets/images/branch/TMG-GLOBAL-LLC(Al Twar Centre).png",
     location:"Al Twar Centre, Al Nahda Road, Al Qusais 2 \n Next to Al Qusais Metro Station ,\nDubai - United Arab Emirates",
     phone:"0586132255",
-  link:"https://www.google.com/search?q=al+twar+center&oq=al+twar&gs_lcrp=EgZjaHJvbWUqDggAEEUYJxg7GIAEGIoFMg4IABBFGCcYOxiABBiKBTIHCAEQLhiABDIGCAIQRRg7MgcIAxAuGIAEMgcIBBAAGIAEMgcIBRAuGIAEMgcIBhAuGIAEMg0IBxAuGK8BGMcBGIAEMg0ICBAuGK8BGMcBGIAE0gEJNjQ2OWowajE1qAIMsAIB8QU0YfqaGL7tEw&sourceid=chrome&ie=UTF-8"
+  link:"https://maps.app.goo.gl/MDxJGVxRcoMmAPcX8?g_st=iw"
 },
   {
     title: "TMG Global-Madina Mall Branch",

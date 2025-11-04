@@ -5,7 +5,9 @@ import { useRef, useState, useEffect } from "react";
 import MainButton from "../button/main-button";
 import { Container } from "../layout/Container";
 
-const SmallBanner = () => {
+// Remove ConsultationModal import here
+
+const SmallBanner = ({ onOpenModal }) => { // Accept onOpenModal as prop
   const sectionRef = useRef(null);
   const [isInView, setIsInView] = useState(false);
 
@@ -85,8 +87,8 @@ const SmallBanner = () => {
   };
 
   return (
-    <section ref={sectionRef} className="relative pb-32 lg:pt-16 pt-8">
-            <div
+    <section ref={sectionRef} className="relative pb-32 lg:pt-16 pt-8 z-10">
+      <div
         className="absolute left-0 w-60 h-60 opacity-100"
         style={{ top: "10%", transform: "translateY(-50%)" }}
       >
@@ -154,11 +156,19 @@ const SmallBanner = () => {
               variants={buttonVariants}
               className=" flex justify-center"
             >
-              <MainButton text="Contact Now" />
+              <MainButton
+                text="Contact Now"
+                className=""
+                icon="external"
+                scroll={true}
+                onClick={onOpenModal} // Use the prop instead of local state
+              />
             </motion.div>
           </motion.div>
         </motion.div>
       </Container>
+      
+      {/* Remove modal rendering from here */}
     </section>
   );
 };

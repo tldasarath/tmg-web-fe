@@ -1,10 +1,14 @@
-// components/ImageSection.jsx or ImageSection.tsx
+'use client'
 import Image from 'next/image';
 import MainButton from '../button/main-button';
 import { Container } from '../layout/Container';
 import LettersPullUpText from '../text/LettersPullUpText';
+import { useState } from 'react';
+import ConsultationModal from '../common/ConsultationModal';
+
 
 const ImageSection = () => {
+     const [showModal, setShowModal] = useState(false);
     return (
         <section className="relative h-auto lg:h-[278px] py-4 lg:py-4 flex items-center justify-center">
             {/* Background Image */}
@@ -47,16 +51,21 @@ const ImageSection = () => {
                                 <MainButton 
                                     bgColor='#C79A59'
                                     text='Connect with Us'
-                                    link='/contact#contact-form'
+                             
                                     className=''
                                     icon='external' 
                                     scroll={true}
+                                     onClick={() => setShowModal(true)} 
                                 />
                             </div>
                     </div>
                 </div>
             </div>
                     </Container>
+
+                       {showModal && (
+        <ConsultationModal isOpen={showModal} setIsOpen={setShowModal} />
+      )}
 
         </section>
     );

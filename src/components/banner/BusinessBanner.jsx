@@ -2,8 +2,13 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Container } from "../layout/Container";
+import { useState } from "react";
+import MainButton from "../button/main-button";
+import ConsultationModal from "../common/ConsultationModal";
 
 export default function BusinessBanner({ bannerData }) {
+  const [showModal, setShowModal] = useState(false);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -83,9 +88,16 @@ export default function BusinessBanner({ bannerData }) {
                   your vision. */}
                   {bannerData?.subheading}
                 </p>
-
+                <MainButton
+                  bgColor="#C79A59"
+                  text="Get a Free Consultation"
+                  className=""
+                  icon="external"
+                  scroll={true}
+                  onClick={() => setShowModal(true)}
+                />
                 {/* CTA Button */}
-                <motion.button
+                {/* <motion.button
                   variants={buttonVariants}
                   whileHover="hover"
                   whileTap="tap"
@@ -95,12 +107,16 @@ export default function BusinessBanner({ bannerData }) {
                     Get a Free Consultation
                   </span>
                   <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5" />
-                </motion.button>
+                </motion.button> */}
               </motion.div>
             </div>
           </motion.div>
         </div>
       </Container>
+
+      {showModal && (
+        <ConsultationModal isOpen={showModal} setIsOpen={setShowModal} />
+      )}
 
       {/* Decorative Elements */}
       <motion.div

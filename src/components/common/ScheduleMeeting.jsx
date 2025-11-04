@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronRight, } from "lucide-react";
-import ScheduleMeetingSection from '../meetingSchedule/ScheduleMeetingSection'
-import { ScheduleModal } from "../meetingSchedule/ScheduleModal";
+import { motion } from "framer-motion";
+import { ChevronRight } from "lucide-react";
 
-const ScheduleMeeting = () => {
+const ScheduleMeeting = ({ onScheduleModalOpen }) => { // Add this prop
     const today = new Date();
 
     const getNextFiveDays = () => {
@@ -24,23 +22,23 @@ const ScheduleMeeting = () => {
 
     const dates = getNextFiveDays();
     const [selectedDate, setSelectedDate] = useState(0);
-    const [showModal, setShowModal] = useState(false);
     const [isSwiped, setIsSwiped] = useState(false);
 
     const handleSwipe = () => {
         setIsSwiped(true);
         setTimeout(() => {
-            setShowModal(true);
+            onScheduleModalOpen(dates[selectedDate]); // Call the prop function
             setIsSwiped(false);
         }, 600);
     };
+
     return (
         <div className="bg-[#C79A59] rounded-2xl px-6 py-10 lg:px-5 lg:py-6 xl:px-4 xl:py-5 shadow-xl text-white flex flex-col ">
             <h3 className="text-[#49051E] text-xl font-bold pb-3">Book a Consultation
                 with TMG Global</h3>
             <p className="text-[#000000] mb-6 lg:mb-8 xl:mb-6 text-lg leading-relaxed font-normal">
                 Plan your meeting with ease. Select a date that suits you, and
-                we’ll make sure an expert is ready to assist you with your
+                we'll make sure an expert is ready to assist you with your
                 business setup in the UAE.
             </p>
 
@@ -109,21 +107,9 @@ const ScheduleMeeting = () => {
                         )}
                     </motion.span>
                 </motion.div>
-
             </motion.div>
-
-            {/* Modal */}
-            <AnimatePresence>
-                {showModal && (
-                    <ScheduleModal
-                        selectedDate={dates[selectedDate]}
-                        onClose={() => setShowModal(false)}
-                    />
-                )}
-            </AnimatePresence>
-
         </div>
     )
 }
 
-export default ScheduleMeeting
+export default ScheduleMeeting;

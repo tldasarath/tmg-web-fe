@@ -4,9 +4,9 @@ import BannerSection from "@/components/banner/Banner";
 import Footer from "@/components/footer/Footer";
 import BusinessJourneySection from "@/components/license/BusinessJourneySection";
 import LicenseDetailSection from "@/components/license/LicenseDetailSection";
+import LicenseFAQSection from "@/components/license/LicenseFaqSection";
 import { Navbar } from "@/components/navbar/Navbar";
 
-import FAQSection from "@/components/serviceDetails/FaqSection";
 import { LicenseDetails } from "@/data/LicenseData";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -70,7 +70,7 @@ const Page = () => {
 
       <LicenseDetailSection license={license} />
 <BusinessJourneySection license={license} />
-      <FAQSection  license={license} />
+      <LicenseFAQSection  license={license} />
       <Footer />
     </div>
   );

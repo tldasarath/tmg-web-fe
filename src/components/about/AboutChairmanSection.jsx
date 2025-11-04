@@ -3,19 +3,14 @@
 import { useRef, useEffect } from 'react';
 import { Container } from '../layout/Container';
 import { motion, useInView, useAnimation } from 'framer-motion';
+import { sisterConcerns } from '@/data/CompanyData';
 
 const AboutChairmanSection = () => {
   const sectionRef = useRef(null);
   const inView = useInView(sectionRef, { margin: '-20% 0px -20% 0px' });
   const controls = useAnimation();
 
-  const sisterConcerns = [
-    { name: "Company Logo", logo: "/assets/images/logos/logo1.png" },
-    { name: "Company Logo", logo: "/assets/images/logos/logo2.png" },
-    { name: "Company Logo", logo: "/assets/images/logos/logo3.png" },
-    { name: "Company Logo", logo: "/assets/images/logos/logo4.png" },
-    { name: "Company Logo", logo: "/assets/images/logos/logo5.png" },
-  ];
+
 
   // Animate the rotation 0 → -180 → 0 smoothly when in view
   useEffect(() => {

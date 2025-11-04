@@ -19,6 +19,7 @@ const MainButton = ({
   className = "",
   icon = "external",
   scroll = true,
+  onClick,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const router = useRouter();
@@ -48,10 +49,13 @@ const MainButton = ({
 
   const handleClick = useCallback(
     (e) => {
-      if (!scroll || !link.includes("#")) {
-        return; // Let Link component handle normal navigation
+      if (onClick) {
+        e.preventDefault(); // stop link navigation
+        onClick(); // call the passed function
+        return;
       }
 
+      if (!scroll || !link.includes("#")) return;
       e.preventDefault();
 
       const [targetPath, hash] = link.split("#");

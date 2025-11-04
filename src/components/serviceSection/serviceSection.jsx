@@ -4,7 +4,6 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import MainButton from "../button/main-button";
 import { Container } from "../layout/Container";
 
-// Animation variants
 const leftVariants = {
   hidden: { x: -150, opacity: 0 },
   visible: {
@@ -25,11 +24,10 @@ const rightVariants = {
 
 const ServicesSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.3 }); // triggers when 30% visible
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
   const leftControls = useAnimation();
   const rightControls = useAnimation();
 
-  // Trigger animation when in view
   React.useEffect(() => {
     if (isInView) {
       leftControls.start("visible");
@@ -40,7 +38,7 @@ const ServicesSection = () => {
   const leftServices = [
     { label: "Business Setup", link: "/service/business-setup-dubai" },
     { label: "Company Formation ", link: "/service/company-formation-dubai" },
-    { label: "Company Liquidation", link: "/link" },
+    { label: "Company Liquidation", link: "/service/company-liquidation" },
   ];
 
   const rightServices = [
@@ -50,11 +48,10 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section ref={ref} className="relative lg:py-16 py-8 overflow-hidden ">
+    <section ref={ref} className="relative  lg:py-16 py-8 overflow-hidden ">
       <Container>
-        <div className="w-full relative z-10">
-          {/* Heading */}
-          <div className="mb-12">
+        <div className="w-full relative z-10 ">
+          <div className="mb-6 md:mb-12">
             <div className="keyboard mb-6 lg:mb-8">
               {"OUR SERVICES".split("").map((letter, i) => (
                 <span
@@ -75,8 +72,7 @@ const ServicesSection = () => {
             </p>
           </div>
 
-          {/* Services Grid */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 gap-8 mb-6">
             {/* Left Section */}
             <motion.div
               className="space-y-4"
@@ -102,7 +98,6 @@ const ServicesSection = () => {
             </motion.div>
           </div>
 
-          {/* Button */}
           <div className="text-center flex justify-center">
             <MainButton
               text="More Services"
@@ -129,7 +124,7 @@ const ServiceItem = ({ service }) => (
   <div
     className="
       group 
-      p-2.5 md:p-6  
+      p-.5 md:p-3 xl:p-6 
       border-b-2 border-black 
       rounded-2xl 
       hover:text-white 
