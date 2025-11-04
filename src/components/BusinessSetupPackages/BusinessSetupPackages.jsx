@@ -3,59 +3,79 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import { cards, packageData } from "../../data/PackageData";
+import { packageData } from "../../data/PackageData";
 
 export const BusinessSetupPackages = () => {
   const [activeTab, setActiveTab] = useState("FREEZONE");
   const [hoveredIndex, setHoveredIndex] = useState(null);
-
+  const [withVisa, setWithVisa] = useState(false);
   const currentOptions = packageData[activeTab];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [fade, setFade] = useState(true);
+  const [isPaused, setIsPaused] = useState(false);
 
   const handleLearnMore = (e) => {
     e.stopPropagation();
     router.push("/");
   };
+
   const cards = [
     {
-      name: "John Doe",
-      role: "Visionary founder leading with passion and innovation.",
-      price: "$199",
+      name: "MEYDAN",
+      prices: {
+        withVisa: { current: 20595, old: 21095 },
+        withoutVisa: { current: 12500, old: 13500 },
+      },
+      image: "/assets/images/packages/meydan-package.jpg",
+    },
+    {
+      name: "IFZA",
+      prices: {
+        withVisa: { current: 23495, old: 23995 },
+        withoutVisa: { current: 12400, old: 12000 },
+      },
       image: "/assets/images/about/why-choose.png",
     },
     {
-      name: "Jane Smith",
-      role: "Creative director inspiring innovation in every project.",
-      price: "$249",
-      image: "/assets/images/about/why-choose01.png",
+      name: "SPC FREEZONE",
+      prices: {
+        withVisa: { current: 14490, old: 4990 },
+        withoutVisa: { current: 6375, old: 6875 },
+      },
+      image: "/assets/images/about/why-choose.png",
     },
     {
-      name: "Alice Johnson",
-      role: "Product manager driving excellence in every launch.",
-      price: "$179",
-      image: "/assets/images/about/why-choose02.png",
+      name: "SRTIP PACKAGES",
+      prices: {
+        withVisa: { current: 12490, old: 13990 },
+        withoutVisa: { current: 5000, old: 5500 },
+      },
+      image: "/assets/images/about/why-choose.png",
+    },
+    {
+      name: "SHAMS FREEZONE",
+      prices: {
+        withVisa: { current: 12600, old: 13120 },
+        withoutVisa: { current: 5750, old: 6885 },
+      },
+      image: "/assets/images/about/why-choose.png",
     },
   ];
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const [fade, setFade] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // Fade out
-      setFade(false);
-
-      setTimeout(() => {
-        // Change card after fade-out
-        setCurrentIndex((prev) => (prev + 1) % cards.length);
-        setFade(true); // Fade back in
-      }, 400); // Fade duration
-    }, 2000); // Change every 2s
+      if (!isPaused) {
+        setFade(false);
+        setTimeout(() => {
+          setCurrentIndex((prev) => (prev + 1) % cards.length);
+          setFade(true);
+        }, 400);
+      }
+    }, 2000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isPaused]);
 
-  const card = cards[currentIndex];
-  // Auto flip the first card when it enters viewport
   useEffect(() => {
     const firstCard = document.querySelector("[data-first-card]");
     if (!firstCard) return;
@@ -64,13 +84,12 @@ export const BusinessSetupPackages = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-
-            setHoveredIndex(0); // flip
-            setTimeout(() => setHoveredIndex(null), 1000); // unflip after 1s
+            setHoveredIndex(0);
+            setTimeout(() => setHoveredIndex(null), 1000);
           }
         });
       },
-      { threshold: 0.5 } // Trigger when 50% visible
+      { threshold: 0.5 }
     );
 
     observer.observe(firstCard);
@@ -79,12 +98,11 @@ export const BusinessSetupPackages = () => {
   }, []);
 
   return (
-    <section className="pb-16" >
-      <div className="bg-black mx-3 md:mx-10 rounded-3xl flex justify-center
-      py-10 xl:px-40 px-10">
-        <div className="grid lg:grid-cols-3  w-full  gap-8 items-start">
-          {/* Left Side  */}
-          <div  >
+    <section className="pb-16">
+      <div className="bg-black mx-3 md:mx-10 rounded-3xl flex justify-center py-10 xl:px-40 px-10">
+        <div className="grid lg:grid-cols-3 w-full gap-8 items-start">
+          {/* Left Side */}
+          <div>
             <motion.h2
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -97,28 +115,31 @@ export const BusinessSetupPackages = () => {
             <div className="flex gap-4 mb-8 flex-wrap">
               <button
                 onClick={() => setActiveTab("FREEZONE")}
-                className={`px-6 py-3 rounded-2xl font-medium transition-all ${activeTab === "FREEZONE"
+                className={`px-6 py-3 rounded-2xl font-medium transition-all ${
+                  activeTab === "FREEZONE"
                     ? "bg-[#C79A59] text-white"
                     : "bg-transparent text-white border-2 border-[#C79A59]"
-                  }`}
+                }`}
               >
                 FREEZONE
               </button>
               <button
                 onClick={() => setActiveTab("Mainland")}
-                className={`px-6 py-3 rounded-2xl font-medium transition-all ${activeTab === "Mainland"
+                className={`px-6 py-3 rounded-2xl font-medium transition-all ${
+                  activeTab === "Mainland"
                     ? "bg-[#C79A59] text-white"
                     : "bg-transparent text-white border-2 border-[#C79A59]"
-                  }`}
+                }`}
               >
                 MAINLAND
               </button>
               <button
                 onClick={() => setActiveTab("OFFSHORE")}
-                className={`px-6 py-3 rounded-2xl font-medium transition-all ${activeTab === "OFFSHORE"
+                className={`px-6 py-3 rounded-2xl font-medium transition-all ${
+                  activeTab === "OFFSHORE"
                     ? "bg-[#C79A59] text-white"
                     : "bg-transparent text-white border-2 border-[#C79A59]"
-                  }`}
+                }`}
               >
                 OFFSHORE
               </button>
@@ -130,7 +151,6 @@ export const BusinessSetupPackages = () => {
                 {currentOptions.map((option, index) => (
                   <motion.div
                     data-first-card={index === 0 ? true : undefined}
-
                     key={`${activeTab}-${option.name}`}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{
@@ -141,14 +161,7 @@ export const BusinessSetupPackages = () => {
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                     className="flex items-center gap-3 text-amber-400 hover:text-amber-300 cursor-pointer group"
                   >
-                    <span
-                      className="
-            text-xl lg:text-3xl font-semibold 
-            bg-[conic-gradient(from_180deg,rgba(199,154,89,1)_0%,rgba(241,241,241,1)_100%)]
-            bg-clip-text text-transparent transition-all duration-300
-            group-hover:opacity-90
-          "
-                    >
+                    <span className="text-xl lg:text-3xl font-semibold bg-[conic-gradient(from_180deg,rgba(199,154,89,1)_0%,rgba(241,241,241,1)_100%)] bg-clip-text text-transparent transition-all duration-300 group-hover:opacity-90">
                       {option.name}
                     </span>
                     <motion.div
@@ -164,11 +177,11 @@ export const BusinessSetupPackages = () => {
               </AnimatePresence>
             </div>
 
-            <div className="flex justify-center ">
+            <div className="flex justify-center">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-[#C79A59] text-white px-4 py-4 rounded-full font-semibold flex items-center gap-2transition-colors"
+                className="bg-[#C79A59] text-white px-4 py-4 rounded-full font-semibold flex items-center gap-2 transition-colors"
               >
                 Explore Packages
                 <ArrowUpRight className="w-5 h-5" />
@@ -176,8 +189,8 @@ export const BusinessSetupPackages = () => {
             </div>
           </div>
 
-        
-          <div className="flex justify-center  w-full ">
+          {/* Middle Section - Flip Cards */}
+          <div className="flex justify-center w-full">
             <div className="w-full md:w-[400px] h-[600px] overflow-y-auto pr-2 scrollbar-hide">
               <div className="space-y-6">
                 <AnimatePresence mode="wait">
@@ -189,15 +202,16 @@ export const BusinessSetupPackages = () => {
                       exit={{ opacity: 0, scale: 0.9 }}
                       transition={{ duration: 0.5, delay: index * 0.15 }}
                       onHoverStart={() => {
-                        if (window.innerWidth > 768) setHoveredIndex(index); // hover for desktop
+                        if (window.innerWidth > 768) setHoveredIndex(index);
                       }}
                       onHoverEnd={() => {
                         if (window.innerWidth > 768) setHoveredIndex(null);
                       }}
                       onClick={() => {
-                        // Flip on click for mobile
                         if (window.innerWidth <= 768) {
-                          setHoveredIndex(hoveredIndex === index ? null : index);
+                          setHoveredIndex(
+                            hoveredIndex === index ? null : index
+                          );
                         }
                       }}
                       className="relative w-full cursor-pointer aspect-[3/2.5] lg:aspect-[3/3] xl:aspect-[3/2.5]"
@@ -242,7 +256,6 @@ export const BusinessSetupPackages = () => {
                           }}
                         >
                           <div className="w-full h-full p-4 2xl:p-8 flex flex-col justify-between">
-                            {/* Top content */}
                             <div>
                               <h3 className="text-white text-2xl font-bold mb-4">
                                 {option.name}
@@ -252,7 +265,6 @@ export const BusinessSetupPackages = () => {
                               </p>
                             </div>
 
-                            {/* Bottom section — Price + Logo */}
                             <div className="flex items-center bg-white p-4 h-14 rounded-xl justify-between mt-2 lg:mt-2 xl:mt-6">
                               <span className="text-black text-lg md:text-xl font-semibold">
                                 {option.rate}
@@ -275,52 +287,157 @@ export const BusinessSetupPackages = () => {
                       </motion.div>
                     </motion.div>
                   ))}
-
                 </AnimatePresence>
               </div>
             </div>
           </div>
 
+          {/* Right Section - Explore Packages */}
+          <div className="w-full flex flex-col items-center space-y-8">
+            {/* Section Heading */}
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-2xl md:text-3xl xl:text-4xl font-bold text-white text-center"
+            >
+              Explore Our Packages
+            </motion.h2>
 
+            {/* Card Container */}
+            <div className="w-full flex justify-center">
+              <motion.div
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="relative w-full md:w-[380px] lg:w-[420px] rounded-3xl shadow-2xl overflow-hidden transition-all duration-700 ease-in-out border-2 border-[#8E1A3D]"
+              >
+                {/* Package Image with Fade Transition */}
+                <div className="relative w-full h-56 overflow-hidden">
+                  <motion.img
+                    key={cards[currentIndex].image}
+                    src={cards[currentIndex].image}
+                    alt={cards[currentIndex].name}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: fade ? 1 : 0 }}
+                    transition={{ duration: 0.7 }}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
 
-        <div className="w-full flex flex-col items-center  space-y-6">
-  {/* Heading */}
-  <h2 className=" text-xl md:text-2xl xl:text-3xl font-bold text-white  ">
-    Explore Our Packages
-  </h2>
+                {/* Content Section */}
+                <div className="bg-white px-6 py-8 flex flex-col items-center text-center space-y-4">
+                  {/* Title */}
+                  <motion.h3
+                    key={cards[currentIndex].name}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4 }}
+                    className="text-2xl md:text-3xl font-bold text-[#8E1A3D]"
+                  >
+                    {cards[currentIndex].name}
+                  </motion.h3>
 
-  {/* Card */}
-  <div className="w-full h-full flex justify-center lg:justify-end">
-    <div className="w-full md:w-96 h-96 md:h-[500px] flex flex-col items-center shadow-2xl p-6 border border-[#8E1A3D] rounded-2xl transition-all duration-700 ease-in-out">
-      <div className="relative w-full h-full rounded-lg overflow-hidden">
-        {/* Image with fade effect */}
-        <img
-          src={card.image}
-          alt={card.name}
-          className={`w-full h-full object-cover transition-opacity duration-700 ${fade ? "opacity-100" : "opacity-0"}`}
-        />
+                  {/* Toggle Switch for Visa Option */}
+                  <div className="flex items-center justify-center gap-3">
+                    <span
+                      className={`text-xs md:text-sm font-medium transition-colors ${
+                        !withVisa ? "text-[#8E1A3D]" : "text-gray-400"
+                      }`}
+                    >
+                      Without Visa
+                    </span>
 
-        {/* Content */}
-        <div
-          className={`absolute bottom-0 w-full bg-white/80 p-1 md:p-4 text-center transition-opacity duration-700 ${fade ? "opacity-100" : "opacity-0"}`}
-        >
-          <h2 className="text-xl md:text-2xl font-bold text-black mb-1">
-            {card.name}
-          </h2>
-          <p className="text-gray-800 md:text-base text-sm mb-2">
-            {card.role}
-          </p>
-          <p className="text-[#8E1A3D] md:text-base text-sm  px-4 md:px-6 py-1 md:py-2 rounded-lg hover:bg-[#6b1430] font-bold transition">
-            {card.price}
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+                    <motion.button
+                      onClick={() => setWithVisa(!withVisa)}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className={`relative w-12 h-6 rounded-full transition-all duration-300 ${
+                        withVisa ? "bg-[#8E1A3D]" : "bg-gray-300"
+                      }`}
+                    >
+                      <motion.span
+                        animate={{ x: withVisa ? 20 : 2 }}
+                        transition={{ duration: 0.3 }}
+                        className="absolute top-1 left-1 w-4 h-4 bg-white rounded-full shadow-md"
+                      ></motion.span>
+                    </motion.button>
 
+                    <span
+                      className={`text-xs md:text-sm font-medium transition-colors ${
+                        withVisa ? "text-[#8E1A3D]" : "text-gray-400"
+                      }`}
+                    >
+                      With Visa
+                    </span>
+                  </div>
 
+                  {/* Price Section with Animation */}
+                  <div className="flex flex-col items-center space-y-1 pt-2">
+                    <motion.span
+                      key={`${cards[currentIndex].name}-${
+                        withVisa ? "with" : "without"
+                      }`}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4 }}
+                      className="text-3xl md:text-4xl font-extrabold text-[#8E1A3D]"
+                    >
+                      AED{" "}
+                      {withVisa
+                        ? cards[
+                            currentIndex
+                          ].prices.withVisa.current.toLocaleString()
+                        : cards[
+                            currentIndex
+                          ].prices.withoutVisa.current.toLocaleString()}
+                    </motion.span>
 
+                    <motion.span
+                      key={`${cards[currentIndex].name}-old-${
+                        withVisa ? "with" : "without"
+                      }`}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.4, delay: 0.1 }}
+                      className="text-gray-400 line-through text-sm md:text-base"
+                    >
+                      AED{" "}
+                      {withVisa
+                        ? cards[
+                            currentIndex
+                          ].prices.withVisa.old.toLocaleString()
+                        : cards[
+                            currentIndex
+                          ].prices.withoutVisa.old.toLocaleString()}
+                    </motion.span>
+                  </div>
+                </div>
+
+                {/* Auto Slide Indicators */}
+                <div className="flex gap-2 justify-center pb-4 bg-white">
+                  {cards.map((_, index) => (
+                    <motion.span
+                      key={index}
+                      animate={{
+                        backgroundColor:
+                          currentIndex === index ? "#8E1A3D" : "#D1D5DB",
+                        scale: currentIndex === index ? 1.2 : 1,
+                      }}
+                      transition={{ duration: 0.3 }}
+                      className="w-2 h-2 rounded-full cursor-pointer"
+                      onClick={() => {
+                        setCurrentIndex(index);
+                        setFade(true);
+                      }}
+                    ></motion.span>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -14,22 +14,22 @@ const Schedule = () => {
   const contentCards = [
     {
       id: 1,
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop',
-      title: 'Company Setup',
-      description: 'Expert guidance through company registration and licensing process in UAE'
+      image: '/assets/images/event_image.png',
+      title: 'UAE National Day 2025 holiday',
+      description: 'Eid Al Etihad expected on December 2–3, with the chance of an extended long weekend for residents'
     },
-    {
-      id: 2,
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop',
-      title: 'Document Clearance',
-      description: 'Complete document verification and approval services for your business'
-    },
-    {
-      id: 3,
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop',
-      title: 'Business Consultation',
-      description: 'Personalized consultation to ensure seamless business establishment'
-    }
+    // {
+    //   id: 2,
+    //   image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop',
+    //   title: 'Document Clearance',
+    //   description: 'Complete document verification and approval services for your business'
+    // },
+    // {
+    //   id: 3,
+    //   image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop',
+    //   title: 'Business Consultation',
+    //   description: 'Personalized consultation to ensure seamless business establishment'
+    // }
   ];
 
   // Auto carousel effect
