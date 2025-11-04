@@ -14,27 +14,32 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://befirst-productions.com'),  // ← Change to your domain
-  
+  metadataBase: new URL("https://tmgdubai.ae/"), // ← Change to your domain
+
   title: {
-    default: 'BeFirst Productions - Business Setup & Company Formation in UAE',
-    template: '%s | BeFirst Productions',
+    default:
+      "Business Setup in Dubai, UAE | Company Formation with TMG GlobalBusiness Setup in Dubai, UAE | Company Formation with TMG Global",
+    template: "%s | BeFirst Productions",
   },
-  
-  description: 'Expert business setup, company formation, and licensing services in UAE. Freezone, Mainland, and Offshore solutions with proven track record.',
-  
+
+  description:
+    "Start your business setup in Dubai with TMG Global. Expert company formation in UAE Mainland, Freezone & Offshore. Get your Dubai business license today.",
+
   keywords: [
-    'business setup UAE',
-    'company formation Dubai',
-    'freezone business',
-    'mainland setup',
-    'offshore company formation',
+    "business setup in Dubai",
+    "company setup UAE",
+    "Dubai business license",
+    "UAE business formation",
+    "TMG Global",
+    "start a business in Dubai",
+    "Freezone setup",
+    "Mainland company setup",
   ],
-  
-  authors: [{ name: 'BeFirst Productions' }],
-  creator: 'BeFirst Productions',
-  publisher: 'BeFirst Productions',
-  
+
+  authors: [{ name: "TMG Global" }],
+  creator: "TMG Global",
+  publisher: "TMG Global",
+
   robots: {
     index: true,
     follow: true,
@@ -43,35 +48,35 @@ export const metadata = {
       follow: true,
     },
   },
-  
+
   openGraph: {
-    type: 'website',
-    locale: 'en_AE',
-    url: 'https://befirst-productions.com',
-    siteName: 'BeFirst Productions',
-    title: 'BeFirst Productions - Business Setup in UAE',
-    description: 'Expert company formation, freezone & offshore solutions',
+    type: "website",
+    locale: "en_AE",
+    url: "https://tmgdubai.ae/",
+    siteName: "TMG Global",
+    title: "TMG Global - Business Setup in UAE",
+    description: "Expert company formation, freezone & offshore solutions",
     images: [
       {
-        url: 'https://befirst-productions.com/og-image.jpg',
+        url: "https://tmgdubai.ae/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: 'BeFirst Productions',
+        alt: "TMG Global",
       },
     ],
   },
-  
+
   twitter: {
-    handle: '@befirst',  // ← Add your Twitter handle
-    cardType: 'summary_large_image',
+    handle: "@TMGDubai",
+    cardType: "summary_large_image",
   },
-  
+
   verification: {
-    google: 'your-google-verification-code',  // ← Get from Google Search Console
+    google: "your-google-verification-code", // ← Get from Google Search Console
   },
-  
+
   alternates: {
-    canonical: 'https://befirst-productions.com',
+    canonical: "https://tmgdubai.ae/",
   },
 };
 
@@ -81,11 +86,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-              <PageWrapper>
-
-        {children}
-        <InnovativeChatbot heroSectionId="hero-section"/>
-          </PageWrapper>
+        <PageWrapper>
+          {children}
+          <InnovativeChatbot heroSectionId="hero-section" />
+        </PageWrapper>
       </body>
     </html>
   );

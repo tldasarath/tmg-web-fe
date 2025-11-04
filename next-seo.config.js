@@ -7,10 +7,10 @@ export default {
   openGraph: {
     type: "website",
     url: "https://tmgdubai.ae",
-    title: "TMG Dubai – UAE Business Setup Experts",
+    title: "TMG Global – UAE Business Setup Experts",
     description:
-      "Start your business in the UAE with TMG Dubai. We specialize in Freezone, Mainland, and Offshore company formation, visa processing, and corporate support services.",
-    site_name: "TMG Dubai",
+    "Start your business setup in Dubai with TMG Global. Expert company formation in UAE Mainland, Freezone & Offshore. Get your Dubai business license today.",
+    site_name: "TMG Global",
     locale: "en_AE",
     images: [
       {

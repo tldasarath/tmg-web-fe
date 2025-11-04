@@ -20,6 +20,14 @@ import SocialMediaCards from "@/components/socialMedia/SocalSection";
 import React from "react";
 import BusinessServiceTransiton from "@/components/Scrolling/BusinessServiceTransiton";
 import { BusinessSetupPackages } from "@/components/BusinessSetupPackages/BusinessSetupPackages";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "Business Setup in Dubai, UAE | TMG Global",
+  description:
+    "Launch your company in Dubai with TMG Global. Mainland, Freezone & Offshore setup with end-to-end licensing and visa assistance.",
+  path: "/",
+});
 
 const page = () => {
   return (
