@@ -1,6 +1,8 @@
 import { siteUrl } from "@/lib/seo";
 import { ServiceDetails } from "@/data/ServiceDetails";
 
+export const dynamic = 'force-static';
+
 export default function sitemap() {
   const now = new Date().toISOString();
 

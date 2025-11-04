@@ -1,6 +1,15 @@
 import { buildMetadata } from "@/lib/seo";
 import { ServiceDetails } from "@/data/ServiceDetails";
 
+// This function runs at build time to generate static pages
+export function generateStaticParams() {
+  // Get unique slugs (avoid duplicates)
+  const uniqueSlugs = [...new Set(ServiceDetails.map((service) => service.slug))];
+  return uniqueSlugs.map((slug) => ({
+    slug: slug,
+  }));
+}
+
 export function generateMetadata({ params }) {
   const slug = params?.slug;
   const service = ServiceDetails.find((s) => s.slug === slug);
