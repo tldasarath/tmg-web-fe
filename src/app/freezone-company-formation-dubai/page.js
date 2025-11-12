@@ -21,7 +21,7 @@ const page = () => {
             { name: "Home", path: "/" },
             {
               name: "Freezone",
-              path: "/freezone-business",
+              path: "/freezone-company-formation-dubai",
             },
           ]}
         />

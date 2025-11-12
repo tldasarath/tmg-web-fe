@@ -39,7 +39,7 @@ export default function PageSEO({
         type="LocalBusiness"
         id="https://yourwebsite.com"
         name="BeFirst Productions"
-        logo="https://yourwebsite.com/logo.png"
+        logo="https://yourwebsite.com/TMG-Global-Services-LLC.png"
         legalName="BeFirst Productions"
         description="Business setup and company formation services in UAE"
         foundingDate="2024"

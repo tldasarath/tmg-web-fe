@@ -36,15 +36,15 @@ const ServicesSection = () => {
   }, [isInView, leftControls, rightControls]);
 
   const leftServices = [
-    { label: "Business Setup", link: "/service/business-setup-dubai" },
-    { label: "Company Formation ", link: "/service/company-formation-dubai" },
-    { label: "Company Liquidation", link: "/service/company-liquidation" },
+    { label: "Business Setup", link: "/service/business-setup-in-dubai-uae" },
+    { label: "Company Formation ", link: "/service/company-formation-in-dubai-uae" },
+    { label: "Company Liquidation", link: "/service/company-liquidation-in-dubai-uae" },
   ];
 
   const rightServices = [
-    { label: "PRO Services", link: "/service/pro-services-dubai" },
+    { label: "PRO Services", link: "/service/pro-services-dubai-uae" },
     { label: "Visa Services", link: "/service/uae-visa-services" },
-    { label: "Legal Translation", link: "/service/legal-translation" },
+    { label: "Legal Translation", link: "/service/legal-translation-services-in-dubai-uae" },
   ];
 
   return (

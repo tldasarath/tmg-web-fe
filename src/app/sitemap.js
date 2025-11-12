@@ -15,9 +15,9 @@ export default function sitemap() {
     "/gallery",
     "/privacy-policy",
     "/terms-of-service",
-    "/mainland-business-setup",
-    "/freezone-business",
-    "/offshore-company-formation",
+    "/mainland-company-formation-dubai",
+    "/freezone-company-formation-dubai",
+    "/offshore-company-formation-dubai",
   ].map((path) => ({
     url: `${siteUrl}${path}`,
     lastModified: now,

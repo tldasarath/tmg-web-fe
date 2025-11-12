@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { Container } from '../layout/Container';
+import { Container } from "../layout/Container";
 
 const OurValuesSection = () => {
   const values = [
@@ -8,30 +8,26 @@ const OurValuesSection = () => {
       title: "Integrity",
       description:
         "We believe honesty and transparency are the foundation of long-term success. Every client interaction is guided by fairness, accountability, and trust.",
-     
     },
     {
       title: "Excellence",
       description:
         "We strive for the highest quality in all our services  from document clearing to corporate consulting ensuring we exceed expectations.",
-    
     },
     {
       title: "Innovation",
       description:
         "We adopt the latest technologies and strategies to provide efficient, future-ready business solutions in a dynamic UAE environment. ",
- 
     },
     {
       title: "Responsibility",
       description:
         "We take full ownership of our commitments, ensuring accuracy, reliability, and excellence in every project we handle.",
-    
     },
   ];
 
   return (
-    <section className=" px-4 sm:px-6 lg:px-0 py-16 lg:py-24 bg-gray-50 relative overflow-visible">
+    <section className=" pt-16 lg:pt-24 pb-20 md:pb-36 bg-gray-50 relative overflow-visible">
       <Container>
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl lg:text-[3rem] text-[#49051E] mb-6 lg:mb-8 leading-tight font-bold">
@@ -57,7 +53,6 @@ const OurValuesSection = () => {
                 <div className="horizontal-circle"></div>
                 <div className="vertical-circle"></div>
               </div>
-
 
               <h3 className="text-xl font-bold text-[#49051E] mb-3">
                 {value.title}

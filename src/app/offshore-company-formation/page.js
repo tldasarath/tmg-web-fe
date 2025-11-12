@@ -21,7 +21,7 @@ const page = () => {
             { name: "Home", path: "/" },
             {
               name: "Offshore",
-              path: "/offshore-company-formation",
+              path: "/offshore-company-formation-dubai",
             },
           ]}
         />

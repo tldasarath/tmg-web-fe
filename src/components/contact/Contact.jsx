@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Container } from "../layout/Container";
+import { contactInfo } from "@/data/ContactData";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -12,7 +13,6 @@ const ContactUs = () => {
 
   const [errors, setErrors] = useState({});
 
-  // ✅ Basic Validation
   const validateForm = () => {
     const newErrors = {};
 
@@ -25,82 +25,49 @@ const ContactUs = () => {
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
       newErrors.email = "Enter a valid email address.";
 
-    if (!formData.message.trim()) newErrors.message = "Message cannot be empty.";
+    if (!formData.message.trim())
+      newErrors.message = "Message cannot be empty.";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  // ✅ WhatsApp Integration
-const handleSubmit = (e) => {
-  e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  // Validate form first
-  if (!validateForm()) return;
+    if (!validateForm()) return;
 
-  // WhatsApp number (no +, no spaces)
-  const whatsappNumber = "971545267777"; 
+    const whatsappNumber = "971545267777";
 
-  // Prepare the message
-  const text = [
-    "New Inquiry from Website",
-    "",
-    `Name: ${formData.name || "N/A"}`,
-    `Phone: ${formData.phone || "N/A"}`,
-    `Email: ${formData.email || "N/A"}`,
-    `Message: ${formData.message || "N/A"}`,
-  ].join("\n"); // Use \n for line breaks
+    const text = [
+      "New Inquiry from Website",
+      "",
+      `Name: ${formData.name || "N/A"}`,
+      `Phone: ${formData.phone || "N/A"}`,
+      `Email: ${formData.email || "N/A"}`,
+      `Message: ${formData.message || "N/A"}`,
+    ].join("\n");
 
-  // Encode the message
-  const encodedText = encodeURIComponent(text);
+    const encodedText = encodeURIComponent(text);
 
-  // Use the more reliable api.whatsapp.com link
-  const whatsappURL = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodedText}`;
+    const whatsappURL = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodedText}`;
 
-  // Open WhatsApp in a new tab
-  window.open(whatsappURL, "_blank");
-};
+    window.open(whatsappURL, "_blank");
+  };
 
-
-
-  // ✅ Update Input
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // ✅ Contact Info
-  const contactInfo = [
-    {
-      id: 1,
-      image: "/assets/images/contact/icons/address.png",
-      title: "Our Location",
-      content: "Al Twar Centre, Al Barsha Mall, Madina Mall, Al Garhoud",
-    },
-    {
-      id: 2,
-      image: "/assets/images/contact/icons/email.png",
-      title: "Email Address",
-      content: "info@tmgdubai.com",
-      link: "mailto:info@tmgdubai.com",
-    },
-    {
-      id: 3,
-      image: "/assets/images/contact/icons/phone.png",
-      title: "Phone Number",
-      content: "054 526 7777",
-      link: "tel:+971545267777",
-    },
-  ];
-
   return (
     <div className="relative  h-auto  px-4 sm:px-6 lg:px-0 py-8 lg:py-16">
-           <div className="absolute  left-0 bottom-0 w-80 h-80 opacity-100 z-0">
-    <img
-      src="/assets/images/about/left_element.png"
-      alt="Professional woman with tablet"
-      className="w-full h-full object-contain opacity-80"
-    />
-  </div>
+      <div className="absolute  left-0 bottom-0 w-80 h-80 opacity-100 z-0">
+        <img
+          src="/assets/images/about/left_element.png"
+          alt="Professional woman with tablet"
+          className="w-full h-full object-contain opacity-80"
+        />
+      </div>
       <Container>
         <div className="relative z-10  grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Section */}
@@ -110,15 +77,25 @@ const handleSubmit = (e) => {
                 We’re Here to Help Your Business Grow
               </h2>
               <p className="text-lg text-gray-600">
-                We'd love to hear from you. Get in touch with us and let us know how we can help.
-                Our team is always here to support you with any questions or concerns you might have.
+                We’d love to hear from you. Contact us today and see how the{" "}
+                <a href="https://tmgdubai.ae" className="text-decoration-none">
+                  <b>best business setup consultants in Dubai</b>
+                </a>{" "}
+                can assist. Our team is always ready to support you with any
+                questions or business setup needs.
               </p>
             </div>
 
             {/* Contact Info */}
             <div className="space-y-6">
               {contactInfo.map((item) => (
-                <div key={item.id} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
+                <a
+                  key={item.id}
+                  href={item.link || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition transform hover:-translate-y-1"
+                >
                   <div className="flex items-center space-x-4">
                     <img
                       src={item.image}
@@ -127,20 +104,23 @@ const handleSubmit = (e) => {
                     />
                     <p className="text-gray-600">{item.content}</p>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
 
           {/* Right Section - Form */}
           <div
-          id="contact-form"
+            id="contact-form"
             className="rounded-lg shadow-lg p-6 text-white"
             style={{
-              backgroundImage: "linear-gradient(180deg, rgba(142,26,61,1) 0%, rgba(40,7,17,1) 100%)",
+              backgroundImage:
+                "linear-gradient(180deg, rgba(142,26,61,1) 0%, rgba(40,7,17,1) 100%)",
             }}
           >
-            <h2 className="text-4xl text-center mb-6 font-bold">Get In Touch</h2>
+            <h2 className="text-4xl text-center mb-6 font-bold">
+              Get In Touch
+            </h2>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name + Phone */}
@@ -159,7 +139,9 @@ const handleSubmit = (e) => {
                     className="w-full px-4 py-3 bg-transparent border-b border-white text-white placeholder-white/60 focus:outline-none focus:border-pink-500"
                     placeholder="Enter your full name"
                   />
-                  {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name}</p>}
+                  {errors.name && (
+                    <p className="text-red-400 text-sm mt-1">{errors.name}</p>
+                  )}
                 </div>
 
                 {/* Phone */}
@@ -176,7 +158,9 @@ const handleSubmit = (e) => {
                     className="w-full px-4 py-3 bg-transparent border-b border-white text-white placeholder-white/60 focus:outline-none focus:border-pink-500"
                     placeholder="Enter your phone number"
                   />
-                  {errors.phone && <p className="text-red-400 text-sm mt-1">{errors.phone}</p>}
+                  {errors.phone && (
+                    <p className="text-red-400 text-sm mt-1">{errors.phone}</p>
+                  )}
                 </div>
               </div>
 
@@ -194,7 +178,9 @@ const handleSubmit = (e) => {
                   className="w-full px-4 py-3 bg-transparent border-b border-white text-white placeholder-white/60 focus:outline-none focus:border-pink-500"
                   placeholder="Enter your email address"
                 />
-                {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email}</p>}
+                {errors.email && (
+                  <p className="text-red-400 text-sm mt-1">{errors.email}</p>
+                )}
               </div>
 
               {/* Message */}
@@ -211,7 +197,9 @@ const handleSubmit = (e) => {
                   className="w-full px-4 py-3 bg-transparent border-b border-white text-white placeholder-white/60 focus:outline-none focus:border-pink-500"
                   placeholder="Enter your message..."
                 ></textarea>
-                {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message}</p>}
+                {errors.message && (
+                  <p className="text-red-400 text-sm mt-1">{errors.message}</p>
+                )}
               </div>
 
               {/* Submit Button */}

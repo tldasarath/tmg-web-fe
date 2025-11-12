@@ -1,7 +1,7 @@
 export const sisterConcerns = [
-    { name: "Company Logo", logo: "/assets/images/about/sisterConcerns1.png" },
-    { name: "Company Logo", logo: "/assets/images/about/sisterConcerns2.png" },
-    { name: "Company Logo", logo: "/assets/images/about/sisterConcerns3.png" },
-    { name: "Company Logo", logo: "/assets/images/about/sisterConcerns4.png" },
-    { name: "Company Logo", logo: "/assets/images/about/sisterConcerns5.png" },
+    { name: "Company Logo", logo: "/assets/images/about/carnation.png" },
+    { name: "Company Logo", logo: "/assets/images/about/emirates-classic.png" },
+    { name: "Company Logo", logo: "/assets/images/about/k-grill.png" },
+    { name: "Company Logo", logo: "/assets/images/about/salad-hub.png" },
+    { name: "Company Logo", logo: "/assets/images/about/kozhikode-restaurant.png" },
   ];

@@ -6,7 +6,7 @@ export default function Footer() {
     { name: "About Us", href: "/about-us" },
     { name: "Blogs", href: "/blogs" },
     { name: "FAQs", href: "/faqs" },
-    { name: "Terms and Conditions", href: "terms-&-conditions" },
+    { name: "Terms of Service", href: "/terms-of-service" },
     { name: "Privacy Policy", href: "/privacy-policy" },
     { name: "Contact", href: "/contact" },
   ];
@@ -24,8 +24,8 @@ export default function Footer() {
       <div className="absolute left-1/2 -translate-x-1/2 -top-16 sm:-top-18 md:-top-20 lg:-top-24 xl:-top-26 z-30 pointer-events-none">
       <div className="relative w-40 h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 lg:w-52 lg:h-52 bg-white rounded-full  flex items-center justify-center">
         <img
-          src="/assets/logo/tmg_footer_logo.png"
-          alt="TMG Global Logo"
+          src="/assets/logo/business-setup-in-dubai.png"
+          alt="TMG Global Services LLC"
           className="w-40 h-40 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-[219.62px] lg:h-[218.62px] object-cover  "
         />
       </div>

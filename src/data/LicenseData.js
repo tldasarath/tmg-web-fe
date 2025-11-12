@@ -1,7 +1,7 @@
 export const LicenseDetails = [
   {
     id: 1,
-    slug: "e-trader-license",
+    slug: "e-trader-license-dubai",
     title: "E-Trader License",
     imageUrl: "/assets/images/license/e-trader-license.png",
     header1: "Professional Business Setup with",
@@ -29,7 +29,7 @@ export const LicenseDetails = [
   },
   {
     id: 2,
-    slug: "industrial-license",
+    slug: "industrial-license-dubai",
     title: "Industrial License",
     imageUrl: "/assets/images/license/industrial-license.png",
     header1: "Professional Business Setup with",
@@ -57,7 +57,7 @@ export const LicenseDetails = [
   },
   {
     id: 3,
-    slug: "commercial-license",
+    slug: "commercial-license-dubai",
     title: "Commercial License",
     imageUrl: "/assets/images/license/commercial-license.png",
     header1: "Professional Business Setup with",
@@ -85,7 +85,7 @@ export const LicenseDetails = [
   },
   {
     id: 4,
-    slug: "professional-license",
+    slug: "professional-license-dubai",
     title: "Professional License",
     imageUrl: "/assets/images/license/professional-license.png",
     header1: "Empower Your Service-Based",

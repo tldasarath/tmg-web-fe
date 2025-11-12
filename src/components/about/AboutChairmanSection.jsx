@@ -1,29 +1,28 @@
-'use client';
+"use client";
 
-import { useRef, useEffect } from 'react';
-import { Container } from '../layout/Container';
-import { motion, useInView, useAnimation } from 'framer-motion';
-import { sisterConcerns } from '@/data/CompanyData';
+import { useRef, useEffect } from "react";
+import { Container } from "../layout/Container";
+import { motion, useInView, useAnimation } from "framer-motion";
+import { sisterConcerns } from "@/data/CompanyData";
 
 const AboutChairmanSection = () => {
   const sectionRef = useRef(null);
-  const inView = useInView(sectionRef, { margin: '-20% 0px -20% 0px' });
+  const inView = useInView(sectionRef, { margin: "-20% 0px -20% 0px" });
   const controls = useAnimation();
-
-
 
   // Animate the rotation 0 → -180 → 0 smoothly when in view
   useEffect(() => {
     if (inView) {
       controls.start({
         rotate: [0, -180, 0],
-        transition: { duration: 4, ease: 'easeInOut' }, // slower and smoother
+        transition: { duration: 4, ease: "easeInOut" }, // slower and smoother
       });
     }
   }, [inView, controls]);
 
   return (
     <section
+    id="about-chairman"
       ref={sectionRef}
       className="relative px-4 sm:px-6 lg:px-0 py-8 lg:py-16 overflow-hidden bg-white"
     >
@@ -48,22 +47,43 @@ const AboutChairmanSection = () => {
               </div>
               <div className="space-y-2 text-gray-700">
                 <p className="text-gray-600 text-[0.938rem] md:text-lg font-normal leading-relaxed">
-                  First and foremost, I thank God for bringing this small initiative of a simple man to the attention of the world.
+                  First and foremost, I thank God for bringing this small
+                  initiative of a simple man to the attention of the world.
                 </p>
                 <p className="text-gray-600 text-[0.938rem] md:text-lg font-normal leading-relaxed">
-                  When I began this journey, I started from zero — with nothing but a vision and determination to make a difference. Today, by the grace of God and the hard work of my dedicated team, I am proud to lead <span className="font-semibold text-gray-900">10+ branches</span> under various sister concerns, with over <span className="font-semibold text-gray-900">250 committed professionals</span> working alongside me.
+                  When I began this journey, I started from zero — with nothing
+                  but a vision and determination to make a difference. Today, by
+                  the grace of God and the hard work of my dedicated team, I am
+                  proud to lead <b>10+ branches</b> under various sister
+                  concerns, with over <b>250 committed professionals</b> working
+                  alongside me.
                 </p>
                 <p className="text-gray-600 text-[0.938rem] md:text-lg font-normal leading-relaxed">
-                  Despite this growth, I continue to work with the same dedication and mindset as an employee, because I understand the struggle and effort it takes to build something meaningful.
+                  Despite this growth, I continue to work with the same
+                  dedication and mindset as an employee, because I understand
+                  the struggle and effort it takes to build something
+                  meaningful.
                 </p>
                 <p className="text-gray-600 text-[0.938rem] md:text-lg font-normal leading-relaxed">
-                  My mission has always been to help people — to serve them sincerely, offer solutions that make their lives easier, and build relationships rooted in trust and respect.
+                  My mission has always been to help people — to serve them
+                  sincerely, offer solutions that make their lives easier, and
+                  build relationships rooted in trust and respect.
                 </p>
                 <p className="text-gray-600 text-[0.938rem] md:text-lg font-normal leading-relaxed">
-                  It is this belief in integrity, teamwork, and quality service that has brought TMG Global to where it stands today.
+                  It is this belief in integrity, teamwork, and quality service
+                  that has brought{" "}
+                  <a
+                    href="https://www.instagram.com/tmg_global"
+                    className="text-decoration-none"
+                  >
+                    <b>TMG Global </b>
+                  </a>{" "}
+                  to where it stands today.
                 </p>
                 <p className="text-gray-600 text-[0.938rem] md:text-lg font-normal leading-relaxed">
-                  And as we look ahead, my vision is clear — within the next two years, we will expand our brands globally, taking our values, professionalism, and service excellence to the world.
+                  And as we look ahead, my vision is clear — within the next two
+                  years, we will expand our brands globally, taking our values,
+                  professionalism, and service excellence to the world.
                 </p>
               </div>
             </div>
@@ -78,7 +98,7 @@ const AboutChairmanSection = () => {
                 className="absolute inset-0 rounded-full"
                 style={{
                   background:
-                    'conic-gradient(from 275deg, #C79A59 85deg, transparent 85deg 360deg)',
+                    "conic-gradient(from 275deg, #C79A59 85deg, transparent 85deg 360deg)",
                 }}
               >
                 <div className="absolute inset-1 bg-white rounded-full"></div>
@@ -88,7 +108,7 @@ const AboutChairmanSection = () => {
               {/* Chairman Image */}
               <div className="absolute inset-8 rounded-full overflow-hidden">
                 <img
-                  src="/assets/images/chairman/boss.jpg"
+                  src="/assets/images/chairman/TMG-Global-Chairman.jpg"
                   alt="Chairman - TMG Global LLC"
                   className="w-full h-full object-fit"
                 />

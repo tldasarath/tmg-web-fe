@@ -63,8 +63,8 @@ export const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <img
-              src="/assets/logo/logo.png"
-              alt="Logo"
+              src="/assets/logo/TMG-Global-Services-LLC.png"
+              alt="TMG Global Services LLC"
               className="h-16 sm:h-20 md:h-24 lg:h-20 xl:h-[6.563rem] w-auto"
             />
           </div>

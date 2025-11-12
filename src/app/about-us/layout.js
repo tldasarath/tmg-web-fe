@@ -1,9 +1,9 @@
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "About TMG Global | UAE Business Setup Experts",
+  title: "best business setup company in dubai | tmg global services llc",
   description:
-    "Learn about TMG Global’s mission and team helping entrepreneurs set up and scale businesses in the UAE.",
+    "tmg global services llc is the best business setup company in dubai, offering expert solutions for company formation, document clearing, and uae business consulting",
   path: "/about-us",
 });
 

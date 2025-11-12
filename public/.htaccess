@@ -1,28 +1,22 @@
-# Next.js Static Export - URL Rewriting
-# This file helps with routing on Apache servers (like Hostinger)
-
+# Next.js Static Export - Proper URL Rewriting for Hostinger
 <IfModule mod_rewrite.c>
   RewriteEngine On
   
-  # Handle trailing slashes
+  # Remove .html extension from URLs (hide it from users)
   RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_URI} !(.*)/$
-  RewriteRule ^(.*)$ $1.html [L]
-  
-  # Remove .html extension from URLs
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME}\.html -f
   RewriteRule ^(.*)\.html$ /$1 [R=301,L]
   
-  # Fallback to index.html for directories
+  # Rewrite requests to .html files internally (don't redirect)
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^(.*)$ /$1/ [R=301,L]
+  RewriteCond %{DOCUMENT_ROOT}/$1\.html -f
+  RewriteRule ^(.+?)/?$ /$1.html [L]
   
+  # Handle directory requests - serve index.html
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_URI} (.*)/$
-  RewriteRule ^(.*)/$ /$1/index.html [L]
+  RewriteRule ^(.*)/?$ /$1/index.html [L]
 </IfModule>
 
 # Enable compression
@@ -42,4 +36,3 @@
   ExpiresByType application/javascript "access plus 1 month"
   ExpiresByType text/javascript "access plus 1 month"
 </IfModule>
-

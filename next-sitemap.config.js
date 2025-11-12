@@ -28,7 +28,7 @@ module.exports = {
     let priority = 0.7;
 
     if (path === '') priority = 1.0; // Homepage
-    else if (path.includes('/freezone-business') || 
+    else if (path.includes('/freezone-company-formation-dubai') || 
              path.includes('/mainland-business') ||
              path.includes('/offshore-company')) priority = 0.9; // Services
 

@@ -8,7 +8,7 @@ export default function Loader() {
       {/* Logo Section */}
       <div className="flex flex-col items-center justify-center">
         <Image
-          src="/assets/logo/logo.png"
+          src="/assets/logo/TMG-Global-Services-LLC.png"
           alt="Logo"
           width={140}
           height={140}

@@ -90,7 +90,7 @@ const AboutSection = () => {
                   stands as a trusted
                   <strong>
                     {" "}
-                    business setup and document-clearing company in Dubai,{" "}
+                    document-clearing and <a href="https://tmgdubai.ae/about-us" className="text-decoration-none">best business setup company in Dubai</a>,UAE{" "}
                   </strong>{" "}
                   offering comprehensive solutions for individuals,
                   entrepreneurs, and corporations throughout the UAE. Founded by{" "}
@@ -152,8 +152,8 @@ const AboutSection = () => {
                     }}
                   >
                     <img
-                      src="/assets/images/about/girl_img.png"
-                      alt="Professional woman with tablet"
+                      src="/assets/images/about/business-setup-dubai.png"
+                      alt="Business Setup Dubai"
                       className="w-full h-auto object-contain"
                     />
                   </motion.div>
@@ -161,8 +161,8 @@ const AboutSection = () => {
                   {/* Background Image - Top layer */}
                   <div className="absolute bottom-0 left-0 w-full h-auto z-20 pointer-events-none">
                     <img
-                      src="/assets/images/about/background_img.png"
-                      alt="Background with laptop and icons"
+                      src="/assets/images/about/business-setup-company-in-dubai.png"
+                      alt="Business Setup Company In Dubai"
                       className="w-full h-auto object-contain"
                     />
                   </div>

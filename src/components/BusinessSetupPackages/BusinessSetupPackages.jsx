@@ -34,7 +34,7 @@ export const BusinessSetupPackages = () => {
         withVisa: { current: 23495, old: 23995 },
         withoutVisa: { current: 12400, old: 12000 },
       },
-      image: "/assets/images/packages/ifza-package.jpg",
+      image: "/assets/images/packages/ifza-freezone-package.jpg",
     },
     {
       name: "SPC FREEZONE",
@@ -42,7 +42,7 @@ export const BusinessSetupPackages = () => {
         withVisa: { current: 14490, old: 4990 },
         withoutVisa: { current: 6375, old: 6875 },
       },
-      image: "/assets/images/packages/spc-package.jpg",
+      image: "/assets/images/packages/spc-freezone-package.jpg",
     },
     {
       name: "SRTIP PACKAGES",
@@ -50,7 +50,7 @@ export const BusinessSetupPackages = () => {
         withVisa: { current: 12490, old: 13990 },
         withoutVisa: { current: 5000, old: 5500 },
       },
-      image: "/assets/images/packages/stip-package.jpg",
+      image: "/assets/images/packages/SRTIP-freezone-package.jpg",
     },
     {
       name: "RAKEZ",
@@ -58,7 +58,7 @@ export const BusinessSetupPackages = () => {
         withVisa: { current: 12010, old: 14010 },
         withoutVisa: { current: 5510, old: 6010 },
       },
-      image: "/assets/images/packages/rakez-packages.jpg",
+      image: "/assets/images/packages/rakez-freezone-package.jpg",
     },
     {
       name: "SHAMS FREEZONE",
@@ -66,7 +66,7 @@ export const BusinessSetupPackages = () => {
         withVisa: { current: 12600, old: 13120 },
         withoutVisa: { current: 5750, old: 6885 },
       },
-      image: "/assets/images/packages/shams-packages.jpg",
+      image: "/assets/images/packages/shams-freezone-package.jpg",
     },
   ];
 

@@ -90,7 +90,7 @@ const LicenseSetupPage = () => {
                       <div className="icon">
                         <img
                           src={category.image}
-                          alt="Card Image"
+                          alt={category.title}
                           className="bg-image"
                         />
                       </div>

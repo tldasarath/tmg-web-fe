@@ -17,9 +17,9 @@ const BusinessSection = () => {
   const rectangles = [
     {
       id: 1,
-      link: "/freezone-business",
+      link: "/freezone-company-formation-dubai",
       title: "FREEZONE",
-      image: "/assets/images/business-section/business01.png",
+      image: "/assets/images/business-section/freezone-company-formation-dubai.png",
       color: "#8E8E8E",
       hoverColor: "#49051E",
       description:
@@ -27,9 +27,9 @@ const BusinessSection = () => {
     },
     {
       id: 2,
-      link: "/mainland-business-setup",
+      link: "/mainland-company-formation-dubai",
       title: "MAINLAND",
-      image: "/assets/images/business-section/business02.png",
+      image: "/assets/images/business-section/mainland-company-formation-dubai.png",
       color: "#FFFFFF",
       hoverColor: "#49051E",
       description:
@@ -37,9 +37,9 @@ const BusinessSection = () => {
     },
     {
       id: 3,
-      link: "/offshore-company-formation",
+      link: "/offshore-company-formation-dubai",
       title: "OFFSHORE",
-      image: "/assets/images/business-section/business03.png",
+      image: "/assets/images/business-section/Offshore-company-formation-dubai.png",
       color: "#49051E",
       hoverColor: "#49051E",
       description:
@@ -82,9 +82,56 @@ const BusinessSection = () => {
                   text="Establish Your Business in Opportunity"
                   className="text-[#49051E]"
                 />
-                <p className="text-[0.938rem] md:text-lg leading-relaxed transition-all duration-500 ease-in-out">
-                  {rectangles[activeIndex].description}
-                </p>
+                {activeIndex === 0 ? (
+                  <p className="text-[0.938rem] md:text-lg leading-relaxed transition-all duration-500 ease-in-out">
+                    TMG Global Services LLC offers expert{" "}
+                    <a
+                      href="https://tmgdubai.ae/freezone-company-formation-dubai"
+                      className="text-decoration-none"
+                    >
+                      <b>Freezone company formation in Dubai</b>,
+                    </a> allowing investors full ownership and operational freedom.
+                    Our consultants assist with jurisdiction selection,
+                    approvals, licensing, and registration, ensuring a seamless
+                    setup. With detailed understanding of Free Zone regulations,
+                    we deliver efficient, compliant, and structured services
+                    that enable entrepreneurs to focus on growth and maximize
+                    opportunities within Dubai's business-friendly environment.
+                  </p>
+                ) : activeIndex === 1 ? (
+                  <p className="text-[0.938rem] md:text-lg leading-relaxed transition-all duration-500 ease-in-out">
+                    TMG Global Services LLC provides trusted
+                    <a
+                      href="https://tmgdubai.ae/mainland-company-formation-dubai"
+                      className="text-decoration-none"
+                    >
+                      <b> mainland company formation in Dubai</b>,
+                    </a> helping entrepreneurs establish fully licensed businesses.
+                    We manage trade name approvals, legal documentation, and
+                    licensing processes directly with <a href="https://ded.ae" className="text-decoration-none"><b>government authorities</b></a>.
+                    With in-depth local knowledge, our team ensures smooth
+                    registration and compliance, enabling businesses to operate
+                    efficiently and leverage Dubai's strong commercial
+                    infrastructure for growth and long-term success.
+                  </p>
+                ) : (
+                  <p className="text-[0.938rem] md:text-lg leading-relaxed transition-all duration-500 ease-in-out">
+                    TMG Global Services LLC specializes in{" "}
+                    <a
+                      href="https://tmgdubai.ae/offshore-company-formation-dubai"
+                      className="text-decoration-none"
+                    >
+                      <b>offshore company formation in Dubai</b>,
+                    </a> providing investors with secure, compliant, and strategic
+                    solutions. We handle registration, documentation, and
+                    regulatory approvals efficiently, ensuring confidentiality
+                    and operational flexibility. Our team guides clients through
+                    the offshore setup process with precision and
+                    professionalism, helping businesses access international
+                    markets while benefiting from Dubai's favorable regulatory
+                    framework.
+                  </p>
+                )}
               </div>
             </div>
 

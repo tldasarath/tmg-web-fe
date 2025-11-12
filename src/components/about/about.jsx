@@ -43,14 +43,13 @@ const AboutUsSection = () => {
             <div className="text-gray-600 text-[0.938rem] md:text-lg font-normal leading-relaxed">
               <p>
                 TMG Global Services LLC (Thameem Management Group Global LLC) is
-                a leading business setup and document clearing company in Dubai,
+                a best business setup company in Dubai,
                 providing complete, end-to-end solutions for individuals,
                 entrepreneurs, and corporations across the UAE.
               </p>
               <p>
                 Founded by Mr. Thameem Aboobacker, a visionary leader and
-                pioneer in business consultancy and government services, TMG
-                Global was created with one mission — to simplify complex
+                pioneer in business consultancy and government services, <a href="https://tmgdubai.ae" className="text-decoration-none"><b>TMG Global</b></a> was created with one mission — to simplify complex
                 business and government processes and empower people to achieve
                 success.
               </p>
@@ -109,7 +108,7 @@ const AboutUsSection = () => {
               onMouseLeave={() => setIsHovered(false)}
             >
               <Image
-                src="/assets/images/about/about02.png"
+                src="/assets/images/about/about-tmg-global.png"
                 alt="TMG Global Team"
                 width={600}
                 height={500}

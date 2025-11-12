@@ -15,16 +15,12 @@ const Page = () => {
   const params = useParams();
   const [license, setLicense] = useState(null);
 
-
   useEffect(() => {
     if (params?.slug) {
       const Licenses = LicenseDetails.find((s) => s.slug === params.slug);
       setLicense(Licenses);
- 
     }
   }, [params?.slug]);
-
-
 
   if (!license) {
     return (
@@ -49,8 +45,6 @@ const Page = () => {
         </div>
         <Footer />
       </div>
-
-      
     );
   }
 
@@ -62,15 +56,12 @@ const Page = () => {
         breadcrumbs={[
           { name: "Home", path: "/home" },
           // { name: "Services", path: "/services" },
-          { name: license.title, path: `/service/${license.slug}` },
+          { name: license.title, path: `/license/${license.slug}` },
         ]}
       />
-
-      
-
       <LicenseDetailSection license={license} />
-<BusinessJourneySection license={license} />
-      <LicenseFAQSection  license={license} />
+      <BusinessJourneySection license={license} />
+      <LicenseFAQSection license={license} />
       <Footer />
     </div>
   );

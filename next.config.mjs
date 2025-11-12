@@ -2,6 +2,7 @@
 const nextConfig = {
 
   output: "export",
+  trailingSlash: false,
   // Image optimization - disabled for static export
   images: {
     unoptimized: true,

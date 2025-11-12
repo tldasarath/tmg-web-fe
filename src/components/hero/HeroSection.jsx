@@ -12,7 +12,7 @@ export const HeroSection = () => {
   const videoRef = useRef(null);
 
   const heroTexts = [
-    "Expand Globally with Seamless Business Setup Support",
+    "Expand Globally with Seamless Business Setup in Dubai Support",
     "Accelerating UAE Success with Expert Business Guidance",
     "Experience Premium Expertise in UAE Company Formation",
   ];

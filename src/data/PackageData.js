@@ -5,7 +5,8 @@
         description: "Sharjah Publishing City offers 100% foreign ownership with zero tax benefits. Perfect for publishing, printing, and packaging businesses.",
         image: "/assets/images/category/front1.png",
         logo: "/assets/images/category/spc-logo.png",
-        rate:"AED5055"
+        rate:"AED5055",
+        link:"/freezone-company-formation-dubai"
       },
       { 
         name: "SHAMS FREEZONE", 

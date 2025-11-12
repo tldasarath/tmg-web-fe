@@ -129,14 +129,19 @@ const GoldenVisaBanner = () => {
                   transition={{ delay: 0.9, duration: 0.8 }}
                 >
                   <p className="text-gray-700 text-base sm:text-lg leading-relaxed">
-                    TMG Global Services LLC provides comprehensive Golden Visa
-                    services in Dubai, offering expert guidance to investors,
-                    entrepreneurs, and professionals seeking long-term
-                    residency. Our dedicated team manages the complete process,
-                    beginning with detailed eligibility assessments and
-                    meticulous document preparation, followed by seamless
-                    submission and continuous follow-up with relevant government
-                    authorities.
+                    TMG Global Services LLC provides comprehensive{" "}
+                    <a
+                      href="https://tmgdubai.ae/uae-golden-visa"
+                      className="text-decoration-none"
+                    >
+                      <b> Golden Visa services in Dubai</b>
+                    </a>
+                    , offering expert guidance to investors, entrepreneurs, and
+                    professionals seeking long-term residency. Our dedicated
+                    team manages the complete process, beginning with detailed
+                    eligibility assessments and meticulous document preparation,
+                    followed by seamless submission and continuous follow-up
+                    with relevant <a href="https://ded.ae" className="text-decoration-none"><b>government authorities</b></a>.
                   </p>
 
                   <p className="text-gray-700 text-base sm:text-lg leading-relaxed">

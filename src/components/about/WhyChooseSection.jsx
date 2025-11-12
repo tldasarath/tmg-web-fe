@@ -48,7 +48,11 @@ const WhyChooseSection = () => {
 
               <div className="space-y-6 text-gray-700">
                 <p className="text-gray-600 text-[0.938rem] md:text-lg font-normal leading-relaxed">
-                  At <span className="font-semibold text-gray-900">TMG Global LLC</span>, we have been a trusted consultant in the business service sector for more than <span className="font-semibold text-gray-900">18 years</span>, delivering expert solutions that help individuals and companies thrive in the UAE market.
+                  At <span className="font-semibold text-gray-900">TMG Global LLC</span>, 
+                  we have been the <a href='https://tmgdubai.ae/contact' className="text-decoration-none"><b>
+                   best business setup consultants in dubai 
+                    </b></a> for more than 
+                   <span className="font-semibold text-gray-900"> 18 years</span>, delivering expert solutions that help individuals and companies thrive in the UAE market.
                 </p>
 
                 <p className="text-gray-600 text-[0.938rem] md:text-lg font-normal leading-relaxed">
@@ -88,7 +92,7 @@ const WhyChooseSection = () => {
               {/* Main Image */}
               <div className="relative rounded-2xl overflow-hidden shadow-xl">
                 <img
-                  src="/assets/images/about/why-choose.png"
+                  src="/assets/images/about/Best-business-setup-company-in-dubai.png"
                   alt="TMG Global LLC Professional Team"
                   className="w-full h-80 lg:h-96 object-cover"
                 />
@@ -97,7 +101,7 @@ const WhyChooseSection = () => {
               {/* Small Top Image */}
               <div className="absolute -top-6 hidden md:block -left-6 w-40 h-40 rounded-xl overflow-hidden shadow-lg border-4 border-white">
                 <img
-                  src="/assets/images/about/why-choose01.png"
+                  src="/assets/images/about/why-choose-tmg-global.png"
                   alt="Client Meeting"
                   className="w-full h-full object-cover"
                 />

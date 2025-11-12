@@ -40,8 +40,8 @@ const ImageSection = () => {
                     {/* Right Side - Description Content */}
                     <div className="text-white flex flex-col justify-center items-center">
                         <p className="text-[0.938rem]  md:text-lg mb-6 leading-relaxed">
-                      Premium business consultants in Dubai empowering entrepreneurs with expert 
-                      planning, seamless documentation, and reliable government-linked solutions.
+                        <a href='https://tmgdubai.ae/contact' className='text-decoration-none'>Best Business Setup Consultants in Dubai</a> empowering entrepreneurs 
+                        with expert planning, seamless documentation, and reliable government-linked solutions
 
                         </p>
 
