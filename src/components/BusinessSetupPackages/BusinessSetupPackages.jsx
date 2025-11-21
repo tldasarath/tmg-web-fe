@@ -9,15 +9,17 @@ export const BusinessSetupPackages = () => {
   const [activeTab, setActiveTab] = useState("FREEZONE");
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [withVisa, setWithVisa] = useState(false);
-  const currentOptions = packageData[activeTab];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fade, setFade] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
+  const currentOptions = packageData[activeTab];
 
   const handleLearnMore = (e) => {
     e.stopPropagation();
     router.push("/");
   };
+
+
 
   const cards = [
     {
@@ -286,7 +288,7 @@ export const BusinessSetupPackages = () => {
                                 <img
                                   src={option.logo}
                                   alt={`${option.name} logo`}
-                                  className="h-20 w-20 object-contain"
+                                  className="h-16 w-16 object-contain"
                                 />
                               </a>
                             </div>

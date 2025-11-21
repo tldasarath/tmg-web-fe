@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import InnovativeChatbot from "@/components/chatbot/InnovativeChatbot";
 import PageWrapper from "@/components/layout/PageWrapper";
+import { BottomCTA } from "@/components/hero/BottomCta";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://tmgdubai.ae/"), // ← Change to your domain
+  metadataBase: new URL("https://tmgdubai.ae/"), 
 
   title: {
     default:
@@ -52,7 +53,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_AE",
-    url: "https://tmgdubai.ae/",
+    url: "https://tmgdubai.ae",
     siteName: "TMG Global",
     title: "TMG Global - Business Setup in UAE",
     description: "Expert company formation, freezone & offshore solutions",
@@ -72,7 +73,7 @@ export const metadata = {
   },
 
   verification: {
-    google: "your-google-verification-code", // ← Get from Google Search Console
+    google: "_W2qQZsYga7KnXrA12vbw48HhEJiYAEB1ouDNDSQPAA", 
   },
 
   alternates: {
@@ -89,6 +90,7 @@ export default function RootLayout({ children }) {
         <PageWrapper>
           {children}
           <InnovativeChatbot heroSectionId="hero-section" />
+          <BottomCTA />
         </PageWrapper>
       </body>
     </html>

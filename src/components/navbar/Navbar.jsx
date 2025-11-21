@@ -4,6 +4,7 @@ import { Menu, X, ChevronDown, ArrowRight, Instagram } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { Container } from "../layout/Container";
 import { navLinks, serviceItems, licenseItems } from "../../data/HeaderData";
+import Link from "next/link";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -52,22 +53,26 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`top-0 left-0 right-0 z-50 py-4 sm:py-6 md:py-3 fixed transition-all duration-300 ${
+      className={`top-0 left-0 right-0 z-50 py-4 sm:py-6 md:py-3 fixed transition-all duration-300
+         ${
         isScrolled
-          ? "border-2 border-b-0 border-gray-200 bg-gradient-to-b from-white/90 to-white/60 backdrop-blur-sm shadow-md"
+          ? `border-2 border-b-0 border-gray-200 bg-gradient-to-b from-white/90 to-white/60 backdrop-blur-sm shadow-md`
           : "bg-transparent"
-      }`}
+      }
+    `}
     >
       <Container>
         <div className="flex items-center justify-between lg:justify-start lg:gap-[11rem] xl:gap-24">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <img
-              src="/assets/logo/TMG-Global-Services-LLC.png"
-              alt="TMG Global Services LLC"
-              className="h-16 sm:h-20 md:h-24 lg:h-20 xl:h-[6.563rem] w-auto"
-            />
-          </div>
+<div className="flex-shrink-0">
+  <Link href="/">
+    <img
+      src="/assets/logo/TMG-Global-Services-LLC.png"
+      alt="TMG Global Services LLC"
+      className="h-16 sm:h-20 md:h-24 lg:h-20 xl:h-[6.563rem] w-auto cursor-pointer"
+    />
+  </Link>
+</div>
 
           {/* Desktop Navigation */}
           <div

@@ -10,7 +10,7 @@ const Schedule = () => {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [autoPlay, setAutoPlay] = useState(true);
 
-  // Content Cards Data
+ 
   const contentCards = [
     {
       id: 1,
@@ -24,12 +24,7 @@ const Schedule = () => {
     //   title: 'Document Clearance',
     //   description: 'Complete document verification and approval services for your business'
     // },
-    // {
-    //   id: 3,
-    //   image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop',
-    //   title: 'Business Consultation',
-    //   description: 'Personalized consultation to ensure seamless business establishment'
-    // }
+
   ];
 
   // Auto carousel effect
@@ -134,14 +129,14 @@ const Schedule = () => {
         </div>
 
         {/* Middle Column - Support CTA */}
-        <div className="bg-[#8E1A3D] rounded-2xl px-8 py-10 lg:px-5 lg:py-6 xl:px-8 xl:py-10 shadow-xl text-white flex flex-col justify-between h-96">
+        <div className="bg-[#8E1A3D] rounded-2xl px-8 py-10 lg:px-5 lg:py-6 xl:px-8 xl:py-10 shadow-xl text-white flex flex-col justify-betwee h-fit md:h-96">
           <div>
-            <h3 className="text-2xl sm:text-3xl font-bold mb-4 md:mb-8">
+            <h3 className="text-2xl md:text-2xl xl:text-3xl font-bold mb-4 md:mb-8 lg:mb-4 xl:mb-8">
               Hurry? Get Support
               <br />
               Right Away!
             </h3>
-            <p className="text-white/90 mb-6 md:mb-8 text-[0.938rem] md:text-lg font-normal">
+            <p className="text-white/90 mb-6 md:mb-8 lg:mb-4 xl:mb-8 text-[0.938rem] md:text-lg lg:text-base xl:text-lg font-normal">
               Short on time? Connect with our team directly via WhatsApp or
               call for immediate support. We're here to answer your questions
               and guide you through your business setup efficiently.
@@ -160,7 +155,7 @@ const Schedule = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 border border-white/30"
+              className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-6 py-3 lg:px-4 lg:py-2 xl:px-6 xl:py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all duration-300 border border-white/30"
             >
               <MessageCircle className="w-5 h-5" />
               Chat Now
@@ -181,8 +176,8 @@ const Schedule = () => {
         </div>
 
         {/* Right Column - Schedule Meeting */}
-        <div className="bg-[#C79A59] rounded-2xl px-6 py-10 lg:px-5 lg:py-6 xl:px-8 xl:py-10 shadow-xl text-white flex flex-col justify-between h-96">
-          <p className="text-[#000000] mb-6 lg:mb-8 xl:mb-6 text-lg leading-relaxed font-normal">
+        <div className="bg-[#C79A59] rounded-2xl px-6 py-10 lg:px-5 lg:py-6 xl:px-8 xl:py-10 shadow-xl text-white flex flex-col justify-between h-fit md:h-96">
+          <p className="text-[#000000] mb-6 lg:mb-4 xl:mb-6 text-lg  leading-relaxed font-normal">
             Plan your meeting with ease. Select a date that suits you, and
             we'll make sure an expert is ready to assist you with your
             business setup in the UAE.

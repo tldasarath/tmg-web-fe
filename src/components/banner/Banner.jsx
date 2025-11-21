@@ -8,7 +8,7 @@ const BannerSection = ({
     { name: "Home", path: "/" },
     { name: "About", path: "/about-us" },
   ],
-  backgroundImage = "/assets/images/banner/banner01.png",
+  backgroundImage = "/assets/images/banner/tmg-global-banner.png",
 }) => {
   return (
     <section

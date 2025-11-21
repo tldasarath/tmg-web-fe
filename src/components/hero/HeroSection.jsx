@@ -3,8 +3,7 @@ import { Container } from "../layout/Container";
 import { SocialSidebar } from "./SocialSidebar";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { BottomCTA } from "./BottomCta";
-import { LetsTalkCard } from "./CtaCard";
+
 
 export const HeroSection = () => {
   const [videoError, setVideoError] = useState(false);
@@ -125,7 +124,7 @@ export const HeroSection = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/60 z-10" />
 
-          {/* Video Element - Always visible, no loading state */}
+          {/* Video Element  */}
           {!videoError && (
             <video
               ref={videoRef}
@@ -165,10 +164,10 @@ export const HeroSection = () => {
           <LetsTalkCard />
         </div> */}
 
-        {/* Main Content */}
+  
         <div id="home" className="relative z-20 h-full flex flex-col">
           <Container>
-            {/* Center Hero Text */}
+     
             <div className="flex-1 flex items-center justify-center h-screen">
               <div className="text-center w-full">
                 <div style={{ perspective: "1200px" }}>
@@ -205,11 +204,10 @@ export const HeroSection = () => {
           </Container>
         </div>
 
-        {/* Elegant bottom fade for seamless transition to next section */}
+ 
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/40 to-transparent z-10" />
       </section>
-                         
-      <BottomCTA />
+  
     </>
   );
 };

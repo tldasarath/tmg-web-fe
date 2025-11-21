@@ -54,7 +54,7 @@ const LicenseSetupPage = () => {
       </div>
 
       <Container>
-        <div className="container z-10 mx-auto px-4 py-16 lg:pt-24 lg:py-0">
+        <div className="container z-10 mx-auto px-4 py-16 lg:pt-10 lg:py-0">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -65,7 +65,7 @@ const LicenseSetupPage = () => {
               License category
             </h2>
             <p className="text-[#4b5563] max-w-2xl mx-auto">
-              Rorem ipsum dolor sit amet, consectetur adipiscing elit
+             Empower your business growth with clear, reliable licensing guidance
             </p>
           </motion.div>
 
