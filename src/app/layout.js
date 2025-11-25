@@ -3,6 +3,8 @@ import "./globals.css";
 import InnovativeChatbot from "@/components/chatbot/InnovativeChatbot";
 import PageWrapper from "@/components/layout/PageWrapper";
 import { BottomCTA } from "@/components/hero/BottomCta";
+import Script from "next/script";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -84,9 +86,46 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+  dangerouslySetInnerHTML={{
+    __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_GTM_ID}');`,
+  }}
+/>
+
+
+{/* Google Analytics */}
+    <Script
+      async
+      src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+    />
+
+    <Script id="google-analytics">
+      {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+      `}
+    </Script>
+      </head>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <noscript>
+  <iframe
+    src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM_ID}`}
+    height="0"
+    width="0"
+    style={{ display: "none", visibility: "hidden" }}
+  ></iframe>
+</noscript>
+
         <PageWrapper>
           {children}
           <InnovativeChatbot heroSectionId="hero-section" />

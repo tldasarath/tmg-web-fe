@@ -87,7 +87,7 @@ export const blogs = [
     id: 11,
     title: "How PRO Services Save Time and Money in Dubai",
     description: "Outsource government liaison tasks for efficiency.",
-    image: "/assets/images/blogs/pro-services-dubai-uae.png",
+    image: "/assets/images/blogs/pro-services-dubai.png",
     category: "PRO & Government Services",
     date: "10 June 2025",
   },
