@@ -1,17 +1,17 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion"; // Add AnimatePresence
+import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { Container } from "../layout/Container";
 import ScheduleMeeting from "../common/ScheduleMeeting";
-import { ScheduleModal } from "../meetingSchedule/ScheduleModal"; // Import ScheduleModal
+import { ScheduleModal } from "../meetingSchedule/ScheduleModal"; 
 import { allServices } from "@/data/ServiceDetails";
 
 const Services = () => {
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(1);
-  const [showScheduleModal, setShowScheduleModal] = useState(false); // Add state for modal
-  const [selectedDate, setSelectedDate] = useState(null); // Add state for selected date
+  const [showScheduleModal, setShowScheduleModal] = useState(false);
+  const [selectedDate, setSelectedDate] = useState(null); 
 
   const servicesPerPage = 8;
 
@@ -29,7 +29,7 @@ const Services = () => {
       )
   );
   const containerRef = useRef(null);
-  const scrollSpeed = 0.5; // pixels per frame
+  const scrollSpeed = 0.5; 
 
   const handleServiceClick = (slug) => {
     router.push(`/service/${slug}`);
@@ -37,7 +37,7 @@ const Services = () => {
 
   // Handle "View Details" click in sidebar
   const handleViewDetails = (slug, e) => {
-    e.stopPropagation(); // Prevent event bubbling
+    e.stopPropagation(); 
     router.push(`/service/${slug}`);
   };
 
@@ -65,7 +65,7 @@ const Services = () => {
       if (!container.matches(":hover") && !container.matches(":active")) {
         scrollPos += scrollSpeed;
         if (scrollPos >= container.scrollHeight - container.clientHeight) {
-          scrollPos = 0; // reset to top
+          scrollPos = 0;
         }
         container.scrollTop = scrollPos;
       }
@@ -202,7 +202,7 @@ const Services = () => {
 
                     <div
                       ref={containerRef}
-                      className="max-h-[400px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-100 hover:scrollbar-thumb-gray-600"
+                      className="max-h-[400px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-stone-50 scrollbar-track-white hover:scrollbar-thumb-stone-100"
                     >
                       <div className="space-y-4">
                         {sidebarServices.map((service) => (
@@ -211,7 +211,7 @@ const Services = () => {
                             className="bg-gray-50 rounded-lg p-4 hover:bg-blue-50 transition-colors duration-200 border border-gray-200 hover:border-[#b9436e] cursor-pointer group"
                             onClick={() => handleServiceClick(service.slug)}
                           >
-                            <div className="h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mb-3">
+                            <div className="h-32 bg-white rounded-lg flex items-center justify-center mb-3">
                               <img
                                 src={service.image}
                                 alt={service.title}

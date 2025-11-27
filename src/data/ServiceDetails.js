@@ -1250,7 +1250,7 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
     title: "VIRTUAL OFFICE & EJARI SERVICES",
     heading: "Premium Virtual Office &\nEjari Registration Set Up Easily",
 
-    image: "/assets/images/services/vvirtual-office-setup-in-dubai-uae.png",
+    image: "/assets/images/services/virtual-office-setup-in-dubai-uae.png",
 
     seo: {
       metaTitle:
@@ -1855,7 +1855,7 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
     heading: "Business Insurance and\nVAT Services\nFast, Compliant, Reliable",
 
     image:
-      "/assets/images/services/insurance-and-vat-services-dubai-uae.png.png",
+      "/assets/images/services/insurance-and-vat-services-dubai-uae.png",
 
     seo: {
       metaTitle:
@@ -2630,7 +2630,7 @@ export const allServices = [
     title: "BUSINESS SETUP IN DUBAI, UAE",
     description:
       "Start your business in the UAE easily with expert company setup, licensing, and registration support from TMG Global.",
-    image: "/assets/images/services/business-setup-dubai.png",
+    image: "/assets/images/services/business-setup-in-dubai-uae.png",
   },
   {
     id: 2,
@@ -2638,7 +2638,7 @@ export const allServices = [
     title: "Company Formation",
     description:
       "Form your UAE company smoothly with complete documentation, approvals, and legal support for mainland and free zone.",
-    image: "/assets/images/services/company-formation-dubai.png",
+    image: "/assets/images/services/company-formation-in-dubai-uae.png",
   },
   {
     id: 3,
@@ -2662,7 +2662,7 @@ export const allServices = [
     title: "Local Sponsorship",
     description:
       "Find reliable UAE local sponsors with secure, transparent agreements ensuring full business control and legal protection.",
-    image: "/assets/images/services/local-sponsorship.png",
+    image: "/assets/images/services/local-sponsorship-in-dubai-uae.png",
   },
   {
     id: 6,
@@ -2678,7 +2678,8 @@ export const allServices = [
     title: "ISO Certification & Trademark Registration",
     description:
       "Get ISO certification and protect your brand with professional trademark registration for business credibility and compliance.",
-    image: "/assets/images/services/iso-trademark.png",
+  image:
+      "/assets/images/services/iso-certification-and-trademark-registration-dubai-uae.png",
   },
   {
     id: 8,
@@ -2686,7 +2687,7 @@ export const allServices = [
     title: "Virtual Office",
     description:
       "Establish your UAE presence with a legal business address, mail handling, and flexible virtual office solutions.",
-    image: "/assets/images/services/virtual-office-ejari.png",
+    image: "/assets/images/services/virtual-office-setup-in-dubai-uae.png",
   },
   {
     id: 9,
@@ -2694,7 +2695,7 @@ export const allServices = [
     title: "Company Liquidation",
     description:
       "Close your UAE business legally and efficiently with full company liquidation, clearance, and government documentation support.",
-    image: "/assets/images/services/company-liquidation.png",
+    image: "/assets/images/services/company-liquidation-in-dubai-uae.png",
   },
   {
     id: 10,
@@ -2702,7 +2703,7 @@ export const allServices = [
     title: "Document Attestation",
     description:
       "Authenticate and attest documents for visa, education, or business use with our quick and certified attestation service.",
-    image: "/assets/images/services/document-attestation.png",
+    image: "/assets/images/services/document-attestation-service-dubai-uae.png",
   },
   {
     id: 11,
@@ -2710,7 +2711,8 @@ export const allServices = [
     title: "Legal Translation",
     description:
       "Certified legal translation for all government and business documents — accurate, fast, and approved by UAE authorities.",
-    image: "/assets/images/services/legal-translation.png",
+   image:
+      "/assets/images/services/legal-translation-services-in-dubai-uae.png",
   },
   {
     id: 12,
@@ -2718,7 +2720,8 @@ export const allServices = [
     title: "Insurance & VAT Services",
     description:
       "Simplify VAT registration, filing, and business insurance with expert consultation and financial compliance support in UAE.",
-    image: "/assets/images/services/insurance-vat.png",
+  image:
+      "/assets/images/services/insurance-and-vat-services-dubai-uae.png",
   },
   {
     id: 13,
@@ -2726,7 +2729,7 @@ export const allServices = [
     title: "Bank Account Opening",
     description:
       "Open UAE corporate or personal bank accounts easily with professional document preparation and direct bank coordination.",
-    image: "/assets/images/services/bank-account.png",
+    image: "/assets/images/services/bank-account-opening-in-dubai-uae.png",
   },
   {
     id: 14,
@@ -2734,7 +2737,7 @@ export const allServices = [
     title: "Typing Services",
     description:
       "Fast, accurate typing and form-filling services for visa, immigration, and business-related documentation in UAE.",
-    image: "/assets/images/services/typing-service.png",
+    image: "/assets/images/services/typing-services-dubai-uae.png",
   },
   {
     id: 15,
@@ -2742,7 +2745,7 @@ export const allServices = [
     title: "UAE Government Approvals",
     description:
       "Get quick approvals and permits from UAE authorities with expert guidance for business licensing and documentation.",
-    image: "/assets/images/services/government-approvals.png",
+    image: "/assets/images/services/government-approvals-in-the-uae.png",
   },
   {
     id: 16,
@@ -2750,6 +2753,7 @@ export const allServices = [
     title: "Medical & Emirates Id Services",
     description:
       "Complete your Emirates ID and medical test process smoothly with full coordination and government-approved assistance.",
-    image: "/assets/images/services/medical-emirates-id.png",
+   image:
+      "/assets/images/services/medical-and-emirates-id-services-dubai-uae.png",
   },
 ];
