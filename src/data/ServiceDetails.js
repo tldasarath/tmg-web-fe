@@ -15,27 +15,52 @@ export const ServiceDetails = [
     heading: "Start Your UAE Venture With\nExpert Business Solutions",
     image: "/assets/images/services/business-setup-in-dubai-uae.png",
 
-    seo: {
-      metaTitle:
-        "Business Setup in Dubai, UAE | Expert Solutions | BeFirst Productions",
-      metaDescription:
-        "Simplify your business setup journey in Dubai with expert guidance. Mainland, Freezone, and Offshore solutions. Fast approvals, transparent costs.",
-      keywords: [
-        "business setup Dubai",
-        "business setup UAE",
-        "company registration Dubai",
-        "business formation UAE",
-        "freezone business Dubai",
-        "mainland business setup",
-      ],
-      ogTitle:
-        "Business Setup in Dubai - Expert Guidance | BeFirst Productions",
-      ogDescription:
-        "Start your UAE venture with expert business setup solutions. Mainland, Freezone, and Offshore options available.",
-      // Use the main service image for OG
-      ogImage: "/assets/images/services/service1_img.png",
-      ogImageAlt: "Professional business setup services in Dubai UAE",
-    },
+  seo: {
+    metaTitle: "Business Setup in Dubai, UAE | TMG Global LLC",
+    metaDescription:
+      "TMG Global LLC offers the best business setup in Dubai, UAE. We provide complete company formation, trade license, PRO, and visa services to make your business setup in Dubai simple and successful.",
+    keywords: [
+      "business setup in Dubai, UAE",
+      "company formation in Dubai",
+      "business setup consultants in Dubai",
+      "start a business in Dubai",
+      "Dubai business setup services"
+    ],
+    ogTitle: "Business Setup in Dubai, UAE | TMG Global LLC",
+    ogDescription:
+      "Start your business setup in Dubai, UAE with TMG Global LLC — expert consultants offering complete company formation, trade license registration, and PRO services across the UAE.",
+    ogImage: "/assets/images/services/business-setup-in-dubai-uae.png",
+    ogImageAlt: "Business setup consultants in Dubai UAE",
+    canonicalUrl: "https://tmgdubai.ae/service/business-setup-in-dubai-uae",
+    robots: { index: true, follow: true },
+  },
+
+  // -------------------------------------------
+  // EXTRA SEO DATA (used by your new layout)
+  // -------------------------------------------
+
+  offers: {
+    "@type": "Offer",
+    url: "https://tmgdubai.ae/service/business-setup-in-dubai-uae",
+    priceCurrency: "AED",
+    availability: "https://schema.org/InStock"
+  },
+
+  serviceOutput: "Fully registered and licensed business setup in Dubai, UAE",
+
+  termsOfService: "https://tmgdubai.ae/terms-of-service",
+
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.8",
+    reviewCount: "37"
+  },
+
+  breadcrumb: [
+    { position: 1, name: "Home", url: "https://tmgdubai.ae" },
+    { position: 2, name: "Services", url: "https://tmgdubai.ae/services" },
+    { position: 3, name: "Business Setup in Dubai, UAE", url: "https://tmgdubai.ae/service/business-setup-in-dubai-uae" }
+  ],
     data: [
       {
         title: "Simplifying Your Business",
@@ -177,27 +202,51 @@ export const ServiceDetails = [
 
     image: "/assets/images/services/company-formation-in-dubai-uae.png",
 
-    seo: {
-      metaTitle:
-        "Business Setup in Dubai, UAE | Expert Solutions | BeFirst Productions",
-      metaDescription:
-        "Simplify your business setup journey in Dubai with expert guidance. Mainland, Freezone, and Offshore solutions. Fast approvals, transparent costs.",
-      keywords: [
-        "business setup Dubai",
-        "business setup UAE",
-        "company registration Dubai",
-        "business formation UAE",
-        "freezone business Dubai",
-        "mainland business setup",
-      ],
-      ogTitle:
-        "Business Setup in Dubai - Expert Guidance | BeFirst Productions",
-      ogDescription:
-        "Start your UAE venture with expert business setup solutions. Mainland, Freezone, and Offshore options available.",
-      // Use the main service image for OG
-      ogImage: "/assets/images/services/service1_img.png",
-      ogImageAlt: "Professional business setup services in Dubai UAE",
-    },
+     seo: {
+    metaTitle: "Company Formation in Dubai, UAE | Business Setup Experts",
+    metaDescription:
+      "Get complete professional guidance for company formation in dubai, UAE. Get professional assistance for trade license registration, business setup, and government approvals to start your company.",
+    keywords: [
+      "company formation in dubai, uae",
+      "business setup in dubai",
+      "company registration uae",
+      "dubai company formation services",
+      "business consultants in dubai"
+    ],
+    ogTitle: "Company Formation in Dubai, UAE | TMG Global LLC",
+    ogDescription:
+      "Start your company formation in dubai, uae with TMG Global LLC — trusted business setup consultants offering trade licenses, registration, and investor visa services across the UAE.",
+    ogImage: "/assets/images/services/company-formation-in-dubai-uae.png",
+    ogImageAlt: "company formation consultants in dubai uae",
+    canonicalUrl: "https://tmgdubai.ae/service/company-formation-in-dubai-uae",
+    robots: { index: true, follow: true },
+  },
+
+  // Optional: Offer -> will be injected into Service JSON-LD if present
+  offers: {
+    "@type": "Offer",
+    url: "https://tmgdubai.ae/service/company-formation-in-dubai-uae",
+    priceCurrency: "AED",
+    // price: "TBD", // optional
+    availability: "https://schema.org/InStock"
+  },
+
+  // Optional: service output / terms / rating -> included in Service JSON-LD
+  serviceOutput: "Registered and licensed company in Dubai, UAE",
+  termsOfService: "https://tmgdubai.ae/terms-of-use",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.7",
+    reviewCount: "24"
+  },
+
+  // Optional: BreadcrumbList data (layout will emit BreadcrumbList JSON-LD)
+  breadcrumb: [
+    { position: 1, name: "Home", url: "https://tmgdubai.ae" },
+    { position: 2, name: "Services", url: "https://tmgdubai.ae/services" },
+    { position: 3, name: "Company Formation in Dubai, UAE", url: "https://tmgdubai.ae/service/company-formation-in-dubai-uae" }
+  ],
+
     data: [
       {
         title: "Navigate Dubai's Legal",
@@ -396,27 +445,52 @@ Not necessarily. In many cases, TMG Global can assist you in completing the proc
 
     image: "/assets/images/services/uae-golden-visa.png",
 
-    seo: {
-      metaTitle:
-        "Business Setup in Dubai, UAE | Expert Solutions | BeFirst Productions",
-      metaDescription:
-        "Simplify your business setup journey in Dubai with expert guidance. Mainland, Freezone, and Offshore solutions. Fast approvals, transparent costs.",
-      keywords: [
-        "business setup Dubai",
-        "business setup UAE",
-        "company registration Dubai",
-        "business formation UAE",
-        "freezone business Dubai",
-        "mainland business setup",
-      ],
-      ogTitle:
-        "Business Setup in Dubai - Expert Guidance | BeFirst Productions",
-      ogDescription:
-        "Start your UAE venture with expert business setup solutions. Mainland, Freezone, and Offshore options available.",
-      // Use the main service image for OG
-      ogImage: "/assets/images/services/service1_img.png",
-      ogImageAlt: "Professional business setup services in Dubai UAE",
-    },
+ seo: {
+    metaTitle: "UAE Golden Visa | Long-Term Residency in Dubai - TMG Global LLC",
+    metaDescription:
+      "TMG Global LLC offers professional assistance for UAE Golden Visa. Get expert guidance for eligibility, documentation, and fast approval for long-term residency in Dubai and UAE.",
+    keywords: [
+      "uae golden visa",
+      "golden visa dubai",
+      "long term residency uae",
+      "golden visa application dubai",
+      "investor visa uae"
+    ],
+    ogTitle: "UAE Golden Visa | TMG Global LLC",
+    ogDescription:
+      "Apply for your UAE Golden Visa with TMG Global LLC — expert consultants in Dubai offering full support for documentation, eligibility verification, and residency application services.",
+    ogImage: "/assets/images/services/uae-golden-visa.png",
+    ogImageAlt: "uae golden visa consultants in dubai uae",
+    canonicalUrl: "https://tmgdubai.ae/service/uae-golden-visa",
+    robots: { index: true, follow: true },
+  },
+
+  // -----------------------------
+  // Optional extras (used by layout)
+  // -----------------------------
+  offers: {
+    "@type": "Offer",
+    url: "https://tmgdubai.ae/service/uae-golden-visa",
+    priceCurrency: "AED",
+    // price: "TBD", // optional
+    availability: "https://schema.org/InStock"
+  },
+
+  serviceOutput: "Approved UAE Golden Visa residency",
+
+  termsOfService: "https://tmgdubai.ae/terms-of-service",
+
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "18"
+  },
+
+  breadcrumb: [
+    { position: 1, name: "Home", url: "https://tmgdubai.ae" },
+    { position: 2, name: "Services", url: "https://tmgdubai.ae/services" },
+    { position: 3, name: "UAE Golden Visa", url: "https://tmgdubai.ae/service/uae-golden-visa" }
+  ],
     data: [
       {
         title: "Unlock Long-Term Residency",
@@ -593,27 +667,43 @@ The Golden Visa offers numerous advantages over standard visas. Key benefits inc
 
     image: "/assets/images/services/pro-services-dubai-uae.png",
 
-    seo: {
-      metaTitle:
-        "Business Setup in Dubai, UAE | Expert Solutions | BeFirst Productions",
-      metaDescription:
-        "Simplify your business setup journey in Dubai with expert guidance. Mainland, Freezone, and Offshore solutions. Fast approvals, transparent costs.",
-      keywords: [
-        "business setup Dubai",
-        "business setup UAE",
-        "company registration Dubai",
-        "business formation UAE",
-        "freezone business Dubai",
-        "mainland business setup",
-      ],
-      ogTitle:
-        "Business Setup in Dubai - Expert Guidance | BeFirst Productions",
-      ogDescription:
-        "Start your UAE venture with expert business setup solutions. Mainland, Freezone, and Offshore options available.",
-      // Use the main service image for OG
-      ogImage: "/assets/images/services/service1_img.png",
-      ogImageAlt: "Professional business setup services in Dubai UAE",
-    },
+seo: {
+    metaTitle: "PRO Services Dubai, UAE | Business Support and Documentation - TMG Global LLC",
+    metaDescription:
+      "TMG Global LLC provides professional pro services dubai, uae including visa processing, document clearance, license renewals, and government approvals to simplify your business operations.",
+    keywords: [
+      "pro services dubai, uae",
+      "business pro services dubai",
+      "visa processing uae",
+      "document clearance dubai",
+      "government liaison services uae"
+    ],
+    ogTitle: "PRO Services Dubai, UAE | TMG Global LLC",
+    ogDescription:
+      "TMG Global LLC offers reliable pro services dubai, uae — covering visa applications, company documentation, and license renewals for businesses across the UAE.",
+    ogImage: "/assets/images/services/pro-services-dubai-uae.png",
+    ogImageAlt: "pro services consultants in dubai uae",
+    canonicalUrl: "https://tmgdubai.ae/service/pro-services-dubai-uae",
+    robots: { index: true, follow: true },
+  },
+
+  offers: {
+    "@type": "Offer",
+    url: "https://tmgdubai.ae/service/pro-services-dubai-uae",
+    priceCurrency: "AED",
+    availability: "https://schema.org/InStock"
+  },
+
+  serviceOutput: "complete business documentation and visa processing support in dubai, uae",
+
+  termsOfService: "https://tmgdubai.ae/terms-of-service",
+
+  // breadcrumb (optional — layout will emit BreadcrumbList if present)
+  breadcrumb: [
+    { position: 1, name: "Home", url: "https://tmgdubai.ae" },
+    { position: 2, name: "Services", url: "https://tmgdubai.ae/services" },
+    { position: 3, name: "PRO Services Dubai, UAE", url: "https://tmgdubai.ae/service/pro-services-dubai-uae" }
+  ],
     data: [
       {
         title: "Streamline Government Procedures",
@@ -789,26 +879,44 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
     image: "/assets/images/services/local-sponsorship-in-dubai-uae.png",
 
     seo: {
-      metaTitle:
-        "Business Setup in Dubai, UAE | Expert Solutions | BeFirst Productions",
-      metaDescription:
-        "Simplify your business setup journey in Dubai with expert guidance. Mainland, Freezone, and Offshore solutions. Fast approvals, transparent costs.",
-      keywords: [
-        "business setup Dubai",
-        "business setup UAE",
-        "company registration Dubai",
-        "business formation UAE",
-        "freezone business Dubai",
-        "mainland business setup",
-      ],
-      ogTitle:
-        "Business Setup in Dubai - Expert Guidance | BeFirst Productions",
-      ogDescription:
-        "Start your UAE venture with expert business setup solutions. Mainland, Freezone, and Offshore options available.",
-      // Use the main service image for OG
-      ogImage: "/assets/images/services/service1_img.png",
-      ogImageAlt: "Professional business setup services in Dubai UAE",
-    },
+    metaTitle: "Local Sponsorship Services in Dubai, UAE | Trusted Emirati Partners - TMG Global LLC",
+    metaDescription:
+      "TMG Global LLC provides reliable local sponsorship services in dubai, uae for mainland businesses. Get secure, compliant, and transparent partnerships with trusted Emirati sponsors for your company formation.",
+    keywords: [
+      "local sponsorship services in dubai, uae",
+      "uae local sponsor",
+      "dubai mainland sponsorship",
+      "emirati business sponsor dubai",
+      "company sponsorship services uae"
+    ],
+    ogTitle: "Local Sponsorship Services in Dubai, UAE | TMG Global LLC",
+    ogDescription:
+      "Partner with TMG Global LLC for secure and transparent local sponsorship services in dubai, uae — helping you connect with trusted Emirati sponsors for your mainland business setup.",
+    ogImage: "/assets/images/services/local-sponsorship-in-dubai-uae.png",
+    ogImageAlt: "local sponsorship consultants in dubai uae",
+    canonicalUrl: "https://tmgdubai.ae/service/local-sponsorship-services-in-dubai-uae",
+    robots: { index: true, follow: true },
+  },
+
+  // Optional extras (used by layout)
+  offers: {
+    "@type": "Offer",
+    url: "https://tmgdubai.ae/service/local-sponsorship-services-in-dubai-uae",
+    priceCurrency: "AED",
+    availability: "https://schema.org/InStock"
+  },
+
+  serviceOutput: "secure and legally compliant local sponsorship partnership in dubai, uae",
+
+  termsOfService: "https://tmgdubai.ae/terms-of-service",
+
+
+
+  breadcrumb: [
+    { position: 1, name: "Home", url: "https://tmgdubai.ae" },
+    { position: 2, name: "Services", url: "https://tmgdubai.ae/services" },
+    { position: 3, name: "Local Sponsorship Services in Dubai, UAE", url: "https://tmgdubai.ae/service/local-sponsorship-services-in-dubai-uae" }
+  ],
     data: [
       {
         title: "Compliant Local Sponsorship",
@@ -937,27 +1045,43 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
 
     image: "/assets/images/services/uae-visa-services.png",
 
-    seo: {
-      metaTitle:
-        "Business Setup in Dubai, UAE | Expert Solutions | BeFirst Productions",
-      metaDescription:
-        "Simplify your business setup journey in Dubai with expert guidance. Mainland, Freezone, and Offshore solutions. Fast approvals, transparent costs.",
-      keywords: [
-        "business setup Dubai",
-        "business setup UAE",
-        "company registration Dubai",
-        "business formation UAE",
-        "freezone business Dubai",
-        "mainland business setup",
-      ],
-      ogTitle:
-        "Business Setup in Dubai - Expert Guidance | BeFirst Productions",
-      ogDescription:
-        "Start your UAE venture with expert business setup solutions. Mainland, Freezone, and Offshore options available.",
-      // Use the main service image for OG
-      ogImage: "/assets/images/services/service1_img.png",
-      ogImageAlt: "Professional business setup services in Dubai UAE",
-    },
+  seo: {
+    metaTitle: "UAE Visa Services | Fast and Reliable Visa Processing - TMG Global LLC",
+    metaDescription:
+      "TMG Global LLC provides expert uae visa services including employment, investor, family, and residence visas. Get fast, accurate, and compliant visa processing solutions anywhere in the UAE.",
+    keywords: [
+      "uae visa services",
+      "visa processing dubai",
+      "residence visa uae",
+      "employment visa dubai",
+      "investor visa services uae"
+    ],
+    ogTitle: "UAE Visa Services | TMG Global LLC",
+    ogDescription:
+      "TMG Global LLC offers professional uae visa services for individuals and companies — covering employment, investor, and family visa applications with fast and reliable processing.",
+    ogImage: "/assets/images/services/uae-visa-services.png",
+    ogImageAlt: "uae visa processing consultants in dubai uae",
+    canonicalUrl: "https://tmgdubai.ae/service/uae-visa-services",
+    robots: { index: true, follow: true },
+  },
+
+  offers: {
+    "@type": "Offer",
+    url: "https://tmgdubai.ae/service/uae-visa-services",
+    priceCurrency: "AED",
+    availability: "https://schema.org/InStock"
+  },
+
+  serviceOutput: "approved uae visa applications processed smoothly and on time",
+
+  termsOfService: "https://tmgdubai.ae/terms-of-service",
+
+  // breadcrumb (layout will emit BreadcrumbList JSON-LD if present)
+  breadcrumb: [
+    { position: 1, name: "Home", url: "https://tmgdubai.ae" },
+    { position: 2, name: "Services", url: "https://tmgdubai.ae/services" },
+    { position: 3, name: "UAE Visa Services", url: "https://tmgdubai.ae/service/uae-visa-services" }
+  ],
     data: [
       {
         title: "Smooth & Efficient",
@@ -1095,26 +1219,35 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
       "/assets/images/services/iso-certification-and-trademark-registration-dubai-uae.png",
 
     seo: {
-      metaTitle:
-        "Business Setup in Dubai, UAE | Expert Solutions | BeFirst Productions",
-      metaDescription:
-        "Simplify your business setup journey in Dubai with expert guidance. Mainland, Freezone, and Offshore solutions. Fast approvals, transparent costs.",
-      keywords: [
-        "business setup Dubai",
-        "business setup UAE",
-        "company registration Dubai",
-        "business formation UAE",
-        "freezone business Dubai",
-        "mainland business setup",
-      ],
-      ogTitle:
-        "Business Setup in Dubai - Expert Guidance | BeFirst Productions",
-      ogDescription:
-        "Start your UAE venture with expert business setup solutions. Mainland, Freezone, and Offshore options available.",
-      // Use the main service image for OG
-      ogImage: "/assets/images/services/service1_img.png",
-      ogImageAlt: "Professional business setup services in Dubai UAE",
-    },
+    metaTitle: "ISO Certification and Trademark Registration Dubai, UAE | TMG Global LLC",
+    metaDescription:
+      "TMG Global LLC provides professional iso certification and trademark registration dubai, uae. Achieve international quality compliance and protect your business brand legally across the UAE.",
+    keywords: [
+      "iso certification and trademark registration in dubai, uae",
+      "iso consultants in dubai",
+      "trademark registration uae",
+      "business certification services dubai",
+      "brand protection dubai uae"
+    ],
+    ogTitle: "ISO Certification and Trademark Registration in Dubai, UAE | TMG Global LLC",
+    ogDescription:
+      "Get expert iso certification and trademark registration in dubai, UAE with TMG Global LLC — ensuring compliance, brand protection, and business credibility across the UAE.",
+    ogImage: "/assets/images/services/iso-certification-and-trademark-registration-dubai-uae.png",
+    ogImageAlt: "iso certification and trademark consultants in dubai uae",
+    canonicalUrl: "https://tmgdubai.ae/service/iso-certification-and-trademark-registration-dubai-uae",
+    robots: { index: true, follow: true },
+  },
+
+  offers: {
+    "@type": "Offer",
+    url: "https://tmgdubai.ae/service/iso-certification-and-trademark-registration-in-dubai",
+    priceCurrency: "AED",
+    availability: "https://schema.org/InStock"
+  },
+
+  serviceOutput: "Certified ISO-compliant business and legally registered trademark in the UAE",
+
+  termsOfService: "https://tmgdubai.ae/terms-of-service",
     data: [
       {
         title: "Build Trust & Protect",
@@ -1252,27 +1385,43 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
 
     image: "/assets/images/services/virtual-office-setup-in-dubai-uae.png",
 
-    seo: {
-      metaTitle:
-        "Business Setup in Dubai, UAE | Expert Solutions | BeFirst Productions",
-      metaDescription:
-        "Simplify your business setup journey in Dubai with expert guidance. Mainland, Freezone, and Offshore solutions. Fast approvals, transparent costs.",
-      keywords: [
-        "business setup Dubai",
-        "business setup UAE",
-        "company registration Dubai",
-        "business formation UAE",
-        "freezone business Dubai",
-        "mainland business setup",
-      ],
-      ogTitle:
-        "Business Setup in Dubai - Expert Guidance | BeFirst Productions",
-      ogDescription:
-        "Start your UAE venture with expert business setup solutions. Mainland, Freezone, and Offshore options available.",
-      // Use the main service image for OG
-      ogImage: "/assets/images/services/service1_img.png",
-      ogImageAlt: "Professional business setup services in Dubai UAE",
-    },
+   seo: {
+    metaTitle: "Virtual Office Setup in Dubai, UAE | Premium Business Address - TMG Global LLC",
+    metaDescription:
+      "TMG Global LLC provides professional virtual office setup in dubai, uae with a premium business address, mail handling, call management, and full office support for startups and entrepreneurs.",
+    keywords: [
+      "virtual office setup in dubai, uae",
+      "virtual office dubai",
+      "business address dubai",
+      "uae office setup services",
+      "shared office solutions dubai"
+    ],
+    ogTitle: "Virtual Office Setup in Dubai, UAE | TMG Global LLC",
+    ogDescription:
+      "Set up your virtual office setup in dubai, uae with TMG Global LLC — get a prestigious business address, mail and call handling, and complete administrative support for your UAE business.",
+    ogImage: "/assets/images/services/virtual-office-setup-in-dubai-uae.png",
+    ogImageAlt: "virtual office setup consultants in dubai uae",
+    canonicalUrl: "https://tmgdubai.ae/service/virtual-office-setup-in-dubai-uae",
+    robots: { index: true, follow: true },
+  },
+
+  offers: {
+    "@type": "Offer",
+    url: "https://tmgdubai.ae/service/virtual-office-setup-in-dubai-uae",
+    priceCurrency: "AED",
+    availability: "https://schema.org/InStock"
+  },
+
+  serviceOutput: "registered virtual office address and administrative support in dubai, uae",
+
+  termsOfService: "https://tmgdubai.ae/terms-of-service",
+
+  // breadcrumb (layout will emit BreadcrumbList JSON-LD if present)
+  breadcrumb: [
+    { position: 1, name: "Home", url: "https://tmgdubai.ae" },
+    { position: 2, name: "Services", url: "https://tmgdubai.ae/services" },
+    { position: 3, name: "Virtual Office Setup in Dubai, UAE", url: "https://tmgdubai.ae/service/virtual-office-setup-in-dubai-uae" }
+  ],
     data: [
       {
         title: "A Professional Business Address",
@@ -1404,27 +1553,42 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
 
     image: "/assets/images/services/company-liquidation-in-dubai-uae.png",
 
-    seo: {
-      metaTitle:
-        "Business Setup in Dubai, UAE | Expert Solutions | BeFirst Productions",
-      metaDescription:
-        "Simplify your business setup journey in Dubai with expert guidance. Mainland, Freezone, and Offshore solutions. Fast approvals, transparent costs.",
-      keywords: [
-        "business setup Dubai",
-        "business setup UAE",
-        "company registration Dubai",
-        "business formation UAE",
-        "freezone business Dubai",
-        "mainland business setup",
-      ],
-      ogTitle:
-        "Business Setup in Dubai - Expert Guidance | BeFirst Productions",
-      ogDescription:
-        "Start your UAE venture with expert business setup solutions. Mainland, Freezone, and Offshore options available.",
-      // Use the main service image for OG
-      ogImage: "/assets/images/services/service1_img.png",
-      ogImageAlt: "Professional business setup services in Dubai UAE",
-    },
+   seo: {
+    metaTitle: "Company Liquidation in Dubai, UAE | Business Closure Services - TMG Global LLC",
+    metaDescription:
+      "TMG Global LLC provides expert company liquidation in dubai, uae. We handle business closure, legal compliance, financial clearance, and government documentation with complete transparency and support.",
+    keywords: [
+      "company liquidation in dubai, uae",
+      "business liquidation dubai",
+      "company closure services uae",
+      "liquidation consultants dubai",
+      "business deregistration dubai"
+    ],
+    ogTitle: "Company Liquidation in Dubai, UAE | TMG Global LLC",
+    ogDescription:
+      "TMG Global LLC offers professional company liquidation in dubai, uae — managing business closure, visa cancellation, financial settlements, and government approvals efficiently.",
+    ogImage: "/assets/images/services/company-liquidation-in-dubai-uae.png",
+    ogImageAlt: "company liquidation consultants in dubai uae",
+    canonicalUrl: "https://tmgdubai.ae/service/company-liquidation-in-dubai-uae",
+    robots: { index: true, follow: true },
+  },
+
+  offers: {
+    "@type": "Offer",
+    url: "https://tmgdubai.ae/service/company-liquidation-service-in-dubai",
+    priceCurrency: "AED",
+    availability: "https://schema.org/InStock"
+  },
+
+  serviceOutput: "Legally closed and deregistered company in Dubai",
+
+  termsOfService: "https://tmgdubai.ae/terms-of-service",
+
+  breadcrumb: [
+    { position: 1, name: "Home", url: "https://tmgdubai.ae" },
+    { position: 2, name: "Services", url: "https://tmgdubai.ae/services" },
+    { position: 3, name: "Company Liquidation in Dubai, UAE", url: "https://tmgdubai.ae/service/company-liquidation-in-dubai-uae" }
+  ],
     data: [
       {
         title: "Legally Close Your UAE Business",
@@ -1560,26 +1724,41 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
     image: "/assets/images/services/document-attestation-service-dubai-uae.png",
 
     seo: {
-      metaTitle:
-        "Business Setup in Dubai, UAE | Expert Solutions | BeFirst Productions",
-      metaDescription:
-        "Simplify your business setup journey in Dubai with expert guidance. Mainland, Freezone, and Offshore solutions. Fast approvals, transparent costs.",
-      keywords: [
-        "business setup Dubai",
-        "business setup UAE",
-        "company registration Dubai",
-        "business formation UAE",
-        "freezone business Dubai",
-        "mainland business setup",
-      ],
-      ogTitle:
-        "Business Setup in Dubai - Expert Guidance | BeFirst Productions",
-      ogDescription:
-        "Start your UAE venture with expert business setup solutions. Mainland, Freezone, and Offshore options available.",
-      // Use the main service image for OG
-      ogImage: "/assets/images/services/service1_img.png",
-      ogImageAlt: "Professional business setup services in Dubai UAE",
-    },
+    metaTitle: "Document Attestation Service Dubai, UAE | Fast and Reliable - TMG Global LLC",
+    metaDescription:
+      "TMG Global LLC provides fast and reliable document attestation service dubai, uae for personal, educational, and commercial certificates. Get MOFA and embassy attestations done easily with expert assistance.",
+    keywords: [
+      "document attestation service dubai, uae",
+      "certificate attestation dubai",
+      "mofa attestation uae",
+      "embassy attestation dubai",
+      "educational certificate attestation uae"
+    ],
+    ogTitle: "Document Attestation Service in Dubai, UAE | TMG Global LLC",
+    ogDescription:
+      "TMG Global LLC offers professional document attestation service in dubai, uae — covering MOFA, embassy, and certificate attestation for individuals and companies across the UAE.",
+    ogImage: "/assets/images/services/document-attestation-service-dubai-uae.png",
+    ogImageAlt: "document attestation consultants dubai uae",
+    canonicalUrl: "https://tmgdubai.ae/service/document-attestation-service-dubai-uae",
+    robots: { index: true, follow: true },
+  },
+
+  offers: {
+    "@type": "Offer",
+    url: "https://tmgdubai.ae/service/document-attestation-service-dubai-uae",
+    priceCurrency: "AED",
+    availability: "https://schema.org/InStock"
+  },
+
+  serviceOutput: "officially attested and verified documents for use in dubai and abroad",
+
+  termsOfService: "https://tmgdubai.ae/terms-of-service",
+
+  breadcrumb: [
+    { position: 1, name: "Home", url: "https://tmgdubai.ae" },
+    { position: 2, name: "Services", url: "https://tmgdubai.ae/services" },
+    { position: 3, name: "Document Attestation Service in Dubai, UAE", url: "https://tmgdubai.ae/service/document-attestation-service-dubai-uae" }
+  ],
     data: [
       {
         title: "Get Your Documents",
@@ -1709,27 +1888,42 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
     image:
       "/assets/images/services/legal-translation-services-in-dubai-uae.png",
 
-    seo: {
-      metaTitle:
-        "Business Setup in Dubai, UAE | Expert Solutions | BeFirst Productions",
-      metaDescription:
-        "Simplify your business setup journey in Dubai with expert guidance. Mainland, Freezone, and Offshore solutions. Fast approvals, transparent costs.",
-      keywords: [
-        "business setup Dubai",
-        "business setup UAE",
-        "company registration Dubai",
-        "business formation UAE",
-        "freezone business Dubai",
-        "mainland business setup",
-      ],
-      ogTitle:
-        "Business Setup in Dubai - Expert Guidance | BeFirst Productions",
-      ogDescription:
-        "Start your UAE venture with expert business setup solutions. Mainland, Freezone, and Offshore options available.",
-      // Use the main service image for OG
-      ogImage: "/assets/images/services/service1_img.png",
-      ogImageAlt: "Professional business setup services in Dubai UAE",
-    },
+     seo: {
+    metaTitle: "Legal Translation Services in Dubai, UAE | Certified Translators - TMG Global LLC",
+    metaDescription:
+      "TMG Global LLC provides certified legal translation services in dubai, uae approved by the Ministry of Justice. Get accurate translations for contracts, court documents, and business papers with expert translators.",
+    keywords: [
+      "legal translation services in dubai, uae",
+      "certified translation dubai",
+      "arabic english translation uae",
+      "official legal translation dubai",
+      "ministry of justice approved translation"
+    ],
+    ogTitle: "Legal Translation Services in Dubai, UAE | TMG Global LLC",
+    ogDescription:
+      "TMG Global LLC offers certified legal translation services in dubai, uae - delivering accurate and ministry-approved translations for contracts, agreements, and legal documents.",
+    ogImage: "/assets/images/services/legal-translation-services-in-dubai-uae.png",
+    ogImageAlt: "certified legal translation office in dubai uae",
+    canonicalUrl: "https://tmgdubai.ae/service/legal-translation-services-in-dubai-uae",
+    robots: { index: true, follow: true },
+  },
+
+  offers: {
+    "@type": "Offer",
+    url: "https://tmgdubai.ae/service/legal-translation-services-in-dubai-uae",
+    priceCurrency: "AED",
+    availability: "https://schema.org/InStock"
+  },
+
+  serviceOutput: "certified legal translations approved by the uae ministry of justice",
+
+  termsOfService: "https://tmgdubai.ae/terms-of-service",
+
+  breadcrumb: [
+    { position: 1, name: "Home", url: "https://tmgdubai.ae" },
+    { position: 2, name: "Services", url: "https://tmgdubai.ae/services" },
+    { position: 3, name: "Legal Translation Services in Dubai, UAE", url: "https://tmgdubai.ae/service/legal-translation-services-in-dubai-uae" }
+  ],
     data: [
       {
         title: "100% Accurate,",
@@ -1857,27 +2051,42 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
     image:
       "/assets/images/services/insurance-and-vat-services-dubai-uae.png",
 
-    seo: {
-      metaTitle:
-        "Business Setup in Dubai, UAE | Expert Solutions | BeFirst Productions",
-      metaDescription:
-        "Simplify your business setup journey in Dubai with expert guidance. Mainland, Freezone, and Offshore solutions. Fast approvals, transparent costs.",
-      keywords: [
-        "business setup Dubai",
-        "business setup UAE",
-        "company registration Dubai",
-        "business formation UAE",
-        "freezone business Dubai",
-        "mainland business setup",
-      ],
-      ogTitle:
-        "Business Setup in Dubai - Expert Guidance | BeFirst Productions",
-      ogDescription:
-        "Start your UAE venture with expert business setup solutions. Mainland, Freezone, and Offshore options available.",
-      // Use the main service image for OG
-      ogImage: "/assets/images/services/service1_img.png",
-      ogImageAlt: "Professional business setup services in Dubai UAE",
-    },
+     seo: {
+    metaTitle: "Insurance and VAT Services Dubai, UAE | TMG Global LLC",
+    metaDescription:
+      "TMG Global LLC provides professional insurance and vat services dubai, uae including vat registration, filing, compliance consulting, and customized corporate insurance solutions for businesses across the UAE.",
+    keywords: [
+      "insurance and vat services dubai, uae",
+      "vat registration dubai",
+      "vat filing uae",
+      "business insurance services dubai",
+      "vat consultancy dubai"
+    ],
+    ogTitle: "Insurance and VAT Services Dubai, UAE | TMG Global LLC",
+    ogDescription:
+      "TMG Global LLC offers expert insurance and vat services dubai, uae — providing vat registration, tax filing, and corporate insurance solutions for complete business support.",
+    ogImage: "/assets/images/services/insurance-and-vat-services-dubai-uae.png",
+    ogImageAlt: "insurance and vat consultants in dubai uae",
+    canonicalUrl: "https://tmgdubai.ae/service/insurance-and-vat-services-dubai-uae",
+    robots: { index: true, follow: true },
+  },
+
+  offers: {
+    "@type": "Offer",
+    url: "https://tmgdubai.ae/service/insurance-and-vat-services-dubai-uae",
+    priceCurrency: "AED",
+    availability: "https://schema.org/InStock"
+  },
+
+  serviceOutput: "vat-compliant and fully insured business solutions in dubai, uae",
+
+  termsOfService: "https://tmgdubai.ae/terms-of-service",
+
+  breadcrumb: [
+    { position: 1, name: "Home", url: "https://tmgdubai.ae" },
+    { position: 2, name: "Services", url: "https://tmgdubai.ae/services" },
+    { position: 3, name: "Insurance and VAT Services Dubai, UAE", url: "https://tmgdubai.ae/service/insurance-and-vat-services-dubai-uae" }
+  ],
     data: [
       {
         title: "Secure Your Business",
@@ -2020,26 +2229,41 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
     image: "/assets/images/services/bank-account-opening-in-dubai-uae.png",
 
     seo: {
-      metaTitle:
-        "Business Setup in Dubai, UAE | Expert Solutions | BeFirst Productions",
-      metaDescription:
-        "Simplify your business setup journey in Dubai with expert guidance. Mainland, Freezone, and Offshore solutions. Fast approvals, transparent costs.",
-      keywords: [
-        "business setup Dubai",
-        "business setup UAE",
-        "company registration Dubai",
-        "business formation UAE",
-        "freezone business Dubai",
-        "mainland business setup",
-      ],
-      ogTitle:
-        "Business Setup in Dubai - Expert Guidance | BeFirst Productions",
-      ogDescription:
-        "Start your UAE venture with expert business setup solutions. Mainland, Freezone, and Offshore options available.",
-      // Use the main service image for OG
-      ogImage: "/assets/images/services/service1_img.png",
-      ogImageAlt: "Professional business setup services in Dubai UAE",
-    },
+    metaTitle: "Bank Account Opening in Dubai, UAE | Corporate and Personal Accounts - TMG Global LLC",
+    metaDescription:
+      "TMG Global LLC offers expert bank account opening in dubai, uae for businesses and individuals. Get assistance with documentation, compliance, and approvals for smooth UAE bank account setup.",
+    keywords: [
+      "bank account opening in dubai, uae",
+      "business bank account dubai",
+      "uae bank account opening",
+      "corporate bank account setup dubai",
+      "open bank account uae"
+    ],
+    ogTitle: "Bank Account Opening in Dubai, UAE | TMG Global LLC",
+    ogDescription:
+      "TMG Global LLC provides professional bank account opening in dubai, uae — helping investors and companies with documentation, compliance, and approvals for UAE bank accounts.",
+    ogImage: "/assets/images/services/bank-account-opening-in-dubai-uae.png",
+    ogImageAlt: "bank account opening consultants in dubai uae",
+    canonicalUrl: "https://tmgdubai.ae/service/bank-account-opening-in-dubai-uae",
+    robots: { index: true, follow: true },
+  },
+
+  offers: {
+    "@type": "Offer",
+    url: "https://tmgdubai.ae/service/bank-account-opening-in-dubai-uae",
+    priceCurrency: "AED",
+    availability: "https://schema.org/InStock"
+  },
+
+  serviceOutput: "successfully opened corporate or personal bank account in dubai, uae",
+
+  termsOfService: "https://tmgdubai.ae/terms-and-conditions",
+
+  breadcrumb: [
+    { position: 1, name: "Home", url: "https://tmgdubai.ae" },
+    { position: 2, name: "Services", url: "https://tmgdubai.ae/services" },
+    { position: 3, name: "Bank Account Opening in Dubai, UAE", url: "https://tmgdubai.ae/service/bank-account-opening-in-dubai-uae" }
+  ],
     data: [
       {
         title: "Simplify Your Corporate",
@@ -2172,26 +2396,41 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
     image: "/assets/images/services/typing-services-dubai-uae.png",
 
     seo: {
-      metaTitle:
-        "Business Setup in Dubai, UAE | Expert Solutions | BeFirst Productions",
-      metaDescription:
-        "Simplify your business setup journey in Dubai with expert guidance. Mainland, Freezone, and Offshore solutions. Fast approvals, transparent costs.",
-      keywords: [
-        "business setup Dubai",
-        "business setup UAE",
-        "company registration Dubai",
-        "business formation UAE",
-        "freezone business Dubai",
-        "mainland business setup",
-      ],
-      ogTitle:
-        "Business Setup in Dubai - Expert Guidance | BeFirst Productions",
-      ogDescription:
-        "Start your UAE venture with expert business setup solutions. Mainland, Freezone, and Offshore options available.",
-      // Use the main service image for OG
-      ogImage: "/assets/images/services/service1_img.png",
-      ogImageAlt: "Professional business setup services in Dubai UAE",
-    },
+    metaTitle: "Typing Services Dubai, UAE | Fast and Accurate Document Processing - TMG Global LLC",
+    metaDescription:
+      "TMG Global LLC provides professional typing services dubai, uae for visa applications, government forms, and business documentation. Get fast, accurate, and reliable document typing support across the UAE.",
+    keywords: [
+      "typing services dubai, uae",
+      "visa typing dubai",
+      "emirates id typing uae",
+      "business documentation typing dubai",
+      "government typing services dubai"
+    ],
+    ogTitle: "Typing Services Dubai, UAE | TMG Global LLC",
+    ogDescription:
+      "TMG Global LLC offers expert typing services dubai, uae — covering visa applications, emirates id forms, and government documentation typing with speed and accuracy.",
+    ogImage: "/assets/images/services/typing-services-dubai-uae.png",
+    ogImageAlt: "typing services and documentation support in dubai uae",
+    canonicalUrl: "https://tmgdubai.ae/service/typing-services-dubai-uae",
+    robots: { index: true, follow: true },
+  },
+
+  offers: {
+    "@type": "Offer",
+    url: "https://tmgdubai.ae/service/typing-services-dubai-uae",
+    priceCurrency: "AED",
+    availability: "https://schema.org/InStock"
+  },
+
+  serviceOutput: "professionally prepared and approved government documents in dubai, uae",
+
+  termsOfService: "https://tmgdubai.ae/terms-of-service",
+
+  breadcrumb: [
+    { position: 1, name: "Home", url: "https://tmgdubai.ae" },
+    { position: 2, name: "Services", url: "https://tmgdubai.ae/services" },
+    { position: 3, name: "Typing Services Dubai, UAE", url: "https://tmgdubai.ae/service/typing-services-dubai-uae" }
+  ],
     data: [
       {
         title: "Accurate & Fast",
@@ -2318,27 +2557,42 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
 
     image: "/assets/images/services/government-approvals-in-the-uae.png",
 
-    seo: {
-      metaTitle:
-        "Business Setup in Dubai, UAE | Expert Solutions | BeFirst Productions",
-      metaDescription:
-        "Simplify your business setup journey in Dubai with expert guidance. Mainland, Freezone, and Offshore solutions. Fast approvals, transparent costs.",
-      keywords: [
-        "business setup Dubai",
-        "business setup UAE",
-        "company registration Dubai",
-        "business formation UAE",
-        "freezone business Dubai",
-        "mainland business setup",
-      ],
-      ogTitle:
-        "Business Setup in Dubai - Expert Guidance | BeFirst Productions",
-      ogDescription:
-        "Start your UAE venture with expert business setup solutions. Mainland, Freezone, and Offshore options available.",
-      // Use the main service image for OG
-      ogImage: "/assets/images/services/service1_img.png",
-      ogImageAlt: "Professional business setup services in Dubai UAE",
-    },
+   seo: {
+    metaTitle: "Government Approvals in the UAE | Business Setup and Licensing - TMG Global LLC",
+    metaDescription:
+      "TMG Global LLC provides complete support for government approvals in the uae. Get assistance with trade licenses, activity permits, and documentation approvals from all UAE authorities for smooth business setup.",
+    keywords: [
+      "government approvals in the uae",
+      "business approvals dubai",
+      "trade license approval uae",
+      "dubai municipality approvals",
+      "ded and chamber approvals uae"
+    ],
+    ogTitle: "Government Approvals in the UAE | TMG Global LLC",
+    ogDescription:
+      "TMG Global LLC offers expert assistance for government approvals in the uae — including trade licenses, permits, and regulatory approvals from UAE authorities for businesses and investors.",
+    ogImage: "/assets/images/services/government-approvals-in-the-uae.png",
+    ogImageAlt: "government approvals consultants in dubai uae",
+    canonicalUrl: "https://tmgdubai.ae/service/government-approvals-in-the-uae",
+    robots: { index: true, follow: true },
+  },
+
+  offers: {
+    "@type": "Offer",
+    url: "https://tmgdubai.ae/service/government-approvals-in-the-uae",
+    priceCurrency: "AED",
+    availability: "https://schema.org/InStock"
+  },
+
+  serviceOutput: "approved business licenses and regulatory permits in the uae",
+
+  termsOfService: "https://tmgdubai.ae/terms-of-service",
+
+  breadcrumb: [
+    { position: 1, name: "Home", url: "https://tmgdubai.ae" },
+    { position: 2, name: "Services", url: "https://tmgdubai.ae/services" },
+    { position: 3, name: "Government Approvals in the UAE", url: "https://tmgdubai.ae/service/government-approvals-in-the-uae" }
+  ],
     data: [
       {
         title: "Streamlined Government",
@@ -2475,26 +2729,47 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
       "/assets/images/services/medical-and-emirates-id-services-dubai-uae.png",
 
     seo: {
-      metaTitle:
-        "Business Setup in Dubai, UAE | Expert Solutions | BeFirst Productions",
-      metaDescription:
-        "Simplify your business setup journey in Dubai with expert guidance. Mainland, Freezone, and Offshore solutions. Fast approvals, transparent costs.",
-      keywords: [
-        "business setup Dubai",
-        "business setup UAE",
-        "company registration Dubai",
-        "business formation UAE",
-        "freezone business Dubai",
-        "mainland business setup",
-      ],
-      ogTitle:
-        "Business Setup in Dubai - Expert Guidance | BeFirst Productions",
-      ogDescription:
-        "Start your UAE venture with expert business setup solutions. Mainland, Freezone, and Offshore options available.",
-      // Use the main service image for OG
-      ogImage: "/assets/images/services/service1_img.png",
-      ogImageAlt: "Professional business setup services in Dubai UAE",
-    },
+    metaTitle: "Medical and Emirates ID Services Dubai, UAE | Fast Processing - TMG Global LLC",
+    metaDescription:
+      "TMG Global LLC offers fast and reliable medical and emirates id services dubai, uae. Get complete assistance for visa medical tests, emirates id typing, and renewal services for individuals and companies.",
+    keywords: [
+      "medical and emirates id services dubai, uae",
+      "emirates id typing dubai",
+      "medical test for visa uae",
+      "emirates id renewal dubai",
+      "visa medical services uae"
+    ],
+    ogTitle: "Medical and Emirates ID Services Dubai, UAE | TMG Global LLC",
+    ogDescription:
+      "TMG Global LLC provides professional medical and emirates id services dubai, uae — including visa medical tests, id typing, and renewal support for fast processing.",
+    ogImage: "/assets/images/services/medical-and-emirates-id-services-dubai-uae.png",
+    ogImageAlt: "medical and emirates id typing services in dubai uae",
+    canonicalUrl: "https://tmgdubai.ae/service/medical-and-emirates-id-services-dubai-uae",
+    robots: { index: true, follow: true },
+  },
+
+  // -----------------------------
+  // Extra SEO data (used by layout)
+  // -----------------------------
+
+  offers: {
+    "@type": "Offer",
+    url: "https://tmgdubai.ae/service/medical-and-emirates-id-services-in-dubai-uae",
+    priceCurrency: "AED",
+    availability: "https://schema.org/InStock"
+  },
+
+  serviceOutput: "completed medical fitness and emirates id application in dubai, uae",
+
+  termsOfService: "https://tmgdubai.ae/terms-of-service",
+
+  aggregateRating: undefined, // No rating provided. Keeping null safe.
+
+  breadcrumb: [
+    { position: 1, name: "Home", url: "https://tmgdubai.ae" },
+    { position: 2, name: "Services", url: "https://tmgdubai.ae/services" },
+    { position: 3, name: "Medical and Emirates ID Services Dubai, UAE", url: "https://tmgdubai.ae/service/medical-and-emirates-id-services-dubai-uae" }
+  ],
     data: [
       {
         title: "Fast & Efficient",

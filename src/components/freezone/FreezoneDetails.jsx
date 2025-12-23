@@ -152,7 +152,7 @@ export default function FreezoneDetails() {
           >
             <div className="relative w-full overflow-hidden rounded-bl-0 rounded-tr-[16px] rounded-tl-[16px] lg:rounded-tr-0 lg:rounded-br-0 lg:rounded-tl-[16px] lg:rounded-bl-[16px] shadow-2xl">
               <img
-                src="/assets/images/freezone/freezone-business.png"
+                src="/assets/images/freezone/freezone-company-formation.png"
                 alt="Dubai skyline"
                 className="w-full h-80 md:h-96 lg:h-full object-cover"
               />

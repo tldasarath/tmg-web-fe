@@ -137,7 +137,7 @@ export default function OffshoreDetails() {
         {/* Image Container */}
         <div className="mb-8 overflow-hidden rounded-2xl">
           <img
-            src="/assets/images/offshore/offshore-company-setup.png"
+            src="/assets/images/offshore/offshore-company-formation.png"
             alt="Dubai skyline with modern buildings"
             className="w-full h-auto object-contain bg-gray-100"
             loading="lazy"

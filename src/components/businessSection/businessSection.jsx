@@ -1,4 +1,4 @@
-// components/VerticalRectangles.tsx
+
 "use client";
 
 import { useState, useRef } from "react";
@@ -7,6 +7,7 @@ import { Container } from "../layout/Container";
 import MainButton from "../button/main-button";
 import LettersPullUpText from "../text/LettersPullUpText";
 import { motion, useInView } from "framer-motion";
+import Link from "next/link";
 
 const BusinessSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -17,9 +18,10 @@ const BusinessSection = () => {
   const rectangles = [
     {
       id: 1,
-      link: "/freezone-company-formation-dubai",
+      link: "/freezone-company-formation",
       title: "FREEZONE",
-      image: "/assets/images/business-section/freezone-company-formation-dubai.png",
+      image:
+        "/assets/images/business-section/freezone-company-formation-dubai.png",
       color: "#8E8E8E",
       hoverColor: "#49051E",
       description:
@@ -27,9 +29,10 @@ const BusinessSection = () => {
     },
     {
       id: 2,
-      link: "/mainland-company-formation-dubai",
+      link: "/mainland-company-formation",
       title: "MAINLAND",
-      image: "/assets/images/business-section/mainland-company-formation-dubai.png",
+      image:
+        "/assets/images/business-section/mainland-company-formation-dubai.png",
       color: "#FFFFFF",
       hoverColor: "#49051E",
       description:
@@ -37,9 +40,10 @@ const BusinessSection = () => {
     },
     {
       id: 3,
-      link: "/offshore-company-formation-dubai",
+      link: "/offshore-company-formation",
       title: "OFFSHORE",
-      image: "/assets/images/business-section/Offshore-company-formation-dubai.png",
+      image:
+        "/assets/images/business-section/Offshore-company-formation-dubai.png",
       color: "#49051E",
       hoverColor: "#49051E",
       description:
@@ -90,7 +94,8 @@ const BusinessSection = () => {
                       className="text-decoration-none"
                     >
                       <b>Freezone company formation in Dubai</b>,
-                    </a> allowing investors full ownership and operational freedom.
+                    </a>{" "}
+                    allowing investors full ownership and operational freedom.
                     Our consultants assist with jurisdiction selection,
                     approvals, licensing, and registration, ensuring a seamless
                     setup. With detailed understanding of Free Zone regulations,
@@ -106,10 +111,14 @@ const BusinessSection = () => {
                       className="text-decoration-none"
                     >
                       <b> mainland company formation in Dubai</b>,
-                    </a> helping entrepreneurs establish fully licensed businesses.
+                    </a>{" "}
+                    helping entrepreneurs establish fully licensed businesses.
                     We manage trade name approvals, legal documentation, and
-                    licensing processes directly with <a href="https://ded.ae" className="text-decoration-none"><b>government authorities</b></a>.
-                    With in-depth local knowledge, our team ensures smooth
+                    licensing processes directly with{" "}
+                    <a href="https://ded.ae" className="text-decoration-none">
+                      <b>government authorities</b>
+                    </a>
+                    . With in-depth local knowledge, our team ensures smooth
                     registration and compliance, enabling businesses to operate
                     efficiently and leverage Dubai's strong commercial
                     infrastructure for growth and long-term success.
@@ -122,7 +131,8 @@ const BusinessSection = () => {
                       className="text-decoration-none"
                     >
                       <b>offshore company formation in Dubai</b>,
-                    </a> providing investors with secure, compliant, and strategic
+                    </a>{" "}
+                    providing investors with secure, compliant, and strategic
                     solutions. We handle registration, documentation, and
                     regulatory approvals efficiently, ensuring confidentiality
                     and operational flexibility. Our team guides clients through
@@ -138,14 +148,15 @@ const BusinessSection = () => {
             {/* Right Side - Rectangles */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-end w-full overflow-y-auto sm:overflow-x-auto lg:overflow-visible px-2 sm:px-4 no-scrollbar">
               {rectangles.map((rectangle, index) => (
-                <div
-                  key={rectangle.id}
-                  onMouseEnter={() => handleMouseEnter(index)}
-                  onClick={() => handleMouseEnter(index)}
-                  className={`relative group cursor-pointer flex-shrink-0 w-full sm:w-auto`}
-                >
+                <Link key={rectangle.id} href={rectangle.link}>
                   <div
-                    className={`relative overflow-hidden transition-all duration-700 ease-out rounded-2xl shadow-2xl transform group-hover:scale-[1.03] border-2 border-opacity-20 backdrop-blur-sm
+                    key={rectangle.id}
+                    onMouseEnter={() => handleMouseEnter(index)}
+                    onClick={() => handleMouseEnter(index)}
+                    className={`relative group cursor-pointer flex-shrink-0 w-full sm:w-auto`}
+                  >
+                    <div
+                      className={`relative overflow-hidden transition-all duration-700 ease-out rounded-2xl shadow-2xl transform group-hover:scale-[1.03] border-2 border-opacity-20 backdrop-blur-sm
                       ${getBorderColor(index, rectangle)}
                       h-16 sm:h-[260px] lg:h-[400px]
                       ${
@@ -153,71 +164,74 @@ const BusinessSection = () => {
                           ? "sm:w-[380px] lg:w-[500px] h-48 sm:h-[260px] lg:h-[400px]"
                           : "sm:w-20 lg:w-28 h-16 sm:h-[260px] lg:h-[400px]"
                       }`}
-                    style={{ background: getRectangleColor(index, rectangle) }}
-                  >
-                    {/* Collapsed Text */}
-                    <div
-                      className={`absolute inset-0 flex items-center justify-center transition-all duration-300 z-10 ${
-                        activeIndex === index
-                          ? "opacity-0 scale-90"
-                          : "opacity-100 scale-100"
-                      }`}
+                      style={{
+                        background: getRectangleColor(index, rectangle),
+                      }}
                     >
-                      <div className="text-center">
-                        <span
-                          className={`font-bold text-xl sm:text-2xl lg:text-[40px] tracking-wider sm:hidden ${
-                            rectangle.id === 2 && index === 1
-                              ? "text-[#49051E]"
-                              : "text-white"
-                          }`}
-                        >
-                          {rectangle.title}
-                        </span>
-                        <span
-                          className={`font-bold text-xl sm:text-2xl lg:text-[40px] tracking-wider hidden sm:inline [writing-mode:vertical-rl] [text-orientation:mixed] ${
-                            rectangle.id === 2 && index === 1
-                              ? "text-[#49051E]"
-                              : "text-white"
-                          }`}
-                        >
-                          {rectangle.title}
-                        </span>
+                      {/* Collapsed Text */}
+                      <div
+                        className={`absolute inset-0 flex items-center justify-center transition-all duration-300 z-10 ${
+                          activeIndex === index
+                            ? "opacity-0 scale-90"
+                            : "opacity-100 scale-100"
+                        }`}
+                      >
+                        <div className="text-center">
+                          <span
+                            className={`font-bold text-xl sm:text-2xl lg:text-[40px] tracking-wider sm:hidden ${
+                              rectangle.id === 2 && index === 1
+                                ? "text-[#49051E]"
+                                : "text-white"
+                            }`}
+                          >
+                            {rectangle.title}
+                          </span>
+                          <span
+                            className={`font-bold text-xl sm:text-2xl lg:text-[40px] tracking-wider hidden sm:inline [writing-mode:vertical-rl] [text-orientation:mixed] ${
+                              rectangle.id === 2 && index === 1
+                                ? "text-[#49051E]"
+                                : "text-white"
+                            }`}
+                          >
+                            {rectangle.title}
+                          </span>
+                        </div>
                       </div>
+
+                      {/* Expanded Image */}
+                      <div
+                        className={`absolute w-full h-full inset-0 transition-all duration-700 ${
+                          activeIndex === index
+                            ? "opacity-100 translate-x-0"
+                            : "opacity-0 translate-x-4"
+                        }`}
+                      >
+                        <div className="w-full h-full relative">
+                          <Image
+                            src={rectangle.image}
+                            alt={rectangle.title}
+                            fill
+                            className="object-fit"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            priority={index === 0}
+                          />
+                        </div>
+
+                        {/* Button */}
+                        <div className="absolute bottom-3 right-6 sm:right-8">
+                          <MainButton
+                            text="View more"
+                            icon="arrow"
+                            link={rectangle.link}
+                          />
+                        </div>
+                      </div>
+
+                      {/* Shine Effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                     </div>
-
-                    {/* Expanded Image */}
-                    <div
-                      className={`absolute w-full h-full inset-0 transition-all duration-700 ${
-                        activeIndex === index
-                          ? "opacity-100 translate-x-0"
-                          : "opacity-0 translate-x-4"
-                      }`}
-                    >
-                      <div className="w-full h-full relative">
-                        <Image
-                          src={rectangle.image}
-                          alt={rectangle.title}
-                          fill
-                          className="object-fit"
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          priority={index === 0}
-                        />
-                      </div>
-
-                      {/* Button */}
-                      <div className="absolute bottom-3 right-6 sm:right-8">
-                        <MainButton
-                          text="View more"
-                          icon="arrow"
-                          link={rectangle.link}
-                        />
-                      </div>
-                    </div>
-
-                    {/* Shine Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

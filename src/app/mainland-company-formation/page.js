@@ -22,7 +22,7 @@ const page = () => {
             { name: "Home", path: "/" },
             {
               name: "Mainland",
-              path: "/mainland-company-formation-dubai",
+              path: "/mainland-company-formation",
             },
           ]}
         />

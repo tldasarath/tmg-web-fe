@@ -1,8 +1,7 @@
-"use client";
+// src/app/service/[slug]/page.js
+import React from "react";
 import BannerSection from "@/components/banner/Banner";
 import BusinessBanner from "@/components/banner/BusinessBanner";
-import ConsultationModal from "@/components/common/ConsultationModal";
-import SmallBanner from "@/components/common/SmallBanner";
 import Footer from "@/components/footer/Footer";
 import { Navbar } from "@/components/navbar/Navbar";
 import AdvantageSection from "@/components/serviceDetails/AdvantageSection";
@@ -10,34 +9,57 @@ import AnimatedTabs from "@/components/serviceDetails/AnimatedTabs";
 import BusinessSection from "@/components/serviceDetails/BusinessSection ";
 import BusinessSetupComponent from "@/components/serviceDetails/BusinessSetupComponent";
 import FAQSection from "@/components/serviceDetails/FaqSection";
+import ServiceClientModalManager from "@/components/common/ServiceClientModalManager";
+
+import { buildMetadata } from "@/lib/seo";
 import { ServiceDetails } from "@/data/ServiceDetails";
-import { useParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
 
-const Page = () => {
-  const params = useParams();
-  const [service, setService] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [showModal, setShowModal] = useState(false);
+export const dynamic = "force-static";
 
-  useEffect(() => {
-    if (params?.slug) {
-      const foundService = ServiceDetails.find((s) => s.slug === params.slug);
-      setService(foundService);
-      setLoading(false);
-    }
-  }, [params?.slug]);
+// FIXED: Make generateStaticParams async (best practice)
+export async function generateStaticParams() {
+  const uniqueSlugs = [...new Set((ServiceDetails || []).map((s) => s.slug))];
+  return uniqueSlugs.map((slug) => ({ slug }));
+}
 
-  // if (loading) {
-  //   return (
-  //     <div className="min-h-screen w-full flex items-center justify-center">
-  //       <div className="text-center">
-  //         <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#8B2645]"></div>
-  //         <p className="mt-4 text-gray-600">Loading service details...</p>
-  //       </div>
-  //     </div>
-  //   );
-  // }
+// FIXED: Make generateMetadata async and await params
+export async function generateMetadata({ params }) {
+  // Await params before accessing properties
+  const { slug } = await params;
+  const service = (ServiceDetails || []).find((s) => s.slug === slug);
+
+  if (!service) {
+    return buildMetadata({
+      title: "Service Not Found",
+      description: "The requested service could not be found.",
+      path: `/service/${slug}`,
+    });
+  }
+
+  // Access SEO data from the nested 'seo' object
+  const seo = service.seo || {};
+
+  // Use SEO-specific fields for metadata (not page content)
+  return buildMetadata({
+    title: seo.metaTitle || service.title,
+    description: seo.metaDescription,
+    path: `/service/${slug}`,
+    keywords: seo.keywords || [],
+    image: seo.ogImage || service.image,
+    ogTitle: seo.ogTitle,
+    ogDescription: seo.ogDescription,
+    ogImageAlt: seo.ogImageAlt,
+    canonicalUrl: seo.canonicalUrl,
+    robots: seo.robots || { index: true, follow: true },
+    type: "article",
+  });
+}
+
+// FIXED: Make page component async and await params
+export default async function ServicePage({ params }) {
+  // Await params before accessing properties
+  const { slug } = await params;
+  const service = (ServiceDetails || []).find((s) => s.slug === slug);
 
   if (!service) {
     return (
@@ -46,8 +68,8 @@ const Page = () => {
         <BannerSection
           title="Service Not Found"
           breadcrumbs={[
-            { name: "Home", path: "/home" },
-            { name: "Services", path: "/service" },
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
           ]}
         />
         <div className="flex items-center justify-center py-20">
@@ -71,7 +93,7 @@ const Page = () => {
       <BannerSection
         title={service.title}
         breadcrumbs={[
-          { name: "Home", path: "/home" },
+          { name: "Home", path: "/" },
           { name: "Services", path: "/services" },
           { name: service.title, path: `/service/${service.slug}` },
         ]}
@@ -82,29 +104,21 @@ const Page = () => {
         image={service.image}
       />
       <BusinessBanner bannerData={service.banner} />
-      {service.sections.map((section) => {
-        if (section.id === "section1") {
-          return <BusinessSection key={section.id} section={section} />;
-        }
-        if (section.id === "section2") {
-          return <BusinessSetupComponent key={section.id} section={section} />;
-        }
-        if (section.id === "section3") {
-          return <AdvantageSection key={section.id} section={section} />;
-        }
-        if (section.id === "section4") {
-          return <FAQSection key={section.id} section={section} />;
-        }
 
+      {service.sections.map((section) => {
+        if (section.id === "section1")
+          return <BusinessSection key={section.id} section={section} />;
+        if (section.id === "section2")
+          return <BusinessSetupComponent key={section.id} section={section} />;
+        if (section.id === "section3")
+          return <AdvantageSection key={section.id} section={section} />;
+        if (section.id === "section4")
+          return <FAQSection key={section.id} section={section} />;
         return null;
       })}
-      <SmallBanner onOpenModal={() => setShowModal(true)} />
-      <Footer />
 
-      {/* Render modal at the top level */}
-      <ConsultationModal isOpen={showModal} setIsOpen={setShowModal} />
+      <ServiceClientModalManager />
+      <Footer />
     </div>
   );
-};
-
-export default Page;
+}

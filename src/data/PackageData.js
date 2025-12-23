@@ -40,7 +40,7 @@ export const packageData = {
       description:
         "Establish your business in Dubai mainland with access to local and international markets without restrictions.",
       image: "/assets/images/category/front1.png",
-      logo: "/assets/images/category/spc-logo.png",
+      logo: "/assets/images/category/dubai-mainland-logo.png",
       rate: "AED5055",
     },
     {
@@ -48,7 +48,7 @@ export const packageData = {
       description:
         "Set up in the capital city with government support and access to major contracts and projects.",
       image: "/assets/images/category/front2.png",
-      logo: "/assets/images/category/spc-logo.png",
+      logo: "/assets/images/category/abu-dhabi-mainland-logo.png",
       rate: "AED5055",
     },
     {
@@ -56,7 +56,7 @@ export const packageData = {
       description:
         "Cost-effective mainland setup with full trading rights across UAE and GCC region.",
       image: "/assets/images/category/front1.png",
-      logo: "/assets/images/category/spc-logo.png",
+      logo: "/assets/images/category/sharjah-mainland-logo.png",
       rate: "AED5055",
     },
     {
@@ -64,7 +64,7 @@ export const packageData = {
       description:
         "Affordable mainland licenses with simplified procedures and quick turnaround time.",
       image: "/assets/images/category/front2.png",
-      logo: "/assets/images/category/spc-logo.png",
+      logo: "/assets/images/category/ajman-mainland-logo.png",
       rate: "AED5055",
     },
   ],
@@ -74,7 +74,7 @@ export const packageData = {
       description:
         "Ras Al Khaimah offshore company for international business operations with privacy and asset protection.",
       image: "/assets/images/category/front1.png",
-      logo: "/assets/images/category/spc-logo.png",
+      logo: "/assets/images/category/rak-logo.png",
       rate: "AED5055",
     },
     {
@@ -82,7 +82,7 @@ export const packageData = {
       description:
         "JAFZA offshore solutions for holding companies and international investments with tax benefits.",
       image: "/assets/images/category/front2.png",
-      logo: "/assets/images/category/spc-logo.png",
+      logo: "/assets/images/category/jafza-offshore-logo.png",
       rate: "AED5055",
     },
     {
@@ -90,7 +90,7 @@ export const packageData = {
       description:
         "Quick and affordable offshore company formation for global trading and holding structures.",
       image: "/assets/images/category/front1.png",
-      logo: "/assets/images/category/spc-logo.png",
+      logo: "/assets/images/category/ajman-offshore-logo.png",
       rate: "AED5055",
     },
     {
@@ -98,7 +98,7 @@ export const packageData = {
       description:
         "Modern offshore solutions with digital banking integration and corporate services.",
       image: "/assets/images/category/front2.png",
-      logo: "/assets/images/category/spc-logo.png",
+      logo: "/assets/images/category/ifza-offshore-logo.png",
       rate: "AED5055",
     },
   ],

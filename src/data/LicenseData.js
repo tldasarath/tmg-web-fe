@@ -26,6 +26,61 @@ export const LicenseDetails = [
           "No, the E-Trader License is designed for online or home-based businesses.",
       },
     ],
+    seo: {
+      metaTitle: "E-Trader License in Dubai | TMG Global LLC",
+      metaDescription:
+        "TMG Global LLC helps entrepreneurs obtain an E-Trader License in Dubai. Start your online business legally with complete assistance in registration, documentation, and approval from DED Dubai.",
+      keywords: [
+        "E-Trader license in Dubai",
+        "online business license Dubai",
+        "DED E-Trader license UAE",
+        "E-Trader registration Dubai",
+        "Dubai e-commerce license",
+      ],
+      ogTitle: "E-Trader License in Dubai | TMG Global LLC",
+      ogDescription:
+        "TMG Global LLC offers professional assistance for obtaining an E-Trader License in Dubai — helping you start your online business legally with DED approval and expert documentation support.",
+      ogImage: "/assets/images/license/e-trader-license.png",
+      ogImageAlt: "E-Trader license consultants in Dubai UAE",
+      canonicalUrl: "https://tmgdubai.ae/license/e-trader-license-dubai",
+    },
+
+    // Optional extras used by layout (keeps schema rich)
+    offers: {
+      "@type": "Offer",
+      url: "https://tmgdubai.ae/license/e-trader-license-dubai",
+      priceCurrency: "AED",
+      availability: "https://schema.org/InStock",
+    },
+
+    serviceOutput: "Approved DED E-Trader license for online business in Dubai",
+
+    termsOfService: "https://tmgdubai.ae/terms-of-service",
+
+    // Breadcrumb for JSON-LD (layout will emit if present)
+    breadcrumb: [
+      { position: 1, name: "Home", url: "https://tmgdubai.ae" },
+      {
+        position: 2,
+        name: "E-Trader License",
+        url: "https://tmgdubai.ae/license/e-trader-license-dubai",
+      },
+    ],
+
+    // keep existing content arrays (example / minimal)
+    data: [
+      {
+        title: "E-commerce simplified",
+        highlight: "Start selling online",
+        description: `The E-Trader License allows individuals to legally sell goods and services online in Dubai without a physical office — ideal for social sellers and small e-commerce owners.`,
+      },
+    ],
+    banner: {
+      heading: "Launch your online business legally in Dubai",
+      subheading:
+        "Complete E-Trader registration, documentation and DED approvals with TMG Global.",
+    },
+    sections: [],
   },
   {
     id: 2,
@@ -54,6 +109,69 @@ export const LicenseDetails = [
           "Yes, a physical industrial premise and proper infrastructure are required.",
       },
     ],
+    seo: {
+      metaTitle: "Industrial License in Dubai | TMG Global LLC",
+      metaDescription:
+        "TMG Global LLC provides expert assistance for obtaining an industrial license in Dubai. Get complete support for manufacturing, production, and industrial activity approvals across the UAE.",
+      keywords: [
+        "industrial license in Dubai",
+        "manufacturing license Dubai",
+        "industrial company setup UAE",
+        "industrial activity approval Dubai",
+        "factory license Dubai",
+      ],
+      ogTitle: "Industrial License in Dubai | TMG Global LLC",
+      ogDescription:
+        "TMG Global LLC offers professional support for industrial license services in Dubai — including approvals, documentation, and registration for manufacturing and production businesses in the UAE.",
+      ogImage: "/assets/images/license/industrial-license.png",
+      ogImageAlt: "Industrial license consultants in Dubai UAE",
+      canonicalUrl: "https://tmgdubai.ae/license/industrial-license-dubai",
+      robots: { index: true, follow: true },
+    },
+
+    // Optional extras used by layout (keeps schema rich)
+    offers: {
+      "@type": "Offer",
+      url: "https://tmgdubai.ae/license/industrial-license-dubai",
+      priceCurrency: "AED",
+      availability: "https://schema.org/InStock",
+    },
+
+    serviceOutput:
+      "Approved industrial or manufacturing business license in Dubai",
+
+    termsOfService: "https://tmgdubai.ae/terms-of-service",
+
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      reviewCount: "12",
+    },
+
+    // Breadcrumb for JSON-LD (layout will emit if present)
+    breadcrumb: [
+      { position: 1, name: "Home", url: "https://tmgdubai.ae" },
+      {
+        position: 2,
+        name: "Industrial License in Dubai",
+        url: "https://tmgdubai.ae/license/industrial-license-dubai",
+      },
+    ],
+
+    // keep existing content arrays (example / minimal)
+    data: [
+      {
+        title: "Industrial approvals & compliance",
+        highlight: "Manufacturing made compliant",
+        description: `We guide manufacturers through zoning, environmental permits, and equipment import approvals — ensuring a compliant and efficient industrial setup.`,
+      },
+    ],
+    banner: {
+      heading: "Build your manufacturing future in Dubai",
+      subheading:
+        "Full-service support for industrial licensing, approvals and factory setup from TMG Global.",
+    },
+    sections: [],
   },
   {
     id: 3,
@@ -82,6 +200,61 @@ export const LicenseDetails = [
           "Typically within 3–5 working days after document submission and approval.",
       },
     ],
+    seo: {
+      metaTitle: "Commercial License in Dubai | TMG Global LLC",
+      metaDescription:
+        "TMG Global LLC provides complete assistance for obtaining a commercial license in Dubai. Get expert guidance for license registration, renewal, and approvals for trading and business activities in the UAE.",
+      keywords: [
+        "commercial license in Dubai",
+        "business license Dubai",
+        "trade license Dubai",
+        "commercial license renewal UAE",
+        "company license services Dubai",
+      ],
+      ogTitle: "Commercial License in Dubai | TMG Global LLC",
+      ogDescription:
+        "TMG Global LLC offers professional support for commercial license services in Dubai — including registration, renewal, and government approvals for trade and business operations across the UAE.",
+      ogImage: "/assets/images/license/commercial-license.png",
+      ogImageAlt: "Commercial license consultants in Dubai UAE",
+      canonicalUrl: "https://tmgdubai.ae/license/commercial-license-dubai",
+    },
+
+    // Optional extras used by layout (keeps schema rich)
+    offers: {
+      "@type": "Offer",
+      url: "https://tmgdubai.ae/license/commercial-license-dubai",
+      priceCurrency: "AED",
+      availability: "https://schema.org/InStock",
+    },
+
+    serviceOutput: "Registered or renewed commercial trade license in Dubai",
+
+    termsOfService: "https://tmgdubai.ae/terms-of-service",
+
+    // Breadcrumb for JSON-LD (layout will emit if present)
+    breadcrumb: [
+      { position: 1, name: "Home", url: "https://tmgdubai.ae" },
+      {
+        position: 2,
+        name: "Commercial License",
+        url: "https://tmgdubai.ae/license/commercial-license-dubai",
+      },
+    ],
+
+    // keep existing content arrays
+    data: [
+      {
+        title: "Commercial trading made simple",
+        highlight: "Open for business",
+        description: `The Commercial License allows traders to import, export and sell goods across the UAE and internationally. With the right classification and approvals, you can access new markets and scale your operations.`,
+      },
+    ],
+    banner: {
+      heading: "Start trading in Dubai with confidence",
+      subheading:
+        "Full support for trade license registration, renewals and compliance from TMG Global.",
+    },
+    sections: [],
   },
   {
     id: 4,
@@ -110,5 +283,69 @@ export const LicenseDetails = [
           "Yes, professional license holders can have 100% ownership under current UAE regulations.",
       },
     ],
+    seo: {
+      metaTitle: "Professional License in Dubai | TMG Global LLC",
+      metaDescription:
+        "TMG Global LLC offers expert assistance for obtaining a professional license in Dubai. Get complete support for registration, renewal, and documentation to start your professional business in the UAE.",
+      keywords: [
+        "professional license in Dubai",
+        "Dubai professional license services",
+        "professional business license UAE",
+        "license renewal Dubai",
+        "company formation Dubai",
+      ],
+      ogTitle: "Professional License in Dubai | TMG Global LLC",
+      ogDescription:
+        "TMG Global LLC provides fast and reliable professional license services in Dubai — from application and registration to renewal and government approvals for your UAE business.",
+      ogImage: "/assets/images/license/professional-license.png",
+      ogImageAlt: "Professional license consultants in Dubai UAE",
+      canonicalUrl: "https://tmgdubai.ae/license/professional-license-dubai",
+      robots: { index: true, follow: true },
+    },
+
+    // Optional extras used by layout (keeps schema rich)
+    offers: {
+      "@type": "Offer",
+      url: "https://tmgdubai.ae/license/professional-license-dubai",
+      priceCurrency: "AED",
+      availability: "https://schema.org/InStock",
+    },
+
+    serviceOutput:
+      "Approved and registered professional business license in Dubai",
+
+    termsOfService: "https://tmgdubai.ae/terms-of-service",
+
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.7",
+      reviewCount: "24",
+    },
+
+    breadcrumb: [
+      { position: 1, name: "Home", url: "https://tmgdubai.ae" },
+      {
+        position: 2,
+        name: "Professional License ",
+        url: "https://tmgdubai.ae/license/professional-license-dubai",
+      },
+    ],
+    // ----------------------------------------------------------------
+
+    // keep existing content arrays (you already have these fields)
+    data: [
+      {
+        title: "Why choose a professional license?",
+        highlight: "Service-based ownership",
+        description:
+          "A Professional License enables 100% ownership (where permitted) and is tailored for service-led businesses such as consultancies, agencies and freelancers.",
+      },
+    ],
+    banner: {
+      heading: "Launch your professional service in Dubai",
+      subheading:
+        "Full licensing support, renewals and compliance with TMG Global.",
+    },
+    sections: [],
   },
 ];

@@ -50,8 +50,8 @@ const MainButton = ({
   const handleClick = useCallback(
     (e) => {
       if (onClick) {
-        e.preventDefault(); // stop link navigation
-        onClick(); // call the passed function
+        e.preventDefault();
+        onClick(); 
         return;
       }
 

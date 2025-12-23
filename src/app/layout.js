@@ -21,22 +21,22 @@ export const metadata = {
 
   title: {
     default:
-      "Business Setup in Dubai, UAE | Company Formation with TMG GlobalBusiness Setup in Dubai, UAE | Company Formation with TMG Global",
-    template: "%s | BeFirst Productions",
+      "Business Setup Company in Dubai, UAE | Company Formation UAE",
+    // template: "%s | BeFirst Productions",
   },
 
   description:
-    "Start your business setup in Dubai with TMG Global. Expert company formation in UAE Mainland, Freezone & Offshore. Get your Dubai business license today.",
+    "Start your business setup company  in Dubai with TMG Global. We offer expert company formation in UAE Mainland, Freezone and Offshore.",
 
   keywords: [
-    "business setup in Dubai",
-    "company setup UAE",
-    "Dubai business license",
-    "UAE business formation",
-    "TMG Global",
-    "start a business in Dubai",
-    "Freezone setup",
-    "Mainland company setup",
+    "business setup company in dubai",
+    "company setup uae",
+    "dubai business license",
+    "uae business formation",
+    "tmg global",
+    "start a business in dubai",
+    "freezone setup",
+    "mainland company setup"
   ],
 
   authors: [{ name: "TMG Global" }],
@@ -57,8 +57,8 @@ export const metadata = {
     locale: "en_AE",
     url: "https://tmgdubai.ae",
     siteName: "TMG Global",
-    title: "TMG Global - Business Setup in UAE",
-    description: "Expert company formation, freezone & offshore solutions",
+    title: "Business Setup Company in Dubai, UAE | Company Formation UAE",
+    description: "Start your business setup company  in Dubai with TMG Global. We offer expert company formation in UAE Mainland, Freezone and Offshore.",
     images: [
       {
         url: "https://tmgdubai.ae/og-image.jpg",
@@ -67,6 +67,18 @@ export const metadata = {
         alt: "TMG Global",
       },
     ],
+  },
+
+    icons: {
+    icon: '/favicon.ico',                
+    shortcut: '/favicon-96x96.png',      
+    apple: '/apple-touch-icon.png',        
+    other: [
+      { rel: 'icon', url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { rel: 'icon', url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { rel: 'icon', url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { rel: 'manifest', url: '/site.webmanifest' }
+    ]
   },
 
   twitter: {
@@ -83,35 +95,35 @@ export const metadata = {
   },
 };
 
+const GTM = process.env.NEXT_PUBLIC_GTM_ID;
+const GA = process.env.NEXT_PUBLIC_GA_ID;
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script
-  dangerouslySetInnerHTML={{
-    __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_GTM_ID}');`,
-  }}
-/>
+        {GTM && (
+          <Script id="gtm-init" strategy="afterInteractive">
+            {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','${GTM}');`}
+          </Script>
+        )}
 
-
-{/* Google Analytics */}
-    <Script
-      async
-      src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-    />
-
-    <Script id="google-analytics">
-      {`
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
-      `}
-    </Script>
+        {/* Google Analytics */}
+        {GA && <Script async src={`https://www.googletagmanager.com/gtag/js?id=${GA}`} />}
+        {GA && (
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA}');
+            `}
+          </Script>
+        )}
       </head>
 
       <body

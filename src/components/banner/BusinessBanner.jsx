@@ -47,7 +47,7 @@ export default function BusinessBanner({ bannerData }) {
 
   return (
     <motion.div
-      className="relative w-full min-h-screen md:min-h-[255px] lg:h-[255px] overflow-hidden flex items-center"
+      className="relative w-full min-h-screen md:min-h-[255px] lg:h-[255px] xl:h-[300px] overflow-hidden flex items-center"
       initial="hidden"
       animate="visible"
       variants={containerVariants}

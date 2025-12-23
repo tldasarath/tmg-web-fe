@@ -2,17 +2,15 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { BusinessSetupPackages } from "../BusinessSetupPackages/BusinessSetupPackages";
 import { Container } from "../layout/Container";
 import { licenseCategories } from "../../data/LicenseCategories";
+import Link from "next/link";
 
 const LicenseSetupPage = () => {
   const firstCardRef = useRef(null);
 
-
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
-  // Auto-open first card when it comes into view
   useEffect(() => {
     const firstCard = firstCardRef.current;
     if (!firstCard) return;
@@ -65,7 +63,8 @@ const LicenseSetupPage = () => {
               License category
             </h2>
             <p className="text-[#4b5563] max-w-2xl mx-auto">
-             Empower your business growth with clear, reliable licensing guidance
+              Empower your business growth with clear, reliable
+              licensing guidance
             </p>
           </motion.div>
 
@@ -107,10 +106,12 @@ const LicenseSetupPage = () => {
 
                       {/* Show button only on hover */}
                       {hoveredIndex === index && (
-                        <div className="">
-                          <button className="mt-4 bg-white text-[#941D43] font-bold py-2 px-4 rounded">
-                            Learn More
-                          </button>
+                        <div>
+                          <Link href={category.link}>
+                            <button className="mt-4 bg-white text-[#941D43] font-bold py-2 px-4 rounded">
+                              Learn More
+                            </button>
+                          </Link>
                         </div>
                       )}
                     </div>
@@ -120,8 +121,6 @@ const LicenseSetupPage = () => {
             ))}
           </div>
 
-          {/* Business Setup Packages Section */}
-          {/* <BusinessSetupPackages /> */}
         </div>
       </Container>
     </div>

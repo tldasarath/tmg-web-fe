@@ -5,9 +5,8 @@ import { useRef, useState, useEffect } from "react";
 import MainButton from "../button/main-button";
 import { Container } from "../layout/Container";
 
-// Remove ConsultationModal import here
 
-const SmallBanner = ({ onOpenModal }) => { // Accept onOpenModal as prop
+const SmallBanner = ({ onOpenModal }) => { 
   const sectionRef = useRef(null);
   const [isInView, setIsInView] = useState(false);
 

@@ -166,7 +166,7 @@ export default function MainlandDetails() {
           >
             <div className="relative w-full max-w-md sm:max-w-lg rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/assets/images/mainland/mainland-business-setup.png"
+                src="/assets/images/mainland/mainland-company-formation.png"
                 alt="Dubai Mainland"
                 width={800}
                 height={500}

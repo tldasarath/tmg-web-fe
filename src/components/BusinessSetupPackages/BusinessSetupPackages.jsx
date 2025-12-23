@@ -3,9 +3,12 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 import { packageData } from "../../data/PackageData";
+import { useRouter } from "next/navigation";
 
 export const BusinessSetupPackages = () => {
+  const router = useRouter();
   const [activeTab, setActiveTab] = useState("FREEZONE");
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [withVisa, setWithVisa] = useState(false);
@@ -14,12 +17,17 @@ export const BusinessSetupPackages = () => {
   const [isPaused, setIsPaused] = useState(false);
   const currentOptions = packageData[activeTab];
 
-  const handleLearnMore = (e) => {
-    e.stopPropagation();
-    router.push("/");
+  const categoryLinks = {
+    FREEZONE: "/freezone-company-formation",
+    OFFSHORE: "/offshore-company-formation",
+    Mainland: "/mainland-company-formation",
   };
 
-
+  const handleLearnMore = (e) => {
+    e.stopPropagation();
+    const link = categoryLinks[activeTab] || "/";
+    router.push(link);
+  };
 
   const cards = [
     {
@@ -189,6 +197,7 @@ export const BusinessSetupPackages = () => {
 
             <div className="flex justify-center">
               <motion.button
+                onClick={handleLearnMore}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-[#C79A59] text-white px-4 py-4 rounded-full font-semibold flex items-center gap-2 transition-colors"
@@ -218,11 +227,9 @@ export const BusinessSetupPackages = () => {
                         if (window.innerWidth > 768) setHoveredIndex(null);
                       }}
                       onClick={() => {
-                        if (window.innerWidth <= 768) {
-                          setHoveredIndex(
-                            hoveredIndex === index ? null : index
-                          );
-                        }
+                        // Always navigate on click (consistent mobile & desktop behavior)
+                        const link = categoryLinks[activeTab] || "/";
+                        router.push(link);
                       }}
                       className="relative w-full cursor-pointer aspect-[3/2.5] lg:aspect-[3/3] xl:aspect-[3/2.5]"
                       style={{ perspective: "1000px" }}
@@ -279,18 +286,14 @@ export const BusinessSetupPackages = () => {
                               <span className="text-black text-lg md:text-xl font-semibold">
                                 {option.rate}
                               </span>
-                              <a
-                                href={option.link || "#"}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:scale-105 transition-transform duration-300"
-                              >
+
+                              <Link href={categoryLinks[activeTab] || "/"}>
                                 <img
                                   src={option.logo}
                                   alt={`${option.name} logo`}
-                                  className="h-16 w-16 object-contain"
+                                  className="h-14 w-14 object-contain hover:scale-105 transition-transform duration-300"
                                 />
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -319,6 +322,10 @@ export const BusinessSetupPackages = () => {
               <motion.div
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => setIsPaused(false)}
+                onClick={() => {
+                  const link = categoryLinks[activeTab] || "/";
+                  router.push(link);
+                }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
