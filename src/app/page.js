@@ -10,24 +10,20 @@ import Footer from "@/components/footer/Footer";
 import FounderSection from "@/components/founderSection/FounderSection";
 import Gallery from "@/components/gallerySection/Gallery";
 import GoldenVisaBanner from "@/components/goldenVisa/GoldenVisaBanner";
-import { HeroSection } from "@/components/hero/HeroSection";
 import ImageSection from "@/components/imageSection/imageSection1";
 import LicenseSetupPage from "@/components/licenseCategory/LicenseSetupSection";
-import LicenseSetup from "@/components/licenseCategory/LicenseSetupSection";
 import { Navbar } from "@/components/navbar/Navbar";
-import ServicesSection from "@/components/serviceSection/serviceSection";
 import SocialMediaCards from "@/components/socialMedia/SocalSection";
 import React from "react";
 import BusinessServiceTransiton from "@/components/Scrolling/BusinessServiceTransiton";
 import { BusinessSetupPackages } from "@/components/BusinessSetupPackages/BusinessSetupPackages";
-import { buildMetadata } from "@/lib/seo";
 
-export const metadata = buildMetadata({
-  title: "Business Setup in Dubai, UAE | TMG Global",
-  description:
-    "Launch your company in Dubai with TMG Global. Mainland, Freezone & Offshore setup with end-to-end licensing and visa assistance.",
-  path: "/",
-});
+// export const metadata = buildMetadata({
+//   title: "Business Setup in Dubai, UAE | TMG Global",
+//   description:
+//     "Launch your company in Dubai with TMG Global. Mainland, Freezone & Offshore setup with end-to-end licensing and visa assistance.",
+//   path: "/",
+// });
 
 const page = () => {
   return (

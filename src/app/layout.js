@@ -4,7 +4,7 @@ import InnovativeChatbot from "@/components/chatbot/InnovativeChatbot";
 import PageWrapper from "@/components/layout/PageWrapper";
 import { BottomCTA } from "@/components/hero/BottomCta";
 import Script from "next/script";
-
+import { buildMetadata } from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,18 +16,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  metadataBase: new URL("https://tmgdubai.ae/"), 
-
-  title: {
-    default:
-      "Business Setup Company in Dubai, UAE | Company Formation UAE",
-    // template: "%s | BeFirst Productions",
-  },
-
+export const metadata = buildMetadata({
+  title: "Business Setup Company in Dubai, UAE | Company Formation UAE",
   description:
-    "Start your business setup company  in Dubai with TMG Global. We offer expert company formation in UAE Mainland, Freezone and Offshore.",
-
+    "Start your business setup company in Dubai with TMG Global. Expert company formation in UAE Mainland, Freezone and Offshore. Get your Dubai business license today.",
   keywords: [
     "business setup company in dubai",
     "company setup uae",
@@ -36,67 +28,72 @@ export const metadata = {
     "tmg global",
     "start a business in dubai",
     "freezone setup",
-    "mainland company setup"
+    "mainland company setup",
+  ],
+  ogTitle: "Business Setup Company in Dubai, UAE | Company Formation UAE",
+  ogDescription:
+    "Start your business setup company in Dubai with TMG Global. Expert company formation in UAE Mainland, Freezone and Offshore. Get your Dubai business license today.",
+  image: "/og-image.jpg",
+  ogImageAlt: "Business setup company in Dubai, UAE",
+  canonicalUrl: "https://tmgdubai.ae/",
+  path: "/",
+});
+
+const OrganizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "TMG Global Services LLC",
+  alternateName: "Thameem Management Group Global LLC",
+  url: "https://tmgdubai.ae",
+  logo: "/assets/logo/TMG-Global-Services-LLC.png",
+  description:
+    "Start your business setup Company in Dubai with TMG Global. Expert company formation in UAE Mainland, Freezone and Offshore.",
+  foundingDate: "2025",
+  founder: {
+    "@type": "Person",
+    name: "TMG Global Team",
+  },
+  slogan: "Best Business Setup Company in Dubai",
+
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Al Twar Centre, Al Barsha Mall, Madina Mall, Al Garhoud",
+    addressLocality: "Dubai",
+    addressRegion: "Dubai",
+    postalCode: "00000",
+    addressCountry: "AE",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+971545267777",
+    contactType: "Customer Support",
+    areaServed: "AE",
+    availableLanguage: ["English", "Arabic"],
+  },
+
+  sameAs: [
+    "https://www.facebook.com/tmgglobal",
+    "https://www.linkedin.com/company/tmg-global",
+    "https://twitter.com/TMGGlobal",
+    "https://www.instagram.com/tmg.global",
   ],
 
-  authors: [{ name: "TMG Global" }],
-  creator: "TMG Global",
-  publisher: "TMG Global",
-
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-    },
-  },
-
-  openGraph: {
-    type: "website",
-    locale: "en_AE",
-    url: "https://tmgdubai.ae",
-    siteName: "TMG Global",
-    title: "Business Setup Company in Dubai, UAE | Company Formation UAE",
-    description: "Start your business setup company  in Dubai with TMG Global. We offer expert company formation in UAE Mainland, Freezone and Offshore.",
-    images: [
-      {
-        url: "https://tmgdubai.ae/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "TMG Global",
-      },
-    ],
-  },
-
-    icons: {
-    icon: '/favicon.ico',                
-    shortcut: '/favicon-96x96.png',      
-    apple: '/apple-touch-icon.png',        
-    other: [
-      { rel: 'icon', url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { rel: 'icon', url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { rel: 'icon', url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
-      { rel: 'manifest', url: '/site.webmanifest' }
-    ]
-  },
-
-  twitter: {
-    handle: "@TMGDubai",
-    cardType: "summary_large_image",
-  },
-
-  verification: {
-    google: "_W2qQZsYga7KnXrA12vbw48HhEJiYAEB1ouDNDSQPAA", 
-  },
-
-  alternates: {
-    canonical: "https://tmgdubai.ae/",
+  knowsAbout: [
+    "best business setup company in dubai",
+    "business setup services uae",
+    "document clearing dubai",
+    "company formation experts dubai",
+    "uae business consultancy",
+  ],
+  areaServed: {
+    "@type": "Place",
+    name: "United Arab Emirates",
   },
 };
 
 const GTM = process.env.NEXT_PUBLIC_GTM_ID;
 const GA = process.env.NEXT_PUBLIC_GA_ID;
+const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
 export default function RootLayout({ children }) {
   return (
@@ -113,7 +110,12 @@ export default function RootLayout({ children }) {
         )}
 
         {/* Google Analytics */}
-        {GA && <Script async src={`https://www.googletagmanager.com/gtag/js?id=${GA}`} />}
+        {GA && (
+          <Script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA}`}
+          />
+        )}
         {GA && (
           <Script id="google-analytics" strategy="afterInteractive">
             {`
@@ -124,19 +126,51 @@ export default function RootLayout({ children }) {
             `}
           </Script>
         )}
+
+         {/* Meta Pixel */}
+        <Script id="meta-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '${META_PIXEL_ID}');
+            fbq('track', 'PageView');
+          `}
+        </Script>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+          />
+        </noscript>
+
+        {/* Organization Schema */}
+        <Script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(OrganizationSchema),
+          }}
+        />
       </head>
 
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <noscript>
-  <iframe
-    src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM_ID}`}
-    height="0"
-    width="0"
-    style={{ display: "none", visibility: "hidden" }}
-  ></iframe>
-</noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
 
         <PageWrapper>
           {children}

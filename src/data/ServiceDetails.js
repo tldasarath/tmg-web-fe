@@ -50,11 +50,6 @@ export const ServiceDetails = [
 
   termsOfService: "https://tmgdubai.ae/terms-of-service",
 
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.8",
-    reviewCount: "37"
-  },
 
   breadcrumb: [
     { position: 1, name: "Home", url: "https://tmgdubai.ae" },
@@ -234,11 +229,7 @@ export const ServiceDetails = [
   // Optional: service output / terms / rating -> included in Service JSON-LD
   serviceOutput: "Registered and licensed company in Dubai, UAE",
   termsOfService: "https://tmgdubai.ae/terms-of-use",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.7",
-    reviewCount: "24"
-  },
+
 
   // Optional: BreadcrumbList data (layout will emit BreadcrumbList JSON-LD)
   breadcrumb: [
@@ -480,11 +471,8 @@ Not necessarily. In many cases, TMG Global can assist you in completing the proc
 
   termsOfService: "https://tmgdubai.ae/terms-of-service",
 
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "18"
-  },
+
+  
 
   breadcrumb: [
     { position: 1, name: "Home", url: "https://tmgdubai.ae" },
@@ -2763,7 +2751,7 @@ By outsourcing to our expert PRO team, you free your staff to focus on revenue-g
 
   termsOfService: "https://tmgdubai.ae/terms-of-service",
 
-  aggregateRating: undefined, // No rating provided. Keeping null safe.
+
 
   breadcrumb: [
     { position: 1, name: "Home", url: "https://tmgdubai.ae" },

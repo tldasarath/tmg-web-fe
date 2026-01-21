@@ -41,14 +41,14 @@ const FAQSection = () => {
 
       <Container>
         <div className="max-w-4xl mx-auto relative z-10">
-          <motion.h1
+          <motion.h2
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-5xl font-bold text-center mb-12 bg-[linear-gradient(180deg,rgba(152,32,68,1)_0%,rgba(100,14,41,1)_100%)] bg-center bg-clip-text text-transparent"
           >
             Frequently Asking Questions
-          </motion.h1>
+          </motion.h2>
 
           <div className="space-y-4">
             {faqsData.map((faq, index) => {
