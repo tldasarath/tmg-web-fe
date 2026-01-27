@@ -7,10 +7,12 @@ import { motion, useMotionValue, useTransform } from "framer-motion";
 import MainButton from "../button/main-button";
 import LettersPullUpText from "../text/LettersPullUpText";
 import ScheduleMeetingSection from "../meetingSchedule/ScheduleMeetingSection";
+import ConsultationModal from "../common/ConsultationModal";
 
 const AboutSection = () => {
   const [selectedDate, setSelectedDate] = useState(2);
   const [isSwiped, setIsSwiped] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const dates = [
     { day: 31, month: "May" },
@@ -123,16 +125,18 @@ const AboutSection = () => {
                   <MainButton
                     bgColor="#49051E"
                     text="  Read More"
-                    link="/"
+                    link="/about-us"
                     className=""
                     icon="external"
                   />
                   <MainButton
                     bgColor="#8E1A3D"
                     text="Enquire Now"
-                    link="/"
+                  
                     className=""
                     icon="external"
+                  onClick={() => setShowModal(true)}
+
                   />
                 </div>
               </div>
@@ -174,6 +178,10 @@ const AboutSection = () => {
      
         </div>
       </Container>
+            {showModal && (
+              <ConsultationModal isOpen={showModal} setIsOpen={setShowModal} />
+            )}
+      
     </div>
   );
 };

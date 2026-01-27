@@ -2,19 +2,22 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { HeroSection } from "../hero/HeroSection";
-import AboutSection from "../about/AboutSection";
+// import AboutSection from "../about/AboutSection";
+import dynamic from "next/dynamic";
+
+const AboutSection = dynamic(() => import("../about/AboutSection"));
 
 
 export const HeroAboutScrollTransition = () => {
 
   return (
-  <div className="relative z-20">
-  <div className="sticky top-0 ">
-   <HeroSection/>
-  </div>
-    <div className="sticky top-0 ">
-    <AboutSection/>
-  </div>
-  </div>
+    <div className="relative z-20">
+      <div className="sticky top-0 ">
+        <HeroSection />
+      </div>
+      <div className="sticky top-0 ">
+        <AboutSection />
+      </div>
+    </div>
   );
 };

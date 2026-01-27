@@ -1,12 +1,15 @@
 "use client";
 import BannerSection from "@/components/banner/Banner";
-import ConsultationModal from "@/components/common/ConsultationModal";
-import SmallBanner from "@/components/common/SmallBanner";
-import Footer from "@/components/footer/Footer";
-
 import { Navbar } from "@/components/navbar/Navbar";
-import Services from "@/components/services/Services";
 import React, { useState } from "react";
+import dynamicImport  from "next/dynamic";
+
+const ConsultationModal = dynamicImport (() => import("@/components/common/ConsultationModal"));
+const SmallBanner = dynamicImport (() => import("@/components/common/SmallBanner"));
+const Footer = dynamicImport (() => import("@/components/footer/Footer"));
+const Services = dynamicImport (() => import("@/components/services/Services"));
+
+export const dynamic = "force-static";
 
 const Page = () => {
   const [showModal, setShowModal] = useState(false);

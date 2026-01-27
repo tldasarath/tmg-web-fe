@@ -9,9 +9,11 @@ import Link from "next/link";
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [mobileOpenDropdown, setMobileOpenDropdown] = useState(null);
   const dropdownRef = useRef(null);
+  const lastScrollY = useRef(0);
 
   const pathname = usePathname();
 
@@ -24,7 +26,22 @@ export const Navbar = () => {
   ];
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Handle transparent/white background toggle
+      setIsScrolled(currentScrollY > 50);
+
+      // Handle navbar visibility (hide on scroll down, show on scroll up)
+      if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -53,34 +70,33 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`top-0 left-0 right-0 z-50 py-4 sm:py-6 md:py-3 fixed transition-all duration-300
-         ${
-        isScrolled
+      className={`top-0 left-0 right-0 z-50 py-4 sm:py-6 md:py-3 fixed transition-all duration-300 transform ${isVisible ? "translate-y-0" : "-translate-y-full"
+        }
+         ${isScrolled
           ? `border-2 border-b-0 border-gray-200 bg-gradient-to-b from-white/90 to-white/60 backdrop-blur-sm shadow-md`
           : "bg-transparent"
-      }
+        }
     `}
     >
       <Container>
         <div className="flex items-center justify-between lg:justify-start lg:gap-[11rem] xl:gap-24">
           {/* Logo */}
-<div className="flex-shrink-0">
-  <Link href="/">
-    <img
-      src="/assets/logo/TMG-Global-Services-LLC.png"
-      alt="TMG Global Services LLC"
-      className="h-16 sm:h-20 md:h-24 lg:h-20 xl:h-[6.563rem] w-auto cursor-pointer"
-    />
-  </Link>
-</div>
+          <div className="flex-shrink-0">
+            <Link href="/">
+              <img
+                src="/assets/logo/TMG-Global-Services-LLC.png"
+                alt="TMG Global Services LLC"
+                className="h-16 sm:h-20 md:h-24 lg:h-20 xl:h-[6.563rem] w-auto cursor-pointer"
+              />
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <div
-            className={`hidden lg:flex rounded-2xl flex-1 max-w-4xl px-4 xl:px-8 py-2 xl:py-3 transition-all duration-300 ${
-              isScrolled
+            className={`hidden lg:flex rounded-2xl flex-1 max-w-4xl px-4 xl:px-8 py-2 xl:py-3 transition-all duration-300 ${isScrolled
                 ? "bg-white/90 backdrop-blur-sm shadow-lg"
                 : "bg-white/70 backdrop-blur-sm shadow-md"
-            }`}
+              }`}
           >
             <ul className="flex items-center justify-center w-full gap-4 xl:gap-8">
               {navLinks.map((link) => {
@@ -100,20 +116,18 @@ export const Navbar = () => {
                               : link.dropdownType
                           )
                         }
-                        className={`flex items-center gap-1 text-sm xl:text-base text-center font-normal transition-colors hover:text-red-800 whitespace-nowrap ${
-                          isActive
+                        className={`flex items-center gap-1 text-sm xl:text-base text-center font-normal transition-colors hover:text-red-800 whitespace-nowrap ${isActive
                             ? "text-red-800 border-b-2 border-red-800 pb-1"
                             : "text-gray-700"
-                        }`}
+                          }`}
                       >
                         {link.label}
                         <ChevronDown
                           size={16}
-                          className={`transition-transform duration-200 ${
-                            openDropdown === link.dropdownType
+                          className={`transition-transform duration-200 ${openDropdown === link.dropdownType
                               ? "rotate-180"
                               : ""
-                          }`}
+                            }`}
                         />
                       </button>
                     </li>
@@ -124,11 +138,10 @@ export const Navbar = () => {
                   <li key={link.href}>
                     <a
                       href={link.href}
-                      className={`text-sm xl:text-base text-center font-normal transition-colors hover:text-red-800 whitespace-nowrap ${
-                        isActive
+                      className={`text-sm xl:text-base text-center font-normal transition-colors hover:text-red-800 whitespace-nowrap ${isActive
                           ? "text-red-800 border-b-2 border-red-800 pb-1"
                           : "text-gray-700"
-                      }`}
+                        }`}
                     >
                       {link.label}
                     </a>
@@ -197,20 +210,18 @@ export const Navbar = () => {
                               : link.dropdownType
                           )
                         }
-                        className={`flex items-center justify-between w-full px-6 py-3 text-base font-normal transition-colors hover:bg-red-50 hover:text-red-800 ${
-                          isActive
+                        className={`flex items-center justify-between w-full px-6 py-3 text-base font-normal transition-colors hover:bg-red-50 hover:text-red-800 ${isActive
                             ? "text-red-800 bg-red-50 border-l-4 border-red-800"
                             : "text-gray-700"
-                        }`}
+                          }`}
                       >
                         <span>{link.label}</span>
                         <ChevronDown
                           size={20}
-                          className={`transition-transform duration-200 ${
-                            mobileOpenDropdown === link.dropdownType
+                          className={`transition-transform duration-200 ${mobileOpenDropdown === link.dropdownType
                               ? "rotate-180"
                               : ""
-                          }`}
+                            }`}
                         />
                       </button>
 
@@ -245,11 +256,10 @@ export const Navbar = () => {
                     <a
                       href={link.href}
                       onClick={() => setIsMenuOpen(false)}
-                      className={`block px-6 py-3 text-base font-normal transition-colors hover:bg-red-50 hover:text-red-800 ${
-                        isActive
+                      className={`block px-6 py-3 text-base font-normal transition-colors hover:bg-red-50 hover:text-red-800 ${isActive
                           ? "text-red-800 bg-red-50 border-l-4 border-red-800"
                           : "text-gray-700"
-                      }`}
+                        }`}
                     >
                       {link.label}
                     </a>

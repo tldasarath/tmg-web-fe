@@ -31,7 +31,7 @@ export async function generateMetadata({ params }) {
       ogTitle: seo.ogTitle,
       ogDescription: seo.ogDescription,
       ogImageAlt: seo.ogImageAlt,
-      canonicalUrl: seo.canonicalUrl,
+      canonicalUrl: seo.canonicalUrl || `https://tmgdubai.ae/service/${slug}`,
       robots: seo.robots,
     });
   } catch (error) {

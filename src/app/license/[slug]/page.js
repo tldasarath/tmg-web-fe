@@ -1,14 +1,14 @@
 // src/app/license/[slug]/page.js
 import React from "react";
+import { Navbar } from "@/components/navbar/Navbar";
+import { LicenseDetails } from "@/data/LicenseData";
+import { buildMetadata } from "@/lib/seo";
+
 import BannerSection from "@/components/banner/Banner";
 import Footer from "@/components/footer/Footer";
 import BusinessJourneySection from "@/components/license/BusinessJourneySection";
 import LicenseDetailSection from "@/components/license/LicenseDetailSection";
 import LicenseFAQSection from "@/components/license/LicenseFaqSection";
-import { Navbar } from "@/components/navbar/Navbar";
-
-import { LicenseDetails } from "@/data/LicenseData";
-import { buildMetadata } from "@/lib/seo";
 
 export const dynamic = "force-static";
 

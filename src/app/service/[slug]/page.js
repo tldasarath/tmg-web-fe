@@ -1,18 +1,20 @@
 // src/app/service/[slug]/page.js
 import React from "react";
-import BannerSection from "@/components/banner/Banner";
-import BusinessBanner from "@/components/banner/BusinessBanner";
-import Footer from "@/components/footer/Footer";
-import { Navbar } from "@/components/navbar/Navbar";
-import AdvantageSection from "@/components/serviceDetails/AdvantageSection";
-import AnimatedTabs from "@/components/serviceDetails/AnimatedTabs";
-import BusinessSection from "@/components/serviceDetails/BusinessSection ";
-import BusinessSetupComponent from "@/components/serviceDetails/BusinessSetupComponent";
-import FAQSection from "@/components/serviceDetails/FaqSection";
-import ServiceClientModalManager from "@/components/common/ServiceClientModalManager";
-
-import { buildMetadata } from "@/lib/seo";
 import { ServiceDetails } from "@/data/ServiceDetails";
+import { buildMetadata } from "@/lib/seo";
+import { Navbar } from "@/components/navbar/Navbar";
+import dynamicImport  from "next/dynamic";
+
+const BannerSection = dynamicImport (() => import("@/components/banner/Banner"));
+const BusinessBanner = dynamicImport (() => import("@/components/banner/BusinessBanner"));
+const Footer = dynamicImport (() => import("@/components/footer/Footer"));
+const AdvantageSection = dynamicImport (() => import("@/components/serviceDetails/AdvantageSection"));
+const AnimatedTabs = dynamicImport (() => import("@/components/serviceDetails/AnimatedTabs"));
+const BusinessSection = dynamicImport (() => import("@/components/serviceDetails/BusinessSection "));
+const BusinessSetupComponent = dynamicImport (() => import("@/components/serviceDetails/BusinessSetupComponent"));
+const FAQSection = dynamicImport (() => import("@/components/serviceDetails/FaqSection"));
+const ServiceClientModalManager = dynamicImport (() => import("@/components/common/ServiceClientModalManager"));
+
 
 export const dynamic = "force-static";
 

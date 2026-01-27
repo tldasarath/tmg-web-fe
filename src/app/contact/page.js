@@ -1,16 +1,17 @@
 import BannerSection from "@/components/banner/Banner";
-import ContactUs from "@/components/contact/Contact";
-import Map from "@/components/contact/Map";
-import Footer from "@/components/footer/Footer";
-
 import { Navbar } from "@/components/navbar/Navbar";
 import React from "react";
+import dynamic from "next/dynamic";
+
+const ContactUs = dynamic(() => import("@/components/contact/Contact"));
+const Map = dynamic(() => import("@/components/contact/Map"));
+const Footer = dynamic(() => import("@/components/footer/Footer"));
 
 const Page = () => {
   return (
     <>
       <div className="min-h-screen w-full">
-        
+
         <Navbar />
         <BannerSection
           title="Contact"

@@ -100,7 +100,7 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <head>
         {GTM && (
-          <Script id="gtm-init" strategy="afterInteractive">
+          <Script id="gtm-init" strategy="lazyOnload">
             {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -113,11 +113,12 @@ export default function RootLayout({ children }) {
         {GA && (
           <Script
             async
+            strategy="lazyOnload"
             src={`https://www.googletagmanager.com/gtag/js?id=${GA}`}
           />
         )}
         {GA && (
-          <Script id="google-analytics" strategy="afterInteractive">
+          <Script id="google-analytics" strategy="lazyOnload">
             {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
@@ -127,8 +128,8 @@ export default function RootLayout({ children }) {
           </Script>
         )}
 
-         {/* Meta Pixel */}
-        <Script id="meta-pixel" strategy="afterInteractive">
+        {/* Meta Pixel */}
+        <Script id="meta-pixel" strategy="lazyOnload">
           {`
             !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?

@@ -1,29 +1,31 @@
-import AboutSection from "@/components/about/AboutSection";
-import Schedule from "@/components/about/Schedule";
-import WhereAvailableSection from "@/components/branches/Branches";
-import BusinessDestination from "@/components/businessSection/BusinessDestination";
-import BusinessSection from "@/components/businessSection/businessSection";
 import { HeroAboutScrollTransition } from "@/components/Scrolling/HeroAboutScrollTransition";
-import GetInTouch from "@/components/contact/ContactSection";
-import FAQSection from "@/components/faqs/FaqSection";
-import Footer from "@/components/footer/Footer";
-import FounderSection from "@/components/founderSection/FounderSection";
-import Gallery from "@/components/gallerySection/Gallery";
-import GoldenVisaBanner from "@/components/goldenVisa/GoldenVisaBanner";
-import ImageSection from "@/components/imageSection/imageSection1";
-import LicenseSetupPage from "@/components/licenseCategory/LicenseSetupSection";
 import { Navbar } from "@/components/navbar/Navbar";
-import SocialMediaCards from "@/components/socialMedia/SocalSection";
 import React from "react";
-import BusinessServiceTransiton from "@/components/Scrolling/BusinessServiceTransiton";
-import { BusinessSetupPackages } from "@/components/BusinessSetupPackages/BusinessSetupPackages";
+import dynamic from "next/dynamic";
 
-// export const metadata = buildMetadata({
-//   title: "Business Setup in Dubai, UAE | TMG Global",
-//   description:
-//     "Launch your company in Dubai with TMG Global. Mainland, Freezone & Offshore setup with end-to-end licensing and visa assistance.",
-//   path: "/",
-// });
+// Eagerly load components above the fold or critical for LCP (if any, besides Navbar and Hero)
+
+// Lazy load components below the fold
+const AboutSection = dynamic(() => import("@/components/about/AboutSection"));
+const Schedule = dynamic(() => import("@/components/about/Schedule"));
+const WhereAvailableSection = dynamic(() => import("@/components/branches/Branches"));
+const BusinessDestination = dynamic(() => import("@/components/businessSection/BusinessDestination"));
+const BusinessSection = dynamic(() => import("@/components/businessSection/businessSection"));
+const GetInTouch = dynamic(() => import("@/components/contact/ContactSection"));
+const FAQSection = dynamic(() => import("@/components/faqs/FaqSection"));
+const Footer = dynamic(() => import("@/components/footer/Footer"));
+const FounderSection = dynamic(() => import("@/components/founderSection/FounderSection"));
+const Gallery = dynamic(() => import("@/components/gallerySection/Gallery"));
+const GoldenVisaBanner = dynamic(() => import("@/components/goldenVisa/GoldenVisaBanner"));
+const ImageSection = dynamic(() => import("@/components/imageSection/imageSection1"));
+const LicenseSetupPage = dynamic(() => import("@/components/licenseCategory/LicenseSetupSection"));
+const SocialMediaCards = dynamic(() => import("@/components/socialMedia/SocalSection"));
+const BusinessServiceTransiton = dynamic(() => import("@/components/Scrolling/BusinessServiceTransiton"));
+const BusinessSetupPackages = dynamic(() => import("@/components/BusinessSetupPackages/BusinessSetupPackages").then(mod => mod.BusinessSetupPackages));
+
+// Note: Ensure named exports are handled correctly in dynamic imports. 
+// If a component is a default export, standard import works. 
+// If it's a named export, use .then(mod => mod.ComponentName) or ensure the file exports default.
 
 const page = () => {
   return (

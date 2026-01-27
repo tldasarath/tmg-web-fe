@@ -1,8 +1,10 @@
-import BannerSection from "@/components/banner/Banner";
-import Footer from "@/components/footer/Footer";
-
+import dynamic from "next/dynamic";
 import { Navbar } from "@/components/navbar/Navbar";
-import TermsOfService from "@/components/termsOfService/Terms";
+
+const TermsOfService = dynamic(() => import("@/components/termsOfService/Terms"));
+const BannerSection = dynamic(() => import("@/components/banner/Banner"));
+const Footer = dynamic(() => import("@/components/footer/Footer"));
+
 import React from "react";
 
 const page = () => {
@@ -17,7 +19,6 @@ const page = () => {
             { name: "Terms Of Service", path: "/terms-of-service" }
           ]} />
         <TermsOfService />
-        {/* <SmallBanner /> */}
         <Footer />
       </div>
     </>

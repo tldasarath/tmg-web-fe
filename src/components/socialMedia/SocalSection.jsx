@@ -155,7 +155,7 @@ export default function SocialMediaCards() {
   // ------------------------
   useEffect(() => {
     const controller = new AbortController();
-    const API_BASE = process.env.NEXT_PUBLIC_INSTAGRAM_API || "http://localhost:3000";
+    const API_BASE = process.env.NEXT_PUBLIC_INSTAGRAM_API || "http://localhost:8080";
     const endpoint = `${API_BASE}/api/instagram?limit=6`;
 
     // helper: map API post shape -> local post shape used by component

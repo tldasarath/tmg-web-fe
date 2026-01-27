@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { Container } from "../layout/Container";
 import { SocialSidebar } from "./SocialSidebar";
 import { useState, useEffect, useRef } from "react";
@@ -30,8 +31,8 @@ export const HeroSection = () => {
 
       video.playbackRate = 0.98;
 
-      // Aggressive preloading
-      video.load();
+      // Aggressive preloading removed
+      // video.load();
 
       // Attempt autoplay
       const playPromise = video.play();
@@ -120,9 +121,22 @@ export const HeroSection = () => {
 
   return (
     <>
+
       <section id="hero-section" className="relative h-screen w-full overflow-hidden bg-gray-900">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/60 z-10" />
+
+          {/* Optimized Background Image (acting as poster and fallback) */}
+          <div className="absolute inset-0 -z-10">
+            <Image
+              src="/assets/images/hero/tmg_video_img.png"
+              alt="Office Background"
+              fill
+              priority
+              className="object-cover"
+              sizes="100vw"
+            />
+          </div>
 
           {/* Video Element  */}
           {!videoError && (
@@ -132,42 +146,34 @@ export const HeroSection = () => {
               muted
               loop
               playsInline
-              preload="auto"
+              preload="metadata" // Optimized preload to save bandwidth for LCP image
               onError={(e) => {
                 console.error("Video failed to load:", e);
                 setVideoError(true);
               }}
-              className="w-full h-full object-cover"
-              poster="/assets/images/hero/tmg_video_img.png"
+              className="w-full h-full object-cover relative z-0"
             >
               <source src="/assets/videos/hero-video.mp4" type="video/mp4" />
               <source src="/assets/videos/hero-video.webm" type="video/webm" />
               Your browser does not support the video tag.
             </video>
           )}
-
-          {/* Fallback background image */}
-          {videoError && (
-            <img
-              src="/assets/images/hero/tmg_video_img.png"
-              alt="Office Background"
-              className="w-full h-full object-cover"
-            />
-          )}
         </div>
+
+        {/* ... rest of the component */}
 
         {/* Social Sidebar */}
         <SocialSidebar />
 
-             {/* LetsTalkCard - Positioned on right side */}
+        {/* LetsTalkCard - Positioned on right side */}
         {/* <div className=" hidden md:block absolute right-14 bottom-[20%] md:bottom-[20%] lg:bottom-1/4 transform translate-y-1/2 z-30">
           <LetsTalkCard />
         </div> */}
 
-  
+
         <div id="home" className="relative z-20 h-full flex flex-col">
           <Container>
-     
+
             <div className="flex-1 flex items-center justify-center h-screen">
               <div className="text-center w-full">
                 <div style={{ perspective: "1200px" }}>
@@ -198,16 +204,16 @@ export const HeroSection = () => {
                     </motion.div>
                   </AnimatePresence>
                 </div>
- 
+
               </div>
             </div>
           </Container>
         </div>
 
- 
+
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/40 to-transparent z-10" />
       </section>
-  
+
     </>
   );
 };

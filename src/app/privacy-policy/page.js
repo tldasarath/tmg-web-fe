@@ -1,8 +1,10 @@
-import BannerSection from "@/components/banner/Banner";
-import Footer from "@/components/footer/Footer";
-
+import dynamic from "next/dynamic";
 import { Navbar } from "@/components/navbar/Navbar";
-import PrivacyPolicy from "@/components/privacyPolicy/PrivacyPolicy";
+
+const Footer = dynamic(() => import("@/components/footer/Footer"));
+const BannerSection = dynamic(() => import("@/components/banner/Banner"));
+const PrivacyPolicy = dynamic(() => import("@/components/privacyPolicy/PrivacyPolicy"));
+
 import React from "react";
 
 const page = () => {

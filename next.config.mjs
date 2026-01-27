@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 
-  output: "export",
-  trailingSlash: false,
-  // Image optimization - disabled for static export
+  output: "export", // Required for Hostinger Static Hosting
+  trailingSlash: true,
+  // Image optimization - must be unoptimized for static export (unless using a custom loader)
   images: {
     unoptimized: true,
     remotePatterns: [],
@@ -74,8 +74,7 @@ const nextConfig = {
   // Production optimizations
   productionBrowserSourceMaps: false,
 
-  // Trailing slashes - set to true for better static hosting compatibility
-  trailingSlash: true,
+
 
   // React strict mode
   reactStrictMode: true,

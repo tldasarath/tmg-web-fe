@@ -1,33 +1,34 @@
-import AboutUsSection from "@/components/about/about";
-import AboutChairmanSection from "@/components/about/AboutChairmanSection";
-import MissionVisionSection from "@/components/about/MissionVisionSection";
-import OurValuesSection from "@/components/about/OurValuesSection";
-import ScheduleSection from "@/components/about/ScheduleSection";
-import WhyChooseSection from "@/components/about/WhyChooseSection";
 import BannerSection from "@/components/banner/Banner";
-import Footer from "@/components/footer/Footer";
-
 import { Navbar } from "@/components/navbar/Navbar";
 import React from "react";
+import dynamic from "next/dynamic";
+
+const AboutUsSection = dynamic(() => import("@/components/about/about"));
+const AboutChairmanSection = dynamic(() => import("@/components/about/AboutChairmanSection"));
+const MissionVisionSection = dynamic(() => import("@/components/about/MissionVisionSection"));
+const OurValuesSection = dynamic(() => import("@/components/about/OurValuesSection"));
+const ScheduleSection = dynamic(() => import("@/components/about/ScheduleSection"));
+const WhyChooseSection = dynamic(() => import("@/components/about/WhyChooseSection"));
+const Footer = dynamic(() => import("@/components/footer/Footer"));
 
 const page = () => {
   return (
     <>
       <div className="min-h-screen w-full">
-        <Navbar/>
-        <BannerSection 
-        title="About Us"
-        breadcrumbs={[
-          { name: "Home", path: "/" },
-          { name: "About", path: "/about" }
-        ]}/>
-      <AboutUsSection/>
-      <MissionVisionSection/>
-      <ScheduleSection/>
-      <WhyChooseSection/>
-      <AboutChairmanSection/>
-      <OurValuesSection/>
-      <Footer/>
+        <Navbar />
+        <BannerSection
+          title="About Us"
+          breadcrumbs={[
+            { name: "Home", path: "/" },
+            { name: "About", path: "/about" }
+          ]} />
+        <AboutUsSection />
+        <MissionVisionSection />
+        <ScheduleSection />
+        <WhyChooseSection />
+        <AboutChairmanSection />
+        <OurValuesSection />
+        <Footer />
       </div>
     </>
   );

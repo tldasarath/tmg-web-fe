@@ -1,3 +1,10 @@
+# Force non-www HTTPS (www → non-www)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^www\.tmgdubai\.ae$ [NC]
+  RewriteRule ^(.*)$ https://tmgdubai.ae/$1 [R=301,L]
+</IfModule>
+
 # Next.js Static Export - Proper URL Rewriting for Hostinger
 <IfModule mod_rewrite.c>
   RewriteEngine On

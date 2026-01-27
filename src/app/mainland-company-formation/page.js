@@ -1,15 +1,17 @@
 import React from "react";
 import BannerSection from "@/components/banner/Banner";
-import ScheduleMeetingContentCard from "@/components/common/ScheduleMeetingContentCard";
-import Footer from "@/components/footer/Footer";
 import { Navbar } from "@/components/navbar/Navbar";
-
-import MainlandDetails from "@/components/mainland/MainlandDetails";
-import MainlandLicenseSection from "@/components/mainland/MainlandLicenseSection";
-import MainlandSetup from "@/components/mainland/MainlandSetup";
-import SimplifyProcessSection from "@/components/mainland/SimplifyProcessSection";
-import MainlandCompanyFormation from "@/components/mainland/MainlandCompanyFormation";
 import { mainlandData } from "@/data/MainlandData";
+import dynamic from "next/dynamic";
+
+const ScheduleMeetingContentCard = dynamic(() => import("@/components/common/ScheduleMeetingContentCard"));
+const Footer = dynamic(() => import("@/components/footer/Footer"));
+const MainlandDetails = dynamic(() => import("@/components/mainland/MainlandDetails"));
+const MainlandLicenseSection = dynamic(() => import("@/components/mainland/MainlandLicenseSection"));
+const MainlandSetup = dynamic(() => import("@/components/mainland/MainlandSetup"));
+const SimplifyProcessSection = dynamic(() => import("@/components/mainland/SimplifyProcessSection"));
+const MainlandCompanyFormation = dynamic(() => import("@/components/mainland/MainlandCompanyFormation"));
+
 
 const page = () => {
   return (
