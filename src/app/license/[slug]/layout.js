@@ -1,4 +1,4 @@
-// src/app/license/[slug]/layout.js
+
 import { buildMetadata, siteUrl } from "@/lib/seo";
 import { LicenseDetails } from "@/data/LicenseData";
 
@@ -15,15 +15,15 @@ function normalizeRobots(robots) {
   return robots;
 }
 
-/** FIXED: Make generateStaticParams async and await params */
+
 export async function generateStaticParams() {
   const uniqueSlugs = [...new Set((LicenseDetails || []).map((l) => l.slug))];
   return uniqueSlugs.map((slug) => ({ slug }));
 }
 
-/** FIXED: Make generateMetadata async and await params */
+
 export async function generateMetadata({ params }) {
-  // Await params before accessing properties
+
   const { slug } = await params;
   const license = (LicenseDetails || []).find((l) => l.slug === slug);
 
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }) {
     });
   }
 
-  // FIXED: Access SEO data from nested 'seo' object
+
   const seo = license.seo || {};
 
   const fallbackTitle = "License Details | TMG Global";
@@ -68,7 +68,7 @@ export async function generateMetadata({ params }) {
   });
 }
 
-/** Build FAQ schema from license.faqs  */
+
 function buildFAQSchema(license) {
   if (!license) return null;
   const faqs = Array.isArray(license.faqs) ? license.faqs.filter((f) => f?.question && f?.answer) : [];
@@ -84,7 +84,7 @@ function buildFAQSchema(license) {
   };
 }
 
-/** Build BreadcrumbList from license.breadcrumb  */
+
 function buildBreadcrumbSchema(license) {
   if (!license?.breadcrumb || !Array.isArray(license.breadcrumb)) return null;
   return {
@@ -99,9 +99,9 @@ function buildBreadcrumbSchema(license) {
   };
 }
 
-/** FIXED: Make layout component async and await params */
+
 export default async function LicenseSlugLayout({ children, params }) {
-  // Await params before accessing properties
+
   const { slug } = await params;
   const license = (LicenseDetails || []).find((l) => l.slug === slug);
 

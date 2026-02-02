@@ -25,9 +25,7 @@ const seo = {
 
 };
 
-// -----------------------
-// Metadata for Next.js App Router
-// -----------------------
+
 export const metadata = buildMetadata({
   title: seo.metaTitle,
   description: seo.metaDescription,
@@ -40,9 +38,7 @@ export const metadata = buildMetadata({
   path: "/mainland-company-formation",
 });
 
-// -----------------------
-// MAINLAND SERVICE SCHEMA (exactly as provided)
-// -----------------------
+
 const MainlandServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -82,13 +78,11 @@ const MainlandServiceSchema = {
   },
 };
 
-// -----------------------
-// LAYOUT COMPONENT
-// -----------------------
+
 export default function MainlandLayout({ children }) {
   return (
     <>
-      {/* Mainland Company Formation JSON-LD */}
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

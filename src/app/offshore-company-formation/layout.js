@@ -21,9 +21,7 @@ const seo = {
   canonicalUrl: "https://tmgdubai.ae/offshore-company-formation",
 };
 
-// -----------------------
-// Metadata for Next.js App Router
-// -----------------------
+
 export const metadata = buildMetadata({
   title: seo.metaTitle,
   description: seo.metaDescription,
@@ -36,9 +34,7 @@ export const metadata = buildMetadata({
   path: "/offshore-company-formation",
 });
 
-// -----------------------
-// Service Schema (exactly as provided)
-// -----------------------
+
 const OffshoreServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -74,9 +70,7 @@ const OffshoreServiceSchema = {
   }
 };
 
-// -----------------------
-// Layout component
-// -----------------------
+
 export default function OffshoreLayout({ children }) {
   return (
     <>

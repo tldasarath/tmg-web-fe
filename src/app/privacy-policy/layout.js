@@ -39,7 +39,6 @@ export const metadata = buildMetadata({
   ogImageAlt: seo.ogImageAlt,
   canonicalUrl: seo.canonicalUrl,
   path: "/privacy-policy",
-  robots: { index: false, follow: true }, // correct for legal pages
 });
 
 // ----------------------
@@ -81,13 +80,11 @@ const PrivacySchema = {
   ],
 };
 
-// ----------------------
-// Layout Component
-// ----------------------
+
 export default function PrivacyLayout({ children }) {
   return (
     <>
-      {/* Inject Privacy Policy JSON-LD */}
+   
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(PrivacySchema) }}

@@ -20,9 +20,7 @@ const seo = {
   canonicalUrl: "https://tmgdubai.ae/contact/",
 };
 
-// -----------------------
-// Next.js Metadata Builder
-// -----------------------
+
 export const metadata = buildMetadata({
   title: seo.metaTitle,
   description: seo.metaDescription,
@@ -35,9 +33,7 @@ export const metadata = buildMetadata({
   path: "/contact",
 });
 
-// -----------------------
-// JSON-LD LocalBusiness SCHEMA (exactly your content)
-// -----------------------
+
 const ContactSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -74,13 +70,11 @@ const ContactSchema = {
   ]
 };
 
-// -----------------------
-// LAYOUT (schema + child content)
-// -----------------------
+
 export default function ContactLayout({ children }) {
   return (
     <>
-      {/* Contact Page Schema */}
+  
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

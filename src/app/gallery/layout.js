@@ -1,9 +1,7 @@
 
 import { buildMetadata } from "@/lib/seo";
 
-// -----------------------
-// SEO DATA (exactly as provided)
-// -----------------------
+
 const seo = {
   metaTitle:
     "TMG Global Gallery | UAE Business Setup Moments & Achievements",
@@ -29,9 +27,7 @@ const seo = {
   canonicalUrl: "https://tmgdubai.ae/gallery/",
 };
 
-// -----------------------
-// Metadata for Next.js App Router
-// -----------------------
+
 export const metadata = buildMetadata({
   title: seo.metaTitle,
   description: seo.metaDescription,
@@ -44,9 +40,7 @@ export const metadata = buildMetadata({
   path: "/gallery",
 });
 
-// -----------------------
-// Gallery JSON-LD Schema (exactly as provided)
-// -----------------------
+
 const GallerySchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -83,13 +77,11 @@ const GallerySchema = {
   ],
 };
 
-// -----------------------
-// Layout Component
-// -----------------------
+
 export default function GalleryLayout({ children }) {
   return (
     <>
-      {/* Gallery Schema */}
+ 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(GallerySchema) }}

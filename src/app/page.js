@@ -3,9 +3,6 @@ import { Navbar } from "@/components/navbar/Navbar";
 import React from "react";
 import dynamic from "next/dynamic";
 
-// Eagerly load components above the fold or critical for LCP (if any, besides Navbar and Hero)
-
-// Lazy load components below the fold
 const AboutSection = dynamic(() => import("@/components/about/AboutSection"));
 const Schedule = dynamic(() => import("@/components/about/Schedule"));
 const WhereAvailableSection = dynamic(() => import("@/components/branches/Branches"));
@@ -23,22 +20,16 @@ const SocialMediaCards = dynamic(() => import("@/components/socialMedia/SocalSec
 const BusinessServiceTransiton = dynamic(() => import("@/components/Scrolling/BusinessServiceTransiton"));
 const BusinessSetupPackages = dynamic(() => import("@/components/BusinessSetupPackages/BusinessSetupPackages").then(mod => mod.BusinessSetupPackages));
 
-// Note: Ensure named exports are handled correctly in dynamic imports. 
-// If a component is a default export, standard import works. 
-// If it's a named export, use .then(mod => mod.ComponentName) or ensure the file exports default.
+
 
 const page = () => {
   return (
     <>
       <div className="min-h-screen w-full">
         <Navbar />
-        {/* <HeroSection />
-        <AboutSection/> */}
         <HeroAboutScrollTransition />
         <Schedule />
         <ImageSection />
-        {/* <BusinessSection/>
-        <ServicesSection/> */}
         <BusinessServiceTransiton />
         <GoldenVisaBanner />
         <LicenseSetupPage />

@@ -37,7 +37,7 @@ export const metadata = buildMetadata({
   path: "/blogs",
 });
 
-// Organization JSON-LD (kept as you provided earlier)
+
 const OrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -113,13 +113,13 @@ const BlogSchema = {
 export default function BlogsLayout({ children }) {
   return (
     <>
-      {/* Organization schema */}
+   
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(OrganizationSchema) }}
       />
 
-      {/* BlogPage schema */}
+    
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(BlogSchema) }}

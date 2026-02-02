@@ -1,4 +1,4 @@
-// app/terms-of-service/layout.js
+
 import { buildMetadata } from "@/lib/seo";
 
 const seo = {
@@ -35,11 +35,11 @@ export const metadata = buildMetadata({
   ogImageAlt: seo.ogImageAlt,
   canonicalUrl: seo.canonicalUrl,
   path: "/terms-of-service",
-  // explicit robots: do not index this page, but allow crawling of links
+
   robots: { index: false, follow: true },
 });
 
-// LocalBusiness JSON-LD (exact content supplied)
+
 const TermsSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",

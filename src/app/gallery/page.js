@@ -20,7 +20,6 @@ const page = () => {
           ]}
         />
         <Gallery/>
-{/* <ComingSoon/> */}
 
         <Footer />
       </div>

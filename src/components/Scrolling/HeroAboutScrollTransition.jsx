@@ -1,10 +1,7 @@
 "use client";
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { HeroSection } from "../hero/HeroSection";
-// import AboutSection from "../about/AboutSection";
 import dynamic from "next/dynamic";
 
+import { HeroSection } from "../hero/HeroSection";
 const AboutSection = dynamic(() => import("../about/AboutSection"));
 
 

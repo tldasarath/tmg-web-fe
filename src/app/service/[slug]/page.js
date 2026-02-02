@@ -18,15 +18,15 @@ const ServiceClientModalManager = dynamicImport (() => import("@/components/comm
 
 export const dynamic = "force-static";
 
-// FIXED: Make generateStaticParams async (best practice)
+
 export async function generateStaticParams() {
   const uniqueSlugs = [...new Set((ServiceDetails || []).map((s) => s.slug))];
   return uniqueSlugs.map((slug) => ({ slug }));
 }
 
-// FIXED: Make generateMetadata async and await params
+
 export async function generateMetadata({ params }) {
-  // Await params before accessing properties
+
   const { slug } = await params;
   const service = (ServiceDetails || []).find((s) => s.slug === slug);
 
@@ -38,10 +38,10 @@ export async function generateMetadata({ params }) {
     });
   }
 
-  // Access SEO data from the nested 'seo' object
+
   const seo = service.seo || {};
 
-  // Use SEO-specific fields for metadata (not page content)
+
   return buildMetadata({
     title: seo.metaTitle || service.title,
     description: seo.metaDescription,
@@ -57,9 +57,9 @@ export async function generateMetadata({ params }) {
   });
 }
 
-// FIXED: Make page component async and await params
+
 export default async function ServicePage({ params }) {
-  // Await params before accessing properties
+
   const { slug } = await params;
   const service = (ServiceDetails || []).find((s) => s.slug === slug);
 

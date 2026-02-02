@@ -25,7 +25,6 @@ const seo = {
   canonicalUrl: "https://tmgdubai.ae/faq/",
   robots: "index, follow",
 
-  // Twitter Meta Tags (kept as provided)
   twitterCard: "summary_large_image",
   twitterTitle: "Business Setup Services in Dubai FAQ | TMG Global Services LLC",
   twitterDescription:
@@ -49,9 +48,7 @@ export const metadata = buildMetadata({
   robots: seo.robots,
 });
 
-/**
- * FAQ JSON-LD (exactly as provided)
- */
+
 const FAQSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -222,13 +219,12 @@ const FAQSchema = {
 export default function FaqsLayout({ children }) {
   return (
     <>
-      {/* FAQ JSON-LD */}
+ 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQSchema) }}
       />
 
-      {/* Page UI will be rendered here */}
       {children}
     </>
   );

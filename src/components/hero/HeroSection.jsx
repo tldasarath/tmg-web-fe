@@ -4,6 +4,7 @@ import { Container } from "../layout/Container";
 import { SocialSidebar } from "./SocialSidebar";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { heroTexts } from "@/data/HeroData";
 
 
 export const HeroSection = () => {
@@ -11,11 +12,6 @@ export const HeroSection = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const videoRef = useRef(null);
 
-  const heroTexts = [
-    "Expand Globally with Seamless Business Setup in Dubai Support",
-    "Accelerating UAE Success with Expert Business Guidance",
-    "Experience Premium Expertise in UAE Company Formation",
-  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -63,7 +59,7 @@ export const HeroSection = () => {
     const video = videoRef.current;
     if (video) {
       const handleTimeUpdate = () => {
-        // Seamless loop: restart before end
+    
         if (video.duration && video.currentTime >= video.duration - 0.15) {
           video.currentTime = 0;
         }
@@ -125,8 +121,6 @@ export const HeroSection = () => {
       <section id="hero-section" className="relative h-screen w-full overflow-hidden bg-gray-900">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/60 z-10" />
-
-          {/* Optimized Background Image (acting as poster and fallback) */}
           <div className="absolute inset-0 -z-10">
             <Image
               src="/assets/images/hero/tmg_video_img.png"
@@ -146,7 +140,7 @@ export const HeroSection = () => {
               muted
               loop
               playsInline
-              preload="metadata" // Optimized preload to save bandwidth for LCP image
+              preload="metadata"
               onError={(e) => {
                 console.error("Video failed to load:", e);
                 setVideoError(true);
@@ -159,18 +153,7 @@ export const HeroSection = () => {
             </video>
           )}
         </div>
-
-        {/* ... rest of the component */}
-
-        {/* Social Sidebar */}
         <SocialSidebar />
-
-        {/* LetsTalkCard - Positioned on right side */}
-        {/* <div className=" hidden md:block absolute right-14 bottom-[20%] md:bottom-[20%] lg:bottom-1/4 transform translate-y-1/2 z-30">
-          <LetsTalkCard />
-        </div> */}
-
-
         <div id="home" className="relative z-20 h-full flex flex-col">
           <Container>
 

@@ -36,7 +36,7 @@ export const metadata = buildMetadata({
   path: "/about-us",
 });
 
-// JSON-LD schema exactly as provided
+// JSON-LD schema 
 const OrganizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -83,7 +83,7 @@ const OrganizationSchema = {
 export default function AboutLayout({ children }) {
   return (
     <>
-      {/* Schema only */}
+    
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -91,7 +91,7 @@ export default function AboutLayout({ children }) {
         }}
       />
 
-      {/* Page content will appear here */}
+
       {children}
     </>
   );

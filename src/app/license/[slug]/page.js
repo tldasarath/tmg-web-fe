@@ -1,4 +1,4 @@
-// src/app/license/[slug]/page.js
+
 import React from "react";
 import { Navbar } from "@/components/navbar/Navbar";
 import { LicenseDetails } from "@/data/LicenseData";
@@ -12,15 +12,15 @@ import LicenseFAQSection from "@/components/license/LicenseFaqSection";
 
 export const dynamic = "force-static";
 
-/** FIXED: Make generateStaticParams async */
+
 export async function generateStaticParams() {
   const uniqueSlugs = [...new Set((LicenseDetails || []).map((lic) => lic.slug))];
   return uniqueSlugs.map((slug) => ({ slug }));
 }
 
-/** FIXED: Make generateMetadata async and await params */
+
 export async function generateMetadata({ params }) {
-  // Await params before accessing properties
+
   const { slug } = await params;
   const license = (LicenseDetails || []).find((l) => l.slug === slug);
 
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }) {
     });
   }
 
-  // FIXED: Access SEO data from nested 'seo' object
+ 
   const seo = license.seo || {};
 
   const title = seo.metaTitle || (license?.title ? `${license.title} | TMG Global` : "License Details | TMG Global");
@@ -54,9 +54,9 @@ export async function generateMetadata({ params }) {
   });
 }
 
-/** FIXED: Make page component async and await params */
+
 export default async function LicensePage({ params }) {
-  // Await params before accessing properties
+
   const { slug } = await params;
   const license = (LicenseDetails || []).find((l) => l.slug === slug);
 

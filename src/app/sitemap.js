@@ -7,7 +7,10 @@ export const dynamic = "force-static";
 
 const norm = (path) => {
   if (!path) return null;
-  const p = path.startsWith("/") ? path : `/${path}`;
+  let p = path.startsWith("/") ? path : `/${path}`;
+  if (p !== "/" && !p.endsWith("/")) {
+    p = `${p}/`;
+  }
   return `${siteUrl}${p}`;
 };
 

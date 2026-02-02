@@ -23,9 +23,7 @@ const seo = {
     "https://tmgdubai.ae/freezone-company-formation",
 };
 
-// -----------------------
-// Metadata for Next.js App Router
-// -----------------------
+
 export const metadata = buildMetadata({
   title: seo.metaTitle,
   description: seo.metaDescription,
@@ -38,9 +36,7 @@ export const metadata = buildMetadata({
   path: "/freezone-company-formation",
 });
 
-// -----------------------
-// Freezone Service Schema (exactly as provided)
-// -----------------------
+
 const FreezoneServiceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -76,9 +72,7 @@ const FreezoneServiceSchema = {
   }
 };
 
-// -----------------------
-// Layout component
-// -----------------------
+
 export default function FreezoneLayout({ children }) {
   return (
     <>

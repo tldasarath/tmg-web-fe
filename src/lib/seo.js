@@ -1,4 +1,4 @@
-// lib/seo.js
+
 export const siteUrl = "https://tmgdubai.ae";
 
 export const defaultSeo = {
@@ -12,7 +12,7 @@ export const defaultSeo = {
   locale: "en_AE",
 };
 
-/** Clean text by removing newlines and extra spaces */
+
 function cleanText(text) {
   if (!text) return text;
   return text.replace(/\n/g, " ").replace(/\s+/g, " ").trim();
@@ -29,10 +29,19 @@ export function buildMetadata({
   ogDescription,
   ogImageAlt,
   canonicalUrl,
+  robots,
 }) {
-  const url = canonicalUrl
-    ? canonicalUrl
-    : `${siteUrl}${path.startsWith("/") ? path : `/${path}`}`;
+
+  let url = canonicalUrl;
+  if (!url) {
+    let finalPath = path.startsWith("/") ? path : `/${path}`;
+    if (!finalPath.endsWith("/")) {
+      finalPath = `${finalPath}/`;
+    }
+    url = `${siteUrl}${finalPath}`;
+  } else if (!url.endsWith("/")) {
+    url = `${url}/`;
+  }
 
   const metaTitle = cleanText(title) || defaultSeo.defaultTitle;
   const metaDescription =
@@ -44,24 +53,24 @@ export function buildMetadata({
     : defaultSeo.defaultImage;
   const twitterImage = imageUrl || defaultSeo.defaultImage;
 
-  // FIXED: Keep keywords as array for Next.js 15
+
   const keywordsArray = Array.isArray(keywords)
     ? keywords
     : keywords
-    ? [keywords]
-    : [];
+      ? [keywords]
+      : [];
 
   return {
     metadataBase: new URL(siteUrl),
     title: metaTitle,
     description: metaDescription,
-    // FIXED: Pass keywords as array, not comma-separated string
+  
     keywords: keywordsArray,
     alternates: { canonical: url },
     authors: [{ name: "TMG Global" }],
     creator: "TMG Global",
     publisher: "TMG Global",
-    robots: {
+    robots: robots || {
       index: true,
       follow: true,
       googleBot: {
@@ -95,8 +104,8 @@ export function buildMetadata({
       google: "_W2qQZsYga7KnXrA12vbw48HhEJiYAEB1ouDNDSQPAA",
     },
 
-    alternates: { 
-      canonical: url 
+    alternates: {
+      canonical: url
     },
 
     openGraph: {
